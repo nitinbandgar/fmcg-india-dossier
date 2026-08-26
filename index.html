@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="A CEO's strategy dossier on the Indian FMCG industry and a five-year plan to make Tata Consumer Products India's leading branded food and beverage company.">
-<meta property="og:title" content="The Pantry Playbook">
+<meta property="og:title" content="The FMCG India Dossier">
 <meta property="og:description" content="An operator's guide to the Indian FMCG industry and a five-year plan for Tata Consumer Products.">
 <meta property="og:type" content="article">
-<title>The Pantry Playbook</title>
+<title>The FMCG India Dossier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
@@ -385,6 +385,135 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .scen dt{font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); padding-top:3px; white-space:nowrap;}
 .scen dd{margin:0; font-family:"IBM Plex Sans",sans-serif; font-size:14.2px; line-height:1.5;}
 
+/* ---------- rail collapse ---------- */
+.railbtn{
+  background:var(--surface-2); border:1px solid var(--line); color:var(--ink-3);
+  border-radius:5px; padding:5px 9px; cursor:pointer; line-height:1;
+  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.09em; text-transform:uppercase;
+}
+.railbtn:hover{color:var(--accent); border-color:var(--accent-line);}
+#railClose{display:none;}
+@media(min-width:1120px){ #railClose{display:inline-block; margin-top:12px;} }
+.railopen{
+  display:none; position:fixed; left:12px; top:14px; z-index:70;
+  background:var(--surface); border:1px solid var(--line-2); color:var(--ink-2);
+  border-radius:6px; padding:8px 12px; cursor:pointer; box-shadow:var(--shadow);
+  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+}
+.railopen:hover{color:var(--accent); border-color:var(--accent-line);}
+@media(min-width:1120px){
+  .shell.railclosed{grid-template-columns:minmax(0,1fr);}
+  .shell.railclosed .rail{display:none;}
+  .shell.railclosed ~ .railopen, body.railclosed .railopen{display:block;}
+}
+
+/* ---------- search ---------- */
+.navsearchwrap{position:relative; margin:0 0 18px;}
+@media(min-width:1120px){ .navsearchwrap{margin-bottom:20px;} }
+.navsearch{
+  width:100%; background:var(--surface-2); border:1px solid var(--line);
+  border-radius:6px; padding:9px 11px; color:var(--ink);
+  font-family:"IBM Plex Sans",sans-serif; font-size:13px;
+}
+.navsearch::placeholder{color:var(--ink-4);}
+.navsearch:focus{outline:none; border-color:var(--accent-line); background:var(--surface);}
+.qresults{
+  position:absolute; left:0; right:0; top:calc(100% + 5px); z-index:60;
+  background:var(--surface); border:1px solid var(--line-2); border-radius:7px;
+  box-shadow:var(--shadow); max-height:340px; overflow-y:auto; padding:5px;
+}
+.qresults button{
+  display:block; width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  padding:8px 9px; border-radius:5px; color:var(--ink-2);
+  font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; line-height:1.4;
+}
+.qresults button:hover,.qresults button:focus{background:var(--accent-soft); color:var(--accent-2);}
+.qresults .qt{display:block; font-weight:600; color:var(--ink); margin-bottom:2px; font-size:13px;}
+.qresults .qp{display:block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-4); margin-bottom:3px;}
+.qresults .qnone{padding:12px 10px; color:var(--ink-3); font-size:12.6px; font-family:"IBM Plex Sans",sans-serif;}
+mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padding:0 1px;}
+.chapter.flash{box-shadow:0 0 0 3px var(--accent-line);}
+
+/* ---------- toolbar & tabs ---------- */
+.toolbar{
+  position:sticky; top:0; z-index:45; background:var(--paper);
+  border-bottom:1px solid var(--line); margin:0 0 8px;
+  display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; justify-content:space-between;
+  padding-top:10px;
+}
+@media(max-width:1119px){ .toolbar{top:53px;} }
+.tabbar{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; flex:1 1 auto;}
+.tabbar::-webkit-scrollbar{display:none;}
+.tab{
+  background:none; border:none; border-bottom:2px solid transparent; cursor:pointer;
+  padding:9px 14px 10px; text-align:left; white-space:nowrap; color:var(--ink-3);
+  border-radius:6px 6px 0 0;
+}
+.tab .tsub{display:block; font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-4); margin-bottom:3px;}
+.tab .tlab{display:block; font-family:"IBM Plex Sans",sans-serif; font-size:14.5px; font-weight:600; letter-spacing:-.012em;}
+.tab:hover{background:var(--surface-2); color:var(--ink-2);}
+.tab[aria-selected=true]{color:var(--accent); border-bottom-color:var(--accent); background:var(--surface-2);}
+.tab[aria-selected=true] .tsub{color:var(--accent);}
+.tools{display:flex; gap:10px; align-items:flex-end; padding:0 0 8px;}
+.rolewrap{display:flex; flex-direction:column; gap:4px;}
+.rolelab{font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-4);}
+.roleselect{
+  background:var(--surface); border:1px solid var(--line-2); border-radius:6px;
+  padding:7px 9px; color:var(--ink); font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; cursor:pointer; max-width:230px;
+}
+.roleselect:focus{outline:none; border-color:var(--accent-line);}
+.rolebanner{
+  background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:7px;
+  padding:11px 15px; margin:14px 0 4px; font-family:"IBM Plex Sans",sans-serif; font-size:13.2px; color:var(--accent-2);
+  display:flex; gap:12px; align-items:baseline; flex-wrap:wrap;
+}
+.rolebanner b{color:var(--accent); font-weight:600;}
+.rolebanner button{background:none; border:1px solid var(--accent-line); color:var(--accent); border-radius:5px; padding:4px 9px; cursor:pointer; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;}
+
+/* ---------- panels ---------- */
+.panel{display:none; max-width:1080px;}
+.panel.on{display:block;}
+.panelhead{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; border-top:2px solid var(--ink); padding-top:14px; margin:20px 0 18px;}
+.peyebrow{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:600; display:block; margin-bottom:4px;}
+.ptitle{font-size:clamp(23px,3vw,31px); line-height:1.1; letter-spacing:-.024em; font-weight:600; margin:0;}
+.pactions{display:flex; gap:7px;}
+.pactions button{
+  background:var(--surface-2); border:1px solid var(--line); color:var(--ink-3); border-radius:5px;
+  padding:6px 10px; cursor:pointer; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+}
+.pactions button:hover{color:var(--accent); border-color:var(--accent-line);}
+
+/* ---------- chapters ---------- */
+.chapter{
+  border:1px solid var(--line); border-radius:9px; background:var(--surface);
+  margin:0 0 13px; scroll-margin-top:96px; transition:box-shadow .16s;
+}
+.chapter[data-open=true]{box-shadow:var(--shadow);}
+.chead{padding:20px 24px; cursor:pointer; border-radius:9px;}
+.chead:hover{background:var(--surface-2);}
+.chapter[data-open=true] .chead{border-radius:9px 9px 0 0;}
+.chead h2{font-size:clamp(21px,2.7vw,28px); margin:2px 0 10px;}
+.chead .standfirst{font-size:17px; margin:0 0 13px;}
+.cmeta{display:flex; align-items:center; gap:10px; margin-bottom:7px;}
+.cnum{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em; color:var(--accent); font-weight:600; background:var(--accent-soft); border-radius:4px; padding:3px 7px;}
+.coff{display:none; font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-4); border:1px solid var(--line-2); border-radius:3px; padding:2px 6px;}
+.chint{display:inline-flex; align-items:center; gap:7px; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+.chint .chev{width:13px; height:13px; transition:transform .18s;}
+.chapter[data-open=true] .chint .chev{transform:rotate(180deg);}
+.chint-close{display:none;}
+.chapter[data-open=true] .chint-open{display:none;}
+.chapter[data-open=true] .chint-close{display:inline;}
+.cbody{padding:4px 24px 26px; border-top:1px solid var(--line);}
+.chapter[data-open=false] .cbody{display:none;}
+.cbody > .wrap,.cbody > .wide{max-width:none;}
+.cbody > .wrap p,.cbody > .wrap ul,.cbody > .wrap ol,.cbody > .wrap .standfirst{max-width:70ch;}
+.cbody section{padding-top:0;}
+.chapter.offpath{opacity:.45;}
+.chapter.offpath .coff{display:inline-block;}
+.chapter.offpath:hover,.chapter.offpath[data-open=true]{opacity:1;}
+.navlist a.offpath{opacity:.35;}
+@media(max-width:700px){ .chead{padding:16px 17px;} .cbody{padding:4px 17px 20px;} }
+
 /* ---------- print ---------- */
 @media print{
   @page{ margin:15mm 14mm 16mm; }
@@ -397,10 +526,20 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   }
   html{font-size:10.2pt;}
   body{background:#fff; color:#000; font-size:10.2pt; line-height:1.45;}
-  .rail,.navtoggle,.model .mctl input,.mfoot button{display:none !important;}
+  .rail,.navtoggle,.model .mctl input,.mfoot button,
+  .toolbar,.rolebanner,.chint,.coff,.railopen,.qresults,.navsearchwrap,.pactions{display:none !important;}
   .shell{display:block; max-width:none;}
   main{padding:0; max-width:none;}
   .wrap,.wide{max-width:none;}
+  /* tabs and accordions all open on paper */
+  .panel{display:block !important; max-width:none;}
+  .panelhead{break-before:page; break-after:avoid; margin:0 0 12pt;}
+  .ptitle{font-size:22pt;}
+  .chapter{border:none; box-shadow:none; margin:0 0 6pt; opacity:1 !important; break-inside:auto;}
+  .chapter .cbody{display:block !important; border-top:none; padding:0;}
+  .chead{padding:0; background:none !important; cursor:auto;}
+  .cnum{background:none; padding:0; color:#000;}
+  mark.hit{background:none;}
   p,ul,ol,.standfirst,.pull{max-width:none;}
   section{padding-top:20pt; break-inside:auto;}
   h2{font-size:19pt; break-after:avoid; break-before:page;}
@@ -433,50 +572,27 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 <nav class="rail">
   <div class="rail-head">
     <div>
-      <span class="rail-mark">Confidential · CEO Briefing</span>
-      <div class="rail-title">The Pantry Playbook</div>
+      <span class="rail-mark">Confidential · Executive Briefing</span>
+      <div class="rail-title">The FMCG India Dossier</div>
     </div>
     <button class="navtoggle" id="nt" aria-expanded="false" aria-controls="nl">Contents</button>
+    <button class="railbtn" id="railClose" title="Hide the contents pane">&laquo; Hide contents</button>
   </div>
   <div class="navlist" id="nl">
-    <div class="navgroup">Orientation</div>
-    <a href="#summary"><span>00</span><span>Executive Summary</span></a>
-    <div class="navgroup">Part One · The Industry</div>
-    <a href="#industry"><span>01</span><span>Structure &amp; Size</span></a>
-    <a href="#forces"><span>02</span><span>The Seven Forces</span></a>
-    <a href="#economics"><span>03</span><span>How Money Is Made</span></a>
-    <a href="#consumer"><span>04</span><span>The Consumer</span></a>
-    <a href="#channels"><span>05</span><span>Channels &amp; Q-Commerce</span></a>
-    <a href="#chanecon"><span>06</span><span>Channel Economics</span></a>
-    <a href="#competition"><span>07</span><span>Competitive Landscape</span></a>
-    <a href="#win"><span>08</span><span>What It Takes to Win</span></a>
-    <div class="navgroup">Part Two · The Company</div>
-    <a href="#tcpl"><span>09</span><span>TCPL: The Numbers</span></a>
-    <a href="#bu"><span>10</span><span>Business Unit Teardown</span></a>
-    <a href="#diagnosis"><span>11</span><span>The Honest Diagnosis</span></a>
-    <div class="navgroup">Part Three · The Plan</div>
-    <a href="#ambition"><span>12</span><span>Defining &quot;Number One&quot;</span></a>
-    <a href="#whereplay"><span>13</span><span>Where to Play</span></a>
-    <a href="#ma"><span>14</span><span>The M&amp;A Map</span></a>
-    <a href="#snacks"><span>15</span><span>Salty Snacks: The Case</span></a>
-    <a href="#howwin"><span>16</span><span>How to Win: Five Thrusts</span></a>
-    <a href="#bridge"><span>17</span><span>The Bridge to FY31</span></a>
-    <div class="navgroup">Part Four · Execution</div>
-    <a href="#functions"><span>18</span><span>Function Playbooks</span></a>
-    <a href="#orgdesign"><span>19</span><span>Org Design &amp; Decision Rights</span></a>
-    <a href="#os"><span>20</span><span>Operating System &amp; KPIs</span></a>
-    <a href="#scenarios"><span>21</span><span>Scenarios &amp; Stress Tests</span></a>
-    <a href="#risks"><span>22</span><span>Risk Register</span></a>
-    <a href="#hundred"><span>23</span><span>Your First 100 Days</span></a>
-    <a href="#sources"><span>24</span><span>Sources &amp; Method</span></a>
+    <div class="navsearchwrap">
+      <input type="search" id="q" class="navsearch" placeholder="Search the dossier…" autocomplete="off" aria-label="Search the dossier">
+      <div class="qresults" id="qres" hidden></div>
+    </div>
+<div class="navgroup">Orientation</div><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
   </div>
 </nav>
+<button class="railopen" id="railOpen" title="Show the contents pane">&raquo; Contents</button>
 
 <main>
 
 <header class="masthead wrap">
   <span class="eyebrow">Strategy Dossier · August 2026</span>
-  <h1>The Pantry Playbook</h1>
+  <h1>The FMCG India Dossier</h1>
   <p class="dek">An operator's guide to the Indian FMCG industry and a five-year plan to make Tata Consumer Products the country's leading branded food and beverage company.</p>
   <div class="credits">
     <div><b>Prepared for</b>Managing Director &amp; CEO</div>
@@ -486,11 +602,40 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   </div>
 </header>
 
-<!-- ============ EXEC SUMMARY ============ -->
-<section id="summary" class="wrap">
-  <div class="parthead"><span class="pnum">00</span></div>
-  <h2>Executive Summary</h2>
-  <p class="standfirst">Thirteen conclusions. If you read nothing else in this document, read these — everything that follows is the evidence and the plan behind them.</p>
+<div class="toolbar" id="toolbar">
+  <div class="tabbar" role="tablist" aria-label="Document parts"><button type="button" role="tab" class="tab" id="tab-p0" data-part="p0" aria-selected="true" aria-controls="pan-p0" tabindex="0"><span class="tsub">Orientation</span><span class="tlab">Start Here</span></button><button type="button" role="tab" class="tab" id="tab-p1" data-part="p1" aria-selected="false" aria-controls="pan-p1" tabindex="-1"><span class="tsub">Part One</span><span class="tlab">The Industry</span></button><button type="button" role="tab" class="tab" id="tab-p2" data-part="p2" aria-selected="false" aria-controls="pan-p2" tabindex="-1"><span class="tsub">Part Two</span><span class="tlab">The Company</span></button><button type="button" role="tab" class="tab" id="tab-p3" data-part="p3" aria-selected="false" aria-controls="pan-p3" tabindex="-1"><span class="tsub">Part Three</span><span class="tlab">The Plan</span></button><button type="button" role="tab" class="tab" id="tab-p4" data-part="p4" aria-selected="false" aria-controls="pan-p4" tabindex="-1"><span class="tsub">Part Four</span><span class="tlab">Execution</span></button><button type="button" role="tab" class="tab" id="tab-p5" data-part="p5" aria-selected="false" aria-controls="pan-p5" tabindex="-1"><span class="tsub">Reference</span><span class="tlab">Sources</span></button></div>
+  <div class="tools">
+    <div class="rolewrap">
+      <label for="role" class="rolelab">Reading path</label>
+      <select id="role" class="roleselect">
+        <option value="all">Everyone — full dossier</option>
+        <option value="ceo">CEO / Managing Director</option>
+        <option value="cfo">CFO &amp; Finance</option>
+        <option value="strategy">Strategy &amp; Corporate Development</option>
+        <option value="cmo">Marketing &amp; Brand</option>
+        <option value="sales">Sales &amp; Commercial</option>
+        <option value="supply">Supply Chain &amp; Operations</option>
+        <option value="rnd">R&amp;D, Innovation &amp; Quality</option>
+        <option value="digital">Digital, Data &amp; AI</option>
+        <option value="chro">HR &amp; Organisation</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="rolebanner" id="rolebanner" hidden></div>
+
+<div class="panel" id="pan-p0" role="tabpanel" aria-labelledby="tab-p0" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Orientation</span><h3 class="ptitle">Start Here</h3><div class="pactions"><button type="button" class="expandall" data-part="p0">Expand all</button><button type="button" class="collapseall" data-part="p0">Collapse all</button></div></div>
+
+<section id="summary" class="chapter" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-summary">
+    <div class="cmeta"><span class="cnum">00</span><span class="coff">Not in this reading path</span></div>
+    <h2>Executive Summary</h2>
+    <p class="standfirst">Thirteen conclusions. If you read nothing else in this document, read these — everything that follows is the evidence and the plan behind them.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-summary">
+    <div class="wrap">
 
   <ol class="steps">
     <li><b>You have inherited a growth company with a returns problem.</b> Revenue crossed ₹20,290 crore in FY26, up 15%<sup class="cite"><a href="#s1" title="Source 1">1</a></sup>, with 13% underlying volume growth in the India branded business — genuinely best-in-class. But return on capital employed is <strong>9.2%</strong> against a three-year ROE of 7.5%<sup class="cite"><a href="#s9" title="Source 9">9</a></sup>, while the stock trades at roughly <strong>63× earnings</strong>. The market is paying a compounder multiple for a business that currently earns close to its cost of capital. Closing that gap — not adding revenue — is the single largest source of value you control.</li>
@@ -525,13 +670,22 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Tata Consumer is one of the few Indian FMCG companies with a genuine right to win across the entire pantry — and it is currently converting that right into 9% returns; the plan is to concentrate capital behind six or seven categories where you can be number one or two, exit or fix everything else, and buy your way into salty snacks and value-added dairy while the windows are still open.</p>
     <p><strong>And the one thing to take from the new analysis:</strong> the target is ₹42,500 crore at 16% CAGR, not ₹46,000 at 18% — but on current assumptions you still finish ₹800 crore behind Nestlé, so the whole plan reduces to moving the growth portfolio from 28% to 32%, and to being honest that statutory returns reach 13% rather than 18% because acquisitions are ROCE-dilutive by construction.</p>
   </div>
+    </div>
+  </div>
 </section>
+</div>
+<div class="panel" id="pan-p1" role="tabpanel" aria-labelledby="tab-p1" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Part One</span><h3 class="ptitle">The Industry</h3><div class="pactions"><button type="button" class="expandall" data-part="p1">Expand all</button><button type="button" class="collapseall" data-part="p1">Collapse all</button></div></div>
 
-<!-- ============ INDUSTRY ============ -->
-<section id="industry" class="wide">
-  <div class="parthead"><span class="pnum">Part One · 01</span></div>
-  <h2>The Industry: Structure and Size</h2>
-  <p class="standfirst">Indian FMCG is a ₹24 lakh crore consumption system growing at high single digits in volume, in which almost all the profit is made in a handful of categories and almost all the competition happens at the last mile.</p>
+<section id="industry" class="chapter" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-industry">
+    <div class="cmeta"><span class="cnum">01</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Industry: Structure and Size</h2>
+    <p class="standfirst">Indian FMCG is a ₹24 lakh crore consumption system growing at high single digits in volume, in which almost all the profit is made in a handful of categories and almost all the competition happens at the last mile.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-industry">
+    <div class="wide">
 
   <div class="grid g4">
     <div class="kpi"><span class="kpi-lab">Market size, 2025</span><div class="kpi-val">$289<small>bn</small></div><div class="kpi-sub">Projected to reach $643bn by 2030</div></div>
@@ -584,13 +738,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Every category in which Tata Consumer is currently strong except spices has structural growth below 6%. Every category with structural growth above 10% is one where you are either sub-scale or absent. That single observation is the strategic problem of this company.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ FORCES ============ -->
-<section id="forces" class="wrap">
-  <div class="parthead"><span class="pnum">Part One · 02</span></div>
-  <h2>The Seven Forces Reshaping the Industry</h2>
-  <p class="standfirst">These are the dynamics your executive team should be able to recite. Each one has a direct implication for how you allocate money and attention.</p>
+<section id="forces" class="chapter" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-forces">
+    <div class="cmeta"><span class="cnum">02</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Seven Forces Reshaping the Industry</h2>
+    <p class="standfirst">These are the dynamics your executive team should be able to recite. Each one has a direct implication for how you allocate money and attention.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-forces">
+    <div class="wrap">
 
   <h3>1. Demand has turned, helped by policy</h3>
   <p>After eight quarters of weak volumes, the sector has re-accelerated: Q1 FY27 revenue growth of roughly 15% across the listed set, with volume recovery visible across large, mid and small caps. Two policy actions did most of the work — the income tax relief in the FY26 budget and <strong>GST 2.0</strong>, which from 22 September 2025 collapsed the rate structure<sup class="cite"><a href="#s31" title="Source 31">31</a></sup> into 5% and 18% slabs and cut tax on a wide set of daily essentials. Consumer companies expect the GST benefit to keep supporting demand for several more quarters<sup class="cite"><a href="#s32" title="Source 32">32</a></sup>.</p>
@@ -619,13 +778,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <h3>7. Input cost and currency volatility as a permanent condition</h3>
   <p>Tea procurement inflation is running at 7–10%. Palm oil and crude-linked packaging costs are elevated. Robusta coffee fell 26% year-on-year, hitting the non-branded business hard. Freight, fuel and FX are all moving.</p>
   <p><em>Implication:</em> pricing agility is a capability, not an event. The companies that win margin cycles are those that can take a ₹2 price increase in salt or a selective tea hike within weeks of a cost signal — and reverse it as fast when costs deflate.</p>
+    </div>
+  </div>
 </section>
-
-<!-- ============ ECONOMICS ============ -->
-<section id="economics" class="wide">
-  <div class="parthead"><span class="pnum">Part One · 03</span></div>
-  <h2>How Money Is Actually Made in Indian FMCG</h2>
-  <p class="standfirst">The P&amp;L anatomy every category manager should know by heart, and the four levers that separate a 13% EBITDA business from a 24% one.</p>
+<section id="economics" class="chapter" data-part="p1" data-roles="ceo cfo strategy supply" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-economics">
+    <div class="cmeta"><span class="cnum">03</span><span class="coff">Not in this reading path</span></div>
+    <h2>How Money Is Actually Made in Indian FMCG</h2>
+    <p class="standfirst">The P&amp;L anatomy every category manager should know by heart, and the four levers that separate a 13% EBITDA business from a 24% one.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-economics">
+    <div class="wide">
 
   <div class="wrap">
   <h3>The canonical P&amp;L</h3>
@@ -666,13 +830,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <p class="mono" style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:16px 18px;font-size:14px;max-width:74ch;">ROCE = EBIT margin × (Revenue ÷ Capital Employed)</p>
   <p>At roughly ₹25,000 crore of capital employed and around ₹2,300 crore of EBIT, you are running a capital turn of about 0.8× and an EBIT margin near 11.4%. Peers with comparable revenue run capital turns of 1.5–3× because they carry far less goodwill and far lighter fixed assets. <strong>Your ROCE problem is at least as much a balance sheet problem as a margin problem</strong> — and no amount of revenue growth fixes it unless the incremental revenue comes at high asset turns.</p>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ CONSUMER ============ -->
-<section id="consumer" class="wrap">
-  <div class="parthead"><span class="pnum">Part One · 04</span></div>
-  <h2>The Consumer</h2>
-  <p class="standfirst">Six shifts in how India buys food. Each one is a brief for your marketing and innovation teams.</p>
+<section id="consumer" class="chapter" data-part="p1" data-roles="ceo cmo rnd sales digital" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-consumer">
+    <div class="cmeta"><span class="cnum">04</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Consumer</h2>
+    <p class="standfirst">Six shifts in how India buys food. Each one is a brief for your marketing and innovation teams.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-consumer">
+    <div class="wrap">
 
   <h3>The self-directed health consumer</h3>
   <p>The single largest behavioural change of this decade. Consumers are making health decisions without a doctor, an expert or a brand telling them what to do — reading labels, checking protein grams per serve, avoiding palm oil, counting added sugar. They trust ingredient lists more than advertising claims.</p>
@@ -698,13 +867,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <h3>Price sensitivity has not gone away — it has become sharper</h3>
   <p>Household debt at roughly 42% of GDP and urban cost-of-living pressure mean consumers trade down within a brand rather than away from it: smaller packs, fewer units, waiting for a promotion. Campa's success at 10% market share came from an explicit price-disruption play that gave consumers permission to switch.</p>
   <p><strong>Brief:</strong> price-pack architecture is a strategic weapon, not a packaging decision. Every brand needs a defensible entry pack that protects the franchise when the consumer is squeezed.</p>
+    </div>
+  </div>
 </section>
-
-<!-- ============ CHANNELS ============ -->
-<section id="channels" class="wide">
-  <div class="parthead"><span class="pnum">Part One · 05</span></div>
-  <h2>Channels: The Ground Is Moving</h2>
-  <p class="standfirst">Route to market used to be a cost line. It is now the primary battleground of Indian FMCG, and the economics of each channel are diverging fast.</p>
+<section id="channels" class="chapter" data-part="p1" data-roles="ceo sales cmo digital supply" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-channels">
+    <div class="cmeta"><span class="cnum">05</span><span class="coff">Not in this reading path</span></div>
+    <h2>Channels: The Ground Is Moving</h2>
+    <p class="standfirst">Route to market used to be a cost line. It is now the primary battleground of Indian FMCG, and the economics of each channel are diverging fast.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-channels">
+    <div class="wide">
 
   <div class="wrap">
   <h3>The five channels and what each one actually costs you</h3>
@@ -745,13 +919,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <p>The industry's answer — visible in what ITC, Nestlé, Dabur, Parle, Coca-Cola and Tata Consumer are all doing simultaneously — is a <strong>re-embrace of the kirana</strong> alongside q-commerce investment: raising trade margins on select brands, shortening replenishment cycles, deploying predictive demand forecasting for distributors, and expanding direct coverage. ITC's UNNATI B2B platform now engages over 800,000 outlets; its digitally-enabled and modern trade channels are 34% of FMCG sales with q-commerce up 57% in FY26.</p>
   <p>The correct stance is not to choose. It is to run <strong>differentiated portfolios per channel</strong> — different pack sizes, different price points, different assortment depth — so that the channels compete for different occasions rather than for the same transaction at different prices. That is the only durable answer to channel conflict, and it is an execution problem, not a policy problem.</p>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ CHANNEL ECONOMICS ============ -->
-<section id="chanecon" class="wide">
-  <div class="parthead"><span class="pnum">Part One · 06</span></div>
-  <h2>Channel Economics: What Each Route to Market Actually Pays You</h2>
-  <p class="standfirst">The previous section described the channel shift. This one prices it. Until a channel mix decision is expressed as contribution margin per rupee and days of working capital, it is not a decision — it is a preference.</p>
+<section id="chanecon" class="chapter" data-part="p1" data-roles="ceo cfo sales cmo digital supply" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-chanecon">
+    <div class="cmeta"><span class="cnum">06</span><span class="coff">Not in this reading path</span></div>
+    <h2>Channel Economics: What Each Route to Market Actually Pays You</h2>
+    <p class="standfirst">The previous section described the channel shift. This one prices it. Until a channel mix decision is expressed as contribution margin per rupee and days of working capital, it is not a decision — it is a preference.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-chanecon">
+    <div class="wide">
 
   <div class="wrap">
   <p>Most Indian FMCG companies still manage channels on <em>revenue</em> and <em>growth</em>. Both are misleading, because a rupee earned in quick commerce is not worth a rupee earned in general trade — it costs more to serve, it carries a media tax that did not exist five years ago, and it arrives with a different working capital profile. The table below traces ₹100 of consumer spend down to what the company actually keeps, for a representative packaged food SKU.</p>
@@ -822,13 +1001,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <strong>Three.</strong> Retail media is bought against contribution, not against revenue. The ₹4,900 crore platform ad pool is priced as marketing but behaves as trade spend; if it is approved by the brand team on a revenue target it will always be over-bought.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ COMPETITION ============ -->
-<section id="competition" class="wide">
-  <div class="parthead"><span class="pnum">Part One · 07</span></div>
-  <h2>The Competitive Landscape</h2>
-  <p class="standfirst">Where you stand against the field, and what each major competitor is actually trying to do.</p>
+<section id="competition" class="chapter" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-competition">
+    <div class="cmeta"><span class="cnum">07</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Competitive Landscape</h2>
+    <p class="standfirst">Where you stand against the field, and what each major competitor is actually trying to do.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-competition">
+    <div class="wide">
 
   <h3 class="wrap">FY26 benchmark: the field at a glance</h3>
   <div class="tablewrap wide">
@@ -899,13 +1083,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <p>₹1 lakh crore of brand turnover in FY26, up 11%, with GCMMF at ₹73,450 crore; 3.6 million farmers, 31 million litres collected daily, 1,200+ product packs, 24 billion packs distributed. Amul does not maximise profit — it maximises farmer realisation — which makes it structurally impossible to out-compete on price in dairy.</p>
   <p><strong>Implication for you:</strong> any dairy entry must be in <em>value-added</em>, premium or convenience dairy where Amul's cost advantage matters less and brand and innovation matter more. Never in liquid milk or commodity butter.</p>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ WHAT IT TAKES TO WIN ============ -->
-<section id="win" class="wrap">
-  <div class="parthead"><span class="pnum">Part One · 08</span></div>
-  <h2>What It Takes to Win</h2>
-  <p class="standfirst">Across every winner in this industry, the same seven capabilities recur. This is the scorecard to hold your executive team against — and Tata Consumer's honest grade on each.</p>
+<section id="win" class="chapter" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-win">
+    <div class="cmeta"><span class="cnum">08</span><span class="coff">Not in this reading path</span></div>
+    <h2>What It Takes to Win</h2>
+    <p class="standfirst">Across every winner in this industry, the same seven capabilities recur. This is the scorecard to hold your executive team against — and Tata Consumer's honest grade on each.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-win">
+    <div class="wrap">
 
   <ol class="steps">
     <li><b>Category leadership, not category presence</b> <span class="tag warn">Partial</span><br>The number one or two brand in a category earns three to five times the economic profit of the number four. Nestlé is number one in almost everything it sells. Britannia is number one in biscuits. You are number one in salt and roughly number one in tea — and outside the top three in most of the growth portfolio. <em>The discipline: be number one or two, or have a credible three-year path to it, or exit.</em></li>
@@ -927,13 +1116,22 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <span class="plab">The synthesis</span>
     <p>Tata Consumer is strong where the industry rewards creativity (innovation, brand trust, portfolio breadth) and weak where it rewards discipline (capital productivity, effective distribution, focus). Every high-performing FMCG company in India is strong on both. The next three years are about installing the discipline without losing the creativity — which is primarily an operating-system and talent problem, not a strategy problem.</p>
   </div>
+    </div>
+  </div>
 </section>
+</div>
+<div class="panel" id="pan-p2" role="tabpanel" aria-labelledby="tab-p2" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Part Two</span><h3 class="ptitle">The Company</h3><div class="pactions"><button type="button" class="expandall" data-part="p2">Expand all</button><button type="button" class="collapseall" data-part="p2">Collapse all</button></div></div>
 
-<!-- ============ TCPL NUMBERS ============ -->
-<section id="tcpl" class="wide">
-  <div class="parthead"><span class="pnum">Part Two · 09</span></div>
-  <h2>Tata Consumer: The Numbers</h2>
-  <p class="standfirst">Where the company actually is, in the terms a CEO should hold in their head.</p>
+<section id="tcpl" class="chapter" data-part="p2" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-tcpl">
+    <div class="cmeta"><span class="cnum">09</span><span class="coff">Not in this reading path</span></div>
+    <h2>Tata Consumer: The Numbers</h2>
+    <p class="standfirst">Where the company actually is, in the terms a CEO should hold in their head.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-tcpl">
+    <div class="wide">
 
   <div class="grid g4">
     <div class="kpi hi"><span class="kpi-lab">FY26 revenue</span><div class="kpi-val">₹20,290<small> cr</small></div><div class="kpi-sub">+15% YoY; first year past ₹20,000 cr</div></div>
@@ -997,13 +1195,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Management's target of ~45% growth-business share in three to four years is a good target for the company you have. It is not a good enough target for the company you want. At 45%, the core still governs your growth rate, and the core grows at 5%. At 60%, the growth portfolio governs — and that is when the blended rate crosses into the high teens.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ BU TEARDOWN ============ -->
-<section id="bu" class="wide">
-  <div class="parthead"><span class="pnum">Part Two · 10</span></div>
-  <h2>Business Unit Teardown</h2>
-  <p class="standfirst">Every business, honestly assessed, with the mandate you should give its leader. Read this section with a pen.</p>
+<section id="bu" class="chapter" data-part="p2" data-roles="ceo cfo strategy rnd" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-bu">
+    <div class="cmeta"><span class="cnum">10</span><span class="coff">Not in this reading path</span></div>
+    <h2>Business Unit Teardown</h2>
+    <p class="standfirst">Every business, honestly assessed, with the mandate you should give its leader. Read this section with a pen.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-bu">
+    <div class="wide">
 
   <div class="wrap">
   <!-- SALT -->
@@ -1137,13 +1340,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <div class="metricstrip"><span><b>Track:</b> Capital employed in non-branded</span><span><b>Track:</b> Earnings volatility contribution</span><span><b>Track:</b> Quantified integration benefit</span></div>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ DIAGNOSIS ============ -->
-<section id="diagnosis" class="wide">
-  <div class="parthead"><span class="pnum">Part Two · 11</span></div>
-  <h2>The Honest Diagnosis</h2>
-  <p class="standfirst">A SWOT is only useful if it is uncomfortable. This one is.</p>
+<section id="diagnosis" class="chapter" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-diagnosis">
+    <div class="cmeta"><span class="cnum">11</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Honest Diagnosis</h2>
+    <p class="standfirst">A SWOT is only useful if it is uncomfortable. This one is.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-diagnosis">
+    <div class="wide">
 
   <div class="matrix">
     <div class="qbox q-s">
@@ -1209,13 +1417,22 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Tata Consumer is being valued as a high-growth branded consumer compounder and operated as a diversified conglomerate with commodity businesses, mature international assets, and heavy goodwill. Those two things cannot both be true for much longer. You either reshape the portfolio to match the valuation, or the valuation reshapes to match the portfolio.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
+</div>
+<div class="panel" id="pan-p3" role="tabpanel" aria-labelledby="tab-p3" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Part Three</span><h3 class="ptitle">The Plan</h3><div class="pactions"><button type="button" class="expandall" data-part="p3">Expand all</button><button type="button" class="collapseall" data-part="p3">Collapse all</button></div></div>
 
-<!-- ============ AMBITION ============ -->
-<section id="ambition" class="wide">
-  <div class="parthead"><span class="pnum">Part Three · 12</span></div>
-  <h2>Defining "Number One"</h2>
-  <p class="standfirst">Before you set the ambition, you have to decide what you are counting. Three definitions are available; only one is both meaningful and winnable.</p>
+<section id="ambition" class="chapter" data-part="p3" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-ambition">
+    <div class="cmeta"><span class="cnum">12</span><span class="coff">Not in this reading path</span></div>
+    <h2>Defining "Number One"</h2>
+    <p class="standfirst">Before you set the ambition, you have to decide what you are counting. Three definitions are available; only one is both meaningful and winnable.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-ambition">
+    <div class="wide">
 
   <div class="wrap">
   <h3>The three candidate definitions</h3>
@@ -1272,13 +1489,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>You cannot buy your way to number one. Roughly two-thirds of the gap must come from organic acceleration — the growth portfolio compounding at 30%+, RTD going national, spices premiumising, and tea stabilising. M&amp;A closes the remaining third and buys you entry into categories you cannot build into fast enough. Any strategy that leads with acquisitions is the wrong strategy.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ WHERE TO PLAY ============ -->
-<section id="whereplay" class="wide">
-  <div class="parthead"><span class="pnum">Part Three · 13</span></div>
-  <h2>Where to Play</h2>
-  <p class="standfirst">The portfolio decision, made explicit. Four buckets, and what each one gets.</p>
+<section id="whereplay" class="chapter" data-part="p3" data-roles="ceo cfo rnd strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-whereplay">
+    <div class="cmeta"><span class="cnum">13</span><span class="coff">Not in this reading path</span></div>
+    <h2>Where to Play</h2>
+    <p class="standfirst">The portfolio decision, made explicit. Four buckets, and what each one gets.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-whereplay">
+    <div class="wide">
 
   <div class="tablewrap wide">
   <table>
@@ -1307,13 +1529,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   <h3>Why value-added dairy is second, not first</h3>
   <p>Dairy is larger and growing at 11–13%, but Amul's cooperative economics make it structurally unattractive in commodity segments. The winnable space is <strong>premium, convenience and functional dairy</strong> — paneer, cheese, yoghurt, protein-forward drinks, and cold-chain convenience — where brand, innovation and distribution matter more than milk procurement cost. That is a real opportunity, but it demands cold-chain capability you do not currently have, which makes it a second-wave move rather than a first one.</p>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ M&A ============ -->
-<section id="ma" class="wide">
-  <div class="parthead"><span class="pnum">Part Three · 14</span></div>
-  <h2>The M&amp;A Map</h2>
-  <p class="standfirst">Where to deploy ₹15,000–17,000 crore of firepower over five years. Archetypes and named candidates, ranked.</p>
+<section id="ma" class="chapter" data-part="p3" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-ma">
+    <div class="cmeta"><span class="cnum">14</span><span class="coff">Not in this reading path</span></div>
+    <h2>The M&amp;A Map</h2>
+    <p class="standfirst">Where to deploy ₹15,000–17,000 crore of firepower over five years. Archetypes and named candidates, ranked.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-ma">
+    <div class="wide">
 
   <div class="wrap">
   <div class="pull warnbox">
@@ -1348,13 +1575,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <li><b>Fund from portfolio pruning, not just the balance sheet</b><br>Every acquisition should be paired with a divestment or a capital release. This keeps ROCE improving rather than being diluted by each deal.</li>
   </ol>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ SNACKS BUSINESS CASE ============ -->
-<section id="snacks" class="wide">
-  <div class="parthead"><span class="pnum">Part Three · 15</span></div>
-  <h2>Salty Snacks: The Business Case</h2>
-  <p class="standfirst">This is the largest single recommendation in the document and it deserves more than a line in a ranking table. Here is the build-versus-buy arithmetic, the P&amp;L you would be taking on, the entry route, and the two things most likely to make it fail.</p>
+<section id="snacks" class="chapter" data-part="p3" data-roles="ceo cfo supply rnd sales strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-snacks">
+    <div class="cmeta"><span class="cnum">15</span><span class="coff">Not in this reading path</span></div>
+    <h2>Salty Snacks: The Business Case</h2>
+    <p class="standfirst">This is the largest single recommendation in the document and it deserves more than a line in a ranking table. Here is the build-versus-buy arithmetic, the P&amp;L you would be taking on, the entry route, and the two things most likely to make it fail.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-snacks">
+    <div class="wide">
 
   <div class="wrap">
   <h3>Build, buy, or buy-and-nationalise</h3>
@@ -1442,13 +1674,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <div class="tli"><div class="tlh">By FY31</div><div class="tlt">₹4,000–5,000 crore, top-five nationally</div><p>Roughly 4× the acquired base, at category-normal 12–16% EBITDA. If the plan requires snacks to earn 18%, the plan is wrong — this category does not pay that, and pretending otherwise will cause you to underinvest in the servicing frequency the business needs.</p></div>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ HOW TO WIN ============ -->
-<section id="howwin" class="wrap">
-  <div class="parthead"><span class="pnum">Part Three · 16</span></div>
-  <h2>How to Win: Five Thrusts</h2>
-  <p class="standfirst">The strategy in five moves. Everything in the function playbooks that follows is downstream of these.</p>
+<section id="howwin" class="chapter" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-howwin">
+    <div class="cmeta"><span class="cnum">16</span><span class="coff">Not in this reading path</span></div>
+    <h2>How to Win: Five Thrusts</h2>
+    <p class="standfirst">The strategy in five moves. Everything in the function playbooks that follows is downstream of these.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-howwin">
+    <div class="wrap">
 
   <ol class="steps">
     <li><b>Rebalance the portfolio from core to growth, faster than is comfortable</b><br>
@@ -1476,13 +1713,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <span class="plab">What you are explicitly choosing not to do</span>
     <p>Not entering chocolate, biscuits, edible oil, liquid milk or personal care. Not defending tea share with price. Not matching Reliance rupee for rupee. Not making a second large acquisition before Capital Foods and Organic India are fully integrated. A strategy is only real when the "no" list is as clear as the "yes" list — say the "no" list out loud, repeatedly.</p>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ THE BRIDGE ============ -->
-<section id="bridge" class="wide">
-  <div class="parthead"><span class="pnum">Part Three · 17</span></div>
-  <h2>The Bridge to FY31</h2>
-  <p class="standfirst">Five thrusts are a direction. This is the arithmetic that says whether they add up — a revenue walk, a margin walk and a returns walk, each built from the assumptions stated. The conclusions are uncomfortable in places, which is the point of building it.</p>
+<section id="bridge" class="chapter" data-part="p3" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-bridge">
+    <div class="cmeta"><span class="cnum">17</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Bridge to FY31</h2>
+    <p class="standfirst">Five thrusts are a direction. This is the arithmetic that says whether they add up — a revenue walk, a margin walk and a returns walk, each built from the assumptions stated. The conclusions are uncomfortable in places, which is the point of building it.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-bridge">
+    <div class="wide">
 
   <div class="wrap">
   <h3>First, a correction to the target itself</h3>
@@ -1633,13 +1875,22 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <li><b>Treat the 3.5× entry multiple as the binding constraint it is</b><br>The difference between buying at 3.2× and 3.9× is roughly ₹1,800 crore of FY31 revenue and 130bps of statutory ROCE. Price discipline is not a finance preference here — it is the second-largest lever in the entire plan.</li>
   </ol>
   </div>
+    </div>
+  </div>
 </section>
+</div>
+<div class="panel" id="pan-p4" role="tabpanel" aria-labelledby="tab-p4" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Part Four</span><h3 class="ptitle">Execution</h3><div class="pactions"><button type="button" class="expandall" data-part="p4">Expand all</button><button type="button" class="collapseall" data-part="p4">Collapse all</button></div></div>
 
-<!-- ============ FUNCTIONS ============ -->
-<section id="functions" class="wide">
-  <div class="parthead"><span class="pnum">Part Four · 18</span></div>
-  <h2>Function Playbooks</h2>
-  <p class="standfirst">What each of your leaders should be doing. Each playbook carries a mandate, the moves, the metrics they are held to, and what must be done in the first 90 days.</p>
+<section id="functions" class="chapter" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-functions">
+    <div class="cmeta"><span class="cnum">18</span><span class="coff">Not in this reading path</span></div>
+    <h2>Function Playbooks</h2>
+    <p class="standfirst">What each of your leaders should be doing. Each playbook carries a mandate, the moves, the metrics they are held to, and what must be done in the first 90 days.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-functions">
+    <div class="wide">
 
   <div class="wrap">
 
@@ -1868,13 +2119,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   </div>
 
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ ORG DESIGN ============ -->
-<section id="orgdesign" class="wide">
-  <div class="parthead"><span class="pnum">Part Four · 19</span></div>
-  <h2>Organisation Design &amp; Decision Rights</h2>
-  <p class="standfirst">Eleven playbooks describe what each leader should do. This section describes the structure that lets them do it — because the strategy in Part Three cannot be executed by the organisation that exists today, and the reason is structural rather than a matter of effort.</p>
+<section id="orgdesign" class="chapter" data-part="p4" data-roles="ceo chro sales cfo" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-orgdesign">
+    <div class="cmeta"><span class="cnum">19</span><span class="coff">Not in this reading path</span></div>
+    <h2>Organisation Design &amp; Decision Rights</h2>
+    <p class="standfirst">Eleven playbooks describe what each leader should do. This section describes the structure that lets them do it — because the strategy in Part Three cannot be executed by the organisation that exists today, and the reason is structural rather than a matter of effort.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-orgdesign">
+    <div class="wide">
 
   <div class="wrap">
   <h3>The mismatch, stated plainly</h3>
@@ -1944,13 +2200,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Do not attempt the structural change and the salty snacks acquisition in the same twelve months. A reorganisation consumes roughly two quarters of managerial attention, and integration capacity is already your binding constraint. <strong>Restructure first, in year one; acquire in year two.</strong> A company midway through a reorganisation is the worst possible acquirer — reporting lines are unclear, the integration office has no authority, and the acquired leadership team cannot tell who they work for. Getting this order wrong is one of the more plausible ways this plan fails.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ OPERATING SYSTEM ============ -->
-<section id="os" class="wide">
-  <div class="parthead"><span class="pnum">Part Four · 20</span></div>
-  <h2>The Operating System</h2>
-  <p class="standfirst">Strategy fails in the calendar. This is the cadence and the scorecard that make it real.</p>
+<section id="os" class="chapter" data-part="p4" data-roles="ceo cfo chro strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-os">
+    <div class="cmeta"><span class="cnum">20</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Operating System</h2>
+    <p class="standfirst">Strategy fails in the calendar. This is the cadence and the scorecard that make it real.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-os">
+    <div class="wide">
 
   <div class="wrap">
   <h3>The CEO scorecard — twelve numbers, reviewed monthly</h3>
@@ -1988,13 +2249,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <div class="tli"><div class="tlh">Annually</div><div class="tlt">Ambition recommitment</div><p>The four numbers — revenue, margin, ROCE, category leadership — restated, with the bridge from where you are to FY31 refreshed. This is what goes to the board and to the market.</p></div>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ SCENARIOS ============ -->
-<section id="scenarios" class="wide">
-  <div class="parthead"><span class="pnum">Part Four · 21</span></div>
-  <h2>Scenarios &amp; Stress Tests</h2>
-  <p class="standfirst">The plan in Part Three is a single path. This section stress-tests it against the four futures most likely to arrive, and — more usefully — pre-commits the response, so that the decision is made now rather than in the week the pressure lands.</p>
+<section id="scenarios" class="chapter" data-part="p4" data-roles="ceo cfo sales strategy supply" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-scenarios">
+    <div class="cmeta"><span class="cnum">21</span><span class="coff">Not in this reading path</span></div>
+    <h2>Scenarios &amp; Stress Tests</h2>
+    <p class="standfirst">The plan in Part Three is a single path. This section stress-tests it against the four futures most likely to arrive, and — more usefully — pre-commits the response, so that the decision is made now rather than in the week the pressure lands.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-scenarios">
+    <div class="wide">
 
   <div class="wrap">
   <p>The value of a scenario is not the forecast. It is that <strong>the response is agreed in advance, in a calm room, by people who are not yet under pressure.</strong> A price war is precisely the moment when a company relitigates its pricing principles badly. Agree the doctrine now; the scenarios below each end with a pre-committed action and the trigger that activates it.</p>
@@ -2076,13 +2342,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <p>Put the four triggers on the monthly scorecard as binary indicators — not as commentary, as flags that are either raised or not. The purpose of a trigger is to remove the discretion that lets an organisation explain away three bad quarters in a row. If a flag goes up, the strategy conversation happens at the next board meeting automatically, whether or not anyone requests it.</p>
   </div>
   </div>
+    </div>
+  </div>
 </section>
-
-<!-- ============ RISKS ============ -->
-<section id="risks" class="wide">
-  <div class="parthead"><span class="pnum">Part Four · 22</span></div>
-  <h2>Risk Register</h2>
-  <p class="standfirst">What could break the plan, how likely it is, and the early warning you should be watching for.</p>
+<section id="risks" class="chapter" data-part="p4" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-risks">
+    <div class="cmeta"><span class="cnum">22</span><span class="coff">Not in this reading path</span></div>
+    <h2>Risk Register</h2>
+    <p class="standfirst">What could break the plan, how likely it is, and the early warning you should be watching for.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-risks">
+    <div class="wide">
 
   <div class="tablewrap wide">
   <table>
@@ -2102,13 +2373,18 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   </table>
   </div>
   <p class="tnote wrap">Likelihood and impact assessments are analytical judgment. <span class="est">Judgment</span></p>
+    </div>
+  </div>
 </section>
-
-<!-- ============ 100 DAYS ============ -->
-<section id="hundred" class="wrap">
-  <div class="parthead"><span class="pnum">Part Four · 23</span></div>
-  <h2>Your First 100 Days</h2>
-  <p class="standfirst">What to do, in what order, and the questions that will tell you most about your business and your team.</p>
+<section id="hundred" class="chapter" data-part="p4" data-roles="ceo" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-hundred">
+    <div class="cmeta"><span class="cnum">23</span><span class="coff">Not in this reading path</span></div>
+    <h2>Your First 100 Days</h2>
+    <p class="standfirst">What to do, in what order, and the questions that will tell you most about your business and your team.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-hundred">
+    <div class="wrap">
 
   <div class="tl">
     <div class="tli">
@@ -2149,15 +2425,24 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
     <span class="plab">One last thing</span>
     <p>You are taking over a company that is genuinely performing — 15% revenue growth, 13% volume growth, an innovation engine that works, and the most trusted brand name in Indian food. The temptation in that situation is to change little and let it run. The argument of this document is that the growth is real but the returns are not, that the core is ageing faster than the portfolio is rebalancing, and that the two categories which would most change the company's trajectory — snacking and health — have windows that close within about three years. The case for moving fast is not that something is broken. It is that the timing is unusually good and it will not stay that way.</p>
   </div>
+    </div>
+  </div>
 </section>
+</div>
+<div class="panel" id="pan-p5" role="tabpanel" aria-labelledby="tab-p5" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Reference</span><h3 class="ptitle">Sources &amp; Method</h3><div class="pactions"><button type="button" class="expandall" data-part="p5">Expand all</button><button type="button" class="collapseall" data-part="p5">Collapse all</button></div></div>
 
-<!-- ============ SOURCES ============ -->
-<section id="sources" class="wide">
+<section id="sources" class="chapter" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-sources">
+    <div class="cmeta"><span class="cnum">24</span><span class="coff">Not in this reading path</span></div>
+    <h2>Sources &amp; Method</h2>
+    <p class="standfirst">How to read the numbers in this document.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-sources">
+    <div class="wide">
   <footer class="foot">
-  <div class="parthead"><span class="pnum">24</span></div>
-  <h2>Sources &amp; Method</h2>
   <div class="wrap">
-  <p class="standfirst">How to read the numbers in this document.</p>
   <p><strong>Reported figures</strong> — revenue, growth rates, margins, market shares quoted by management, distribution counts, store counts — are taken from company disclosures, earnings calls, investor presentations and reputable financial press, all cited below, and are current through the quarter ended June 2026 (Q1 FY27).</p>
   <p><strong>Derived figures</strong> are marked <span class="est">Est</span> or <span class="est">Derived</span>. The segment revenue splits in section 09, for example, are calculated from disclosed growth rates and the disclosed ratio of growth businesses to India business, not lifted from a filing.</p>
   <p><strong>Projections and recommendations</strong> are marked <span class="est">Modelled</span> or <span class="est">Recommended</span>. The FY29 and FY31 targets, peer CAGR assumptions, funding estimates and M&amp;A ticket sizes are this document's analysis. Company guidance for FY27 is double-digit revenue growth with 50–70bps of margin expansion<sup class="cite"><a href="#s5" title="Source 5">5</a></sup>; everything beyond that horizon here is argument, not guidance.</p>
@@ -2203,54 +2488,252 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
   </ul>
   </div>
   </footer>
+    </div>
+  </div>
 </section>
-
+</div>
 </main>
 </div>
 
 <script>
+/* ---------- document shell: tabs, chapters, search, reading paths ---------- */
 (function(){
-  var t=document.getElementById('nt'), l=document.getElementById('nl');
-  if(t&&l){
-    t.addEventListener('click',function(){
-      var open=l.classList.toggle('open');
-      t.setAttribute('aria-expanded',open?'true':'false');
-      t.textContent=open?'Close':'Contents';
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s));};
+
+  var tabs=$$('.tab'), panels=$$('.panel'), chapters=$$('.chapter'), navLinks=$$('.navlist a');
+  var nl=$('#nl'), nt=$('#nt');
+
+  /* ---------- mobile contents toggle ---------- */
+  if(nt&&nl){
+    nt.addEventListener('click',function(){
+      var open=nl.classList.toggle('open');
+      nt.setAttribute('aria-expanded',open?'true':'false');
+      nt.textContent=open?'Close':'Contents';
     });
-    l.addEventListener('click',function(e){
-      if(e.target.closest('a')&&window.innerWidth<1120){
-        l.classList.remove('open');
-        t.setAttribute('aria-expanded','false');
-        t.textContent='Contents';
+  }
+  function closeMobileNav(){
+    if(nl&&window.innerWidth<1120){
+      nl.classList.remove('open');
+      if(nt){nt.setAttribute('aria-expanded','false'); nt.textContent='Contents';}
+    }
+  }
+
+  /* ---------- rail collapse ---------- */
+  var railClose=$('#railClose'), railOpen=$('#railOpen');
+  function setRail(closed){
+    document.body.classList.toggle('railclosed',closed);
+    var sh=$('.shell'); if(sh) sh.classList.toggle('railclosed',closed);
+    try{ localStorage.setItem('fmcg-rail',closed?'1':'0'); }catch(e){}
+  }
+  if(railClose) railClose.addEventListener('click',function(){setRail(true);});
+  if(railOpen) railOpen.addEventListener('click',function(){setRail(false);});
+  try{ if(localStorage.getItem('fmcg-rail')==='1') setRail(true); }catch(e){}
+
+  /* ---------- tabs ---------- */
+  function showPart(pid,opts){
+    opts=opts||{};
+    tabs.forEach(function(t){
+      var on=t.dataset.part===pid;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+    });
+    panels.forEach(function(p){ p.classList.toggle('on',p.id==='pan-'+pid); });
+    if(!opts.noscroll) window.scrollTo({top:0,behavior:opts.instant?'auto':'smooth'});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){ showPart(t.dataset.part); history.replaceState(null,'','#'+t.dataset.part); });
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t),n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home')n=tabs[0];
+      else if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault(); n.focus(); showPart(n.dataset.part);}
+    });
+  });
+
+  /* ---------- chapters ---------- */
+  function setOpen(ch,open){
+    ch.dataset.open=open?'true':'false';
+    var head=$('.chead',ch);
+    if(head) head.setAttribute('aria-expanded',open?'true':'false');
+  }
+  chapters.forEach(function(ch){
+    var head=$('.chead',ch);
+    if(!head) return;
+    head.addEventListener('click',function(e){
+      if(e.target.closest('a')) return;
+      setOpen(ch,ch.dataset.open!=='true');
+    });
+    head.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setOpen(ch,ch.dataset.open!=='true'); }
+    });
+  });
+  $$('.expandall').forEach(function(b){b.addEventListener('click',function(){
+    $$('#pan-'+b.dataset.part+' .chapter').forEach(function(c){setOpen(c,true);});
+  });});
+  $$('.collapseall').forEach(function(b){b.addEventListener('click',function(){
+    $$('#pan-'+b.dataset.part+' .chapter').forEach(function(c){setOpen(c,false);});
+  });});
+
+  /* ---------- navigate to any id, opening its tab and chapter ---------- */
+  function goTo(id,opts){
+    opts=opts||{};
+    var el=document.getElementById(id);
+    if(!el) return false;
+    var host=el.classList.contains('chapter')?el:el.closest('.chapter');
+    if(!host) return false;
+    showPart(host.dataset.part,{noscroll:true});
+    setOpen(host,true);
+    var target=(el===host)?host:el;
+    window.setTimeout(function(){
+      target.scrollIntoView({behavior:opts.instant?'auto':'smooth',block:(el===host)?'start':'center'});
+      host.classList.add('flash');
+      window.setTimeout(function(){host.classList.remove('flash');},1300);
+    },40);
+    return true;
+  }
+
+  /* every in-document link routes through goTo so tabs open correctly */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id=a.getAttribute('href').slice(1);
+    if(!id) return;
+    if(goTo(id)){
+      e.preventDefault();
+      history.replaceState(null,'','#'+id);
+      closeMobileNav();
+    }
+  });
+
+  /* ---------- reading paths ---------- */
+  var roleSel=$('#role'), banner=$('#rolebanner');
+  var ROLE_LABEL={ceo:'CEO / Managing Director',cfo:'CFO & Finance',strategy:'Strategy & Corporate Development',
+    cmo:'Marketing & Brand',sales:'Sales & Commercial',supply:'Supply Chain & Operations',
+    rnd:'R&D, Innovation & Quality',digital:'Digital, Data & AI',chro:'HR & Organisation'};
+  function applyRole(role){
+    var n=0;
+    chapters.forEach(function(ch){
+      var on=(role==='all')||((ch.dataset.roles||'').split(' ').indexOf(role)>-1);
+      ch.classList.toggle('offpath',!on);
+      if(on) n++;
+    });
+    navLinks.forEach(function(a){
+      var on=(role==='all')||((a.dataset.roles||'').split(' ').indexOf(role)>-1);
+      a.classList.toggle('offpath',!on);
+    });
+    if(!banner) return;
+    if(role==='all'){ banner.hidden=true; banner.innerHTML=''; }
+    else{
+      banner.hidden=false;
+      banner.innerHTML='<span>Reading path for <b>'+ROLE_LABEL[role]+'</b> — '+n+' of '+chapters.length+
+        ' chapters are core to this role. The rest stay available, just dimmed.</span>'+
+        '<button type="button" id="roleclear">Show all</button>';
+      var rc=$('#roleclear');
+      if(rc) rc.addEventListener('click',function(){ roleSel.value='all'; applyRole('all'); });
+    }
+    try{ localStorage.setItem('fmcg-role',role); }catch(e){}
+  }
+  if(roleSel){
+    roleSel.addEventListener('change',function(){applyRole(roleSel.value);});
+    try{
+      var saved=localStorage.getItem('fmcg-role');
+      if(saved&&ROLE_LABEL[saved]){ roleSel.value=saved; applyRole(saved); }
+    }catch(e){}
+  }
+
+  /* ---------- search across all chapters, including collapsed ---------- */
+  var q=$('#q'), qres=$('#qres'), index=[];
+  chapters.forEach(function(ch){
+    var h2=$('.chead h2',ch), num=$('.cnum',ch);
+    index.push({
+      id:ch.id,
+      title:h2?h2.textContent.trim():ch.id,
+      num:num?num.textContent.trim():'',
+      part:(document.getElementById('tab-'+ch.dataset.part)||{textContent:''}).textContent.replace(/\s+/g,' ').trim(),
+      text:ch.textContent.replace(/\s+/g,' ')
+    });
+  });
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function snippet(text,term){
+    var i=text.toLowerCase().indexOf(term.toLowerCase());
+    if(i<0) return '';
+    var a=Math.max(0,i-55), b=Math.min(text.length,i+term.length+75);
+    return (a>0?'…':'')+text.slice(a,b).replace(new RegExp('('+esc(term)+')','ig'),'<mark class="hit">$1</mark>')+(b<text.length?'…':'');
+  }
+  function runSearch(){
+    var term=q.value.trim();
+    if(term.length<2){ qres.hidden=true; qres.innerHTML=''; return; }
+    var hits=index.map(function(r){
+      var t=r.text.toLowerCase(), n=0, k=0, low=term.toLowerCase();
+      while((k=t.indexOf(low,k))>-1){n++;k+=low.length;}
+      var inTitle=r.title.toLowerCase().indexOf(low)>-1;
+      return n||inTitle?{r:r,n:n,score:n+(inTitle?100:0)}:null;
+    }).filter(Boolean).sort(function(a,b){return b.score-a.score;}).slice(0,12);
+
+    if(!hits.length){ qres.hidden=false; qres.innerHTML='<div class="qnone">No match for “'+term.replace(/</g,'&lt;')+'”.</div>'; return; }
+    qres.hidden=false;
+    qres.innerHTML=hits.map(function(hit){
+      return '<button type="button" data-go="'+hit.r.id+'">'+
+        '<span class="qp">'+hit.r.num+' · '+hit.r.part+' · '+hit.n+' match'+(hit.n===1?'':'es')+'</span>'+
+        '<span class="qt">'+hit.r.title+'</span>'+
+        snippet(hit.r.text,term)+'</button>';
+    }).join('');
+    $$('button[data-go]',qres).forEach(function(b){
+      b.addEventListener('click',function(){
+        goTo(b.dataset.go);
+        history.replaceState(null,'','#'+b.dataset.go);
+        qres.hidden=true; q.value=''; closeMobileNav();
+      });
+    });
+  }
+  if(q&&qres){
+    q.addEventListener('input',runSearch);
+    q.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){ q.value=''; qres.hidden=true; q.blur(); }
+      if(e.key==='Enter'){ var f=$('button[data-go]',qres); if(f) f.click(); }
+    });
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.navsearchwrap')) qres.hidden=true;
+    });
+    document.addEventListener('keydown',function(e){
+      if((e.key==='/'||((e.ctrlKey||e.metaKey)&&e.key==='k'))&&document.activeElement!==q){
+        e.preventDefault(); q.focus(); q.select();
+        if(window.innerWidth<1120&&nl&&!nl.classList.contains('open')&&nt) nt.click();
       }
     });
   }
-  var links=[].slice.call(document.querySelectorAll('.navlist a'));
-  var map={};
-  links.forEach(function(a){
-    var id=a.getAttribute('href').slice(1);
-    var s=document.getElementById(id);
-    if(s) map[id]=a;
-  });
+
+  /* ---------- scroll spy within the active panel ---------- */
   if('IntersectionObserver' in window){
+    var map={};
+    navLinks.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){
-          links.forEach(function(a){a.classList.remove('on');});
-          var a=map[en.target.id];
-          if(a){
-            a.classList.add('on');
-            if(window.innerWidth>=1120){
-              var rail=document.querySelector('.rail');
-              var top=a.offsetTop-rail.clientHeight/2;
-              if(top>0) rail.scrollTo({top:top,behavior:'smooth'});
-            }
-          }
-        }
+        if(!en.isIntersecting) return;
+        navLinks.forEach(function(a){a.classList.remove('on');});
+        var a=map[en.target.id];
+        if(a) a.classList.add('on');
       });
-    },{rootMargin:'-10% 0px -75% 0px',threshold:0});
-    Object.keys(map).forEach(function(id){io.observe(document.getElementById(id));});
+    },{rootMargin:'-12% 0px -70% 0px',threshold:0});
+    chapters.forEach(function(c){io.observe(c);});
   }
+
+  /* ---------- initial state ---------- */
+  var first=$('.tab[aria-selected=true]')||tabs[0];
+  if(first) showPart(first.dataset.part,{noscroll:true,instant:true});
+
+  /* ---------- open from the URL ---------- */
+  function fromHash(instant){
+    var id=(location.hash||'').slice(1);
+    if(!id) return;
+    if(/^p[0-9]$/.test(id)){ showPart(id,{instant:true,noscroll:true}); return; }
+    goTo(id,{instant:instant});
+  }
+  fromHash(true);
+  window.addEventListener('hashchange',function(){fromHash(false);});
 })();
 
 /* ---------- FY31 scenario model ---------- */
