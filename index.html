@@ -590,6 +590,20 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   .chead{padding:0; background:none !important; cursor:auto;}
   .cnum{background:none; padding:0; color:#000;}
   mark.hit{background:none;}
+  /* the one-page brief prints on its own sheet, compactly */
+  .onepager{font-size:8.6pt; line-height:1.34;}
+  .onepager h3{font-size:10pt; margin:9pt 0 4pt;}
+  .onepager p,.onepager li{margin-bottom:3pt;}
+  .onepager .grid{gap:5pt; margin:6pt 0;}
+  .onepager .kpi{padding:5pt 6pt;}
+  .onepager .kpi .kpi-val{font-size:13pt;}
+  .onepager .kpi .kpi-sub{font-size:7pt;}
+  .onepager table{font-size:7.4pt;}
+  .onepager th,.onepager td{padding:3pt 4pt;}
+  .onepager .pull{padding:6pt 9pt; margin:7pt 0;}
+  .onepager .pull p{font-size:9pt;}
+  #execbrief{break-before:page; break-after:page;}
+  #decisions{break-before:page;}
   p,ul,ol,.standfirst,.pull{max-width:none;}
   section{padding-top:20pt; break-inside:auto;}
   h2{font-size:19pt; break-after:avoid; break-before:page;}
@@ -633,7 +647,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <input type="search" id="q" class="navsearch" placeholder="Search the dossier…" autocomplete="off" aria-label="Search the dossier">
       <div class="qresults" id="qres" hidden></div>
     </div>
-<div class="navgroup">Orientation</div><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
+<div class="navgroup">Orientation</div><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
   </div>
 </nav>
 <button class="railopen" id="railOpen" title="Show the contents pane">&raquo; Contents</button>
@@ -641,11 +655,11 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 <main>
 
 <header class="masthead wrap">
-  <span class="eyebrow">Strategy Dossier · August 2026</span>
+  <span class="eyebrow">Strategy Dossier · August 2026 · Executive Committee</span>
   <h1>The FMCG India Dossier</h1>
   <p class="dek">An operator's guide to the Indian FMCG industry and a five-year plan to make Tata Consumer Products the country's leading branded food and beverage company.</p>
   <div class="credits">
-    <div><b>Prepared for</b>Managing Director &amp; CEO</div>
+    <div><b>Prepared for</b>The Executive Committee</div>
     <div><b>Data through</b>Q1 FY27 (June 2026)</div>
     <div><b>Horizon</b>FY27 – FY31</div>
     <div><b>Basis</b>Public filings &amp; analysis</div>
@@ -690,13 +704,13 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <ol class="steps">
     <li><b>You have inherited a growth company with a returns problem.</b> Revenue crossed ₹20,290 crore in FY26, up 15%<sup class="cite"><a href="#s1" title="Source 1">1</a></sup>, with 13% underlying volume growth in the India branded business — genuinely best-in-class. But return on capital employed is <strong>9.2%</strong> against a three-year ROE of 7.5%<sup class="cite"><a href="#s9" title="Source 9">9</a></sup>, while the stock trades at roughly <strong>63× earnings</strong>. The market is paying a compounder multiple for a business that currently earns close to its cost of capital. Closing that gap — not adding revenue — is the single largest source of value you control.</li>
 
-    <li><b>The core is a cash engine that is quietly ageing.</b> Tea and salt still generate most of the India profit pool. Salt is superb: ~39% share, five straight quarters of double-digit growth, and a credible path past 40%. Tea is not: volumes grew 2% in Q1 FY27 and revenue <em>fell</em> 4%, in a category the market expects to compound at under 3% a year. You cannot build a number-one food company on a category growing at 3%.</li>
+    <li><b>The core is a cash engine that is quietly ageing.</b> Tea and salt still generate most of the India profit pool. Salt is superb: ~39% share<sup class="cite"><a href="#s2" title="Source 2">2</a></sup>, five straight quarters of double-digit growth, and a credible path past 40%. Tea is not: volumes grew 2% in Q1 FY27 and revenue <em>fell</em> 4%<sup class="cite"><a href="#s3" title="Source 3">3</a></sup>, in a category the market expects to compound at under 3% a year. You cannot build a number-one food company on a category growing at 3%.</li>
 
-    <li><b>The growth portfolio is working and is the real story.</b> Sampann, Capital Foods, Organic India, Soulfull and ready-to-drink together grew 47% in Q1 FY27 and now make up 36% of the India business, up from 28% a year ago. Management's own aspiration is ~45% within three to four years. This portfolio is the machine; your job is to feed it capital, talent and shelf space faster than the organisation is comfortable with.</li>
+    <li><b>The growth portfolio is working and is the real story.</b> Sampann, Capital Foods, Organic India, Soulfull and ready-to-drink together grew 47% in Q1 FY27<sup class="cite"><a href="#s2" title="Source 2">2</a><a href="#s3" title="Source 3">3</a></sup> and now make up 36% of the India business, up from 28% a year ago. Management's own aspiration is ~45% within three to four years. This portfolio is the machine; your job is to feed it capital, talent and shelf space faster than the organisation is comfortable with.</li>
 
     <li><b>You are absent from four of India's largest and fastest food profit pools.</b> Salty snacks (₹46,571 crore, doubling by 2033), dairy value-added products, biscuits and bakery, and chocolate/confectionery. Together these represent well over ₹2 lakh crore of consumer spend where Tata Consumer has effectively zero share — despite owning the distribution, the trust and the pantry adjacency to compete.</li>
 
-    <li><b>"Number one food and beverage company in India" needs an honest definition — and the right benchmark is Nestlé, not ITC's whole FMCG business.</b> Amul, at over ₹1 lakh crore, is structurally unreachable as a cooperative.<sup class="cite"><a href="#s26" title="Source 26">26</a></sup> The winnable target is <strong>number one among branded, listed F&amp;B businesses</strong>. The bar is <strong>Nestlé India's domestic business, which reaches roughly ₹40,700 crore by FY31</strong>. ITC's often-quoted ₹40,790 crore includes personal care, agarbatti and stationery; ITC <em>Foods</em> lands nearer ₹35,250 crore. Measured correctly, leadership needs about <strong>₹42,500 crore — a 16% CAGR, not 18%</strong> — which is roughly ₹4,000 crore of acquisitions you do not have to fund. <span class="tag go">Revised in section 17</span></li>
+    <li><b>"Number one food and beverage company in India" needs an honest definition — and the right benchmark is Nestlé, not ITC's whole FMCG business.</b> Amul, at over ₹1 lakh crore, is structurally unreachable as a cooperative.<sup class="cite"><a href="#s26" title="Source 26">26</a></sup> The winnable target is <strong>number one among branded, listed F&amp;B businesses</strong>. The bar is <strong>Nestlé India's domestic business, which reaches roughly ₹40,700 crore by FY31</strong>. ITC's often-quoted ₹40,790 crore includes personal care, agarbatti and stationery; ITC <em>Foods</em> lands nearer ₹35,250 crore. Measured correctly, leadership needs about <strong>₹42,500 crore — a 16% CAGR, not 18%</strong> — which is roughly ₹4,000 crore of acquisitions you do not have to fund. <span class="tag go">Bridge in section 17</span></li>
 
     <li><b>Even so, the base case finishes second — and the gap is four points of growth-portfolio CAGR.</b> Building the FY31 revenue walk from the disclosed segments, executing this entire plan competently lands at <strong>₹39,800 crore, about ₹800 crore <em>short</em> of Nestlé</strong>. Leadership requires the growth portfolio to compound at 32% rather than 28%, or acquisitions bought at 3.2× rather than 3.5×. Four percentage points of growth-portfolio CAGR is worth more than doubling the M&amp;A budget — and it is cheaper, faster and lower-risk. That single number is where your attention belongs.</li>
 
@@ -706,7 +720,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
     <li><b>Your margin ambition fights your growth ambition, and the honest landing is 16.5%, not 18%.</b> Salty snacks earns 12–16% at scale. Quick commerce pays roughly nine points less contribution than general trade — a 100bps drag as it goes from 4% to 15% of the business. Acquisitions dilute for two years before they accrete. Every one of those is the right move and every one costs margin. Setting an 18% target guarantees a miss, and worse, invites the organisation to hit it by underinvesting in exactly the servicing frequency and brand support the growth plan depends on.</li>
 
-    <li><b>Distribution is your most under-used asset and your most urgent fix.</b> You reach 4.5 million outlets and 290 million households, yet Tata Water Plus is properly distributed in only 40–50% of the country, and the Capital Foods and Organic India go-to-market rebuild is still short of distributors and salesmen. The gap between <em>reach</em> and <em>effective reach</em> is where several thousand crore of revenue is sitting.</li>
+    <li><b>Distribution is your most under-used asset and your most urgent fix.</b> You reach 4.5 million outlets and 290 million households, yet Tata Water Plus is properly distributed in only 40–50% of the country<sup class="cite"><a href="#s3" title="Source 3">3</a></sup>, and the Capital Foods and Organic India go-to-market rebuild is still short of distributors and salesmen. The gap between <em>reach</em> and <em>effective reach</em> is where several thousand crore of revenue is sitting.</li>
 
     <li><b>Channel economics are being rewritten under you.</b> General trade is now 56% of your business — management has stopped quoting Nielsen share because the measurement no longer captures the market. Quick commerce is compounding at 70–80% and already takes 70–75% of e-grocery<sup class="cite"><a href="#s14" title="Source 14">14</a></sup>. This is not a channel decision; it is a pack architecture, pricing, assortment and supply-chain decision that touches every P&amp;L line.</li>
 
@@ -718,11 +732,149 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <div class="pull">
     <span class="plab">The one-sentence version</span>
     <p>Tata Consumer is one of the few Indian FMCG companies with a genuine right to win across the entire pantry — and it is currently converting that right into 9% returns; the plan is to concentrate capital behind six or seven categories where you can be number one or two, exit or fix everything else, and buy your way into salty snacks and value-added dairy while the windows are still open.</p>
-    <p><strong>And the one thing to take from the new analysis:</strong> the target is ₹42,500 crore at 16% CAGR, not ₹46,000 at 18% — but on current assumptions you still finish ₹800 crore behind Nestlé, so the whole plan reduces to moving the growth portfolio from 28% to 32%, and to being honest that statutory returns reach 13% rather than 18% because acquisitions are ROCE-dilutive by construction.</p>
+    <p><strong>And the one thing to take from the new analysis:</strong> the target is ₹42,500 crore at 16% CAGR, measured against Nestlé rather than against ITC’s non-food revenue — but on current assumptions you still finish ₹800 crore behind, so the whole plan reduces to moving the growth portfolio from 28% to 32%, and to being honest that statutory returns reach 13% rather than 18% because acquisitions are ROCE-dilutive by construction.</p>
   </div>
     </div>
   </div>
 </section>
+
+<section id="execbrief" class="chapter" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-execbrief">
+    <div class="cmeta"><span class="cnum">BRIEF</span><span class="coff">Not in this reading path</span></div>
+    <h2>The One-Page Brief</h2>
+    <p class="standfirst">The whole argument on a single sheet, built to be printed and put in front of people during the session. Everything here is argued at length elsewhere in the dossier.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-execbrief">
+    <div class="wide onepager">
+
+    <div class="pull">
+      <span class="plab">The situation in one sentence</span>
+      <p>Tata Consumer is growing faster than almost any large Indian FMCG company and earning less on its capital than any of them — and the categories that would fix both, snacking and health, have entry windows that close within about three years.</p>
+    </div>
+
+    <h3>The four numbers</h3>
+    <div class="grid g4">
+      <div class="kpi hi"><span class="kpi-lab">FY31 Revenue</span><div class="kpi-val">₹42,500<small> cr</small></div><div class="kpi-sub">16% CAGR. Clears Nestlé's ~₹40,660 cr.</div></div>
+      <div class="kpi hi"><span class="kpi-lab">FY31 EBITDA</span><div class="kpi-val">16.5<small>%</small></div><div class="kpi-sub">From 13.9%. The honest landing, not 18%.</div></div>
+      <div class="kpi hi"><span class="kpi-lab">ROCE ex-goodwill</span><div class="kpi-val">18<small>%</small></div><div class="kpi-sub">Statutory reaches 13.5%. Report both.</div></div>
+      <div class="kpi hi"><span class="kpi-lab">Categories at #1/#2</span><div class="kpi-val">8</div><div class="kpi-sub">From roughly 2 today.</div></div>
+    </div>
+
+    <h3>The diagnosis, in five lines</h3>
+    <ul>
+      <li><strong>Growth is real.</strong> ₹20,290 cr FY26, +15%, on 13% underlying India volume growth — best in the peer set.<sup class="cite"><a href="#s1" title="Source 1">1</a></sup></li>
+      <li><strong>Returns are not.</strong> ROCE 9.2% against a 63× multiple. The market pays for a compounder; the business earns near its cost of capital.<sup class="cite"><a href="#s9" title="Source 9">9</a></sup></li>
+      <li><strong>The core is ageing.</strong> Tea revenue fell 4% in Q1 FY27 in a category growing under 3%. Salt is excellent but its category grows at 5%.</li>
+      <li><strong>The growth portfolio is the company's future.</strong> +47% in Q1 FY27, now 36% of India. It must reach 32% CAGR, not 28%.</li>
+      <li><strong>Four of India's largest food profit pools have no Tata presence at all</strong> — salty snacks, value-added dairy, biscuits, chocolate.</li>
+    </ul>
+
+    <h3>The bridge to FY31</h3>
+    <div class="tablewrap wide">
+    <table>
+      <thead><tr><th>Source of FY31 revenue</th><th class="n">₹ cr</th><th>What it depends on</th></tr></thead>
+      <tbody>
+        <tr><td>FY26 base</td><td class="n">20,290</td><td>Reported</td></tr>
+        <tr><td>Core India at 5%</td><td class="n">+2,484</td><td>Salt premiumisation; tea stabilised, not fixed</td></tr>
+        <tr class="me"><td><strong>Growth portfolio at 28%</strong></td><td class="n"><strong>+9,744</strong></td><td><strong>The single largest lever. At 32% it adds ₹2,300 cr more.</strong></td></tr>
+        <tr><td>International at 5%</td><td class="n">+1,354</td><td>US momentum offsetting UK decline</td></tr>
+        <tr><td>Non-branded divested</td><td class="n">−2,400</td><td>Improves ROCE; costs revenue</td></tr>
+        <tr><td>Acquisitions, grown</td><td class="n">+8,371</td><td>₹15,000 cr at 3.5×, compounding at 25%</td></tr>
+        <tr class="me"><td><strong>FY31 base case</strong></td><td class="n"><strong>39,842</strong></td><td><strong>₹818 cr behind Nestlé. Competent execution finishes second.</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>The five thrusts</h3>
+    <ol>
+      <li><strong>Rebalance core to growth</strong> — growth businesses from 36% to 60% of India by FY31, via capital allocation rather than exhortation.</li>
+      <li><strong>Make capital productivity the organising discipline</strong> — cost programme at 2.5% of sales, dividend payout from 64% to ~35%, one divestment completed by FY28.</li>
+      <li><strong>Convert nominal reach into effective reach</strong> — 4.5 mn outlets means little when Tata Water Plus is properly distributed in 40–50% of the country.</li>
+      <li><strong>Build one health and protein platform</strong> — ring-fenced, one leader, one P&amp;L, ₹5,000 cr by FY31.</li>
+      <li><strong>Enter salty snacks within 24 months</strong> — buy regional at ≤3.5× revenue and nationalise it; never pay for reach you already own.</li>
+    </ol>
+
+    <h3>The three things most likely to go wrong</h3>
+    <ul>
+      <li><strong>Quick commerce quietly costs 100bps.</strong> It pays roughly nine points less contribution than general trade. Going from 4% to 15% of the business works against the margin target every year.</li>
+      <li><strong>M&amp;A is ROCE-dilutive by construction.</strong> An asset at 3.5× revenue would need a 63% EBIT margin to earn 18% on that capital. Revenue and returns targets pull apart.</li>
+      <li><strong>Integration capacity, not capital, is the binding constraint.</strong> Capital Foods and Organic India remain mid-integration eighteen months on. Do not restructure and acquire in the same year.</li>
+    </ul>
+
+    <h3>The four flags that force the strategy back to the board</h3>
+    <div class="tablewrap wide">
+    <table>
+      <thead><tr><th>Flag</th><th>Response, pre-agreed</th></tr></thead>
+      <tbody>
+        <tr><td>Growth portfolio below 25% for two quarters</td><td>Reset the public ambition before the market does; redirect M&amp;A capital into fixing go-to-market</td></tr>
+        <tr><td>Statutory ROCE flat near 9% through FY28</td><td>Stop all M&amp;A. More capital into an engine that cannot earn returns makes it worse</td></tr>
+        <tr><td>Quick commerce above 15% of urban revenue at &gt;10pt contribution gap</td><td>Accelerate the channel-native reorganisation ahead of the category-GM transition</td></tr>
+        <tr><td>A snacks asset of scale sells to ITC, Reliance or PepsiCo</td><td>Do not chase. Redeploy to spices, protein and dairy; reset the ambition down ~₹6,000 cr</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="pull warnbox">
+      <span class="plab">What the executive committee is being asked to decide</span>
+      <p>Adopt the four numbers. Cut the dividend to fund them. Split the ROCE metric before the snacks deal rather than after. Restructure in year one and acquire in year two, not both at once. And treat 32% growth-portfolio CAGR — not the acquisition budget — as the number the whole plan turns on.</p>
+    </div>
+
+    <p class="tnote">Every figure here is argued and sourced in the chapters that follow. Reported figures carry citations; modelled and judgment figures are tagged where they appear. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
+
+    </div>
+  </div>
+</section>
+
+<section id="decisions" class="chapter" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-decisions">
+    <div class="cmeta"><span class="cnum">DECISIONS</span><span class="coff">Not in this reading path</span></div>
+    <h2>Decisions Required</h2>
+    <p class="standfirst">Every decision this dossier asks for, in one place, with an owner, a deadline and the cost of deferring it. A strategy document becomes an agenda at the point where this table is agreed.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-decisions">
+    <div class="wide">
+
+    <p>Fourteen decisions. Eight belong to the executive committee, six need the board. They are ordered by when they must be taken, not by size — several small early decisions gate large later ones.</p>
+
+    <div class="chartctl" id="decfilter" style="border-radius:7px;border:1px solid var(--line);margin:0 0 6px">
+      <span class="cl">Filter</span>
+    </div>
+
+    <div class="tablewrap wide">
+    <table id="dectable">
+      <thead><tr><th>By when</th><th>Decision</th><th>Decides</th><th>Argued in</th><th>Cost of deferring</th></tr></thead>
+      <tbody>
+        <tr data-owner="ceo" data-when="m1"><td class="n">Month 1</td><td><strong>Commission the four missing baselines</strong> — ROCE by business unit, effective distribution by SKU and state, a blended market share prototype, and a top-100 talent map</td><td>CEO</td><td><a href="#hundred">§23</a></td><td>Every other decision below is taken on incomplete information</td></tr>
+        <tr data-owner="board" data-when="m2" class="me"><td class="n">Month 2</td><td><strong>Adopt the four-number ambition</strong> — ₹42,500 cr, 16.5% EBITDA, 18% ROCE ex-goodwill, eight category leaderships</td><td>Board, on CEO recommendation</td><td><a href="#ambition">§12</a> <a href="#bridge">§17</a></td><td>The organisation continues optimising against a target benchmarked on the wrong competitor</td></tr>
+        <tr data-owner="ceo" data-when="m2"><td class="n">Month 2</td><td><strong>Assign every business to a portfolio bucket</strong> — invest to lead, enter, harvest and premiumise, or fix/exit/separate — and tell the leaders concerned</td><td>CEO</td><td><a href="#whereplay">§13</a></td><td>Capital keeps being spread evenly, which is the status quo that produced 9.2% ROCE</td></tr>
+        <tr data-owner="board" data-when="m2"><td class="n">Month 2</td><td><strong>Commission the two strategic reviews</strong> — non-branded plantations and extraction, and Tetley UK — with board-agreed terms of reference</td><td>Board</td><td><a href="#whereplay">§13</a></td><td>The fastest available ROCE improvement slips a year, and reviews without terms of reference get deferred quietly</td></tr>
+        <tr data-owner="cfo" data-when="m3" class="me"><td class="n">Month 3</td><td><strong>Split the ROCE metric</strong> — statutory for the market, ex-acquisition-goodwill for management incentives, plus an annual goodwill return test</td><td>CFO</td><td><a href="#bridge">§17</a></td><td>Done after the snacks deal it reads as an excuse; done before, it reads as discipline</td></tr>
+        <tr data-owner="board" data-when="m3"><td class="n">Month 3</td><td><strong>Cut the dividend payout</strong> from 64% toward 35% to fund growth internally</td><td>Board</td><td><a href="#ambition">§12</a></td><td>Roughly ₹500 cr a year of compounding firepower, and the acquisition budget shrinks with it</td></tr>
+        <tr data-owner="ceo" data-when="m3"><td class="n">Month 3</td><td><strong>Appoint the health and protein platform leader</strong> and ring-fence the platform from corporate allocation for three years</td><td>CEO with CHRO</td><td><a href="#howwin">§16</a> <a href="#orgdesign">§19</a></td><td>The highest-leverage single appointment available, requiring no restructuring — every month unfilled is a month lost</td></tr>
+        <tr data-owner="ceo" data-when="m3"><td class="n">Month 3</td><td><strong>Fund the RTD North and West expansion</strong> as a named programme with its own leader, P&amp;L, route infrastructure and cooler capital</td><td>CEO with CFO</td><td><a href="#howwin">§16</a></td><td>A business growing 41% stays distributed in only 40–50% of the country</td></tr>
+        <tr data-owner="rnd" data-when="m3"><td class="n">Month 3</td><td><strong>Install the automatic kill rule</strong> — every launch carries a twelve-month hurdle set at launch; missing it discontinues the product unless formally contested</td><td>Chief Innovation Officer</td><td><a href="#orgdesign">§19</a></td><td>Portfolio bloat continues, and quick commerce delists the tail on your behalf</td></tr>
+        <tr data-owner="cfo" data-when="m3"><td class="n">Month 3</td><td><strong>Stand up the Integration &amp; Value Capture office</strong> as a permanent function under the CFO, with a veto on transaction timing</td><td>CFO</td><td><a href="#orgdesign">§19</a></td><td>The binding constraint on the entire plan stays unstaffed while deals are contemplated</td></tr>
+        <tr data-owner="board" data-when="m4"><td class="n">Month 4</td><td><strong>Agree the price-floor doctrine</strong> — a stated level below which the company will not follow a price entrant, whatever the share consequence</td><td>Board with CEO</td><td><a href="#scenarios">§21</a></td><td>The decision gets made in a bad week by whoever is most alarmed</td></tr>
+        <tr data-owner="board" data-when="m4"><td class="n">Month 4</td><td><strong>Adopt the four strategy-change triggers</strong> as binary board-tracked flags on the monthly scorecard</td><td>Board</td><td><a href="#scenarios">§21</a></td><td>Three bad quarters get explained away individually rather than read as a pattern</td></tr>
+        <tr data-owner="board" data-when="m6" class="me"><td class="n">Month 6</td><td><strong>Approve the salty snacks entry route</strong> — not the transaction, the route: build, buy national, or buy regional and nationalise</td><td>Board, on CEO recommendation</td><td><a href="#snacks">§15</a></td><td>The window closes around FY29 and assets are consolidating to ITC, Reliance and PepsiCo</td></tr>
+        <tr data-owner="ceo" data-when="y1"><td class="n">Year 1</td><td><strong>Restructure to category general managers and four channel P&amp;Ls</strong> — completed before any large acquisition, not alongside one</td><td>CEO with CHRO</td><td><a href="#orgdesign">§19</a></td><td>Acquiring mid-reorganisation is one of the more plausible ways this plan fails</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="pull">
+      <span class="plab">The sequencing point worth arguing about</span>
+      <p>Two decisions are in tension. The snacks window argues for moving fast; integration capacity and the reorganisation argue for moving second. This dossier resolves it as <strong>restructure in year one, acquire in year two</strong> — but that resolution costs you a year against ITC, Reliance and PepsiCo, and it is the single assumption in this plan most worth the executive committee testing before it is accepted.</p>
+    </div>
+
+    <p class="tnote">Owners and deadlines are this document's recommendations, not existing company commitments. <span class="est" title="Recommendation — this document’s analysis, not company policy or guidance" tabindex="0" role="note">Recommended</span></p>
+
+    </div>
+  </div>
+</section>
+
 </div>
 <div class="panel" id="pan-p1" role="tabpanel" aria-labelledby="tab-p1" tabindex="0">
   <div class="panelhead"><span class="peyebrow">Part One</span><h3 class="ptitle">The Industry</h3><div class="pactions"><button type="button" class="expandall" data-part="p1">Expand all</button><button type="button" class="collapseall" data-part="p1">Collapse all</button></div></div>
@@ -738,10 +890,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wide">
 
   <div class="grid g4">
-    <div class="kpi"><span class="kpi-lab">Market size, 2025</span><div class="kpi-val">$289<small>bn</small></div><div class="kpi-sub">Projected to reach $643bn by 2030</div></div>
-    <div class="kpi hi"><span class="kpi-lab">FY26 value growth</span><div class="kpi-val">12–14<small>%</small></div><div class="kpi-sub">On 5–6% volume growth</div></div>
+    <div class="kpi"><span class="kpi-lab">Market size, 2025</span><div class="kpi-val">$289<sup class="cite"><a href="#s11" title="Source 11">11</a></sup><small>bn</small></div><div class="kpi-sub">Projected to reach $643bn by 2030</div></div>
+    <div class="kpi hi"><span class="kpi-lab">FY26 value growth</span><div class="kpi-val">12–14<sup class="cite"><a href="#s12" title="Source 12">12</a></sup><small>%</small></div><div class="kpi-sub">On 5–6% volume growth</div></div>
     <div class="kpi"><span class="kpi-lab">Rural share of sales</span><div class="kpi-val">35<small>%+</small></div><div class="kpi-sub">Now growing faster than urban</div></div>
-    <div class="kpi"><span class="kpi-lab">Kirana outlets</span><div class="kpi-val">13<small>mn</small></div><div class="kpi-sub">Still &gt;90% of FMCG volume</div></div>
+    <div class="kpi"><span class="kpi-lab">Kirana outlets</span><div class="kpi-val">13<small>mn</small><sup class="cite"><a href="#s11" title="Source 11">11</a></sup></div><div class="kpi-sub">Still &gt;90% of FMCG volume</div></div>
   </div>
 
   <div class="wrap">
@@ -750,7 +902,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <p>Three numbers frame everything you do:</p>
   <ul>
-    <li><strong>Penetration is nearly complete; frequency and price are not.</strong> Nestlé reaches 6.2 million outlets and 45,300 villages; ITC reaches 7 million outlets and 280 million households; you reach 4.5 million outlets and 290 million households<sup class="cite"><a href="#s7" title="Source 7">7</a></sup>. Growth no longer comes from finding new buyers — it comes from selling them more, more often, at a higher price point.</li>
+    <li><strong>Penetration is nearly complete; frequency and price are not.</strong> Nestlé reaches 6.2 million outlets and 45,300 villages<sup class="cite"><a href="#s19" title="Source 19">19</a></sup>; ITC reaches 7 million outlets and 280 million households; you reach 4.5 million outlets and 290 million households<sup class="cite"><a href="#s7" title="Source 7">7</a></sup>. Growth no longer comes from finding new buyers — it comes from selling them more, more often, at a higher price point.</li>
     <li><strong>Premiumisation is real and it is rural too.</strong> Rural India now accounts for 51% of premium volume and 42% of super-premium sales<sup class="cite"><a href="#s12" title="Source 12">12</a></sup>. The old mental model of "rural = value packs, urban = premium" is obsolete and will mislead your team.</li>
     <li><strong>New product success is brutally rare.</strong> Only about 4% of new FMCG launches in India achieved even 1% market penetration. Your innovation-to-sales ratio of 4.5% is genuinely good; the industry norm is a graveyard.</li>
   </ul>
@@ -771,7 +923,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <tr><td><strong>Spices &amp; condiments</strong></td><td class="n">Large, rapidly branding</td><td class="n">12–15%</td><td class="n">40–50%</td><td>Regional leaders + national challengers</td><td><span class="tag go">Strong &amp; scaling</span></td></tr>
       <tr><td><strong>Branded pulses &amp; staples</strong></td><td class="n">Enormous, &lt;15% branded</td><td class="n">15–20%</td><td class="n">15–25%</td><td>Wide open; ITC, AWL, TCPL, regional</td><td><span class="tag go">Leading challenger</span></td></tr>
       <tr class="me"><td><strong>Salt</strong></td><td class="n">Mature</td><td class="n">4–6%</td><td class="n">40%+</td><td>You are the category</td><td><span class="tag go">#1, ~39%</span></td></tr>
-      <tr class="me"><td><strong>Packaged tea</strong></td><td class="n">$11.9bn (2025) → $15.4bn (2034)</td><td class="n">~3%</td><td class="n">30–40%</td><td>Duopoly + strong regional (Wagh Bakri, Society)</td><td><span class="tag warn">#1/#2, low growth</span></td></tr>
+      <tr class="me"><td><strong>Packaged tea</strong></td><td class="n">$11.9bn (2025) → $15.4bn (2034)<sup class="cite"><a href="#s27" title="Source 27">27</a></sup></td><td class="n">~3%</td><td class="n">30–40%</td><td>Duopoly + strong regional (Wagh Bakri, Society)</td><td><span class="tag warn">#1/#2, low growth</span></td></tr>
       <tr><td><strong>Coffee (retail + café)</strong></td><td class="n">Small base, fastest-growing hot drink</td><td class="n">15–25%</td><td class="n">35–50%</td><td>Nescafé dominant; premium fragmenting</td><td><span class="tag go">Building</span></td></tr>
       <tr><td><strong>RTD &amp; carbonates</strong></td><td class="n">Large; Campa alone ₹4,700 cr</td><td class="n">12–18%</td><td class="n">45–55%</td><td>Coke/Pepsi/VBL + Reliance disrupting on price</td><td><span class="tag go">Sub-scale but 41% growth</span></td></tr>
       <tr><td><strong>Protein &amp; sports nutrition</strong></td><td class="n">~17.7% CAGR</td><td class="n">18–25%</td><td class="n">40–55%</td><td>Fragmented, D2C-led, no trusted mass brand</td><td><span class="tag warn">Toe-hold via Soulfull</span></td></tr>
@@ -780,7 +932,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Size and growth figures are drawn from public market reports and company disclosures cited in Sources; gross margin bands and "structure" assessments are analytical judgment. <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Size and growth figures are drawn from public market reports and company disclosures cited in Sources; gross margin bands and "structure" assessments are analytical judgment. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
 
   <div class="wrap">
 
@@ -804,7 +956,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wrap">
 
   <h3>1. Demand has turned, helped by policy</h3>
-  <p>After eight quarters of weak volumes, the sector has re-accelerated: Q1 FY27 revenue growth of roughly 15% across the listed set, with volume recovery visible across large, mid and small caps. Two policy actions did most of the work — the income tax relief in the FY26 budget and <strong>GST 2.0</strong>, which from 22 September 2025 collapsed the rate structure<sup class="cite"><a href="#s31" title="Source 31">31</a></sup> into 5% and 18% slabs and cut tax on a wide set of daily essentials. Consumer companies expect the GST benefit to keep supporting demand for several more quarters<sup class="cite"><a href="#s32" title="Source 32">32</a></sup>.</p>
+  <p>After eight quarters of weak volumes, the sector has re-accelerated: Q1 FY27 revenue growth of roughly 15% across the listed set<sup class="cite"><a href="#s13" title="Source 13">13</a></sup>, with volume recovery visible across large, mid and small caps. Two policy actions did most of the work — the income tax relief in the FY26 budget and <strong>GST 2.0</strong>, which from 22 September 2025 collapsed the rate structure<sup class="cite"><a href="#s31" title="Source 31">31</a></sup> into 5% and 18% slabs and cut tax on a wide set of daily essentials. Consumer companies expect the GST benefit to keep supporting demand for several more quarters<sup class="cite"><a href="#s32" title="Source 32">32</a></sup>.</p>
   <p><em>Implication:</em> this is a window, not a new normal. Cyclical tailwinds are the cheapest time to gain share, because competitors mistake market growth for their own performance. Push hard on distribution and A&amp;P now.</p>
 
   <h3>2. Rural is outperforming urban — a reversal</h3>
@@ -861,7 +1013,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Indicative bands based on disclosed peer economics. <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Indicative bands based on disclosed peer economics. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
 
   <div class="wrap">
   <h3>The four levers, in order of power</h3>
@@ -874,7 +1026,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <div class="pull warnbox">
     <span class="plab">Where Tata Consumer sits</span>
-    <p>13.9% consolidated EBITDA margin in FY26 versus HUL at 23.6%, Nestlé India near 26%, Britannia at roughly 18.5%. Roughly half of that gap is genuine mix — you carry a large low-margin non-branded and commodity-adjacent business, and salt and tea are structurally lower-margin than biscuits or noodles. The other half is addressable: complexity, sub-scale growth brands, and a cost base built for a smaller, simpler company.</p>
+    <p>13.9% consolidated EBITDA margin in FY26 versus HUL at 23.6%<sup class="cite"><a href="#s17" title="Source 17">17</a></sup>, Nestlé India near 26%, Britannia at roughly 18.5%. Roughly half of that gap is genuine mix — you carry a large low-margin non-branded and commodity-adjacent business, and salt and tea are structurally lower-margin than biscuits or noodles. The other half is addressable: complexity, sub-scale growth brands, and a cost base built for a smaller, simpler company.</p>
   </div>
 
   <h3>The ROCE equation you should manage to</h3>
@@ -948,7 +1100,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Share and growth figures from cited sources; economics characterisations are analytical judgment. <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Share and growth figures from cited sources; economics characterisations are analytical judgment. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
 
   <div class="wrap">
   <h3>The quick-commerce deep dive</h3>
@@ -1012,7 +1164,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Illustrative channel P&amp;L for a representative packaged food SKU, built from typical Indian FMCG trade-margin and cost-to-serve structures. Not Tata Consumer's disclosed figures, which are not published at this granularity. The <em>relative</em> ranking is robust; the absolute values will differ by category and by negotiated terms. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Illustrative channel P&amp;L for a representative packaged food SKU, built from typical Indian FMCG trade-margin and cost-to-serve structures. Not Tata Consumer's disclosed figures, which are not published at this granularity. The <em>relative</em> ranking is robust; the absolute values will differ by category and by negotiated terms. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
   <div class="chart" id="chartChan"></div>
 
 
@@ -1043,7 +1195,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Illustrative architecture demonstrating the principle. Price points are constructed for the example, not current Tata Consumer pricing. <span class="est">Illustrative</span></p>
+  <p class="tnote wrap">Illustrative architecture demonstrating the principle. Price points are constructed for the example, not current Tata Consumer pricing. <span class="est" title="Illustrative — constructed to demonstrate the principle, not actual company figures" tabindex="0" role="note">Illustrative</span></p>
 
   <div class="wrap">
   <p>Read the ₹/100g column. It moves from ₹76 down to ₹56, and at no point does a shopper standing in a kirana see the identical pack cheaper on their phone. The value ladder is intact, the discount is earned through commitment rather than channel, and the kirana's core pack is protected by being the only place the 100g exists. This is the single most useful operating rule in the document, and most Indian FMCG companies violate it every day.</p>
@@ -1077,8 +1229,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <tr><td><strong>AWL Agri Business</strong></td><td class="n">~74,000</td><td class="n">—</td><td class="n">~3–4%</td><td class="n">—</td><td>Edible-oil commodity giant pivoting to branded foods; ₹1 lakh cr target by 2030</td></tr>
       <tr><td><strong>Hindustan Unilever</strong></td><td class="n">63,763</td><td class="n">+5%</td><td class="n">23.6%</td><td class="n">10,324</td><td>The margin benchmark; slow-growing, premiumising, reorganising</td></tr>
       <tr><td><strong>ITC (FMCG)</strong></td><td class="n">24,210</td><td class="n">10.5% 5-yr CAGR</td><td class="n">~11%</td><td class="n">—</td><td>Foods past ₹20,000 cr; deep pockets from cigarettes; acquiring aggressively</td></tr>
-      <tr><td><strong>Nestlé India</strong></td><td class="n">23,071 <span class="tag">domestic</span></td><td class="n">+14.9%</td><td class="n">~26%</td><td class="n">—</td><td>The quality benchmark: 75.2% ROE, EBITDA +72%, cost savings 2.6% of sales</td></tr>
-      <tr><td><strong>Reliance Consumer</strong></td><td class="n">22,000 <span class="tag">gross</span></td><td class="n">~2×</td><td class="n">Thin / negative</td><td class="n">—</td><td>Price disruptor; Campa ₹4,700 cr; 3mn outlets; ₹40,000 cr food parks</td></tr>
+      <tr><td><strong>Nestlé India</strong></td><td class="n">23,071 <span class="tag">domestic</span></td><td class="n">+14.9%</td><td class="n">~26%</td><td class="n">—</td><td>The quality benchmark: 75.2% ROE, EBITDA +72%, cost savings 2.6% of sales<sup class="cite"><a href="#s19" title="Source 19">19</a></sup></td></tr>
+      <tr><td><strong>Reliance Consumer</strong></td><td class="n">22,000 <span class="tag">gross</span></td><td class="n">~2×</td><td class="n">Thin / negative</td><td class="n">—</td><td>Price disruptor; Campa ₹4,700 cr<sup class="cite"><a href="#s23" title="Source 23">23</a></sup>; 3mn outlets; ₹40,000 cr food parks</td></tr>
       <tr class="me"><td><strong>Tata Consumer</strong></td><td class="n">20,290</td><td class="n">+15%</td><td class="n">13.9%</td><td class="n">1,547</td><td>Best volume growth in the peer set; worst ROCE</td></tr>
       <tr><td><strong>Britannia</strong></td><td class="n">19,151</td><td class="n">+7.1%</td><td class="n">~18.5%</td><td class="n">2,537</td><td>Category king in biscuits; growth-constrained, margin-disciplined</td></tr>
       <tr><td><strong>Marico</strong></td><td class="n">13,611</td><td class="n">+26%</td><td class="n">~19%</td><td class="n">1,762</td><td>Fastest growth in 14 years; foods diversification working</td></tr>
@@ -1086,7 +1238,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Figures as reported for the year ended March 2026 (Amul brand turnover is a calendar-aligned federation figure). Dabur FY26 full-year figures are approximate pending final disclosure. <span class="est">Approximate</span></p>
+  <p class="tnote wrap">Figures as reported for the year ended March 2026 (Amul brand turnover is a calendar-aligned federation figure). Dabur FY26 full-year figures are approximate pending final disclosure. <span class="est" title="Approximate figure — rounded or derived, not a precise disclosure" tabindex="0" role="note">Approximate</span></p>
 
   <div class="wrap">
 
@@ -1227,14 +1379,14 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <table>
     <thead><tr><th>Segment</th><th class="n">Approx. FY26 revenue</th><th class="n">FY26 growth</th><th class="n">Q1 FY27 margin</th><th>Assessment</th></tr></thead>
     <tbody>
-      <tr><td><strong>India Foods</strong></td><td class="n">~₹7,300 cr <span class="est">Est</span></td><td class="n">+18%</td><td class="n" rowspan="2" style="vertical-align:middle">11.1% <span class="tag">India combined</span></td><td>The engine. Salt plus the growth portfolio. Compounding fast.</td></tr>
-      <tr><td><strong>India Beverages</strong></td><td class="n">~₹5,600 cr <span class="est">Est</span></td><td class="n">+8%</td><td>Tea drag offset by coffee (+20% Q4) and RTD (+23% Q4).</td></tr>
-      <tr><td><strong>International</strong></td><td class="n">~₹4,900 cr <span class="est">Est</span></td><td class="n">+16% reported<br>+9% cc</td><td class="n">13.0%</td><td>US gaining share seven quarters running; UK declining.</td></tr>
-      <tr><td><strong>Non-branded</strong></td><td class="n">~₹2,400 cr <span class="est">Est</span></td><td class="n">Declining</td><td class="n">9.9%</td><td>Plantations and coffee extraction. Commodity-exposed; −10% cc in Q1 FY27 on a 26% Robusta price fall.</td></tr>
+      <tr><td><strong>India Foods</strong></td><td class="n">~₹7,300 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+18%</td><td class="n" rowspan="2" style="vertical-align:middle">11.1% <span class="tag">India combined</span></td><td>The engine. Salt plus the growth portfolio. Compounding fast.</td></tr>
+      <tr><td><strong>India Beverages</strong></td><td class="n">~₹5,600 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+8%</td><td>Tea drag offset by coffee (+20% Q4) and RTD (+23% Q4).</td></tr>
+      <tr><td><strong>International</strong></td><td class="n">~₹4,900 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+16% reported<br>+9% cc</td><td class="n">13.0%</td><td>US gaining share seven quarters running; UK declining.</td></tr>
+      <tr><td><strong>Non-branded</strong></td><td class="n">~₹2,400 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">Declining</td><td class="n">9.9%</td><td>Plantations and coffee extraction. Commodity-exposed; −10% cc in Q1 FY27 on a 26% Robusta price fall.</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Segment revenue splits are derived estimates from disclosed growth rates and ratios, not reported figures. Growth rates and margins are as disclosed. <span class="est">Derived</span></p>
+  <p class="tnote wrap">Segment revenue splits are derived estimates from disclosed growth rates and ratios, not reported figures. Growth rates and margins are as disclosed. <span class="est" title="Derived figure — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Derived</span></p>
 
   <div class="wrap">
   <h3>Core versus growth: the transition in one chart</h3>
@@ -1269,7 +1421,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <div class="wrap">
   <!-- SALT -->
   <div class="fnbox">
-    <header><h4>Tata Salt &amp; Salt Portfolio</h4><span class="who">India Foods · ~₹2,500–3,000 cr <span class="est">Est</span></span></header>
+    <header><h4>Tata Salt &amp; Salt Portfolio</h4><span class="who">India Foods · ~₹2,500–3,000 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: defend to 42% share, and turn the franchise into a health platform.</strong></p>
       <p><strong>Where it is.</strong> The best business in the company. Roughly 39% share and explicitly targeting past 40%, with 12% growth in Q4 FY26 and a fifth consecutive double-digit quarter. Q1 FY27 saw 7% volume and 7% revenue growth with a ₹2-per-pack price increase taken cleanly. Gross margins are strong, capital intensity is modest, and Tata Salt is arguably the most trusted food brand in India.</p>
@@ -1281,7 +1433,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- SAMPANN -->
   <div class="fnbox">
-    <header><h4>Tata Sampann — pulses, spices, dry fruits, oils</h4><span class="who">India Foods · ~₹1,200–1,500 cr <span class="est">Est</span> · +58% Q1 FY27</span></header>
+    <header><h4>Tata Sampann — pulses, spices, dry fruits, oils</h4><span class="who">India Foods · ~₹1,200–1,500 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +58% Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: become a ₹5,000 crore brand by FY31 and the number one branded spices player in at least six states.</strong></p>
       <p><strong>Where it is.</strong> Growing 58% in Q1 FY27 and 69% in Q4 FY26, expanding into protein snacking. This is your best organic growth story and the clearest expression of the "unbranded to branded" thesis. Spices carry 40–50% gross margins; pulses carry 15–25%.</p>
@@ -1316,7 +1468,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- RTD -->
   <div class="fnbox">
-    <header><h4>Ready-to-Drink — NourishCo: Tata Gluco+, Copper+, Tata Water Plus, Himalayan, Tata Electrolyte, Kombucha</h4><span class="who">India Beverages · ~₹1,300 cr <span class="est">Est</span> · +41% revenue, +35% volume Q1 FY27</span></header>
+    <header><h4>Ready-to-Drink — NourishCo: Tata Gluco+, Copper+, Tata Water Plus, Himalayan, Tata Electrolyte, Kombucha</h4><span class="who">India Beverages · ~₹1,300 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +41% revenue, +35% volume Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: national distribution within 24 months. This is your most under-distributed high-growth asset.</strong></p>
       <p><strong>Where it is.</strong> Three consecutive double-digit quarters, then 41% revenue growth with 35% volume growth in Q1 FY27. Tata Electrolyte has entered a category that is compounding fast. Kombucha gives you a genuine premium wellness position. Gross margins in RTD are 45–55%.</p>
@@ -1364,7 +1516,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- STARBUCKS -->
   <div class="fnbox">
-    <header><h4>Tata Starbucks (50:50 JV)</h4><span class="who">Equity-accounted · 498–502 stores, 80 cities · FY26 loss ₹49.5 cr · +11% revenue Q1 FY27</span></header>
+    <header><h4>Tata Starbucks<sup class="cite"><a href="#s10" title="Source 10">10</a></sup> (50:50 JV)</h4><span class="who">Equity-accounted · 498–502 stores, 80 cities · FY26 loss ₹49.5 cr · +11% revenue Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: reach sustained profitability, then decide honestly whether to scale hard or hold.</strong></p>
       <p><strong>Where it is.</strong> 502 stores across 80 cities at FY26 close, three consecutive quarters of positive same-store sales, FY26 losses narrowed to ₹49.5 crore, and a relaunched tiered rewards programme. Q1 FY27 added only four net stores including two Reserve formats — a deliberate slowdown after the aggressive expansion phase, and the right call.</p>
@@ -1376,7 +1528,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- INTERNATIONAL -->
   <div class="fnbox">
-    <header><h4>International — Tetley (UK, Canada), Eight O'Clock Coffee (US), teapigs, Good Earth</h4><span class="who">~₹4,900 cr <span class="est">Est</span> · +16% reported / +9% cc FY26 · 13.0% margin</span></header>
+    <header><h4>International — Tetley (UK, Canada), Eight O'Clock Coffee (US), teapigs, Good Earth</h4><span class="who">~₹4,900 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +16% reported / +9% cc FY26 · 13.0% margin</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: fix or exit the UK; double down on the US; treat the specialty brands as the growth engine.</strong></p>
       <p><strong>Where it is.</strong> A tale of two geographies. The <strong>US</strong> is working: 7% constant-currency growth in Q1 FY27 and a seventh consecutive quarter of market share gains, with Eight O'Clock outperforming category growth. The <strong>UK</strong> is not: a 2% constant-currency decline in Q1 FY27, in a structurally declining black tea market. Specialty brands teapigs and Good Earth carry good momentum. Roughly 75–80% of international revenue is base black tea.</p>
@@ -1388,7 +1540,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- NON-BRANDED -->
   <div class="fnbox">
-    <header><h4>Non-Branded — plantations, coffee extraction, bulk tea</h4><span class="who">~₹2,400 cr <span class="est">Est</span> · −10% cc Q1 FY27 · margin 9.9%, down from 12.0%</span></header>
+    <header><h4>Non-Branded — plantations, coffee extraction, bulk tea</h4><span class="who">~₹2,400 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · −10% cc Q1 FY27 · margin 9.9%, down from 12.0%</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: shrink the commodity exposure and quantify what strategic value the vertical integration actually delivers.</strong></p>
       <p><strong>Where it is.</strong> Declined 10% in constant currency in Q1 FY27 with margins compressing from 12.0% to 9.9%, driven by a 26% fall in Robusta coffee prices. This business injects commodity volatility directly into a branded consumer P&amp;L that the market values at 63× earnings.</p>
@@ -1422,7 +1574,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
         <li><strong>Category leadership in salt</strong> at ~39% and heading past 40%, with strong pricing power.</li>
         <li><strong>Distribution scale.</strong> 4.5 million outlets, 290 million households.</li>
         <li><strong>Vertical integration in tea and coffee</strong> — sourcing security and sustainability credentials few can match.</li>
-        <li><strong>Balance sheet capacity.</strong> ₹2,978 crore net cash, ₹2,016 crore free cash flow, modest borrowings at ₹2,820 crore.</li>
+        <li><strong>Balance sheet capacity.</strong> ₹2,978 crore net cash<sup class="cite"><a href="#s9" title="Source 9">9</a></sup>, ₹2,016 crore<sup class="cite"><a href="#s1" title="Source 1">1</a></sup> free cash flow, modest borrowings at ₹2,820 crore.</li>
       </ul>
     </div>
 
@@ -1430,7 +1582,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <div class="qh">Weaknesses — the ones that matter</div>
       <ul>
         <li><strong>ROCE of 9.2% and three-year ROE of 7.5%.</strong> The company earns close to its cost of capital while trading at 63× earnings. This is the central problem.</li>
-        <li><strong>EBITDA margin of 13.9%</strong> against Nestlé near 26%, HUL at 23.6%, Britannia at 18.5%. Roughly half is mix; roughly half is addressable.</li>
+        <li><strong>EBITDA margin of 13.9%</strong> against Nestlé near 26%<sup class="cite"><a href="#s19" title="Source 19">19</a></sup>, HUL at 23.6%, Britannia at 18.5%<sup class="cite"><a href="#s21" title="Source 21">21</a></sup>. Roughly half is mix; roughly half is addressable.</li>
         <li><strong>Capital turn of about 0.8×</strong> — heavy goodwill and intangibles from the merger and from ₹7,000 crore of acquisitions, plus asset-heavy plantations.</li>
         <li><strong>A core growing at 3–6%.</strong> Tea revenue fell 4% in Q1 FY27; salt's category grows at 5%. Together they still govern the blended growth rate.</li>
         <li><strong>Absent from four of India's biggest food profit pools</strong> — salty snacks, value-added dairy, biscuits, chocolate.</li>
@@ -1506,29 +1658,36 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <table>
     <thead><tr><th>Company</th><th class="n">FY26 base (₹ cr)</th><th class="n">Assumed CAGR</th><th class="n">FY31 revenue (₹ cr)</th></tr></thead>
     <tbody>
-      <tr><td>Nestlé India (domestic)</td><td class="n">23,071</td><td class="n">12%</td><td class="n">40,650</td></tr>
-      <tr><td>ITC FMCG</td><td class="n">24,210</td><td class="n">11%</td><td class="n">40,790</td></tr>
+      <tr class="me"><td><strong>Nestlé India (domestic)</strong> — the competitor that defines the bar</td><td class="n">23,071</td><td class="n">12%</td><td class="n"><strong>40,660</strong></td></tr>
+      <tr><td>ITC Foods — the comparable food business</td><td class="n">~20,000</td><td class="n">12%</td><td class="n">35,250</td></tr>
       <tr><td>Britannia</td><td class="n">19,151</td><td class="n">9%</td><td class="n">29,470</td></tr>
+      <tr><td><em>Memo:</em> ITC total FMCG, including non-food</td><td class="n">24,210</td><td class="n">11%</td><td class="n">40,790</td></tr>
       <tr><td>Tata Consumer — current trajectory</td><td class="n">20,290</td><td class="n">13%</td><td class="n">37,380</td></tr>
-      <tr class="me"><td>Tata Consumer — required</td><td class="n">20,290</td><td class="n">18%</td><td class="n">46,420</td></tr>
+      <tr class="me"><td><strong>Tata Consumer — required to lead</strong></td><td class="n">20,290</td><td class="n">16%</td><td class="n"><strong>42,500</strong></td></tr>
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Projections are this document's calculations on stated base figures; peer CAGRs are assumptions, not guidance. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Projections are this document's calculations on stated base figures; peer CAGRs are assumptions, not guidance. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
+  <div class="pull warnbox">
+    <span class="plab">Why this target is ₹42,500 crore and not ₹46,000</span>
+    <p>An earlier reading of this comparison set the bar at ₹46,000 crore by treating <strong>ITC's ₹40,790 crore of total FMCG revenue</strong> as the number to beat. It is not the right comparison: that figure includes personal care, agarbatti, matches, education and stationery. <strong>ITC <em>Foods</em> — the business you actually compete with — is a little over ₹20,000 crore</strong><sup class="cite"><a href="#s20" title="Source 20">20</a></sup> and reaches roughly ₹35,250 crore by FY31.</p>
+    <p>Measured on a like-for-like branded food and beverage basis, the competitor that defines leadership is <strong>Nestlé India at about ₹40,660 crore</strong>. Clearing that with enough margin to be beyond forecast error means <strong>₹42,500 crore — a 16% CAGR</strong>. That is not a softened ambition; it is the same ambition measured against the right company, and it removes roughly ₹4,000 crore of acquisitions from the funding requirement. Section 17 builds the full bridge to this number.</p>
+  </div>
+
   <div class="pull">
     <span class="plab">The gap, stated precisely</span>
-    <p>Roughly <strong>₹9,000 crore of FY31 revenue</strong> separates the current trajectory from clear leadership. That is the number your entire strategy has to close — and closing it at 13.9% EBITDA and 9% ROCE would be a failure, not a success.</p>
+    <p>Roughly <strong>₹5,100 crore of FY31 revenue</strong> separates the current 13% trajectory from clear leadership. That is the number your strategy has to close — and closing it at 13.9% EBITDA and 9% ROCE would be a failure, not a success. Section 17 shows that even the full plan, competently executed, closes only about four-fifths of it: the base case lands at ₹39,800 crore, <em>behind</em> Nestlé. Leadership depends on the growth portfolio compounding at 32% rather than 28%.</p>
   </div>
 
   <h3>The full ambition: four numbers, not one</h3>
   <p>Revenue alone is a vanity target. The ambition that should go to your board and be repeated in every town hall has four components:</p>
 
   <div class="grid g4">
-    <div class="kpi hi"><span class="kpi-lab">FY31 Revenue</span><div class="kpi-val">₹46,000<small> cr</small></div><div class="kpi-sub">18% CAGR from ₹20,290 cr. Number one branded F&amp;B in India.</div></div>
-    <div class="kpi hi"><span class="kpi-lab">FY31 EBITDA margin</span><div class="kpi-val">18<small>%</small></div><div class="kpi-sub">From 13.9%. Implies ₹8,300 cr EBITDA — roughly 3× today.</div></div>
-    <div class="kpi hi"><span class="kpi-lab">FY31 ROCE</span><div class="kpi-val">18<small>%</small></div><div class="kpi-sub">From 9.2%. The hardest and most important of the four.</div></div>
+    <div class="kpi hi"><span class="kpi-lab">FY31 Revenue</span><div class="kpi-val">₹42,500<small> cr</small></div><div class="kpi-sub">16% CAGR from ₹20,290 cr. Clears Nestlé India's ~₹40,660 cr.</div></div>
+    <div class="kpi hi"><span class="kpi-lab">FY31 EBITDA margin</span><div class="kpi-val">16.5<small>%</small></div><div class="kpi-sub">From 13.9%. The honest landing — snacks, quick commerce and M&amp;A are all margin-dilutive.</div></div>
+    <div class="kpi hi"><span class="kpi-lab">FY31 ROCE</span><div class="kpi-val">18<small>%</small><span style="font-size:13px;font-weight:500;color:var(--ink-2)"> ex-goodwill</span></div><div class="kpi-sub">Statutory ROCE reaches 13–14%; acquisitions add capital at 3.5× revenue. Report both.</div></div>
     <div class="kpi hi"><span class="kpi-lab">Category leadership</span><div class="kpi-val">8</div><div class="kpi-sub">Categories where TCPL is #1 or #2 by FY31, up from roughly 2 today.</div></div>
   </div>
 
@@ -1536,7 +1695,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <p>Honest answer: partially, and only with a capital allocation change.</p>
   <ul>
     <li><strong>Retained cash.</strong> Free cash flow was ₹2,016 crore in FY26 and will grow with the business. At the current 64% dividend payout, retention is roughly ₹550 crore a year. <strong>Cutting the payout to 35% frees around ₹500 crore annually</strong> and compounds — cumulatively ₹9,000–11,000 crore of retained cash over five years on a growing base.</li>
-    <li><strong>Debt capacity.</strong> With ₹2,820 crore of borrowings against ₹2,815 crore of EBITDA, leverage is negligible. Taking net debt to a still-conservative 1.5× EBITDA provides ₹5,000–6,000 crore of additional firepower, rising as EBITDA grows.</li>
+    <li><strong>Debt capacity.</strong> With ₹2,820 crore of borrowings against ₹2,815 crore<sup class="cite"><a href="#s1" title="Source 1">1</a></sup> of EBITDA, leverage is negligible. Taking net debt to a still-conservative 1.5× EBITDA provides ₹5,000–6,000 crore of additional firepower, rising as EBITDA grows.</li>
     <li><strong>Capital release.</strong> A partial or full exit from non-branded, and a strategic review of the UK, could release meaningful capital and simultaneously improve ROCE — the rare move that helps both sides of the equation.</li>
     <li><strong>Equity.</strong> Available but expensive to your existing shareholders at current multiples, and it becomes unavailable precisely when you most need it if growth disappoints.</li>
   </ul>
@@ -1577,8 +1736,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <h3>Why salty snacks is the entry that matters most</h3>
   <p>Of everything available to you, the salty snacks and namkeen category is the clearest strategic fit, and the window is closing as valuations rise.</p>
   <ul>
-    <li><strong>Size and growth.</strong> ₹46,571 crore today, projected past ₹1,01,811 crore by 2033<sup class="cite"><a href="#s28" title="Source 28">28</a></sup>. Namkeen alone heads toward ₹39,591 crore by 2029.</li>
-    <li><strong>Structure.</strong> Fragmented enough to enter. On ethnic-snacks share, Haldiram leads at roughly 36.6%, with Balaji at 9.6%, Bikaji 8.7%<sup class="cite"><a href="#s28" title="Source 28">28</a></sup>, Bikanervala 5.9%, PepsiCo 3.3% and ITC 3.1% — leaving roughly 28% in a long regional tail. <span class="est">Industry data</span> There is room for a national number three or four.</li>
+    <li><strong>Size and growth.</strong> ₹46,571 crore today, projected past ₹1,01,811 crore by 2033<sup class="cite"><a href="#s28" title="Source 28">28</a></sup>. Namkeen alone heads toward ₹39,591 crore by 2029<sup class="cite"><a href="#s28" title="Source 28">28</a></sup>.</li>
+    <li><strong>Structure.</strong> Fragmented enough to enter. On ethnic-snacks share, Haldiram leads at roughly 36.6%, with Balaji at 9.6%, Bikaji 8.7%<sup class="cite"><a href="#s28" title="Source 28">28</a></sup>, Bikanervala 5.9%, PepsiCo 3.3% and ITC 3.1% — leaving roughly 28% in a long regional tail. <span class="est" title="Third-party industry data, cited in Sources" tabindex="0" role="note">Industry data</span> There is room for a national number three or four.</li>
     <li><strong>Adjacency.</strong> Same consumer, same pantry occasion, same distribution, same trust equity. Sampann's move into protein snacking already proves the internal appetite.</li>
     <li><strong>Margin.</strong> 35–45% gross margins with impulse pricing power and strong quick-commerce velocity.</li>
     <li><strong>Defensive logic.</strong> ITC, Reliance and PepsiCo are all building here. If you are not in salty snacks by FY29, you will not be in it.</li>
@@ -1621,7 +1780,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Ticket sizes are analytical estimates based on typical 3–5× revenue multiples for branded Indian food assets. <span class="est">Estimated</span></p>
+  <p class="tnote wrap">Ticket sizes are analytical estimates based on typical 3–5× revenue multiples for branded Indian food assets. <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Estimated</span></p>
 
   <div class="wrap">
   <h3>Five M&amp;A disciplines to install before you sign anything</h3>
@@ -1657,7 +1816,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <tbody>
       <tr>
         <td><strong>Build organically</strong><br>Extend Sampann into namkeen</td>
-        <td class="n">₹2,500–3,000 cr<br><span class="est">Modelled</span></td>
+        <td class="n">₹2,500–3,000 cr<br><span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></td>
         <td class="n">8–10 years</td>
         <td>4–5 regional frying and extrusion plants (₹150–200 cr each), ₹250 cr a year of A&amp;P for five years, and cumulative launch losses before breakeven. Full control, no goodwill, no integration risk.</td>
         <td><span class="tag stop">Too slow</span> The window closes around FY29. Building arrives a decade late to a category that will have consolidated.</td>
@@ -1679,7 +1838,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Cash requirements and timelines are analytical estimates built from typical Indian snacks plant costs, category A&amp;P intensity and the 3–5× revenue multiples branded food assets command. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Cash requirements and timelines are analytical estimates built from typical Indian snacks plant costs, category A&amp;P intensity and the 3–5× revenue multiples branded food assets command. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <div class="pull">
@@ -1707,7 +1866,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Category norms drawn from published financials of listed Indian snacks and foods companies and standard category economics. Bands are analytical. <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Category norms drawn from published financials of listed Indian snacks and foods companies and standard category economics. Bands are analytical. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
 
   <div class="wrap">
   <div class="pull warnbox">
@@ -1718,7 +1877,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <h3>What to underwrite, and what to walk away from</h3>
   <ol class="steps">
     <li><b>Underwrite the plants and the freshness map, not the brand deck</b><br>Diligence should start with a map of the target's plants, a 500km radius drawn around each, and an honest assessment of what national expansion actually requires in new capacity. If the answer is three new plants at ₹180 crore each, that is part of the purchase price and it belongs in the model on day one.</li>
-    <li><b>Test the top 20 SKUs against a front-of-pack labelling regime before you sign</b><br>India's regulatory direction of travel on front-of-pack nutrition labelling and high-fat-salt-sugar disclosure is toward more prominent consumer-facing warning or rating information. <span class="est">Judgment</span> Salty snacks sits squarely in scope. Run the target's portfolio against plausible thresholds during diligence and price the reformulation runway in. A portfolio that needs wholesale reformulation is worth materially less than one already engineered for it.</li>
+    <li><b>Test the top 20 SKUs against a front-of-pack labelling regime before you sign</b><br>India's regulatory direction of travel on front-of-pack nutrition labelling and high-fat-salt-sugar disclosure is toward more prominent consumer-facing warning or rating information. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span> Salty snacks sits squarely in scope. Run the target's portfolio against plausible thresholds during diligence and price the reformulation runway in. A portfolio that needs wholesale reformulation is worth materially less than one already engineered for it.</li>
     <li><b>Treat a labelling regime as a reason to enter, not a reason to hesitate</b><br>If disclosure becomes mandatory and prominent, the advantage shifts to brands consumers already trust and to baked, roasted and millet-based formats. Tata is the most trusted name in Indian food and you already own a millet platform in Soulfull. A stricter regime is a tailwind for you and a headwind for the regional tail — provided you build for it deliberately rather than acquiring a fryer-heavy portfolio and hoping.</li>
     <li><b>Retain the founder's production leadership; replace the commercial leadership</b><br>In Indian snacks the recipe, the frying discipline and the supplier relationships live in a handful of people, and they are usually not the people running sales. Acquisitions in this category fail when the acquirer keeps the commercial team out of politeness and loses the plant team through neglect. Do the opposite.</li>
     <li><b>Walk away above 3.5× revenue</b><br>At 4× and above, the arbitrage that justifies this whole route disappears — you are paying national multiples for a regional asset and the returns depend on flawless national expansion. Your own recent history says do not underwrite flawless.</li>
@@ -1786,8 +1945,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <div class="wrap">
   <h3>First, a correction to the target itself</h3>
-  <p>Section 12 set the bar at ₹46,000 crore by benchmarking against Nestlé India at ₹40,650 crore <em>and</em> ITC at ₹40,790 crore. But those two numbers are not the same kind of thing. The ITC figure is total FMCG revenue — it includes personal care, agarbatti, matches, education and stationery. <strong>ITC Foods, the business you actually compete with, is a little over ₹20,000 crore</strong>, which at 12% compounding reaches roughly ₹35,250 crore by FY31.</p>
-  <p>If the ambition is to be the number one branded <em>food and beverage</em> company, the field looks materially less daunting than section 12 implies:</p>
+  <p>Section 12 sets the bar at ₹42,500 crore, and this section is where that number comes from. It is worth restating why it is not the ₹46,000 crore an earlier reading produced: that figure treated ITC’s ₹40,790 crore of <em>total</em> FMCG revenue as the competitor, when it includes personal care, agarbatti, matches, education and stationery. <strong>ITC Foods, the business you actually compete with, is a little over ₹20,000 crore</strong><sup class="cite"><a href="#s20" title="Source 20">20</a></sup>, reaching roughly ₹35,250 crore by FY31.</p>
+  <p>On a like-for-like branded <em>food and beverage</em> basis, the field is this:</p>
   </div>
 
   <div class="tablewrap wide">
@@ -1801,7 +1960,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Peer CAGRs are assumptions carried forward from section 12, not guidance. The ITC Foods base is the disclosed "over ₹20,000 crore". <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Peer CAGRs are assumptions carried forward from section 12, not guidance. The ITC Foods base is the disclosed "over ₹20,000 crore". <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <div class="pull">
@@ -1821,7 +1980,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wf-row"><div class="wl">Acquisitions, grown<br><span class="tnote" style="margin:0;font-size:11.5px">₹15,000 cr @ 3.5× → ₹4,290 cr, +25% p.a.</span></div><div class="wtrack"><span class="wseg" style="left:69.9%;width:18.6%"></span></div><div class="wv">+8,371</div></div>
     <div class="wf-row total"><div class="wl">FY31 base case</div><div class="wtrack"><span class="wseg tot" style="left:0%;width:88.5%"></span></div><div class="wv">39,842</div></div>
   </div>
-  <p class="tnote">Bars are scaled to ₹45,000 crore. Segment bases are the derived FY26 estimates from section 09. <span class="est">Modelled</span></p>
+  <p class="tnote">Bars are scaled to ₹45,000 crore. Segment bases are the derived FY26 estimates from section 09. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="pull warnbox">
     <span class="plab">The finding that should go to the board first</span>
@@ -1848,7 +2007,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Driver attribution is this document's model, not a reconciliation of statutory accounts. Individual drivers are judgment; the direction and relative scale are the useful output. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Driver attribution is this document's model, not a reconciliation of statutory accounts. Individual drivers are judgment; the direction and relative scale are the useful output. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <div class="pull">
@@ -1876,7 +2035,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Capital employed built forward from FY26 (revenue ÷ 0.8× turn), plus organic capex and working capital net of depreciation, less the non-branded divestment, plus ₹15,000 crore of acquisition spend. The ex-goodwill column removes the ~83% of acquisition consideration that would sit as goodwill and intangibles rather than tangible plant. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Capital employed built forward from FY26 (revenue ÷ 0.8× turn), plus organic capex and working capital net of depreciation, less the non-branded divestment, plus ₹15,000 crore of acquisition spend. The ex-goodwill column removes the ~83% of acquisition consideration that would sit as goodwill and intangibles rather than tangible plant. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <div class="pull warnbox">
@@ -1917,17 +2076,17 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       </div>
     </div>
     <div class="mfoot">
-      <span>Benchmark: Nestlé India domestic at ₹40,660 cr by FY31 <span class="est">Modelled</span></span>
+      <span>Benchmark: Nestlé India domestic at ₹40,660 cr by FY31 <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></span>
       <button type="button" id="k_reset">Reset to base case</button>
     </div>
   </div>
   <p class="tnote wrap print-note">The scenario model is interactive in a browser. Printed here at its base-case settings: core India 5%, growth portfolio 28%, international 5%, ₹15,000 crore deployed at 3.5×, acquired assets compounding at 25%, non-branded divested.</p>
-  <p class="tnote wrap">Cost programme, pricing discipline, quick-commerce drag and the A&amp;P step-up are held constant across all settings — they are themselves uncertain, and the model varies only the seven levers shown. Treat outputs as directional sensitivity, not a forecast. <span class="est">Modelled</span></p>
+  <p class="tnote wrap">Cost programme, pricing discipline, quick-commerce drag and the A&amp;P step-up are held constant across all settings — they are themselves uncertain, and the model varies only the seven levers shown. Treat outputs as directional sensitivity, not a forecast. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <h3>What the bridge means for the plan</h3>
   <ol class="steps">
-    <li><b>Reset the public target to ₹42,500 crore and 16.5% EBITDA</b><br>Both are defensible, both clear Nestlé, and both survive contact with the arithmetic. A ₹46,000 crore target benchmarked against ITC's non-food revenue will be missed and will cost you credibility at exactly the moment you need it to fund the dividend cut.</li>
+    <li><b>Hold the public target at ₹42,500 crore and 16.5% EBITDA</b><br>Both are defensible, both clear Nestlé, and both survive contact with the arithmetic. A ₹46,000 crore target benchmarked against ITC's non-food revenue would be missed, and would cost you credibility at exactly the moment you need it to fund the dividend cut.</li>
     <li><b>Move the growth-portfolio CAGR from 28% to 32% — this is the whole game</b><br>Four points of CAGR on the growth portfolio is worth ₹2,300 crore of FY31 revenue, more than doubling your M&amp;A budget would deliver. It is also cheaper, faster and lower-risk. Every incremental rupee of capital, A&amp;P and senior talent should be tested against this one number first.</li>
     <li><b>Split the ROCE metric before the next board meeting</b><br>Statutory for the market, operating ex-goodwill for management, and a goodwill return test to keep both honest. Doing this <em>before</em> the snacks acquisition means the metric change reads as discipline; doing it after means it reads as an excuse.</li>
     <li><b>Treat the 3.5× entry multiple as the binding constraint it is</b><br>The difference between buying at 3.2× and 3.9× is roughly ₹1,800 crore of FY31 revenue and 130bps of statutory ROCE. Price discipline is not a finance preference here — it is the second-largest lever in the entire plan.</li>
@@ -2236,7 +2395,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Recommended allocation of decision rights. <span class="est">Recommended</span></p>
+  <p class="tnote wrap">Recommended allocation of decision rights. <span class="est" title="Recommendation — this document’s analysis, not company policy or guidance" tabindex="0" role="note">Recommended</span></p>
 
   <div class="wrap">
   <div class="pull">
@@ -2272,19 +2431,20 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wide">
 
   <div class="wrap">
-  <h3>The CEO scorecard — twelve numbers, reviewed monthly</h3>
-  <p>Not fifty. Twelve. If a number is not on this list, it does not come to your monthly review.</p>
+  <h3>The executive scorecard — thirteen numbers, reviewed monthly</h3>
+  <p>Not fifty. Thirteen. If a number is not on this list, it does not come to the monthly review. Each has one named owner on the executive committee — shared ownership is how metrics stop being managed.</p>
   </div>
 
   <div class="tablewrap wide">
   <table>
     <thead><tr><th>#</th><th>Metric</th><th class="n">Today</th><th class="n">FY29</th><th class="n">FY31</th><th>Owner</th></tr></thead>
     <tbody>
-      <tr><td class="n">1</td><td>Consolidated revenue (₹ cr)</td><td class="n">20,290</td><td class="n">~31,000</td><td class="n">~46,000</td><td>CEO</td></tr>
+      <tr><td class="n">1</td><td>Consolidated revenue (₹ cr)</td><td class="n">20,290</td><td class="n">~30,000</td><td class="n">~42,500</td><td>CEO</td></tr>
       <tr><td class="n">2</td><td>India underlying volume growth</td><td class="n">13%</td><td class="n">≥10%</td><td class="n">≥10%</td><td>India Presidents</td></tr>
       <tr><td class="n">3</td><td>Growth businesses, % of India</td><td class="n">36%</td><td class="n">45%</td><td class="n">60%</td><td>CEO</td></tr>
-      <tr><td class="n">4</td><td>EBITDA margin</td><td class="n">13.9%</td><td class="n">16.0%</td><td class="n">18.0%</td><td>CFO</td></tr>
-      <tr class="me"><td class="n">5</td><td><strong>ROCE</strong></td><td class="n">9.2%</td><td class="n">14%</td><td class="n">18%</td><td>CFO</td></tr>
+      <tr><td class="n">4</td><td>EBITDA margin</td><td class="n">13.9%</td><td class="n">15.2%</td><td class="n">16.5%</td><td>CFO</td></tr>
+      <tr class="me"><td class="n">5</td><td><strong>ROCE — statutory</strong></td><td class="n">9.2%</td><td class="n">11.5%</td><td class="n">13.5%</td><td>CFO</td></tr>
+      <tr class="me"><td class="n">5b</td><td><strong>ROCE — excluding acquisition goodwill</strong><br><span style="font-size:12px;color:var(--ink-3)">The measure management is actually held to</span></td><td class="n">9.2%</td><td class="n">16%</td><td class="n">18%</td><td>CFO</td></tr>
       <tr><td class="n">6</td><td>Capital turn (revenue ÷ capital employed)</td><td class="n">~0.8×</td><td class="n">1.0×</td><td class="n">1.2×+</td><td>CFO</td></tr>
       <tr><td class="n">7</td><td>Categories at #1 or #2</td><td class="n">~2</td><td class="n">5</td><td class="n">8</td><td>Category heads</td></tr>
       <tr><td class="n">8</td><td>Effective distribution, top 30 growth SKUs</td><td class="n">Not measured</td><td class="n">70%</td><td class="n">85%</td><td>Chief Commercial</td></tr>
@@ -2295,7 +2455,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">FY29 and FY31 targets are this document's recommendations, derived from the ambition in section 12 — not company guidance. Company guidance for FY27 is double-digit revenue growth, 30%+ growth from growth businesses, and 50–70bps of EBITDA margin expansion. <span class="est">Recommended</span></p>
+  <p class="tnote wrap">FY29 and FY31 targets are this document's recommendations, derived from the ambition in section 12 — not company guidance. Company guidance for FY27 is double-digit revenue growth, 30%+ growth from growth businesses, and 50–70bps of EBITDA margin expansion. <span class="est" title="Recommendation — this document’s analysis, not company policy or guidance" tabindex="0" role="note">Recommended</span></p>
 
   <div class="wrap">
   <h3>The cadence</h3>
@@ -2335,7 +2495,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Revenue and CAGR are model outputs from section 17. Margin and ROCE figures overlay scenario-specific judgment on the model's fixed drivers — in a downside the cost programme is assumed to underdeliver, which the section 17 model holds constant. <span class="est">Modelled</span> <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Revenue and CAGR are model outputs from section 17. Margin and ROCE figures overlay scenario-specific judgment on the model's fixed drivers — in a downside the cost programme is assumed to underdeliver, which the section 17 model holds constant. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
 
   <div class="wrap">
 
@@ -2343,7 +2503,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="sh"><h4>Scenario one — Reliance opens a price war in your core</h4><span class="prob">Likelihood ~40%</span></div>
     <dl>
       <dt>Mechanism</dt><dd>Reliance Consumer applies the Campa playbook to salt or branded staples: a recognised proposition at 25–30% below your price, backed by 3 million outlets and cross-subsidised from retail and telecom. It took roughly 10% of the cola market in about three years, and it is explicitly not profit-constrained. Your salt franchise, at ~39% share and 40%+ gross margin, is the most attractive target in your portfolio precisely because it is the most profitable.</dd>
-      <dt>P&amp;L impact</dt><dd>If you defend with an 8% realisation cut across salt, that is roughly <strong>₹250–350 crore of EBITDA</strong> — over a tenth of the group total — for a share outcome that is uncertain at best. <span class="est">Modelled</span></dd>
+      <dt>P&amp;L impact</dt><dd>If you defend with an 8% realisation cut across salt, that is roughly <strong>₹250–350 crore of EBITDA</strong> — over a tenth of the group total — for a share outcome that is uncertain at best. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></dd>
       <dt>Doctrine</dt><dd><strong>Never match on price.</strong> Widen the quality and purity gap and communicate it relentlessly; accelerate the premium tier where price comparison is weakest; defend distribution intensity rather than price point. Accept a 2–3 point share loss in the value tier as the cost of protecting the premium tier absolutely. Salt is a trust purchase, and trust is the one thing a price entrant cannot discount into existence.</dd>
       <dt>Pre-commit</dt><dd>Agree a <strong>published internal price floor</strong> with the board now — a stated level below which you will not follow, whatever the share consequence. Without it, the decision gets made in a bad week by whoever is most alarmed.</dd>
       <dt>Trigger</dt><dd>Distributor margin demands rising in the affected category · a competitor entering an adjacent SKU at more than 20% below your price · value-tier volume declining while premium holds.</dd>
@@ -2365,7 +2525,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="sh"><h4>Scenario three — tea inflation persists above 10% for eight quarters</h4><span class="prob">Likelihood ~35%</span></div>
     <dl>
       <dt>Mechanism</dt><dd>Procurement inflation of 7–10% is already the reported condition, and climate volatility in Assam and the Nilgiris makes persistence more likely than reversion. Tea remains your largest single revenue line, inside a category growing under 3%, where consumers are unusually price-sensitive and regional competitors are structurally advantaged on freshness and cost.</dd>
-      <dt>P&amp;L impact</dt><dd>At 10% procurement inflation with a 120-day pass-through lag, roughly <strong>200–300bps of India Beverages margin</strong>, persisting until pricing catches up. <span class="est">Modelled</span> The compounding damage is worse than the annual figure: each quarter of lag is margin you never recover.</dd>
+      <dt>P&amp;L impact</dt><dd>At 10% procurement inflation with a 120-day pass-through lag, roughly <strong>200–300bps of India Beverages margin</strong>, persisting until pricing catches up. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> The compounding damage is worse than the annual figure: each quarter of lag is margin you never recover.</dd>
       <dt>Doctrine</dt><dd>The 60-day pricing mechanism from the beverages playbook is the whole answer and it is an operational change, not a strategic one. Pair it with forward-buying governance and an accelerated shift into value-added formats, where gross margin is a multiple of black CTC and price sensitivity is far lower.</dd>
       <dt>Pre-commit</dt><dd>Delegate tea pricing authority to a named executive within a pre-agreed band, so that a pass-through decision does not require a committee. The lag is almost always governance, not analysis.</dd>
       <dt>Trigger</dt><dd>Auction prices above the agreed band for two consecutive quarters · pass-through lag exceeding 90 days · value-added mix failing to improve for three quarters.</dd>
@@ -2430,7 +2590,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Likelihood and impact assessments are analytical judgment. <span class="est">Judgment</span></p>
+  <p class="tnote wrap">Likelihood and impact assessments are analytical judgment. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
     </div>
   </div>
 </section>
@@ -2456,7 +2616,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="tli">
       <div class="tlh">Days 31–60 · Frame and align</div>
       <div class="tlt">Set the ambition and the portfolio buckets</div>
-      <p>Take the four-number ambition — ₹46,000 crore, 18% EBITDA, 18% ROCE, eight category leaderships — to the board with the funding plan and the honest acknowledgement that two-thirds must come organically.</p>
+      <p>Take the four-number ambition — ₹42,500 crore, 16.5% EBITDA, 18% ROCE excluding acquisition goodwill, eight category leaderships — to the board with the funding plan, the two-metric returns proposal from section 17, and the honest acknowledgement that two-thirds must come organically.</p>
       <p>Assign every business to a portfolio bucket: invest to lead, enter, harvest and premiumise, or fix/exit/separate. Do this explicitly and communicate it to the leaders concerned. The businesses in the harvest bucket must understand that this is a respected role, not a demotion — otherwise you lose the cash generation you depend on.</p>
       <p>Commission the two strategic reviews: non-branded, and Tetley UK. Agree terms of reference with the board so the reviews cannot be quietly deferred.</p>
       <p>Appoint the health-and-protein platform leader. This is the highest-leverage single appointment available to you and it requires no restructuring.</p>
@@ -2502,11 +2662,11 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <footer class="foot">
   <div class="wrap">
   <p><strong>Reported figures</strong> — revenue, growth rates, margins, market shares quoted by management, distribution counts, store counts — are taken from company disclosures, earnings calls, investor presentations and reputable financial press, all cited below, and are current through the quarter ended June 2026 (Q1 FY27).</p>
-  <p><strong>Derived figures</strong> are marked <span class="est">Est</span> or <span class="est">Derived</span>. The segment revenue splits in section 09, for example, are calculated from disclosed growth rates and the disclosed ratio of growth businesses to India business, not lifted from a filing.</p>
-  <p><strong>Projections and recommendations</strong> are marked <span class="est">Modelled</span> or <span class="est">Recommended</span>. The FY29 and FY31 targets, peer CAGR assumptions, funding estimates and M&amp;A ticket sizes are this document's analysis. Company guidance for FY27 is double-digit revenue growth with 50–70bps of margin expansion<sup class="cite"><a href="#s5" title="Source 5">5</a></sup>; everything beyond that horizon here is argument, not guidance.</p>
-  <p><strong>Judgments</strong> — competitive vulnerabilities, category attractiveness, margin bands, risk likelihood — are marked <span class="est">Judgment</span> and should be debated rather than accepted.</p>
-  <p><strong>Inline citations.</strong> Numbered markers such as <sup class="cite"><a href="#s1" title="Source 1">1</a></sup> follow the principal reported figures and link directly to the numbered source below. They are applied where a specific published figure is being relied on; they are deliberately <em>not</em> applied to derived, modelled or judgment material, which by definition has no source other than this document's own analysis. If a number in this document carries no citation and no <span class="est">Est</span>, <span class="est">Modelled</span> or <span class="est">Judgment</span> tag, treat that as an omission worth querying.</p>
-  <p><strong>A note on the new analytical sections.</strong> Sections 06, 15, 17, 19 and 21 — channel economics, the salty snacks case, the FY31 bridge, organisation design and the scenarios — are analysis rather than reportage. Their inputs are the reported figures cited elsewhere in this document; their outputs are models and recommendations. The section 17 bridge in particular reaches conclusions that differ from the targets stated in section 12, and it says so explicitly rather than quietly reconciling them. Where this document disagrees with itself, the disagreement is the finding.</p>
+  <p><strong>Derived figures</strong> are marked <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> or <span class="est" title="Derived figure — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Derived</span>. The segment revenue splits in section 09, for example, are calculated from disclosed growth rates and the disclosed ratio of growth businesses to India business, not lifted from a filing.</p>
+  <p><strong>Projections and recommendations</strong> are marked <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> or <span class="est" title="Recommendation — this document’s analysis, not company policy or guidance" tabindex="0" role="note">Recommended</span>. The FY29 and FY31 targets, peer CAGR assumptions, funding estimates and M&amp;A ticket sizes are this document's analysis. Company guidance for FY27 is double-digit revenue growth with 50–70bps of margin expansion<sup class="cite"><a href="#s5" title="Source 5">5</a></sup>; everything beyond that horizon here is argument, not guidance.</p>
+  <p><strong>Judgments</strong> — competitive vulnerabilities, category attractiveness, margin bands, risk likelihood — are marked <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span> and should be debated rather than accepted.</p>
+  <p><strong>Inline citations.</strong> Numbered markers such as <sup class="cite"><a href="#s1" title="Source 1">1</a></sup> follow the principal reported figures and link directly to the numbered source below. They are applied where a specific published figure is being relied on; they are deliberately <em>not</em> applied to derived, modelled or judgment material, which by definition has no source other than this document's own analysis. If a number in this document carries no citation and no <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span>, <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> or <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span> tag, treat that as an omission worth querying.</p>
+  <p><strong>A note on the new analytical sections.</strong> Sections 06, 15, 17, 19 and 21 — channel economics, the salty snacks case, the FY31 bridge, organisation design and the scenarios — are analysis rather than reportage. Their inputs are the reported figures cited elsewhere in this document; their outputs are models and recommendations. The section 17 bridge is the source of the ₹42,500 crore target and the two-metric returns proposal now carried in section 12; where the bridge revised an earlier figure, section 12 states what changed and why rather than quietly substituting the new number.</p>
   <p>Named companies in the M&amp;A section are drawn from public information and illustrate archetypes. Their inclusion implies nothing about availability, valuation or any process.</p>
 
   <h3>Sources</h3>
@@ -2989,7 +3149,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     btn(c,'Growth above 10%',false,function(){filt(function(d){return d.g>10;});});
     btn(c,'Margin above 40%',false,function(){filt(function(d){return d.gm>=40;});});
 
-    H('p',{class:'chnote',html:'Bubble area is proportional to category size. The salty snacks figure is as cited in the table above; other category sizes are indicative estimates assembled for this chart, and growth and margin bands are the analytical judgments set out in the table. <span class="est">Modelled</span> <span class="est">Judgment</span>'},host);
+    H('p',{class:'chnote',html:'Bubble area is proportional to category size. The salty snacks figure is as cited in the table above; other category sizes are indicative estimates assembled for this chart, and growth and margin bands are the analytical judgments set out in the table. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span>'},host);
   }
 
   /* ================= 2. competitive benchmark ================= */
@@ -3128,7 +3288,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     btn(c,'Quick commerce',false,function(){waterfall('qc');});
     btn(c,'D2C',false,function(){waterfall('d2c');});
     compare();
-    H('p',{class:'chnote',html:'Illustrative channel P&amp;L for a representative packaged food SKU, as set out in the table above. The relative ranking is robust; absolute values differ by category and negotiated terms. <span class="est">Modelled</span>'},host);
+    H('p',{class:'chnote',html:'Illustrative channel P&amp;L for a representative packaged food SKU, as set out in the table above. The relative ranking is robust; absolute values differ by category and negotiated terms. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span>'},host);
   }
 
   /* ================= 4. portfolio evolution ================= */
@@ -3175,7 +3335,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     });
     var nl=E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(40660),y2:y(40660),stroke:'var(--rust)','stroke-dasharray':'5 4'},svg);
     E('text',{class:'ax-tick',x:W-mr-2,y:y(40660)-6,'text-anchor':'end',fill:'var(--rust)'},svg).textContent='Nestlé FY31 ≈ 40.7k';
-    H('p',{class:'chnote',html:'Base case from the section 17 model. The dashed line is Nestlé India’s projected FY31 domestic revenue — the bar leadership has to clear. <span class="est">Modelled</span>'},host);
+    H('p',{class:'chnote',html:'Base case from the section 17 model. The dashed line is Nestlé India’s projected FY31 domestic revenue — the bar leadership has to clear. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span>'},host);
   }
 
   /* ---------- build on demand, since chapters start collapsed ---------- */
@@ -3209,6 +3369,36 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   window.addEventListener('hashchange',function(){ setTimeout(buildAll,140); });
   window.addEventListener('beforeprint',forceAll);
   setTimeout(buildAll,150);
+})();
+
+/* ---------- decision log filter ---------- */
+(function(){
+  var bar=document.getElementById("decfilter"), tbl=document.getElementById("dectable");
+  if(!bar||!tbl) return;
+  var rows=[].slice.call(tbl.querySelectorAll("tbody tr"));
+  var FILTERS=[
+    ["All 14 decisions", function(){return true;}],
+    ["Board decisions", function(r){return r.dataset.owner==="board";}],
+    ["Executive committee", function(r){return r.dataset.owner!=="board";}],
+    ["First 90 days", function(r){return ["m1","m2","m3"].indexOf(r.dataset.when)>-1;}]
+  ];
+  FILTERS.forEach(function(f,i){
+    var b=document.createElement("button");
+    b.type="button"; b.textContent=f[0];
+    b.setAttribute("aria-pressed", i===0?"true":"false");
+    b.addEventListener("click",function(){
+      [].slice.call(bar.querySelectorAll("button")).forEach(function(x){x.setAttribute("aria-pressed","false");});
+      b.setAttribute("aria-pressed","true");
+      var n=0;
+      rows.forEach(function(r){ var on=f[1](r); r.style.display=on?"":"none"; if(on)n++; });
+      var c=document.getElementById("deccount");
+      if(c) c.textContent=n+" shown";
+    });
+    bar.appendChild(b);
+  });
+  var c=document.createElement("span");
+  c.className="cl"; c.id="deccount"; c.style.marginLeft="auto"; c.textContent="14 shown";
+  bar.appendChild(c);
 })();
 </script>
 
