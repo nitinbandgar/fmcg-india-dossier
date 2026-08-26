@@ -385,6 +385,56 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .scen dt{font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); padding-top:3px; white-space:nowrap;}
 .scen dd{margin:0; font-family:"IBM Plex Sans",sans-serif; font-size:14.2px; line-height:1.5;}
 
+/* ---------- charts ---------- */
+.chart{border:1px solid var(--line-2); border-radius:8px; background:var(--surface); margin:26px 0; overflow:hidden;}
+.chart > header{padding:14px 18px 12px; background:var(--surface-2); border-bottom:1px solid var(--line);}
+.chart > header .ch-t{font-family:"IBM Plex Sans",sans-serif; font-size:15.5px; font-weight:600; margin:0 0 3px; letter-spacing:-.012em;}
+.chart > header .ch-s{font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; color:var(--ink-3); margin:0; max-width:78ch;}
+.chartbody{padding:18px 16px 6px; position:relative;}
+.chart svg{width:100%; height:auto; display:block; overflow:visible;}
+.chartctl{display:flex; gap:7px; flex-wrap:wrap; padding:11px 16px; border-top:1px solid var(--line); background:var(--surface-2); align-items:center;}
+.chartctl .cl{font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-4); margin-right:2px;}
+.chartctl button{
+  background:var(--surface); border:1px solid var(--line-2); color:var(--ink-2); border-radius:5px;
+  padding:6px 10px; cursor:pointer; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+}
+.chartctl button:hover{border-color:var(--accent-line); color:var(--accent);}
+.chartctl button[aria-pressed=true]{background:var(--accent-soft); border-color:var(--accent-line); color:var(--accent); font-weight:600;}
+.chnote{font-family:"IBM Plex Sans",sans-serif; font-size:11.8px; color:var(--ink-3); padding:0 18px 13px; margin:0; line-height:1.5;}
+.legend{display:flex; gap:15px; flex-wrap:wrap; padding:2px 18px 14px; font-family:"IBM Plex Sans",sans-serif; font-size:11.8px; color:var(--ink-3);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend i{width:10px; height:10px; border-radius:50%; display:inline-block;}
+.lg-absent{background:var(--rust);} .lg-toe{background:var(--amber);}
+.lg-strong{background:var(--accent);} .lg-lead{background:var(--accent-2);}
+
+/* svg primitives, styled via CSS so they follow the theme */
+.ax-line{stroke:var(--line-2); stroke-width:1; fill:none;}
+.ax-grid{stroke:var(--line); stroke-width:1; stroke-dasharray:2 5; fill:none;}
+.ax-lab{fill:var(--ink-4); font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.13em; text-transform:uppercase;}
+.ax-tick{fill:var(--ink-4); font-family:"IBM Plex Mono",monospace; font-size:9.5px;}
+.pt-lab{fill:var(--ink-2); font-family:"IBM Plex Sans",sans-serif; font-size:10.5px;}
+.pt-lab.me{fill:var(--accent); font-weight:600;}
+.bub{cursor:pointer; transition:opacity .15s;}
+.bub circle{stroke:var(--surface); stroke-width:1.5;}
+.bub.dim{opacity:.16;}
+.bub.sel circle{stroke:var(--ink); stroke-width:2.5;}
+.f-absent{fill:var(--rust); fill-opacity:.62;} .f-toe{fill:var(--amber); fill-opacity:.62;}
+.f-strong{fill:var(--accent); fill-opacity:.62;} .f-lead{fill:var(--accent-2); fill-opacity:.72;}
+.bar-r{fill:var(--accent);} .bar-neg{fill:var(--rust);} .bar-mut{fill:var(--ink-4);}
+.bar-core{fill:var(--ink-4);} .bar-growth{fill:var(--accent);} .bar-acq{fill:var(--accent-2);} .bar-intl{fill:var(--amber);}
+.seg-lab{fill:var(--surface); font-family:"IBM Plex Mono",monospace; font-size:9.5px; font-weight:600;}
+.tip{
+  position:absolute; pointer-events:none; opacity:0; transition:opacity .12s; z-index:30;
+  background:var(--surface); border:1px solid var(--line-2); border-radius:7px; padding:10px 12px;
+  box-shadow:var(--shadow); font-family:"IBM Plex Sans",sans-serif; font-size:12.4px; line-height:1.45;
+  max-width:250px; color:var(--ink);
+}
+.tip.on{opacity:1;}
+.tip b{display:block; font-size:13px; margin-bottom:4px;}
+.tip dl{display:grid; grid-template-columns:auto auto; gap:2px 12px; margin:5px 0 0;}
+.tip dt{color:var(--ink-3); font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; align-self:center;}
+.tip dd{margin:0; text-align:right; font-variant-numeric:tabular-nums; font-weight:600;}
+
 /* ---------- rail collapse ---------- */
 .railbtn{
   background:var(--surface-2); border:1px solid var(--line); color:var(--ink-3);
@@ -733,6 +783,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <p class="tnote wrap">Size and growth figures are drawn from public market reports and company disclosures cited in Sources; gross margin bands and "structure" assessments are analytical judgment. <span class="est">Judgment</span></p>
 
   <div class="wrap">
+
+  <div class="chart" id="chartPools"></div>
   <div class="pull">
     <span class="plab">Read this table twice</span>
     <p>Every category in which Tata Consumer is currently strong except spices has structural growth below 6%. Every category with structural growth above 10% is one where you are either sub-scale or absent. That single observation is the strategic problem of this company.</p>
@@ -961,6 +1013,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   </table>
   </div>
   <p class="tnote wrap">Illustrative channel P&amp;L for a representative packaged food SKU, built from typical Indian FMCG trade-margin and cost-to-serve structures. Not Tata Consumer's disclosed figures, which are not published at this granularity. The <em>relative</em> ranking is robust; the absolute values will differ by category and by negotiated terms. <span class="est">Modelled</span></p>
+  <div class="chart" id="chartChan"></div>
+
 
   <div class="wrap">
   <div class="pull warnbox">
@@ -1035,6 +1089,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <p class="tnote wrap">Figures as reported for the year ended March 2026 (Amul brand turnover is a calendar-aligned federation figure). Dabur FY26 full-year figures are approximate pending final disclosure. <span class="est">Approximate</span></p>
 
   <div class="wrap">
+
+  <div class="chart" id="chartComp"></div>
   <h3>Margin and returns: the gap that matters</h3>
   <div class="bars">
     <div class="bar"><div class="bl">Nestlé India</div><div class="bt"><div class="bf" style="width:100%"></div></div><div class="bv">~26.0%</div></div>
@@ -1189,6 +1245,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="bar"><div class="bl">This document's<br>recommendation (FY31)</div><div class="bt"><div class="bf" style="width:60%"></div></div><div class="bv">60%</div></div>
   </div>
   <p class="tnote">Growth businesses (Sampann, Capital Foods, Organic India, Soulfull, RTD) as a share of the India business.</p>
+  <div class="chart" id="chartPortfolio"></div>
+
 
   <div class="pull">
     <span class="plab">The reframe</span>
@@ -2819,6 +2877,338 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   });
 
   compute();
+})();
+
+/* ---------- interactive charts ---------- */
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  function E(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+  function H(t,a,p){var e=document.createElement(t);for(var k in a){if(k==='html')e.innerHTML=a[k];else if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}if(p)p.appendChild(e);return e;}
+  function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+
+  function shell(host,title,sub){
+    host.innerHTML='';
+    var hd=H('header',{},host);
+    H('p',{class:'ch-t',text:title},hd);
+    H('p',{class:'ch-s',html:sub},hd);
+    var body=H('div',{class:'chartbody'},host);
+    var tip=H('div',{class:'tip'},body);
+    return {body:body,tip:tip};
+  }
+  function bindTip(node,tip,body,html){
+    node.addEventListener('mouseenter',function(){tip.innerHTML=html;tip.classList.add('on');});
+    node.addEventListener('mousemove',function(ev){
+      var r=body.getBoundingClientRect();
+      var x=ev.clientX-r.left+14, y=ev.clientY-r.top+14;
+      if(x+tip.offsetWidth>r.width) x=ev.clientX-r.left-tip.offsetWidth-12;
+      if(y+tip.offsetHeight>r.height) y=ev.clientY-r.top-tip.offsetHeight-12;
+      tip.style.left=Math.max(0,x)+'px'; tip.style.top=Math.max(0,y)+'px';
+    });
+    node.addEventListener('mouseleave',function(){tip.classList.remove('on');});
+  }
+  function ctlbar(host,label){
+    var c=H('div',{class:'chartctl'},host);
+    if(label) H('span',{class:'cl',text:label},c);
+    return c;
+  }
+  function btn(parent,label,pressed,fn){
+    var b=H('button',{type:'button',text:label},parent);
+    b.setAttribute('aria-pressed',pressed?'true':'false');
+    b.addEventListener('click',function(){
+      [].slice.call(parent.querySelectorAll('button')).forEach(function(x){x.setAttribute('aria-pressed','false');});
+      b.setAttribute('aria-pressed','true'); fn();
+    });
+    return b;
+  }
+
+  /* ================= 1. value pool map ================= */
+  var POOLS=[
+   {n:'Salty snacks & namkeen',size:46571,g:11,gm:40,p:'absent',src:'₹46,571 cr today, past ₹1,01,811 cr by 2033',cited:true},
+   {n:'Value-added dairy',size:60000,g:12,gm:32,p:'absent'},
+   {n:'Biscuits & bakery',size:50000,g:7,gm:37,p:'absent'},
+   {n:'Chocolate & confectionery',size:25000,g:9,gm:50,p:'absent'},
+   {n:'Edible oil',size:150000,g:7,gm:10,p:'absent'},
+   {n:'Spices & condiments',size:35000,g:13.5,gm:45,p:'strong'},
+   {n:'Branded pulses & staples',size:40000,g:17.5,gm:20,p:'strong'},
+   {n:'Coffee (retail + café)',size:9000,g:20,gm:42,p:'strong'},
+   {n:'RTD & carbonates',size:60000,g:15,gm:50,p:'toe'},
+   {n:'Protein & sports nutrition',size:8000,g:21,gm:47,p:'toe'},
+   {n:'Salt',size:12000,g:5,gm:40,p:'lead'},
+   {n:'Packaged tea',size:35000,g:3,gm:35,p:'lead'}
+  ];
+  var PLAB={absent:'Absent',toe:'Sub-scale / toe-hold',strong:'Strong & scaling',lead:'Category leader'};
+
+  function poolChart(host){
+    var s=shell(host,'The value pool map',
+      'Every category Tata Consumer leads sits on the left of this chart, where growth is slow. Every fast-growing pool sits on the right, where it is absent or sub-scale. Bubble area is category size. Hover for detail, or filter below.');
+    var W=760,Hh=430,ml=58,mr=22,mt=18,mb=52;
+    var svg=E('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Category value pools by growth and gross margin'},s.body);
+    var x=function(v){return ml+(v/22)*(W-ml-mr);};
+    var y=function(v){return Hh-mb-((v-5)/50)*(Hh-mt-mb);};
+    var r=function(v){return 6+Math.sqrt(v/150000)*46;};
+
+    for(var gv=0;gv<=20;gv+=5){
+      E('line',{class:'ax-grid',x1:x(gv),x2:x(gv),y1:mt,y2:Hh-mb},svg);
+      E('text',{class:'ax-tick',x:x(gv),y:Hh-mb+16,'text-anchor':'middle'},svg).textContent=gv+'%';
+    }
+    for(var mv=10;mv<=50;mv+=10){
+      E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(mv),y2:y(mv)},svg);
+      E('text',{class:'ax-tick',x:ml-9,y:y(mv)+3.5,'text-anchor':'end'},svg).textContent=mv+'%';
+    }
+    E('line',{class:'ax-line',x1:ml,x2:W-mr,y1:Hh-mb,y2:Hh-mb},svg);
+    E('line',{class:'ax-line',x1:ml,x2:ml,y1:mt,y2:Hh-mb},svg);
+    E('text',{class:'ax-lab',x:W-mr,y:Hh-mb+34,'text-anchor':'end'},svg).textContent='Structural growth →';
+    var yl=E('text',{class:'ax-lab',x:0,y:0,transform:'translate(14,'+(mt+8)+') rotate(-90)','text-anchor':'end'},svg);
+    yl.textContent='← Gross margin';
+
+    var nodes=[];
+    POOLS.slice().sort(function(a,b){return b.size-a.size;}).forEach(function(d){
+      var g=E('g',{class:'bub'},svg);
+      E('circle',{class:'f-'+d.p,cx:x(d.g),cy:y(d.gm),r:r(d.size)},g);
+      var t=E('text',{class:'pt-lab'+(d.p==='lead'||d.p==='strong'?' me':''),x:x(d.g),y:y(d.gm)+r(d.size)+12,'text-anchor':'middle'},svg);
+      t.textContent=d.n.length>26?d.n.slice(0,24)+'…':d.n;
+      bindTip(g,s.tip,s.body,'<b>'+d.n+'</b><dl>'+
+        '<dt>Size</dt><dd>'+inr(d.size)+' cr'+(d.cited?'':' <span style="opacity:.6">est</span>')+'</dd>'+
+        '<dt>Growth</dt><dd>'+d.g+'%</dd>'+
+        '<dt>Gross margin</dt><dd>~'+d.gm+'%</dd>'+
+        '<dt>TCPL</dt><dd>'+PLAB[d.p]+'</dd></dl>'+
+        (d.src?'<div style="margin-top:6px;font-size:11.5px;opacity:.75">'+d.src+'</div>':''));
+      nodes.push({g:g,t:t,d:d});
+    });
+
+    var lg=H('div',{class:'legend'},host);
+    [['lead','Category leader'],['strong','Strong & scaling'],['toe','Sub-scale / toe-hold'],['absent','Absent']].forEach(function(p){
+      H('span',{html:'<i class="lg-'+(p[0]==='lead'?'lead':p[0]==='strong'?'strong':p[0]==='toe'?'toe':'absent')+'"></i>'+p[1]},lg);
+    });
+
+    var c=ctlbar(host,'Filter');
+    function filt(fn){ nodes.forEach(function(o){ var on=fn(o.d); o.g.classList.toggle('dim',!on); o.t.style.opacity=on?'':'0.16'; }); }
+    btn(c,'All categories',true,function(){filt(function(){return true;});});
+    btn(c,'Where TCPL is absent',false,function(){filt(function(d){return d.p==='absent';});});
+    btn(c,'Where TCPL plays',false,function(){filt(function(d){return d.p!=='absent';});});
+    btn(c,'Growth above 10%',false,function(){filt(function(d){return d.g>10;});});
+    btn(c,'Margin above 40%',false,function(){filt(function(d){return d.gm>=40;});});
+
+    H('p',{class:'chnote',html:'Bubble area is proportional to category size. The salty snacks figure is as cited in the table above; other category sizes are indicative estimates assembled for this chart, and growth and margin bands are the analytical judgments set out in the table. <span class="est">Modelled</span> <span class="est">Judgment</span>'},host);
+  }
+
+  /* ================= 2. competitive benchmark ================= */
+  var COMPS=[
+   {n:'Amul (brand)',rev:100000,g:11,eb:null,note:'Cooperative — not profit-maximising'},
+   {n:'AWL Agri',rev:74000,g:null,eb:3.5,note:'Commodity edible oil at scale'},
+   {n:'HUL',rev:63763,g:5,eb:23.6,note:'The margin benchmark'},
+   {n:'ITC (FMCG)',rev:24210,g:10.5,eb:11,note:'Foods past ₹20,000 cr'},
+   {n:'Nestlé India',rev:23071,g:14.9,eb:26,note:'The quality benchmark'},
+   {n:'Reliance Consumer',rev:22000,g:100,eb:0,note:'Price disruptor; growth ~2× off scale'},
+   {n:'Tata Consumer',rev:20290,g:15,eb:13.9,me:true,note:'Best volume growth, worst returns'},
+   {n:'Britannia',rev:19151,g:7.1,eb:18.5,note:'Margin-disciplined, growth-constrained'},
+   {n:'Marico',rev:13611,g:26,eb:19,note:'Fastest growth in 14 years'},
+   {n:'Dabur',rev:13000,g:7,eb:18,note:'Rebuilding growth'}
+  ];
+  function compChart(host){
+    var s=shell(host,'The field, plotted',
+      'The same peer set as the table above, positioned so the gap is visible rather than merely stated. Tata Consumer is marked in green. Switch the view to see scale, growth and margin against each other.');
+    var W=760,Hh=430,ml=62,mr=26,mt=20,mb=54;
+    var svg=E('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Competitive benchmark scatter'},s.body);
+    var AX={
+      rev:{lab:'FY26 revenue (₹ cr)',max:105000,fmt:function(v){return v>=1000?(v/1000)+'k':v;},get:function(d){return d.rev;}},
+      g:{lab:'Revenue growth',max:30,fmt:function(v){return v+'%';},get:function(d){return d.g;}},
+      eb:{lab:'EBITDA margin',max:28,fmt:function(v){return v+'%';},get:function(d){return d.eb;}}
+    };
+    var views=[['Revenue vs margin','rev','eb'],['Growth vs margin','g','eb'],['Revenue vs growth','rev','g']];
+    var g=E('g',{},svg);
+
+    function draw(xk,yk){
+      while(g.firstChild)g.removeChild(g.firstChild);
+      var AXx=AX[xk],AXy=AX[yk];
+      var x=function(v){return ml+Math.min(v,AXx.max)/AXx.max*(W-ml-mr);};
+      var y=function(v){return Hh-mb-Math.min(v,AXy.max)/AXy.max*(Hh-mt-mb);};
+      var i;
+      for(i=0;i<=5;i++){
+        var vx=AXx.max/5*i;
+        E('line',{class:'ax-grid',x1:x(vx),x2:x(vx),y1:mt,y2:Hh-mb},g);
+        E('text',{class:'ax-tick',x:x(vx),y:Hh-mb+16,'text-anchor':'middle'},g).textContent=AXx.fmt(Math.round(vx));
+        var vy=AXy.max/5*i;
+        E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(vy),y2:y(vy)},g);
+        E('text',{class:'ax-tick',x:ml-9,y:y(vy)+3.5,'text-anchor':'end'},g).textContent=AXy.fmt(Math.round(vy));
+      }
+      E('line',{class:'ax-line',x1:ml,x2:W-mr,y1:Hh-mb,y2:Hh-mb},g);
+      E('line',{class:'ax-line',x1:ml,x2:ml,y1:mt,y2:Hh-mb},g);
+      E('text',{class:'ax-lab',x:W-mr,y:Hh-mb+34,'text-anchor':'end'},g).textContent=AXx.lab+' →';
+      E('text',{class:'ax-lab',transform:'translate(14,'+(mt+8)+') rotate(-90)','text-anchor':'end'},g).textContent='← '+AXy.lab;
+
+      COMPS.forEach(function(d){
+        var xv=AXx.get(d), yv=AXy.get(d);
+        if(xv===null||yv===null||xv===undefined||yv===undefined) return;
+        var off=(xv>AXx.max)||(yv>AXy.max);
+        var node=E('g',{class:'bub'},g);
+        E('circle',{class:d.me?'f-lead':'f-strong',cx:x(xv),cy:y(yv),r:d.me?11:8},node);
+        var t=E('text',{class:'pt-lab'+(d.me?' me':''),x:x(xv),y:y(yv)-15,'text-anchor':'middle'},g);
+        t.textContent=d.n+(off?' ↗':'');
+        bindTip(node,s.tip,s.body,'<b>'+d.n+'</b><dl>'+
+          '<dt>Revenue</dt><dd>'+inr(d.rev)+' cr</dd>'+
+          '<dt>Growth</dt><dd>'+(d.g===null?'n/a':(d.g>30?'~2× (off scale)':d.g+'%'))+'</dd>'+
+          '<dt>EBITDA</dt><dd>'+(d.eb===null?'n/a':(d.eb===0?'thin / negative':d.eb+'%'))+'</dd></dl>'+
+          '<div style="margin-top:6px;font-size:11.5px;opacity:.75">'+d.note+'</div>');
+      });
+    }
+    var c=ctlbar(host,'View');
+    views.forEach(function(v,i){ btn(c,v[0],i===0,function(){draw(v[1],v[2]);}); });
+    draw('rev','eb');
+    H('p',{class:'chnote',html:'FY26 figures as disclosed and cited in the benchmark table above. Reliance Consumer’s growth is roughly 2× and sits off the scale; Amul reports no comparable margin as a cooperative. Points at the axis edge are marked ↗.'},host);
+  }
+
+  /* ================= 3. channel economics comparator ================= */
+  var CHAN={
+    gt:{n:'General trade',end:25,recv:'21–30 days',assort:'Narrow, deep',
+        steps:[['Retailer margin',-10],['Distributor margin',-6],['Cost of goods',-49],['Trade schemes',-4],['Listing & visibility',-1],['Merchandising',-1],['Logistics & servicing',-4]]},
+    mt:{n:'Modern trade',end:21,recv:'45–60 days',assort:'Full range',
+        steps:[['Retailer margin',-22],['Cost of goods',-45],['Promotions',-5],['Listing & slotting',-3],['In-store promoter',-2],['Logistics',-2]]},
+    qc:{n:'Quick commerce',end:16,recv:'30–45 days',assort:'10–15% of a supermarket',
+        steps:[['Platform margin',-25],['Cost of goods',-44],['Discount funding',-4],['Listing',-1],['Retail media',-8],['Logistics to dark store',-2]]},
+    d2c:{n:'D2C (own site)',end:13,recv:'Prepaid',assort:'Unlimited',
+        steps:[['Cost of goods',-58],['Promotions',-3],['Customer acquisition',-14],['Shipping & fulfilment',-9],['Payment, returns, RTO',-3]]}
+  };
+  function chanChart(host){
+    var s=shell(host,'Where ₹100 of consumer spend actually goes',
+      'The same P&amp;L as the table above, as a waterfall. Pick a channel and watch ₹100 of consumer spend erode down to what the company keeps — or compare all four side by side.');
+    var W=760,Hh=380,ml=42,mr=22,mt=22,mb=86;
+    var svg=E('svg',{viewBox:'0 0 '+W+' '+Hh},s.body);
+    var g=E('g',{},svg);
+    function y(v){return Hh-mb-(v/100)*(Hh-mt-mb);}
+
+    function waterfall(key){
+      while(g.firstChild)g.removeChild(g.firstChild);
+      var d=CHAN[key], n=d.steps.length+2, bw=(W-ml-mr)/n*0.66, gap=(W-ml-mr)/n;
+      var i,run=100;
+      for(i=0;i<=100;i+=25){
+        E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(i),y2:y(i)},g);
+        E('text',{class:'ax-tick',x:ml-8,y:y(i)+3.5,'text-anchor':'end'},g).textContent=i;
+      }
+      function bar(idx,top,bottom,cls,label,val){
+        var xx=ml+gap*idx+(gap-bw)/2;
+        var node=E('g',{class:'bub'},g);
+        E('rect',{class:cls,x:xx,y:y(top),width:bw,height:Math.max(1.5,y(bottom)-y(top)),rx:2},node);
+        var t=E('text',{class:'ax-tick',x:xx+bw/2,y:Hh-mb+15,'text-anchor':'end',transform:'rotate(-38 '+(xx+bw/2)+' '+(Hh-mb+15)+')'},g);
+        t.textContent=label;
+        bindTip(node,s.tip,s.body,'<b>'+label+'</b><dl><dt>Impact</dt><dd>'+(val>0?'+':'')+val+'</dd><dt>Running</dt><dd>'+bottom.toFixed(0)+'</dd></dl>');
+      }
+      bar(0,100,0,'bar-mut','Consumer pays',100);
+      d.steps.forEach(function(st,i2){
+        var from=run; run+=st[1];
+        bar(i2+1,from,run,'bar-neg',st[0],st[1]);
+      });
+      bar(n-1,run,0,'bar-r','Contribution',d.end);
+      E('text',{class:'pt-lab me',x:ml+gap*(n-1)+gap/2,y:y(run)-9,'text-anchor':'middle'},g).textContent='₹'+d.end;
+      E('text',{class:'ax-lab',x:ml,y:Hh-10},g).textContent=d.n+' · receivables '+d.recv+' · assortment '+d.assort;
+    }
+    function compare(){
+      while(g.firstChild)g.removeChild(g.firstChild);
+      var keys=['gt','mt','qc','d2c'], gap=(W-ml-mr)/keys.length, bw=gap*0.42;
+      var i;
+      for(i=0;i<=100;i+=25){
+        E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(i),y2:y(i)},g);
+        E('text',{class:'ax-tick',x:ml-8,y:y(i)+3.5,'text-anchor':'end'},g).textContent=i;
+      }
+      keys.forEach(function(k,idx){
+        var d=CHAN[k], xx=ml+gap*idx+(gap-bw)/2;
+        var node=E('g',{class:'bub'},g);
+        E('rect',{class:'bar-mut',x:xx,y:y(100),width:bw,height:y(0)-y(100),rx:2,opacity:.22},node);
+        E('rect',{class:k==='gt'?'bar-r':'bar-growth',x:xx,y:y(d.end),width:bw,height:y(0)-y(d.end),rx:2},node);
+        E('text',{class:'pt-lab'+(k==='gt'?' me':''),x:xx+bw/2,y:y(d.end)-9,'text-anchor':'middle'},g).textContent='₹'+d.end;
+        E('text',{class:'ax-tick',x:xx+bw/2,y:Hh-mb+16,'text-anchor':'middle'},g).textContent=d.n;
+        bindTip(node,s.tip,s.body,'<b>'+d.n+'</b><dl><dt>Contribution</dt><dd>₹'+d.end+' per ₹100</dd><dt>Receivables</dt><dd>'+d.recv+'</dd><dt>Assortment</dt><dd>'+d.assort+'</dd></dl>');
+      });
+      E('text',{class:'ax-lab',x:ml,y:Hh-10},g).textContent='Contribution per ₹100 of consumer spend — general trade still pays most';
+    }
+    var c=ctlbar(host,'Channel');
+    btn(c,'Compare all',true,compare);
+    btn(c,'General trade',false,function(){waterfall('gt');});
+    btn(c,'Modern trade',false,function(){waterfall('mt');});
+    btn(c,'Quick commerce',false,function(){waterfall('qc');});
+    btn(c,'D2C',false,function(){waterfall('d2c');});
+    compare();
+    H('p',{class:'chnote',html:'Illustrative channel P&amp;L for a representative packaged food SKU, as set out in the table above. The relative ranking is robust; absolute values differ by category and negotiated terms. <span class="est">Modelled</span>'},host);
+  }
+
+  /* ================= 4. portfolio evolution ================= */
+  function portfolioChart(host){
+    var s=shell(host,'The portfolio, FY26 to FY31',
+      'How the revenue base changes shape under the base case in section 17 — core India compounding at 5%, the growth portfolio at 28%, non-branded divested by FY28, and one acquisition landing that year. Hover any band for the numbers.');
+    var W=760,Hh=380,ml=52,mr=120,mt=20,mb=44;
+    var svg=E('svg',{viewBox:'0 0 '+W+' '+Hh},s.body);
+    var years=['FY26','FY27','FY28','FY29','FY30','FY31'];
+    var core=[],growth=[],intl=[],nonbr=[],acq=[];
+    for(var t=0;t<6;t++){
+      core.push(8990*Math.pow(1.05,t));
+      growth.push(4000*Math.pow(1.28,t));
+      intl.push(4900*Math.pow(1.05,t));
+      nonbr.push(t<2?2400:0);
+      acq.push(t<2?0:(15000/3.5)*Math.pow(1.25,t-2));
+    }
+    var max=45000;
+    function y(v){return Hh-mb-(v/max)*(Hh-mt-mb);}
+    var gap=(W-ml-mr)/years.length, bw=gap*0.56;
+    for(var gv=0;gv<=45000;gv+=15000){
+      E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(gv),y2:y(gv)},svg);
+      E('text',{class:'ax-tick',x:ml-8,y:y(gv)+3.5,'text-anchor':'end'},svg).textContent=(gv/1000)+'k';
+    }
+    E('line',{class:'ax-line',x1:ml,x2:W-mr,y1:Hh-mb,y2:Hh-mb},svg);
+    var bands=[['bar-core','Core India',core],['bar-growth','Growth portfolio',growth],['bar-acq','Acquired',acq],['bar-intl','International',intl],['bar-mut','Non-branded',nonbr]];
+    years.forEach(function(yr,i){
+      var xx=ml+gap*i+(gap-bw)/2, run=0, total=core[i]+growth[i]+intl[i]+nonbr[i]+acq[i];
+      bands.forEach(function(b){
+        var v=b[2][i]; if(v<=0) return;
+        var node=E('g',{class:'bub'},svg);
+        E('rect',{class:b[0],x:xx,y:y(run+v),width:bw,height:Math.max(1,y(run)-y(run+v)),rx:1.5},node);
+        bindTip(node,s.tip,s.body,'<b>'+b[1]+' · '+yr+'</b><dl><dt>Revenue</dt><dd>'+inr(v)+' cr</dd><dt>Share</dt><dd>'+(v/total*100).toFixed(0)+'%</dd><dt>Total</dt><dd>'+inr(total)+' cr</dd></dl>');
+        run+=v;
+      });
+      E('text',{class:'ax-tick',x:xx+bw/2,y:Hh-mb+16,'text-anchor':'middle'},svg).textContent=yr;
+      E('text',{class:'pt-lab'+(i===5?' me':''),x:xx+bw/2,y:y(total)-8,'text-anchor':'middle'},svg).textContent=(total/1000).toFixed(1)+'k';
+    });
+    var ly=mt+10;
+    bands.forEach(function(b){
+      E('rect',{class:b[0],x:W-mr+8,y:ly-9,width:11,height:11,rx:2},svg);
+      E('text',{class:'pt-lab',x:W-mr+25,y:ly},svg).textContent=b[1];
+      ly+=21;
+    });
+    var nl=E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(40660),y2:y(40660),stroke:'var(--rust)','stroke-dasharray':'5 4'},svg);
+    E('text',{class:'ax-tick',x:W-mr-2,y:y(40660)-6,'text-anchor':'end',fill:'var(--rust)'},svg).textContent='Nestlé FY31 ≈ 40.7k';
+    H('p',{class:'chnote',html:'Base case from the section 17 model. The dashed line is Nestlé India’s projected FY31 domestic revenue — the bar leadership has to clear. <span class="est">Modelled</span>'},host);
+  }
+
+  /* ---------- build on demand, since chapters start collapsed ---------- */
+  var BUILDERS={chartPools:poolChart,chartComp:compChart,chartChan:chanChart,chartPortfolio:portfolioChart};
+  var built={};
+  function build(id){
+    if(built[id]) return;
+    var host=document.getElementById(id);
+    if(!host||!host.offsetParent) return;
+    try{ BUILDERS[id](host); built[id]=true; }catch(e){ }
+  }
+  function buildAll(){ Object.keys(BUILDERS).forEach(build); }
+  function forceAll(){
+    Object.keys(BUILDERS).forEach(function(id){
+      if(built[id]) return;
+      var host=document.getElementById(id);
+      if(host){ try{ BUILDERS[id](host); built[id]=true; }catch(e){} }
+    });
+  }
+  /* build each chart the moment its chapter and tab actually become visible */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) build(e.target.id); });
+    },{rootMargin:'300px 0px'});
+    Object.keys(BUILDERS).forEach(function(id){
+      var el=document.getElementById(id); if(el) io.observe(el);
+    });
+  }
+  /* fallbacks: any chapter toggle or tab switch, and printing needs them all */
+  document.addEventListener('click',function(){ setTimeout(buildAll,80); });
+  window.addEventListener('hashchange',function(){ setTimeout(buildAll,140); });
+  window.addEventListener('beforeprint',forceAll);
+  setTimeout(buildAll,150);
 })();
 </script>
 
