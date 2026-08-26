@@ -67,7 +67,7 @@ h1,h2,h3,h4,h5,.sans{font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFon
 .mono,code,th,.tag,.kpi-lab,.eyebrow,.num{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;}
 
 /* ---------- shell ---------- */
-.shell{display:grid; grid-template-columns:1fr; max-width:1500px; margin:0 auto;}
+.shell{display:grid; grid-template-columns:1fr; max-width:1840px; margin:0 auto;}
 @media(min-width:1120px){
   .shell{grid-template-columns:274px minmax(0,1fr); gap:0;}
 }
@@ -121,29 +121,29 @@ h1,h2,h3,h4,h5,.sans{font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFon
 main{padding:0 20px 120px; min-width:0;}
 @media(min-width:760px){ main{padding:0 46px 140px;} }
 @media(min-width:1120px){ main{padding:0 60px 160px;} }
-.wrap{max-width:830px;}
-.wide{max-width:1080px;}
+.wrap{max-width:1240px;}
+.wide{max-width:1480px;}
 
 section{padding-top:62px; scroll-margin-top:80px;}
 @media(min-width:1120px){ section{scroll-margin-top:24px;} }
 
 /* ---------- masthead ---------- */
-.masthead{padding:64px 0 8px; border-bottom:1px solid var(--line);}
+.masthead{padding:22px 0 2px;}
 .masthead .eyebrow{
   font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--accent); font-weight:600; display:block; margin-bottom:20px;
+  color:var(--accent); font-weight:600; display:block; margin-bottom:10px;
 }
 .masthead h1{
-  font-size:clamp(38px,6.6vw,68px); line-height:1.02; letter-spacing:-.033em;
-  font-weight:600; margin:0 0 22px; text-wrap:balance; max-width:16ch;
+  font-size:clamp(27px,3.1vw,41px); line-height:1.06; letter-spacing:-.028em;
+  font-weight:600; margin:0 0 9px; text-wrap:balance; max-width:none;
 }
 .masthead .dek{
-  font-size:clamp(18px,2.1vw,21.5px); line-height:1.5; color:var(--ink-2);
-  max-width:62ch; margin:0 0 34px;
+  font-size:clamp(14px,1.35vw,16.5px); line-height:1.45; color:var(--ink-2);
+  max-width:96ch; margin:0 0 13px;
 }
 .credits{
-  display:flex; flex-wrap:wrap; gap:0 34px; row-gap:14px; padding:0 0 34px;
-  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.04em; color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:0 28px; row-gap:9px; padding:0 0 13px;
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.04em; color:var(--ink-3);
 }
 .credits b{display:block; color:var(--ink-4); font-weight:500; font-size:9.5px; letter-spacing:.15em; text-transform:uppercase; margin-bottom:4px;}
 
@@ -168,12 +168,12 @@ h4{
   font-size:15.5px; line-height:1.35; letter-spacing:-.008em; font-weight:600;
   margin:28px 0 9px;
 }
-.standfirst{font-size:19.5px; line-height:1.55; color:var(--ink-2); max-width:60ch; margin:0 0 12px;}
-p{margin:0 0 17px; max-width:70ch;}
+.standfirst{font-size:19.5px; line-height:1.55; color:var(--ink-2); max-width:none; margin:0 0 12px;}
+p{margin:0 0 17px; max-width:none;}
 main a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px;}
 strong{font-weight:600; color:var(--ink);}
 em{font-style:italic;}
-ul,ol{max-width:70ch; padding-left:22px; margin:0 0 18px;}
+ul,ol{max-width:none; padding-left:22px; margin:0 0 18px;}
 li{margin-bottom:9px;}
 li::marker{color:var(--ink-4);}
 hr{border:none; border-top:1px solid var(--line); margin:40px 0;}
@@ -209,7 +209,7 @@ hr{border:none; border-top:1px solid var(--line); margin:40px 0;}
 
 .pull{
   border-left:3px solid var(--accent); background:var(--accent-soft);
-  padding:18px 22px; border-radius:0 6px 6px 0; margin:26px 0; max-width:74ch;
+  padding:18px 22px; border-radius:0 6px 6px 0; margin:26px 0; max-width:none;
 }
 .pull p{margin:0; font-size:18.5px; line-height:1.5;}
 .pull p + p{margin-top:12px;}
@@ -245,7 +245,7 @@ tr.me td:first-child{font-weight:600;}
 .bar .bv{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-2); text-align:right; font-variant-numeric:tabular-nums;}
 @media(max-width:560px){ .bar{grid-template-columns:1fr; gap:4px;} .bar .bv{text-align:left;} }
 
-.steps{counter-reset:s; list-style:none; padding:0; margin:24px 0; max-width:74ch;}
+.steps{counter-reset:s; list-style:none; padding:0; margin:24px 0; max-width:none;}
 .steps > li{
   counter-increment:s; position:relative; padding-left:44px; margin-bottom:22px;
 }
@@ -289,7 +289,7 @@ tr.me td:first-child{font-weight:600;}
 .q-s .qh{color:var(--accent);} .q-w .qh{color:var(--rust);}
 .q-o .qh{color:var(--accent);} .q-t .qh{color:var(--amber);}
 
-.tl{border-left:2px solid var(--line-2); padding-left:24px; margin:26px 0; max-width:74ch;}
+.tl{border-left:2px solid var(--line-2); padding-left:24px; margin:26px 0; max-width:none;}
 .tl .tli{position:relative; margin-bottom:28px;}
 .tl .tli::before{content:""; position:absolute; left:-31px; top:7px; width:9px; height:9px; border-radius:50%; background:var(--accent); border:2px solid var(--paper);}
 .tl .tlh{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; font-weight:600;}
@@ -389,7 +389,7 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .chart{border:1px solid var(--line-2); border-radius:8px; background:var(--surface); margin:26px 0; overflow:hidden;}
 .chart > header{padding:14px 18px 12px; background:var(--surface-2); border-bottom:1px solid var(--line);}
 .chart > header .ch-t{font-family:"IBM Plex Sans",sans-serif; font-size:15.5px; font-weight:600; margin:0 0 3px; letter-spacing:-.012em;}
-.chart > header .ch-s{font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; color:var(--ink-3); margin:0; max-width:78ch;}
+.chart > header .ch-s{font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; color:var(--ink-3); margin:0; max-width:none;}
 .chartbody{padding:18px 16px 6px; position:relative;}
 .chart svg{width:100%; height:auto; display:block; overflow:visible;}
 .chartctl{display:flex; gap:7px; flex-wrap:wrap; padding:11px 16px; border-top:1px solid var(--line); background:var(--surface-2); align-items:center;}
@@ -492,6 +492,17 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   padding-top:10px;
 }
 @media(max-width:1119px){ .toolbar{top:53px;} }
+.toolbar::after{
+  content:""; position:absolute; left:0; right:0; bottom:-9px; height:9px;
+  background:linear-gradient(var(--paper),transparent); pointer-events:none;
+}
+/* longer measure needs larger type to stay readable on wide screens */
+@media(min-width:1400px){ body{font-size:18.5px;} .standfirst{font-size:20.5px;} }
+@media(min-width:1750px){ body{font-size:19.5px;} .standfirst{font-size:21.5px;} }
+/* safety valve: on very large monitors stop lines running past ~130 characters */
+@media(min-width:1900px){
+  .cbody p,.cbody li,.chead .standfirst,.masthead .dek{max-width:130ch;}
+}
 .tabbar{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; flex:1 1 auto;}
 .tabbar::-webkit-scrollbar{display:none;}
 .tab{
@@ -521,7 +532,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 .rolebanner button{background:none; border:1px solid var(--accent-line); color:var(--accent); border-radius:5px; padding:4px 9px; cursor:pointer; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;}
 
 /* ---------- panels ---------- */
-.panel{display:none; max-width:1080px;}
+.panel{display:none; max-width:1480px;}
 .panel.on{display:block;}
 .panelhead{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; border-top:2px solid var(--ink); padding-top:14px; margin:20px 0 18px;}
 .peyebrow{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:600; display:block; margin-bottom:4px;}
@@ -556,7 +567,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 .cbody{padding:4px 24px 26px; border-top:1px solid var(--line);}
 .chapter[data-open=false] .cbody{display:none;}
 .cbody > .wrap,.cbody > .wide{max-width:none;}
-.cbody > .wrap p,.cbody > .wrap ul,.cbody > .wrap ol,.cbody > .wrap .standfirst{max-width:70ch;}
+.cbody > .wrap p,.cbody > .wrap ul,.cbody > .wrap ol,.cbody > .wrap .standfirst{max-width:none;}
 .cbody section{padding-top:0;}
 .chapter.offpath{opacity:.45;}
 .chapter.offpath .coff{display:inline-block;}
@@ -1036,7 +1047,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <h3>The ROCE equation you should manage to</h3>
   <p>Return on capital employed decomposes cleanly into three things a CEO can act on:</p>
-  <p class="mono" style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:16px 18px;font-size:14px;max-width:74ch;">ROCE = EBIT margin × (Revenue ÷ Capital Employed)</p>
+  <p class="mono" style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:16px 18px;font-size:14px;max-width:none;">ROCE = EBIT margin × (Revenue ÷ Capital Employed)</p>
   <p>At roughly ₹25,000 crore of capital employed and around ₹2,300 crore of EBIT, you are running a capital turn of about 0.8× and an EBIT margin near 11.4%. Peers with comparable revenue run capital turns of 1.5–3× because they carry far less goodwill and far lighter fixed assets. <strong>Your ROCE problem is at least as much a balance sheet problem as a margin problem</strong> — and no amount of revenue growth fixes it unless the incremental revenue comes at high asset turns.</p>
   </div>
     </div>
