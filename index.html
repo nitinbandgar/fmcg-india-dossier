@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="A CEO's strategy dossier on the Indian FMCG industry and a five-year plan to make Tata Consumer Products India's leading branded food and beverage company.">
-<meta property="og:title" content="The FMCG India Dossier">
+<meta property="og:title" content="The FMCG India Dossier — Tata Consumer Products">
 <meta property="og:description" content="An operator's guide to the Indian FMCG industry and a five-year plan for Tata Consumer Products.">
 <meta property="og:type" content="article">
-<title>The FMCG India Dossier</title>
+<title>The FMCG India Dossier — Tata Consumer Products</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
@@ -128,7 +128,7 @@ section{padding-top:62px; scroll-margin-top:80px;}
 @media(min-width:1120px){ section{scroll-margin-top:24px;} }
 
 /* ---------- masthead ---------- */
-.masthead{padding:22px 0 2px;}
+.masthead{padding:9px 0 1px;}
 .masthead .eyebrow{
   font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
   color:var(--accent); font-weight:600; display:block; margin-bottom:10px;
@@ -138,14 +138,14 @@ section{padding-top:62px; scroll-margin-top:80px;}
   font-weight:600; margin:0 0 9px; text-wrap:balance; max-width:none;
 }
 .masthead .dek{
-  font-size:clamp(14px,1.35vw,16.5px); line-height:1.45; color:var(--ink-2);
-  max-width:96ch; margin:0 0 13px;
+  font-size:clamp(12.5px,1.1vw,14.5px); line-height:1.42; color:var(--ink-3);
+  max-width:none; margin:0 0 8px;
 }
 .credits{
-  display:flex; flex-wrap:wrap; gap:0 28px; row-gap:9px; padding:0 0 13px;
-  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.04em; color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:0 24px; row-gap:5px; padding:0 0 8px;
+  font-family:"IBM Plex Mono",monospace; font-size:9.8px; letter-spacing:.04em; color:var(--ink-3);
 }
-.credits b{display:block; color:var(--ink-4); font-weight:500; font-size:9.5px; letter-spacing:.15em; text-transform:uppercase; margin-bottom:4px;}
+.credits b{display:inline; color:var(--ink-4); font-weight:500; font-size:9.2px; letter-spacing:.13em; text-transform:uppercase; margin-right:7px;}
 
 /* ---------- typography ---------- */
 .parthead{
@@ -319,7 +319,7 @@ sup.cite a{
   line-height:1; white-space:nowrap; border:1px solid transparent;
 }
 sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
-.srclist li{scroll-margin-top:90px;}
+.srclist li{scroll-margin-top:120px;}
 .srclist li:target{background:var(--accent-soft); border-radius:4px; box-shadow:0 0 0 6px var(--accent-soft);}
 .srcnum{font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--accent); font-weight:600; margin-right:5px;}
 .srclist{list-style:none; padding-left:0;}
@@ -444,17 +444,9 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .railbtn:hover{color:var(--accent); border-color:var(--accent-line);}
 #railClose{display:none;}
 @media(min-width:1120px){ #railClose{display:inline-block; margin-top:12px;} }
-.railopen{
-  display:none; position:fixed; left:12px; top:14px; z-index:70;
-  background:var(--surface); border:1px solid var(--line-2); color:var(--ink-2);
-  border-radius:6px; padding:8px 12px; cursor:pointer; box-shadow:var(--shadow);
-  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase;
-}
-.railopen:hover{color:var(--accent); border-color:var(--accent-line);}
 @media(min-width:1120px){
   .shell.railclosed{grid-template-columns:minmax(0,1fr);}
   .shell.railclosed .rail{display:none;}
-  .shell.railclosed ~ .railopen, body.railclosed .railopen{display:block;}
 }
 
 /* ---------- search ---------- */
@@ -488,8 +480,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 .toolbar{
   position:sticky; top:0; z-index:45; background:var(--paper);
   border-bottom:1px solid var(--line); margin:0 0 8px;
-  display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; justify-content:space-between;
-  padding-top:10px;
+  display:flex; flex-direction:column; align-items:stretch; gap:0;
+  padding-top:6px;
 }
 @media(max-width:1119px){ .toolbar{top:53px;} }
 .toolbar::after{
@@ -503,24 +495,44 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 @media(min-width:1900px){
   .cbody p,.cbody li,.chead .standfirst,.masthead .dek{max-width:130ch;}
 }
+/* persistent brand line above the tabs */
+.topline{display:flex; align-items:center; gap:14px; width:100%; padding:0 0 5px; min-width:0;}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; margin-right:auto;}
+.brand-t{
+  font-family:"IBM Plex Sans",sans-serif; font-size:16px; font-weight:600;
+  letter-spacing:-.018em; color:var(--ink); line-height:1.12; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis;
+}
+.brand-s{
+  font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--accent); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+#railOpen{display:none; flex:0 0 auto;}
+@media(min-width:1120px){ body.railclosed #railOpen{display:inline-block;} }
+.tools{flex:0 0 auto;}
+@media(max-width:700px){
+  .brand-s{display:none;}
+  .rolelab{display:none;}
+  .roleselect{max-width:150px; font-size:11.5px; padding:5px 7px;}
+}
 .tabbar{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; flex:1 1 auto;}
 .tabbar::-webkit-scrollbar{display:none;}
 .tab{
   background:none; border:none; border-bottom:2px solid transparent; cursor:pointer;
-  padding:9px 14px 10px; text-align:left; white-space:nowrap; color:var(--ink-3);
+  padding:6px 13px 7px; text-align:left; white-space:nowrap; color:var(--ink-3);
   border-radius:6px 6px 0 0;
 }
-.tab .tsub{display:block; font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-4); margin-bottom:3px;}
-.tab .tlab{display:block; font-family:"IBM Plex Sans",sans-serif; font-size:14.5px; font-weight:600; letter-spacing:-.012em;}
+.tab .tsub{display:block; font-family:"IBM Plex Mono",monospace; font-size:8.4px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-4); margin-bottom:1px;}
+.tab .tlab{display:block; font-family:"IBM Plex Sans",sans-serif; font-size:13.8px; font-weight:600; letter-spacing:-.012em;}
 .tab:hover{background:var(--surface-2); color:var(--ink-2);}
 .tab[aria-selected=true]{color:var(--accent); border-bottom-color:var(--accent); background:var(--surface-2);}
 .tab[aria-selected=true] .tsub{color:var(--accent);}
-.tools{display:flex; gap:10px; align-items:flex-end; padding:0 0 8px;}
+.tools{display:flex; gap:10px; align-items:center;}
 .rolewrap{display:flex; flex-direction:column; gap:4px;}
-.rolelab{font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-4);}
+.rolelab{font-family:"IBM Plex Mono",monospace; font-size:8.4px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-4);}
 .roleselect{
   background:var(--surface); border:1px solid var(--line-2); border-radius:6px;
-  padding:7px 9px; color:var(--ink); font-family:"IBM Plex Sans",sans-serif; font-size:12.6px; cursor:pointer; max-width:230px;
+  padding:5px 8px; color:var(--ink); font-family:"IBM Plex Sans",sans-serif; font-size:12px; cursor:pointer; max-width:220px;
 }
 .roleselect:focus{outline:none; border-color:var(--accent-line);}
 .rolebanner{
@@ -547,7 +559,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 /* ---------- chapters ---------- */
 .chapter{
   border:1px solid var(--line); border-radius:9px; background:var(--surface);
-  margin:0 0 13px; scroll-margin-top:96px; transition:box-shadow .16s;
+  margin:0 0 13px; scroll-margin-top:118px; transition:box-shadow .16s;
 }
 .chapter[data-open=true]{box-shadow:var(--shadow);}
 .chead{padding:20px 24px; cursor:pointer; border-radius:9px;}
@@ -588,7 +600,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   html{font-size:10.2pt;}
   body{background:#fff; color:#000; font-size:10.2pt; line-height:1.45;}
   .rail,.navtoggle,.model .mctl input,.mfoot button,
-  .toolbar,.rolebanner,.chint,.coff,.railopen,.qresults,.navsearchwrap,.pactions{display:none !important;}
+  .toolbar,.rolebanner,.chint,.coff,#railOpen,.qresults,.navsearchwrap,.pactions{display:none !important;}
   .shell{display:block; max-width:none;}
   main{padding:0; max-width:none;}
   .wrap,.wide{max-width:none;}
@@ -661,13 +673,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 <div class="navgroup">Orientation</div><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
   </div>
 </nav>
-<button class="railopen" id="railOpen" title="Show the contents pane">&raquo; Contents</button>
 
 <main>
 
-<header class="masthead wrap">
-  <span class="eyebrow">Strategy Dossier · August 2026 · Executive Committee</span>
-  <h1>The FMCG India Dossier</h1>
+<header class="masthead">
   <p class="dek">An operator's guide to the Indian FMCG industry and a five-year plan to make Tata Consumer Products the country's leading branded food and beverage company.</p>
   <div class="credits">
     <div><b>Prepared for</b>The Executive Committee</div>
@@ -678,24 +687,31 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 </header>
 
 <div class="toolbar" id="toolbar">
-  <div class="tabbar" role="tablist" aria-label="Document parts"><button type="button" role="tab" class="tab" id="tab-p0" data-part="p0" aria-selected="true" aria-controls="pan-p0" tabindex="0"><span class="tsub">Orientation</span><span class="tlab">Start Here</span></button><button type="button" role="tab" class="tab" id="tab-p1" data-part="p1" aria-selected="false" aria-controls="pan-p1" tabindex="-1"><span class="tsub">Part One</span><span class="tlab">The Industry</span></button><button type="button" role="tab" class="tab" id="tab-p2" data-part="p2" aria-selected="false" aria-controls="pan-p2" tabindex="-1"><span class="tsub">Part Two</span><span class="tlab">The Company</span></button><button type="button" role="tab" class="tab" id="tab-p3" data-part="p3" aria-selected="false" aria-controls="pan-p3" tabindex="-1"><span class="tsub">Part Three</span><span class="tlab">The Plan</span></button><button type="button" role="tab" class="tab" id="tab-p4" data-part="p4" aria-selected="false" aria-controls="pan-p4" tabindex="-1"><span class="tsub">Part Four</span><span class="tlab">Execution</span></button><button type="button" role="tab" class="tab" id="tab-p5" data-part="p5" aria-selected="false" aria-controls="pan-p5" tabindex="-1"><span class="tsub">Reference</span><span class="tlab">Sources</span></button></div>
-  <div class="tools">
-    <div class="rolewrap">
-      <label for="role" class="rolelab">Reading path</label>
-      <select id="role" class="roleselect">
-        <option value="all">Everyone — full dossier</option>
-        <option value="ceo">CEO / Managing Director</option>
-        <option value="cfo">CFO &amp; Finance</option>
-        <option value="strategy">Strategy &amp; Corporate Development</option>
-        <option value="cmo">Marketing &amp; Brand</option>
-        <option value="sales">Sales &amp; Commercial</option>
-        <option value="supply">Supply Chain &amp; Operations</option>
-        <option value="rnd">R&amp;D, Innovation &amp; Quality</option>
-        <option value="digital">Digital, Data &amp; AI</option>
-        <option value="chro">HR &amp; Organisation</option>
-      </select>
+  <div class="topline">
+    <button class="railbtn" id="railOpen" title="Show the contents pane">&raquo; Contents</button>
+    <div class="brand">
+      <span class="brand-t">The FMCG India Dossier</span>
+      <span class="brand-s">Tata Consumer Products · Strategy FY27–FY31</span>
+    </div>
+    <div class="tools">
+      <div class="rolewrap">
+        <label for="role" class="rolelab">Reading path</label>
+        <select id="role" class="roleselect">
+          <option value="all">Everyone — full dossier</option>
+          <option value="ceo">CEO / Managing Director</option>
+          <option value="cfo">CFO &amp; Finance</option>
+          <option value="strategy">Strategy &amp; Corporate Development</option>
+          <option value="cmo">Marketing &amp; Brand</option>
+          <option value="sales">Sales &amp; Commercial</option>
+          <option value="supply">Supply Chain &amp; Operations</option>
+          <option value="rnd">R&amp;D, Innovation &amp; Quality</option>
+          <option value="digital">Digital, Data &amp; AI</option>
+          <option value="chro">HR &amp; Organisation</option>
+        </select>
+      </div>
     </div>
   </div>
+  <div class="tabbar" role="tablist" aria-label="Document parts"><button type="button" role="tab" class="tab" id="tab-p0" data-part="p0" aria-selected="true" aria-controls="pan-p0" tabindex="0"><span class="tsub">Orientation</span><span class="tlab">Start Here</span></button><button type="button" role="tab" class="tab" id="tab-p1" data-part="p1" aria-selected="false" aria-controls="pan-p1" tabindex="-1"><span class="tsub">Part One</span><span class="tlab">The Industry</span></button><button type="button" role="tab" class="tab" id="tab-p2" data-part="p2" aria-selected="false" aria-controls="pan-p2" tabindex="-1"><span class="tsub">Part Two</span><span class="tlab">The Company</span></button><button type="button" role="tab" class="tab" id="tab-p3" data-part="p3" aria-selected="false" aria-controls="pan-p3" tabindex="-1"><span class="tsub">Part Three</span><span class="tlab">The Plan</span></button><button type="button" role="tab" class="tab" id="tab-p4" data-part="p4" aria-selected="false" aria-controls="pan-p4" tabindex="-1"><span class="tsub">Part Four</span><span class="tlab">Execution</span></button><button type="button" role="tab" class="tab" id="tab-p5" data-part="p5" aria-selected="false" aria-controls="pan-p5" tabindex="-1"><span class="tsub">Reference</span><span class="tlab">Sources</span></button></div>
 </div>
 <div class="rolebanner" id="rolebanner" hidden></div>
 
