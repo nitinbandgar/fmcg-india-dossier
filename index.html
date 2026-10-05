@@ -422,6 +422,27 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .f-strong{fill:var(--accent); fill-opacity:.62;} .f-lead{fill:var(--accent-2); fill-opacity:.72;}
 .bar-r{fill:var(--accent);} .bar-neg{fill:var(--rust);} .bar-mut{fill:var(--ink-4);}
 .bar-core{fill:var(--ink-4);} .bar-growth{fill:var(--accent);} .bar-acq{fill:var(--accent-2);} .bar-intl{fill:var(--amber);}
+
+/* ---------- October 2026 additions: explorer, sortable tables ---------- */
+.bar-nb{fill:var(--rust); fill-opacity:.62;}
+.legend i.sw{border-radius:3px; flex:none;}
+.legend i.bar-growth{background:var(--accent);} .legend i.bar-intl{background:var(--amber);}
+.legend i.bar-core,.legend i.bar-mut{background:var(--ink-4);} .legend i.bar-nb{background:var(--rust); opacity:.62;}
+.segdetail{padding:14px 16px 6px; border-top:1px solid var(--line);}
+.segdetail .kpi{padding:13px 14px;}
+.segdetail .kpi .kpi-val{font-size:24px;}
+.segdl{display:grid; grid-template-columns:150px 1fr; gap:7px 16px; margin:14px 2px 8px; font-family:"IBM Plex Sans",sans-serif; font-size:13.4px; line-height:1.45;}
+.segdl dt{font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); padding-top:3px;}
+.segdl dd{margin:0; color:var(--ink-2);}
+@media(max-width:620px){ .segdl{grid-template-columns:1fr; gap:2px;} .segdl dd{margin-bottom:8px;} }
+.bub:focus{outline:none;}
+.bub:focus-visible rect[class]{stroke:var(--ink); stroke-width:1.5;}
+th.sorth{cursor:pointer; user-select:none;}
+th.sorth:hover,th.sorth:focus-visible{color:var(--accent); outline:none;}
+th.sorth::after{content:" \2195"; opacity:.35;}
+th.sorth[aria-sort=ascending]::after{content:" \25B2"; opacity:.9;}
+th.sorth[aria-sort=descending]::after{content:" \25BC"; opacity:.9;}
+@media print{ th.sorth::after{content:"";} }
 .seg-lab{fill:var(--surface); font-family:"IBM Plex Mono",monospace; font-size:9.5px; font-weight:600;}
 .tip{
   position:absolute; pointer-events:none; opacity:0; transition:opacity .12s; z-index:30;
@@ -670,7 +691,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <input type="search" id="q" class="navsearch" placeholder="Search the dossier…" autocomplete="off" aria-label="Search the dossier">
       <div class="qresults" id="qres" hidden></div>
     </div>
-<div class="navgroup">Orientation</div><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
+<div class="navgroup">Orientation</div><a href="#whatsnew" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>NEW</span><span>What Changed — October 2026</span></a><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#segments" data-part="p2" data-roles="ceo cfo strategy cmo sales"><span>09A</span><span>Segment Explorer</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
   </div>
 </nav>
 
@@ -680,7 +701,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <p class="dek">An operator's guide to the Indian FMCG industry and a five-year plan to make Tata Consumer Products the country's leading branded food and beverage company.</p>
   <div class="credits">
     <div><b>Prepared for</b>The Executive Committee</div>
-    <div><b>Data through</b>Q1 FY27 (June 2026)</div>
+    <div><b>Data through</b>Q1 FY27 · updated 5 Oct 2026</div>
     <div><b>Horizon</b>FY27 – FY31</div>
     <div><b>Basis</b>Public filings &amp; analysis</div>
   </div>
@@ -718,6 +739,50 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 <div class="panel" id="pan-p0" role="tabpanel" aria-labelledby="tab-p0" tabindex="0">
   <div class="panelhead"><span class="peyebrow">Orientation</span><h3 class="ptitle">Start Here</h3><div class="pactions"><button type="button" class="expandall" data-part="p0">Expand all</button><button type="button" class="collapseall" data-part="p0">Collapse all</button></div></div>
 
+<section id="whatsnew" class="chapter" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="true">
+  <div class="chead" role="button" tabindex="0" aria-expanded="true" aria-controls="body-whatsnew">
+    <div class="cmeta"><span class="cnum">NEW</span><span class="coff">Not in this reading path</span></div>
+    <h2>What Changed — October 2026 Update</h2>
+    <p class="standfirst">This edition replaces estimates with audited segment disclosures from the FY26 annual report, adds the latest quarter for Tata Consumer and eight peers, and brings in NielsenIQ's read of the consumer to June 2026. Nine things changed. Three of them matter for the plan.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-whatsnew">
+    <div class="wide">
+
+  <div class="grid g4">
+    <div class="kpi hi"><span class="kpi-lab">India segment EBIT margin</span><div class="kpi-val">11.8<small>%</small></div><div class="kpi-sub">FY26, up from 9.1% — reported<sup class="cite"><a href="#s33" title="Source 33">33</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">International EBIT margin</span><div class="kpi-val">11.9<small>%</small></div><div class="kpi-sub">FY26, down from 14.7% — coffee costs and US tariffs</div></div>
+    <div class="kpi lo"><span class="kpi-lab">FMCG market volume</span><div class="kpi-val">−2.0<small>%</small></div><div class="kpi-sub">Apr–Jun 2026, NIQ; rural −5%<sup class="cite"><a href="#s51" title="Source 51">51</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">Nestlé India Q1 FY27</span><div class="kpi-val">+25<small>%</small></div><div class="kpi-sub">Revenue growth vs Tata Consumer +12%<sup class="cite"><a href="#s42" title="Source 42">42</a></sup></div></div>
+  </div>
+
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>#</th><th>What changed</th><th>Previous edition</th><th>Now</th><th>Effect on the plan</th></tr></thead>
+    <tbody>
+      <tr class="me"><td class="n">1</td><td><strong>The race got harder</strong></td><td>Nestlé India compounding ~12% to ₹40,660 cr by FY31</td><td>Nestlé grew revenue 25% in Q1 FY27 with EBITDA margin up 250bps to 24.1%<sup class="cite"><a href="#s42" title="Source 42">42</a></sup> — partly a weak base (Q1 FY26 profit fell 12%)</td><td>If Nestlé's FY27 lands at +18% and it compounds at 12% after that, the FY31 bar rises to <strong>~₹42,800 cr</strong> and the base-case gap widens from ~₹800 cr to <strong>~₹3,000 cr</strong>. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> See <a href="#ambition">§12</a>.</td></tr>
+      <tr class="me"><td class="n">2</td><td><strong>Segment returns are now visible</strong></td><td>Group ROCE only (9.2%)</td><td>Audited segment note: pre-tax return on segment capital is India <strong>11.2%</strong>, International <strong>9.0%</strong>, Non-branded <strong>11.4%</strong><sup class="cite"><a href="#s33" title="Source 33">33</a></sup> <span class="est" title="Derived estimate — calculated from disclosed figures, not lifted from a filing" tabindex="0" role="note">Derived</span></td><td>No segment clears the ~14.7% pre-tax equivalent of an 11% WACC. International is the weakest return in the group, which sharpens the UK review in <a href="#bu">§10</a>.</td></tr>
+      <tr class="me"><td class="n">3</td><td><strong>The market shrank while the leaders grew</strong></td><td>"Demand has turned"; rural outperforming</td><td>NIQ Apr–Jun 2026: value +0.8%, volume −2%, rural volume −5%, 68% of categories in decline<sup class="cite"><a href="#s51" title="Source 51">51</a></sup>. Listed leaders grew 10–25%.</td><td>Share is moving to organised players, but the tailwind is gone. Force 1 and Force 2 in <a href="#forces">§02</a> carry updates; the consumer dashboard in <a href="#consumer">§04</a> has the detail.</td></tr>
+      <tr><td class="n">4</td><td>India split</td><td>Estimated: Foods ~₹7,300 cr, Beverages ~₹5,600 cr</td><td>Reported: Foods ₹6,588 cr (+18%), Beverages ₹6,467 cr (+8%, now includes Organic India)<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td><td>The combined India target is unaffected. The Foods mandate in <a href="#functions">§18</a> now implies ~27% CAGR rather than ~25%; Beverages ~15% rather than ~18%.</td></tr>
+      <tr><td class="n">5</td><td>Salt is bigger than estimated</td><td>~₹2,500–3,000 cr</td><td>Crossed <strong>₹4,000 cr</strong> (+14%); share +100bps to ~39%<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s38" title="Source 38">38</a></sup></td><td>The core is a larger cash engine than the previous edition assumed.</td></tr>
+      <tr><td class="n">6</td><td>Non-branded was not declining</td><td>"Declining"</td><td>Grew 25% in FY26, but segment margin halved from 21.3% to 11.8%; Q1 FY27 −7%<sup class="cite"><a href="#s33" title="Source 33">33</a></sup></td><td>The case for separation rests on earnings volatility, not decline. It is stronger, not weaker.</td></tr>
+      <tr><td class="n">7</td><td>Capital Foods</td><td>+40% growth quoted as the trend</td><td>FY26 growth was only <strong>5%</strong> (₹839 cr) before +40% in Q1 FY27. Stake raised to 80% on 1 September 2026<sup class="cite"><a href="#s35" title="Source 35">35</a><a href="#s39" title="Source 39">39</a></sup></td><td>One strong quarter is not a run rate. Keep the ROIC milestone in <a href="#bu">§10</a>.</td></tr>
+      <tr><td class="n">8</td><td>Valuation</td><td>62.9× P/E, ~₹1.04 lakh cr</td><td>₹957 on 1 Oct 2026, near a 52-week low; ~₹94,700 cr market cap; ~58× trailing P/E<sup class="cite"><a href="#s40" title="Source 40">40</a><a href="#s41" title="Source 41">41</a></sup></td><td>Paper is ~8% cheaper as an acquisition currency. <a href="#ma">§14</a> keeps the June arithmetic and notes the change.</td></tr>
+      <tr><td class="n">9</td><td>Input costs turned</td><td>Tea deflation passed through</td><td>Tea procurement inflation 7–10%; West Asia conflict lifted crude-linked packaging, fuel and LPG costs; El Niño and a deficit monsoon<sup class="cite"><a href="#s38" title="Source 38">38</a><a href="#s44" title="Source 44">44</a></sup></td><td>FY27 guidance of 50–70bps margin expansion now depends on pricing taken in June holding.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="wrap">
+  <div class="pull">
+    <span class="plab">New in this edition</span>
+    <p><a href="#segments"><strong>§09A Segment Explorer</strong></a> — drill from the group into every business: revenue, growth, margins, return on capital and market share, all interactive. <a href="#competition"><strong>§07</strong></a> adds a Q1 FY27 scoreboard of nine companies. <a href="#consumer"><strong>§04</strong></a> adds a consumer dashboard built on NielsenIQ data. Benchmark tables now sort when you click a column heading.</p>
+    <p><strong>Next data point:</strong> Tata Consumer's Q2 FY27 results are expected in late October 2026; the trading window closed on 24 September. Marico's Q2 update (double-digit revenue growth, double-digit India volumes) is the only peer read so far<sup class="cite"><a href="#s47" title="Source 47">47</a></sup>.</p>
+  </div>
+  </div>
+    </div>
+  </div>
+</section>
 <section id="summary" class="chapter" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="false">
   <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-summary">
     <div class="cmeta"><span class="cnum">00</span><span class="coff">Not in this reading path</span></div>
@@ -729,7 +794,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wrap">
 
   <ol class="steps">
-    <li><b>You have inherited a growth company with a returns problem.</b> Revenue crossed ₹20,290 crore in FY26, up 15%<sup class="cite"><a href="#s1" title="Source 1">1</a></sup>, with 13% underlying volume growth in the India branded business — genuinely best-in-class. But return on capital employed is <strong>9.2%</strong> against a three-year ROE of 7.5%<sup class="cite"><a href="#s9" title="Source 9">9</a></sup>, while the stock trades at roughly <strong>63× earnings</strong>. At a cost of capital of approximately <strong>11%</strong> — risk-free ~6.75%, equity risk premium ~6%, staples beta ~0.7, negligible debt <span class="est" title="Derived estimate — calculated from stated inputs, not lifted from a filing" tabindex="0" role="note">Derived</span> — a 9.2% ROCE means <strong>the company has been destroying value for three years</strong>, at roughly ₹450 crore a year. The plan's FY31 statutory 13–14% delivers a thin positive spread of about <strong>250bps</strong>. The market is paying a compounder multiple for a business that has not yet cleared its hurdle rate. Closing that gap — not adding revenue — is the single largest source of value you control. <span class="tag go">WACC derived in section 09</span></li>
+    <li><b>You have inherited a growth company with a returns problem.</b> Revenue crossed ₹20,290 crore in FY26, up 15%<sup class="cite"><a href="#s1" title="Source 1">1</a></sup>, with 13% underlying volume growth in the India branded business — genuinely best-in-class. But return on capital employed is <strong>9.2%</strong> against a three-year ROE of 7.5%<sup class="cite"><a href="#s9" title="Source 9">9</a></sup>, while the stock trades at roughly <strong>60× earnings</strong>. At a cost of capital of approximately <strong>11%</strong> — risk-free ~6.75%, equity risk premium ~6%, staples beta ~0.7, negligible debt <span class="est" title="Derived estimate — calculated from stated inputs, not lifted from a filing" tabindex="0" role="note">Derived</span> — a 9.2% ROCE means <strong>the company has been destroying value for three years</strong>, at roughly ₹450 crore a year. The plan's FY31 statutory 13–14% delivers a thin positive spread of about <strong>250bps</strong>. The market is paying a compounder multiple for a business that has not yet cleared its hurdle rate. Closing that gap — not adding revenue — is the single largest source of value you control. <span class="tag go">WACC derived in section 09</span></li>
 
     <li><b>The core is a cash engine in a slow category — which is not the same as a deteriorating business.</b> Tea and salt still generate most of the India profit pool. Salt is superb: ~39% share<sup class="cite"><a href="#s2" title="Source 2">2</a></sup>, five straight quarters of double-digit growth, and a credible path past 40%. Tea reads worse than it is. Volumes grew <strong>2% in a category compounding at under 3%</strong>, which means the business is <em>holding or gaining share</em>; the 4% revenue decline<sup class="cite"><a href="#s3" title="Source 3">3</a></sup> is deflation passed through to consumers in a year when input costs fell — correct pricing behaviour, not lost competitiveness. The real constraint on tea is the category's growth rate, and no amount of execution changes that. <strong>You cannot build a number-one food company on a category growing at 3% — but you must not damage the one you have, because it funds the plan and holds the shelf.</strong> <span class="tag go">Section 13</span></li>
 
@@ -792,7 +857,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <h3>The diagnosis, in five lines</h3>
     <ul>
       <li><strong>Growth is real.</strong> ₹20,290 cr FY26, +15%, on 13% underlying India volume growth — best in the peer set.<sup class="cite"><a href="#s1" title="Source 1">1</a></sup></li>
-      <li><strong>Returns are not.</strong> ROCE 9.2% against an <strong>~11% cost of capital</strong> and a 63× multiple. The business has destroyed value for three years; the market pays for a compounder.<sup class="cite"><a href="#s9" title="Source 9">9</a></sup></li>
+      <li><strong>Returns are not.</strong> ROCE 9.2% against an <strong>~11% cost of capital</strong> and a ~60× multiple. The business has destroyed value for three years; the market pays for a compounder.<sup class="cite"><a href="#s9" title="Source 9">9</a></sup></li>
       <li><strong>The core is ageing.</strong> Tea revenue fell 4% in Q1 FY27 in a category growing under 3%. Salt is excellent but its category grows at 5%.</li>
       <li><strong>The growth portfolio is the company's future.</strong> +47% in Q1 FY27, now 36% of India. It must reach 32% CAGR, not 28%.</li>
       <li><strong>Four of India's largest food profit pools have no Tata presence at all</strong> — salty snacks, value-added dairy, biscuits, chocolate.</li>
@@ -998,10 +1063,12 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <h3>1. Demand has turned, helped by policy</h3>
   <p>After eight quarters of weak volumes, the sector has re-accelerated: Q1 FY27 revenue growth of roughly 15% across the listed set<sup class="cite"><a href="#s13" title="Source 13">13</a></sup>, with volume recovery visible across large, mid and small caps. Two policy actions did most of the work — the income tax relief in the FY26 budget and <strong>GST 2.0</strong>, which from 22 September 2025 collapsed the rate structure<sup class="cite"><a href="#s31" title="Source 31">31</a></sup> into 5% and 18% slabs and cut tax on a wide set of daily essentials. Consumer companies expect the GST benefit to keep supporting demand for several more quarters<sup class="cite"><a href="#s32" title="Source 32">32</a></sup>.</p>
   <p><em>Implication:</em> this is a window, not a new normal. Cyclical tailwinds are the cheapest time to gain share, because competitors mistake market growth for their own performance. Push hard on distribution and A&amp;P now.</p>
+  <div class="pull warnbox"><span class="plab">Update · October 2026 — the window is narrowing</span><p>NielsenIQ's April–June 2026 read is the first hard evidence that the window is closing. All-India FMCG value grew <strong>0.8%</strong> on a <strong>2% volume decline</strong>, and 68% of categories lost volume<sup class="cite"><a href="#s51" title="Source 51">51</a></sup>. The listed set did not see it: Nestlé +25%, Marico +23%, Godrej Consumer +18%, Tata Consumer +12%. Organised players are taking share of a pie that has stopped growing. Costs turned in the same quarter: the West Asia conflict lifted crude-linked packaging, fuel and LPG costs, and El Niño and a deficit monsoon are the watch-outs for the second half<sup class="cite"><a href="#s44" title="Source 44">44</a></sup>. The implication above still holds, and it is more urgent: share gained now is gained from weaker competitors, not from the market.</p></div>
 
   <h3>2. Rural is outperforming urban — a reversal</h3>
   <p>Rural markets have grown ahead of urban for three consecutive quarters. Rural also over-indexes on premium: 51% of premium volume, 42% of super-premium sales. Meanwhile urban consumption is under pressure from household debt at roughly 42% of GDP and elevated cost of living in metros.</p>
   <p><em>Implication:</em> the growth portfolio — Sampann, RTD, Soulfull — has been built for urban and modern-trade first. Rural is a large, under-served opportunity for exactly these brands, and it needs different pack-price architecture, not just wider distribution.</p>
+  <div class="pull warnbox"><span class="plab">Update · October 2026 — rural has turned</span><p>Rural led urban for eight consecutive quarters to December 2025. In April–June 2026 <strong>rural volumes fell 5%</strong> and rural value fell 2.9%, with traditional trade dragging the decline<sup class="cite"><a href="#s51" title="Source 51">51</a></sup>. One quarter is not a trend, but a deficit monsoon makes the next two quarters the test. The rural opportunity is real over the plan period. In FY27, plan rural pack-price moves on the assumption that the consumer is squeezed.</p></div>
 
   <h3>3. K-shaped consumption</h3>
   <p>The middle is hollowing. Premium and super-premium are growing fastest; mass-value is growing on volume with almost no pricing power; mid-market is being squeezed from both ends. HUL's Q1 FY27 is the clearest illustration — premium hair and skin care in double digits, personal care up only 4% and almost entirely on price.</p>
@@ -1086,6 +1153,27 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   </div>
   <div class="cbody" id="body-consumer">
     <div class="wrap">
+  <h3>The consumer in numbers — the latest NielsenIQ read</h3>
+  <p>Before the six shifts, the state of demand. The most recent quarter of NielsenIQ data, April–June 2026, is the weakest in this dossier's horizon. The market's value growth fell to under 1%, volume went negative, and rural India — the engine of the previous two years — fell hardest. The behavioural shifts below have not reversed. They are now playing out in a market that is not growing.</p>
+
+  <div class="grid g4">
+    <div class="kpi lo"><span class="kpi-lab">Value growth, Apr–Jun 2026</span><div class="kpi-val">+0.8<small>%</small></div><div class="kpi-sub">From +13.9% a year earlier<sup class="cite"><a href="#s51" title="Source 51">51</a><a href="#s54" title="Source 54">54</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">Rural volume</span><div class="kpi-val">−5.0<small>%</small></div><div class="kpi-sub">After eight straight quarters ahead of urban</div></div>
+    <div class="kpi hi"><span class="kpi-lab">E-commerce, top 8 metros</span><div class="kpi-val">21<small>%</small></div><div class="kpi-sub">Of FMCG sales; 7% nationally, 25% in southern metros<sup class="cite"><a href="#s52" title="Source 52">52</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">Categories in decline</span><div class="kpi-val">68<small>%</small></div><div class="kpi-sub">Of FMCG categories lost volume in the quarter</div></div>
+  </div>
+
+  <div class="chart" id="chartPulse"></div>
+  <div class="chart" id="chartShare"></div>
+  <div class="chart" id="chartSlow"></div>
+
+  <div class="pull">
+    <span class="plab">What the numbers mean for Tata Consumer</span>
+    <p><strong>The portfolio is positioned at the resilient end of the slowdown.</strong> Noodles, vermicelli and packaged rice were the least affected categories, and those are Ching's and Sampann territory. Salty snacks and biscuits sat in the middle band; the heavy damage was in home and personal care, where the company does not play. Food held value growth while home and personal care lost 4.3% of volume.</p>
+    <p><strong>But the channel where the growth portfolio over-indexes is the one carrying the market.</strong> E-commerce volume grew 35% and modern trade 17.5% while traditional trade lost four points of share to 81%. A quarter in which rural general trade contracts is a quarter in which the 56% of the business that runs through general trade is under pressure. That is exactly where Tata Tea and Tata Salt are sold.</p>
+  </div>
+
+  <h3 style="margin-top:34px">Six shifts in how India buys food</h3>
 
   <h3>The self-directed health consumer</h3>
   <p>The single largest behavioural change of this decade. Consumers are making health decisions without a doctor, an expert or a brand telling them what to do — reading labels, checking protein grams per serve, avoiding palm oil, counting added sugar. They trust ingredient lists more than advertising claims.</p>
@@ -1262,7 +1350,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <h3 class="wrap">FY26 benchmark: the field at a glance</h3>
   <div class="tablewrap wide">
-  <table>
+  <table class="sortable">
     <thead><tr><th>Company</th><th class="n">FY26 revenue (₹ cr)</th><th class="n">Growth</th><th class="n">EBITDA margin</th><th class="n">Net profit (₹ cr)</th><th>Character</th></tr></thead>
     <tbody>
       <tr><td><strong>Amul (brand)</strong></td><td class="n">1,00,000</td><td class="n">+11%</td><td class="n">n/a (co-op)</td><td class="n">n/a</td><td>Cooperative; structurally unbeatable on scale, not profit-maximising</td></tr>
@@ -1295,6 +1383,38 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="bar"><div class="bl">AWL Agri</div><div class="bt"><div class="bf alt" style="width:13.5%"></div></div><div class="bv">~3.5%</div></div>
   </div>
   <p class="tnote">FY26 EBITDA margin. Bars scaled to Nestlé India at 100%.</p>
+
+  <h3>Q1 FY27: the latest quarter, side by side</h3>
+  <p>The April–June 2026 quarter is the most recent one every company has reported. It changes the picture in one important way. <strong>Nestlé India grew 25% with a 250bps margin expansion</strong>, the strongest quarter in the peer set — on a weak base, but not only because of it. Tata Consumer's 12% is respectable and its 70bps margin gain is real. It is no longer the fastest grower in the set: Nestlé, Marico and Godrej Consumer all grew faster.</p>
+  </div>
+
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Company</th><th class="n">Q1 FY27 revenue (₹ cr)</th><th class="n">YoY growth</th><th class="n">EBITDA margin</th><th class="n">Margin change</th><th class="n">Profit growth</th><th>Volume and notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nestlé India</strong></td><td class="n">6,378</td><td class="n">+25.2%</td><td class="n">24.1%</td><td class="n">+250bps</td><td class="n">+47.9%</td><td>Domestic +25%, volume-led; exports +36%. Q1 FY26 profit had fallen 12%<sup class="cite"><a href="#s42" title="Source 42">42</a></sup></td></tr>
+      <tr><td><strong>Marico</strong></td><td class="n">3,957</td><td class="n">+22.9%</td><td class="n">20.7%</td><td class="n">+36bps</td><td class="n">+27.1%</td><td>India volume +11%, best in 20 quarters; international +15% cc<sup class="cite"><a href="#s46" title="Source 46">46</a></sup></td></tr>
+      <tr><td><strong>Godrej Consumer</strong></td><td class="n">4,225</td><td class="n">+18.3%</td><td class="n">19.0%</td><td class="n">—</td><td class="n">+11.5%</td><td>Underlying volume +9%; LPG costs tripled<sup class="cite"><a href="#s49" title="Source 49">49</a></sup></td></tr>
+      <tr><td><strong>ITC FMCG–Others</strong></td><td class="n">6,688</td><td class="n">+15.3%</td><td class="n">9.4%</td><td class="n">+55bps</td><td class="n">+22% <span class="tag">segment</span></td><td>Consolidated segment; dairy, snacks, noodles 20%+; Yoga Bar consolidated from April 2026<sup class="cite"><a href="#s44" title="Source 44">44</a></sup></td></tr>
+      <tr class="me"><td><strong>Tata Consumer</strong></td><td class="n">5,349</td><td class="n">+11.9%</td><td class="n">13.6%</td><td class="n">+70bps</td><td class="n">+28.6%</td><td>India underlying volume +13%; growth businesses +47%<sup class="cite"><a href="#s37" title="Source 37">37</a></sup></td></tr>
+      <tr><td><strong>Dabur</strong></td><td class="n">3,764</td><td class="n">+10.6%</td><td class="n">24.3%</td><td class="n">+50bps</td><td class="n">+15%</td><td>India FMCG +9.5%, volume +5%<sup class="cite"><a href="#s48" title="Source 48">48</a></sup></td></tr>
+      <tr><td><strong>Hindustan Unilever</strong></td><td class="n">17,341</td><td class="n">+10.1%</td><td class="n">23.0%</td><td class="n">−40bps</td><td class="n">−3%</td><td>Underlying sales +10%, volume +5% — best in 13 quarters; foods +7%<sup class="cite"><a href="#s43" title="Source 43">43</a></sup></td></tr>
+      <tr><td><strong>Britannia</strong></td><td class="n">4,964</td><td class="n">+9.5%</td><td class="n">16.8%</td><td class="n">+40bps</td><td class="n">+13.6%</td><td>Profit growth ahead of revenue<sup class="cite"><a href="#s45" title="Source 45">45</a></sup></td></tr>
+      <tr><td><strong>Reliance Consumer</strong></td><td class="n">8,600 <span class="tag">gross</span></td><td class="n">&gt;100%</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td>Campa ₹2,900 cr — half its FY26 sales in one quarter; Independence ₹3,200 cr<sup class="cite"><a href="#s50" title="Source 50">50</a></sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">Quarter ended 30 June 2026. Revenue from operations as reported (Nestlé standalone; others consolidated). HUL's margin change is year on year, derived from EBITDA growth of 8% against revenue growth of 10%; ITC's is the standalone FMCG segment excluding Sresta. Tata Consumer profit is group net profit. <span class="est" title="Approximate or derived where noted — not every company discloses the same measures" tabindex="0" role="note">Mixed basis</span></p>
+
+  <div class="wrap">
+  <div class="chart" id="chartQ1"></div>
+
+  <div class="pull">
+    <span class="plab">The divergence worth noticing</span>
+    <p>NielsenIQ measured the whole market's value growth at <strong>0.8%</strong> in the same quarter, on a 2% volume decline<sup class="cite"><a href="#s51" title="Source 51">51</a></sup>. Every listed company in this table grew at least ten times faster. Some of the gap is measurement — NIQ under-reads modern trade and quick commerce, where the listed leaders over-index. Most of it is real: <strong>large, organised brands are taking share from small and unbranded players while the market stands still.</strong> That is a tailwind for a trusted brand like Tata. It also means the growth was won from someone and will be contested.</p>
+  </div>
+
+  <p><strong>Q2 FY27, first signals.</strong> Marico's early-October business update reported double-digit consolidated revenue growth, double-digit India volume growth and operating profit growth in the mid-twenties, and said it expects to beat its near-term guidance<sup class="cite"><a href="#s47" title="Source 47">47</a></sup>. Most peers, Tata Consumer included, report from mid-October.</p>
 
   <h3>Competitor teardowns</h3>
 
@@ -1353,7 +1473,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
     <li><b>Brand investment at scale, concentrated</b> <span class="tag warn">Partial</span><br>A&amp;P at 6.1% of revenue in Q1 FY27 is respectable but spread across too many brands. The winners spend disproportionately on fewer, bigger brands. Nestlé built Maggi and Nescafé into franchises by never under-investing in them. <em>The discipline: no brand gets A&amp;P unless it can be a ₹1,000 crore brand.</em></li>
 
-    <li><b>Cost and capital productivity as a permanent programme</b> <span class="tag stop">Weak</span><br>Nestlé's savings run at 2.6% of sales as a structural programme, not a cost-cutting exercise. Your ROCE of 9.2% against a 63× multiple says this capability does not yet exist at the required intensity. This is the biggest gap in the company.</li>
+    <li><b>Cost and capital productivity as a permanent programme</b> <span class="tag stop">Weak</span><br>Nestlé's savings run at 2.6% of sales as a structural programme, not a cost-cutting exercise. Your ROCE of 9.2% against a ~60× multiple says this capability does not yet exist at the required intensity. This is the biggest gap in the company.</li>
 
     <li><b>Channel-native commercial capability</b> <span class="tag warn">Building</span><br>Running general trade, modern trade, quick commerce and D2C as genuinely different businesses with different portfolios, terms, teams and P&amp;Ls. Most Indian FMCG companies still run one commercial organisation with an e-commerce team bolted on. The ones that separate them properly are winning.</li>
 
@@ -1388,7 +1508,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="kpi hi"><span class="kpi-lab">India volume growth</span><div class="kpi-val">13<small>%</small></div><div class="kpi-sub">FY26 underlying; 16% in Q4</div></div>
     <div class="kpi lo"><span class="kpi-lab">ROCE</span><div class="kpi-val">9.2<small>%</small></div><div class="kpi-sub">3-yr ROE 7.5%; <strong>180bps below WACC</strong></div></div>
     <div class="kpi lo"><span class="kpi-lab">Cost of capital</span><div class="kpi-val">~11<small>%</small></div><div class="kpi-sub">WACC. Every return in this document is measured against it <span class="est" title="Derived estimate — calculated from stated inputs, not lifted from a filing" tabindex="0" role="note">Derived</span></div></div>
-    <div class="kpi lo"><span class="kpi-lab">P/E multiple</span><div class="kpi-val">62.9<small>×</small></div><div class="kpi-sub">Market cap ~₹1.04 lakh cr</div></div>
+    <div class="kpi lo"><span class="kpi-lab">P/E multiple</span><div class="kpi-val">~58<small>×</small></div><div class="kpi-sub">Trailing, at ₹957 (1 Oct 2026); market cap ~₹94,700 cr, down from ~₹1.04 lakh cr at 62.9×<sup class="cite"><a href="#s40" title="Source 40">40</a><a href="#s41" title="Source 41">41</a></sup></div></div>
     <div class="kpi"><span class="kpi-lab">Free cash flow</span><div class="kpi-val">₹2,016<small> cr</small></div><div class="kpi-sub">From ₹2,422 cr operating cash</div></div>
     <div class="kpi"><span class="kpi-lab">Dividend payout</span><div class="kpi-val">64<small>%</small></div><div class="kpi-sub">₹10/share, +21% YoY</div></div>
   </div>
@@ -1439,21 +1559,35 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <div class="wrap">
   <h3>The segment shape</h3>
-  <p>The company reports four segments. Approximate FY26 scale, derived from disclosed growth rates and the statement that growth businesses at ₹4,000 crore represented 31% of the India business:</p>
+  <p>The company reports in two ways, and the difference matters. The <strong>audited segment note</strong> has three segments — India Business, International Business and Non-branded — with revenue, operating result, assets and liabilities for each<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>. The <strong>management view</strong> in the investor presentation splits India into Beverages and Foods, and counts Capital Foods and Organic India exports in India rather than International<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>. From Q1 FY27 management reports five businesses instead: Salt, Tea &amp; Coffee, Growth businesses, International and Non-branded<sup class="cite"><a href="#s37" title="Source 37">37</a></sup>. The tables below use each where it is the better instrument: the audited note for margins and returns, the management view for scale and growth.</p>
   </div>
 
   <div class="tablewrap wide">
-  <table>
-    <thead><tr><th>Segment</th><th class="n">Approx. FY26 revenue</th><th class="n">FY26 growth</th><th class="n">Q1 FY27 margin</th><th>Assessment</th></tr></thead>
+  <table class="sortable">
+    <thead><tr><th>Audited segment, FY26</th><th class="n">Revenue (₹ cr)</th><th class="n">Growth</th><th class="n">Segment result (₹ cr)</th><th class="n">EBIT margin FY25 → FY26</th><th class="n">EBITDA margin</th><th class="n">Segment capital (₹ cr)</th><th class="n">Pre-tax return</th></tr></thead>
     <tbody>
-      <tr><td><strong>India Foods</strong></td><td class="n">~₹7,300 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+18%</td><td class="n" rowspan="2" style="vertical-align:middle">11.1% <span class="tag">India combined</span></td><td>The engine. Salt plus the growth portfolio. Compounding fast.</td></tr>
-      <tr><td><strong>India Beverages</strong></td><td class="n">~₹5,600 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+8%</td><td>Tea drag offset by coffee (+20% Q4) and RTD (+23% Q4).</td></tr>
-      <tr><td><strong>International</strong></td><td class="n">~₹4,900 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">+16% reported<br>+9% cc</td><td class="n">13.0%</td><td>US gaining share seven quarters running; UK declining.</td></tr>
-      <tr><td><strong>Non-branded</strong></td><td class="n">~₹2,400 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></td><td class="n">Declining</td><td class="n">9.9%</td><td>Plantations and coffee extraction. Commodity-exposed; −10% cc in Q1 FY27 on a 26% Robusta price fall.</td></tr>
+      <tr><td><strong>India Business</strong></td><td class="n">12,779</td><td class="n">+13.7%</td><td class="n">1,504</td><td class="n">9.1% → <strong>11.8%</strong></td><td class="n">15.2%</td><td class="n">13,390</td><td class="n">11.2%</td></tr>
+      <tr><td><strong>International Business</strong></td><td class="n">5,251</td><td class="n">+15.4%</td><td class="n">626</td><td class="n">14.7% → <strong>11.9%</strong></td><td class="n">14.3%</td><td class="n">6,932</td><td class="n">9.0%</td></tr>
+      <tr><td><strong>Non-branded Business</strong></td><td class="n">2,387</td><td class="n">+25.0%</td><td class="n">280</td><td class="n">21.3% → <strong>11.8%</strong></td><td class="n">14.6%</td><td class="n">2,462</td><td class="n">11.4%</td></tr>
+      <tr class="me pin"><td><strong>Total segments</strong></td><td class="n">20,417</td><td class="n">+15.4%</td><td class="n">2,410</td><td class="n">11.8% → <strong>11.8%</strong></td><td class="n">14.9%</td><td class="n">22,785</td><td class="n">10.6%</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Segment revenue splits are derived estimates from disclosed growth rates and ratios, not reported figures. Growth rates and margins are as disclosed. <span class="est" title="Derived figure — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Derived</span></p>
+  <p class="tnote wrap">Revenue, segment result and segment assets and liabilities as reported in note 38 of the FY26 consolidated statements<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>. Totals are before ₹126 cr of eliminations and other items (consolidated revenue ₹20,290 cr) and ₹222 cr of unallocated corporate cost. EBITDA margin adds segment depreciation and amortisation to segment result. Segment capital is segment assets less segment liabilities, and pre-tax return is segment result over segment capital. Management reports the EBITDA margin moves as India +210bps, International −280bps and Non-branded −1,010bps<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>, consistent with the derived figures. <span class="est" title="Derived figure — calculated from audited disclosures, not lifted from a filing" tabindex="0" role="note">Derived</span></p>
+
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Management view</th><th class="n">FY26 revenue (₹ cr)</th><th class="n">FY26 growth</th><th class="n">Q1 FY27 revenue (₹ cr)</th><th class="n">Q1 FY27 growth</th><th>What drove it</th></tr></thead>
+    <tbody>
+      <tr><td><strong>India Foods</strong> — salt, Sampann, Soulfull, Capital Foods</td><td class="n">6,588</td><td class="n">+18%</td><td class="n">—</td><td class="n">—</td><td>Overtook Beverages as the largest business in FY26. Salt crossed ₹4,000 cr; Sampann +46%.</td></tr>
+      <tr><td><strong>India Beverages</strong> — tea, coffee, RTD, Organic India</td><td class="n">6,467</td><td class="n">+8%</td><td class="n">—</td><td class="n">—</td><td>Tea +3% volume, +6% value; coffee +43%; RTD +10%.</td></tr>
+      <tr><td><strong>International</strong></td><td class="n">4,885</td><td class="n">+16% (9% cc)</td><td class="n">1,245</td><td class="n">+16% (3% cc)</td><td>US coffee +23% cc on pricing; UK −1% cc; Canada flat.</td></tr>
+      <tr><td><strong>Non-branded</strong></td><td class="n">2,387</td><td class="n">+25% (23% cc)</td><td class="n">498</td><td class="n">−7% (−10% cc)</td><td>Coffee solubles volume in FY26; Robusta −26% in Q1 FY27.</td></tr>
+      <tr class="me pin"><td><strong>Consolidated</strong></td><td class="n">20,290</td><td class="n">+15%</td><td class="n">5,349</td><td class="n">+12%</td><td>India +13% underlying volume growth in Q1 FY27.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">FY26 from the Q4 FY26 investor presentation<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>; Q1 FY27 from the Q1 FY27 presentation<sup class="cite"><a href="#s37" title="Source 37">37</a></sup>, which moved to the five-business view. On that basis Q1 FY27 India was Salt ₹1,090 cr (+7%), Tea &amp; Coffee ₹1,234 cr (−4%) and Growth businesses ₹1,314 cr (+47%) — the growth portfolio is now larger than either core business. The previous edition estimated Foods at ~₹7,300 cr and Beverages at ~₹5,600 cr; the reported figures supersede them. <a href="#segments">§09A</a> takes every line down to brand level.</p>
 
   <div class="wrap">
   <h3>Core versus growth: the transition in one chart</h3>
@@ -1475,6 +1609,97 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </div>
   </div>
 </section>
+<section id="segments" class="chapter" data-part="p2" data-roles="ceo cfo strategy cmo sales" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-segments">
+    <div class="cmeta"><span class="cnum">09A</span><span class="coff">Not in this reading path</span></div>
+    <h2>Segment Explorer</h2>
+    <p class="standfirst">Every business in the portfolio, from the group down to the brand: how big it is, how fast it is growing, what it earns, what capital it ties up and where it stands in its market. Click to drill in.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-segments">
+    <div class="wide">
+
+  <div class="grid g4">
+    <div class="kpi hi"><span class="kpi-lab">Growth businesses</span><div class="kpi-val">36<small>% of India</small></div><div class="kpi-sub">Q1 FY27, from 8% in FY21; +47% YoY<sup class="cite"><a href="#s37" title="Source 37">37</a></sup></div></div>
+    <div class="kpi hi"><span class="kpi-lab">Salt value share</span><div class="kpi-val">~39<small>%</small></div><div class="kpi-sub">+100bps MAT March 2026; target past 40%<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s38" title="Source 38">38</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">India tea value share</span><div class="kpi-val">−50<small>bps</small></div><div class="kpi-sub">MAT March 2026; level no longer disclosed<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">Weakest segment return</span><div class="kpi-val">9.0<small>%</small></div><div class="kpi-sub">International, pre-tax, FY26 <span class="est" title="Derived figure — calculated from audited disclosures, not lifted from a filing" tabindex="0" role="note">Derived</span></div></div>
+  </div>
+
+  <div class="wrap">
+  <h3>The portfolio, business by business</h3>
+  <p>The explorer below uses the five businesses management now reports. Start at the group, click any bar to open its brands and markets, and switch the measure between size and growth. The panel under the chart gives the detail for whatever you last selected: revenue, growth, the margin evidence that is actually disclosed, market position, and whether each number is reported or derived.</p>
+
+  <div class="chart" id="chartSeg"></div>
+
+  <h3>Margins and returns: what each segment earns on what it uses</h3>
+  <p>This is the view the previous edition could not show. The audited segment note discloses the assets and liabilities behind each segment, so the return on capital can be computed segment by segment. Read the result against the hurdle. An 11% post-tax cost of capital is roughly <strong>14.7% pre-tax</strong>, and no segment clears it. India is improving fast, from 7.4% to 11.2%, as tea costs eased and the growth portfolio scaled. International moved the wrong way.</p>
+
+  <div class="chart" id="chartSegRet"></div>
+
+  <div class="pull warnbox">
+    <span class="plab">What the segment returns say that the group number hides</span>
+    <p><strong>International earns the least on the capital it uses — 9.0% pre-tax, about 6.8% after tax — and it is the segment the plan treats as stable.</strong> That is the UK and US tea and coffee brands carrying acquired goodwill. The UK review recommended in <a href="#bu">§10</a> is therefore a returns question as much as a growth question. Non-branded, meanwhile, swung from the best return in the group (17.5%) to the middle (11.4%) in one year on coffee prices alone — the volatility argument for separating it, in a single line.</p>
+  </div>
+
+  <h3>The growth portfolio's rise</h3>
+  <div class="chart" id="chartGrowth"></div>
+
+  <h3>Where the money is made, by geography</h3>
+  <div class="chart" id="chartGeo"></div>
+
+  <h3>Every business on one table</h3>
+  <p>Click any column heading to sort. Filter by role to compare like with like.</p>
+  </div>
+
+  <div class="chartctl tblfilter" data-for="butable" style="border:1px solid var(--line);border-radius:7px 7px 0 0;border-bottom:none;margin-top:18px"></div>
+  <div class="tablewrap wide" style="margin-top:0;border-radius:0 0 7px 7px">
+  <table class="sortable" id="butable">
+    <thead><tr><th>Business</th><th>Role</th><th class="n">FY26 revenue (₹ cr)</th><th class="n">FY26 growth</th><th class="n">Q1 FY27 growth</th><th>Margin evidence</th><th>Market position</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr data-role="core"><td><strong>Salt</strong> — Tata Salt, Lite, Rock Salt</td><td>Core</td><td class="n">4,000</td><td class="n">+14%</td><td class="n">+7%</td><td>Gross margin 33–36%</td><td>#1 · ~39% value share</td><td>Reported</td></tr>
+      <tr data-role="core"><td><strong>Tea &amp; coffee (India)</strong> — Tata Tea, Tetley, Coffee Grand</td><td>Core</td><td class="n">5,030</td><td class="n">+6%</td><td class="n">−4%</td><td>Gross margin 33–36%</td><td>#2 tea brand · share −50bps</td><td>Derived</td></tr>
+      <tr data-role="growth"><td><strong>Tata Sampann</strong> — pulses, spices, dry fruits, oils</td><td>Growth</td><td class="n">1,500</td><td class="n">+46%</td><td class="n">+58%</td><td>EBITDA ~12%, from −5% in FY20</td><td>National brand in pulses &amp; spices</td><td>Reported</td></tr>
+      <tr data-role="growth"><td><strong>Ready-to-drink</strong> — Himalayan, Copper+, Gluco+</td><td>Growth</td><td class="n">960</td><td class="n">+10%</td><td class="n">+41%</td><td>Margin rising with utilisation</td><td>#1 natural mineral water</td><td>Est</td></tr>
+      <tr data-role="growth"><td><strong>Capital Foods</strong> — Ching's Secret, Smith &amp; Jones</td><td>Growth</td><td class="n">839</td><td class="n">+5%</td><td class="n">+40%</td><td>Gross margin 48% (with OI)</td><td>#1 Desi-Chinese brand</td><td>Reported</td></tr>
+      <tr data-role="growth"><td><strong>Organic India</strong></td><td>Growth</td><td class="n">478</td><td class="n">+28%</td><td class="n">+27%</td><td>Gross margin 48% (with CF)</td><td>Leading organic supplements brand</td><td>Reported</td></tr>
+      <tr data-role="growth"><td><strong>Soulfull, vending &amp; other</strong></td><td>Growth</td><td class="n">200</td><td class="n">—</td><td class="n">+45%</td><td>Not disclosed</td><td>Vending ₹100 cr run-rate</td><td>Est</td></tr>
+      <tr data-role="intl"><td><strong>USA</strong> — Eight O'Clock, Tetley US</td><td>International</td><td class="n">2,202</td><td class="n">+23% cc</td><td class="n">+7% cc</td><td>Under pressure: coffee cost, tariffs</td><td>#4 R&amp;G coffee · 4.3% coffee bags</td><td>Reported</td></tr>
+      <tr data-role="intl"><td><strong>UK</strong> — Tetley, teapigs, Good Earth</td><td>International</td><td class="n">1,514</td><td class="n">−1% cc</td><td class="n">−2% cc</td><td>Improved on pricing and cost</td><td>#3 · 18.5% everyday black</td><td>Reported</td></tr>
+      <tr data-role="intl"><td><strong>Canada</strong> — Tetley</td><td>International</td><td class="n">468</td><td class="n">0% cc</td><td class="n">0% cc</td><td>Mix improving to specialty</td><td>#1 · 25.1% value share</td><td>Reported</td></tr>
+      <tr data-role="intl"><td><strong>Other international</strong> — Joekels, Europe, Australia</td><td>International</td><td class="n">701</td><td class="n">—</td><td class="n">—</td><td>Not disclosed</td><td>Mixed; Middle East disrupted</td><td>Derived</td></tr>
+      <tr data-role="nb"><td><strong>Coffee solubles</strong> — India, Vietnam</td><td>Non-branded</td><td class="n">1,623</td><td class="n">+32%</td><td class="n">−12% cc</td><td>Largely pass-through pricing</td><td>B2B extraction</td><td>Derived</td></tr>
+      <tr data-role="nb"><td><strong>Plantations</strong> — tea, coffee</td><td>Non-branded</td><td class="n">764</td><td class="n">+10%</td><td class="n">−8% cc</td><td>Crop- and price-driven</td><td>Owned estates</td><td>Derived</td></tr>
+      <tr data-role="jv"><td><strong>Tata Starbucks</strong> (50:50 JV, not consolidated)</td><td>Joint venture</td><td class="n">1,367</td><td class="n">+7%</td><td class="n">+11%</td><td>Double-digit EBITDA growth</td><td>#1 organised café chain · 498 stores</td><td>Reported</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">Reported figures from the FY26 annual report<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s35" title="Source 35">35</a></sup>, the Q4 FY26 and Q1 FY27 presentations<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s37" title="Source 37">37</a></sup> and the Q1 FY27 call<sup class="cite"><a href="#s38" title="Source 38">38</a></sup>. "₹4,000" and "₹1,500" are disclosed milestones ("crossed"), not exact figures. Tea &amp; coffee is India Beverages less Organic India and RTD, and is consistent with management's statement that packaged beverages crossed ₹5,000 cr. RTD and Soulfull are estimated residuals. Solubles and plantations apply the disclosed 68:32 split. International markets come from the subsidiary accounts and do not sum to segment revenue exactly. Market shares are Nielsen MAT value to March 2026 as quoted by the company. <span class="est" title="Derived or estimated figures are tagged in the Basis column" tabindex="0" role="note">Mixed basis</span></p>
+
+  <div class="wrap">
+  <h3>Market position, where the company discloses it</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Market</th><th>Brand</th><th class="n">Rank</th><th class="n">Value share</th><th>Direction</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>India — salt</td><td>Tata Salt</td><td class="n">1</td><td class="n">~39%</td><td><span class="tag go">+100bps</span></td><td>Category leader still taking share; price increase taken cleanly in June 2026.</td></tr>
+      <tr><td>India — packaged tea</td><td>Tata Tea, Tetley, Kanan Devan, Chakra Gold</td><td class="n">2</td><td class="n">n/d</td><td><span class="tag stop">−50bps</span></td><td>Lost share in general trade; leads in e-commerce and gained in modern trade. The ₹25,000 cr category grew 9% in value in FY26.</td></tr>
+      <tr><td>India — natural mineral water</td><td>Himalayan</td><td class="n">1</td><td class="n">n/d</td><td><span class="tag go">Growing</span></td><td>The premium anchor of an RTD business distributed properly in only 40–50% of the country.</td></tr>
+      <tr><td>India — Desi-Chinese</td><td>Ching's Secret</td><td class="n">1</td><td class="n">n/d</td><td><span class="tag warn">Recovering</span></td><td>Category owner; FY26 growth was 5% before a 40% quarter.</td></tr>
+      <tr><td>India — pulses</td><td>Tata Sampann</td><td class="n">—</td><td class="n">~0.3%</td><td><span class="tag go">Growing</span></td><td>₹600–700 cr in a ₹2.2 lakh cr market with 6% branded penetration — roughly 5% of branded pulses. <span class="est" title="Derived estimate — calculated from management’s stated figures" tabindex="0" role="note">Derived</span></td></tr>
+      <tr><td>UK — everyday black tea</td><td>Tetley</td><td class="n">3</td><td class="n">18.5%</td><td><span class="tag warn">Stabilising</span></td><td>Share fell in FY26 on volume; sequential improvement in the 12 weeks to March 2026.</td></tr>
+      <tr><td>UK — fruit &amp; herbal tea</td><td>Good Earth, teapigs, Tetley</td><td class="n">—</td><td class="n">10.2%</td><td><span class="tag go">Gaining</span></td><td>The growing end of a shrinking category.</td></tr>
+      <tr><td>Canada — tea</td><td>Tetley</td><td class="n">1</td><td class="n">25.1%</td><td><span class="tag go">+1.3pts Q4</span></td><td>Fastest-growing major brand in herbal tea.</td></tr>
+      <tr><td>USA — coffee bags</td><td>Eight O'Clock</td><td class="n">4</td><td class="n">4.3%</td><td><span class="tag go">7 quarters of gains</span></td><td>Growing at more than twice the category rate.</td></tr>
+      <tr><td>India — organised cafés</td><td>Tata Starbucks</td><td class="n">1</td><td class="n">n/d</td><td><span class="tag warn">Holding</span></td><td>Largest by store count; expansion slowed deliberately.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">Ranks and shares as stated by the company<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s37" title="Source 37">37</a><a href="#s38" title="Source 38">38</a></sup>; Nielsen MAT value basis, March 2026. India tea share levels have not been disclosed since management stopped quoting Nielsen. Its stated reason is that general trade is now only 56% of the business and one large modern-trade retailer does not share data. Tea category size per the FY26 MD&amp;A<sup class="cite"><a href="#s34" title="Source 34">34</a></sup>.</p>
+    </div>
+  </div>
+</section>
 <section id="bu" class="chapter" data-part="p2" data-roles="ceo cfo strategy rnd" data-open="false">
   <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-bu">
     <div class="cmeta"><span class="cnum">10</span><span class="coff">Not in this reading path</span></div>
@@ -1488,10 +1713,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <div class="wrap">
   <!-- SALT -->
   <div class="fnbox">
-    <header><h4>Tata Salt &amp; Salt Portfolio</h4><span class="who">India Foods · ~₹2,500–3,000 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span></span></header>
+    <header><h4>Tata Salt &amp; Salt Portfolio</h4><span class="who">India Foods · ₹4,000 cr+ FY26 (+14%) · +7% Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: defend to 42% share, and turn the franchise into a health platform.</strong></p>
-      <p><strong>Where it is.</strong> The best business in the company. Roughly 39% share and explicitly targeting past 40%, with 12% growth in Q4 FY26 and a fifth consecutive double-digit quarter. Q1 FY27 saw 7% volume and 7% revenue growth with a ₹2-per-pack price increase taken cleanly. Gross margins are strong, capital intensity is modest, and Tata Salt is arguably the most trusted food brand in India.</p>
+      <p><strong>Where it is.</strong> The best business in the company. Roughly 39% share, up 100bps in FY26, and explicitly targeting past 40%. Revenue crossed ₹4,000 crore in FY26, up 14% on 10% volume growth, with 12% growth in Q4 and a fifth consecutive double-digit quarter<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>. Premium salts ended the year above ₹300 crore, rock salt above ₹100 crore. Q1 FY27 saw 7% volume and 7% revenue growth with a ₹2-per-pack price increase taken cleanly. Gross margins are strong, capital intensity is modest, and Tata Salt is arguably the most trusted food brand in India.</p>
       <p><strong>The risk.</strong> Category growth is 4–6%. At 40% share in a 5% category, this business becomes a 5% grower — a superb cash generator with no growth left in it. Premium variants (Lite, Rock Salt, Lo-Sodium Rock Salt with 15% lower sodium) are the only lever that lifts the growth rate.</p>
       <p><strong>What to do.</strong> Three things. First, take share past 42% — every point is high-margin and defends the shelf position that carries the rest of the portfolio. Second, aggressively mix-shift to premium: the goal should be premium variants at 25%+ of salt revenue within three years, up from a low base. Third, and most importantly, <strong>extend the Tata Salt trust equity into an explicit health-and-purity master brand</strong> covering low-sodium, fortified and functional pantry products. The salt brand is the most under-leveraged asset you own.</p>
     </div>
@@ -1500,10 +1725,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- SAMPANN -->
   <div class="fnbox">
-    <header><h4>Tata Sampann — pulses, spices, dry fruits, oils</h4><span class="who">India Foods · ~₹1,200–1,500 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +58% Q1 FY27</span></header>
+    <header><h4>Tata Sampann — pulses, spices, dry fruits, oils</h4><span class="who">India Foods · ₹1,500 cr+ FY26 (+46%) · +58% Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: become a ₹5,000 crore brand by FY31 and the number one branded spices player in at least six states.</strong></p>
-      <p><strong>Where it is.</strong> Growing 58% in Q1 FY27 and 69% in Q4 FY26, expanding into protein snacking. This is your best organic growth story and the clearest expression of the "unbranded to branded" thesis. Spices carry 40–50% gross margins; pulses carry 15–25%.</p>
+      <p><strong>Where it is.</strong> Growing 58% in Q1 FY27 and 69% in Q4 FY26, expanding into protein snacking. EBITDA margin is closing on 12%, from −5% in FY20, and rose 150–200bps in Q1 FY27<sup class="cite"><a href="#s38" title="Source 38">38</a></sup>. Pulses are ₹600–700 crore of it, in a ₹2.2 lakh crore market that is only 6% branded. This is your best organic growth story and the clearest expression of the "unbranded to branded" thesis. Spices carry 40–50% gross margins; pulses carry 15–25%.</p>
       <p><strong>The risk.</strong> Two. The mix is skewed toward lower-margin pulses when the value sits in spices and condiments. And you are entering a category with entrenched regional leaders whose taste profiles are locally specific — a national spice brand has to win state by state, which is expensive and slow.</p>
       <p><strong>What to do.</strong> Deliberately over-weight spices, masalas and condiments over pulses in resource allocation — accept slower revenue growth for far better margin and capital returns. Build region-specific blends rather than a single national SKU set. Use the protein snacking entry to move into a genuinely high-margin adjacent category rather than treating it as a line extension. And consider acquiring a regional spice leader to buy taste credibility in the South or East rather than building it.</p>
     </div>
@@ -1512,7 +1737,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- TEA -->
   <div class="fnbox">
-    <header><h4>India Tea — Tata Tea, Tetley, Gold, Premium, Chakra</h4><span class="who">India Beverages · Largest single revenue line · +2% volume, −4% revenue Q1 FY27</span></header>
+    <header><h4>India Tea — Tata Tea, Tetley, Gold, Premium, Chakra</h4><span class="who">India Beverages · ~₹5,000 cr · FY26 +3% volume, +6% value · Q1 FY27 +2% volume, −4% revenue · share −50bps</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: stabilise volume at mid-single digit, take the margin up 300bps, and stop consuming a disproportionate share of management attention.</strong></p>
       <p><strong>Where it is — read the two numbers correctly.</strong> Volume grew 2% in Q1 FY27 while revenue fell 4%. Those look like a business in trouble and they are not. <strong>2% volume growth in a category compounding at under 3% means you are holding share and probably gaining it.</strong> The 4% revenue decline is cost deflation passed through to the consumer — input costs fell and you did not pocket the difference, which is the correct behaviour in a price-sensitive staple where the regional packers would have undercut you within a quarter had you tried. Q4 FY26 was 4% volume growth with stable revenue. Procurement inflation has since turned and is running 7–10%, which will reverse the revenue optics without changing the underlying business at all.</p>
@@ -1525,7 +1750,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- COFFEE -->
   <div class="fnbox">
-    <header><h4>India Coffee — Tata Coffee Grand, Sonnets</h4><span class="who">India Beverages · +24% Q1 FY27, +20% Q4 FY26</span></header>
+    <header><h4>India Coffee — Tata Coffee Grand, Sonnets</h4><span class="who">India Beverages · +43% FY26 · +24% Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: build the number two coffee franchise in India behind Nescafé, at premium margins.</strong></p>
       <p><strong>Where it is.</strong> Growing 20–24% off a small base. Coffee is the fastest-growing hot beverage in India, and you have a genuine structural advantage: owned plantations, an extraction business, the Starbucks relationship, and Eight O'Clock's roasting expertise in the US. Almost no competitor has that vertical integration.</p>
@@ -1536,7 +1761,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- RTD -->
   <div class="fnbox">
-    <header><h4>Ready-to-Drink — NourishCo: Tata Gluco+, Copper+, Tata Water Plus, Himalayan, Tata Electrolyte, Kombucha</h4><span class="who">India Beverages · ~₹1,300 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +41% revenue, +35% volume Q1 FY27</span></header>
+    <header><h4>Ready-to-Drink — NourishCo: Tata Gluco+, Copper+, Tata Water Plus, Himalayan, Tata Electrolyte, Kombucha</h4><span class="who">India Beverages · ~₹960 cr <span class="est" title="Derived estimate — residual of disclosed figures, not lifted from a filing" tabindex="0" role="note">Est</span> · +10% FY26 · +41% revenue, +35% volume Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: national distribution within 24 months. This is your most under-distributed high-growth asset.</strong></p>
       <p><strong>Where it is.</strong> Three consecutive double-digit quarters, then 41% revenue growth with 35% volume growth in Q1 FY27. Tata Electrolyte has entered a category that is compounding fast. Kombucha gives you a genuine premium wellness position. Gross margins in RTD are 45–55%.</p>
@@ -1548,10 +1773,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- CAPITAL FOODS -->
   <div class="fnbox">
-    <header><h4>Capital Foods — Ching's Secret, Smith &amp; Jones</h4><span class="who">India Foods · +40% Q1 FY27 · ~50% gross margin</span></header>
+    <header><h4>Capital Foods — Ching's Secret, Smith &amp; Jones</h4><span class="who">India Foods · ₹839 cr FY26 (+5%) · ₹232 cr Q1 FY27 (+40%) · 80% owned · 48% gross margin</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: complete the go-to-market rebuild and establish 25–30% growth as the durable run rate.</strong></p>
-      <p><strong>Where it is.</strong> Acquired for roughly ₹5,100 crore. Growing 40% in Q1 FY27 with domestic and export contribution, at close to 50% gross margin — the best margin structure in your India portfolio. Product expansion into Manchurian and Schezwan cup noodles is smart: it moves the brand from an ingredient to a meal.</p>
+      <p><strong>Where it is.</strong> Acquired for roughly ₹5,100 crore. FY26 was a weak year: group revenue of ₹839 crore, up only 5%, with exports hit by tariffs and geopolitical disruption and domestic sales by the GST transition<sup class="cite"><a href="#s35" title="Source 35">35</a></sup>. Q1 FY27 then grew 40% with domestic and export contribution, at close to 50% gross margin — partly a recovery off that soft base. The stake rose from 75% to 80% on 1 September 2026, with 20% still to buy<sup class="cite"><a href="#s39" title="Source 39">39</a></sup> — the best margin structure in your India portfolio. Product expansion into Manchurian and Schezwan cup noodles is smart: it moves the brand from an ingredient to a meal.</p>
       <p><strong>The problem.</strong> The go-to-market restructuring implemented in February is still incomplete, with acknowledged difficulty finding distributors and distributor salesmen. Management has framed 25–30% as "the new normal" — a step down from the current 40%.</p>
       <p><strong>What to do.</strong> First, finish the GTM rebuild — this is a staffing and capability problem with a known solution and it should not still be open in six months. Second, be ambitious about the category: "Desi Chinese" is one of India's genuinely large and under-branded cuisine occasions, and Ching's owns it. The right ambition is to make Ching's the default Indian-Chinese meal brand across formats — sauces, noodles, cup formats, frozen, restaurant. Third, given the acquisition price, this business must clear its cost of capital; hold the team to an explicit ROIC milestone, not just growth.</p>
     </div>
@@ -1560,7 +1785,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- ORGANIC INDIA -->
   <div class="fnbox">
-    <header><h4>Organic India</h4><span class="who">India Foods · +27% Q1 FY27 · ~50% gross margin</span></header>
+    <header><h4>Organic India</h4><span class="who">India Beverages (management view) · ₹478 cr FY26 (+28%) · ₹118 cr Q1 FY27 (+27%) · 48% gross margin</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: become the flagship of a coherent Tata health-and-wellness platform, not a standalone organic brand.</strong></p>
       <p><strong>Where it is.</strong> Acquired for roughly ₹1,900 crore. Growing 27%, at close to 50% gross margin, with genuine credibility in organic and Ayurvedic wellness plus a meaningful international business.</p>
@@ -1572,7 +1797,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- SOULFULL -->
   <div class="fnbox">
-    <header><h4>Tata Soulfull — millet-based breakfast and snacking</h4><span class="who">India Foods · Smallest growth brand · Online + modern trade led</span></header>
+    <header><h4>Tata Soulfull — millet-based breakfast and snacking</h4><span class="who">India Foods · Smallest growth brand · +45% Q1 FY27 · Online + modern trade led</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: prove the protein thesis at scale within 18 months, or fold the capability into Sampann.</strong></p>
       <p><strong>Where it is.</strong> Operating primarily in online and modern trade. Hi-Protein millet oats at 25g protein per serve with zero added sugar is exactly the right product for the self-directed health consumer. But the business is sub-scale, channel-limited, and competing against Kellogg's, Quaker and a wave of D2C challengers.</p>
@@ -1584,7 +1809,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- STARBUCKS -->
   <div class="fnbox">
-    <header><h4>Tata Starbucks<sup class="cite"><a href="#s10" title="Source 10">10</a></sup> (50:50 JV)</h4><span class="who">Equity-accounted · 498–502 stores, 80 cities · FY26 loss ₹49.5 cr · +11% revenue Q1 FY27</span></header>
+    <header><h4>Tata Starbucks<sup class="cite"><a href="#s10" title="Source 10">10</a></sup> (50:50 JV)</h4><span class="who">Equity-accounted · FY26 revenue ₹1,367 cr (+7%) · 498 stores after closures · FY26 loss ₹49.5 cr · +11% revenue Q1 FY27</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: reach sustained profitability, then decide honestly whether to scale hard or hold.</strong></p>
       <p><strong>Where it is.</strong> 502 stores across 80 cities at FY26 close, three consecutive quarters of positive same-store sales, FY26 losses narrowed to ₹49.5 crore, and a relaunched tiered rewards programme. Q1 FY27 added only four net stores including two Reserve formats — a deliberate slowdown after the aggressive expansion phase, and the right call.</p>
@@ -1596,10 +1821,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- INTERNATIONAL -->
   <div class="fnbox">
-    <header><h4>International — Tetley (UK, Canada), Eight O'Clock Coffee (US), teapigs, Good Earth</h4><span class="who">~₹4,900 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · +16% reported / +9% cc FY26 · 13.0% margin</span></header>
+    <header><h4>International — Tetley (UK, Canada), Eight O'Clock Coffee (US), teapigs, Good Earth</h4><span class="who">₹4,885 cr FY26 · +16% reported / +9% cc · segment EBIT 14.7% → 11.9% · pre-tax return 9.0%</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: fix or exit the UK; double down on the US; treat the specialty brands as the growth engine.</strong></p>
-      <p><strong>Where it is.</strong> A tale of two geographies. The <strong>US</strong> is working: 7% constant-currency growth in Q1 FY27 and a seventh consecutive quarter of market share gains, with Eight O'Clock outperforming category growth. The <strong>UK</strong> is not: a 2% constant-currency decline in Q1 FY27, in a structurally declining black tea market. Specialty brands teapigs and Good Earth carry good momentum. Roughly 75–80% of international revenue is base black tea.</p>
+      <p><strong>Where it is.</strong> A tale of two geographies. In FY26 the US branded business was ₹2,202 crore (+23% cc), the UK ₹1,514 crore (−1% cc) and Canada ₹468 crore (flat)<sup class="cite"><a href="#s35" title="Source 35">35</a></sup>. On the audited segment basis International earned only <strong>9.0% pre-tax on its capital</strong>, the lowest in the group, as coffee costs and US tariffs took 280bps off its EBITDA margin. The <strong>US</strong> is working: 7% constant-currency growth in Q1 FY27 and a seventh consecutive quarter of market share gains, with Eight O'Clock outperforming category growth. The <strong>UK</strong> is not: a 2% constant-currency decline in Q1 FY27, in a structurally declining black tea market. Specialty brands teapigs and Good Earth carry good momentum. Roughly 75–80% of international revenue is base black tea.</p>
       <p><strong>The uncomfortable question.</strong> Tetley UK is a large, mature, declining, cash-generative business in a category with no growth. It ties up capital and management attention in a market where Tata Consumer has no strategic advantage and no adjacent growth path. Under a strict "number one or two with a path, or exit" discipline, the UK business deserves a formal strategic review — including the option of a sale or partial separation, with proceeds redeployed into Indian growth categories where your ROCE is far higher.</p>
       <p><strong>What to do.</strong> Commission that review in your first six months. Independently: accelerate the US, where you are winning and where coffee gives you a second leg; and scale teapigs and Good Earth as premium wellness beverage platforms internationally, which is where the international growth actually is.</p>
     </div>
@@ -1608,10 +1833,10 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <!-- NON-BRANDED -->
   <div class="fnbox">
-    <header><h4>Non-Branded — plantations, coffee extraction, bulk tea</h4><span class="who">~₹2,400 cr <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> · −10% cc Q1 FY27 · margin 9.9%, down from 12.0%</span></header>
+    <header><h4>Non-Branded — plantations, coffee extraction, bulk tea</h4><span class="who">₹2,387 cr FY26 (+25%) · −10% cc Q1 FY27 · segment margin 21.3% → 11.8% → 9.9%</span></header>
     <div class="body">
       <p class="mandate"><strong>Mandate: shrink the commodity exposure and quantify what strategic value the vertical integration actually delivers.</strong></p>
-      <p><strong>Where it is.</strong> Declined 10% in constant currency in Q1 FY27 with margins compressing from 12.0% to 9.9%, driven by a 26% fall in Robusta coffee prices. This business injects commodity volatility directly into a branded consumer P&amp;L that the market values at 63× earnings.</p>
+      <p><strong>Where it is.</strong> Grew 25% in FY26 on coffee solubles volume — solubles are 68% of the business, plantations 32% — while the segment margin halved from 21.3% to 11.8% as prior-year fair-value gains reversed<sup class="cite"><a href="#s33" title="Source 33">33</a><a href="#s34" title="Source 34">34</a></sup>. Then declined 10% in constant currency in Q1 FY27 with margins compressing from 12.0% to 9.9%, driven by a 26% fall in Robusta coffee prices. This business injects commodity volatility directly into a branded consumer P&amp;L that the market values at ~60× earnings.</p>
       <p><strong>The strategic question.</strong> Vertical integration in coffee and tea has real value — sourcing security, quality control, sustainability credentials, cost visibility. But that value must be measured. If the plantations and extraction business earns a 9–12% margin with high capital intensity and high volatility, and the branded business earns high-teens margins at better capital turns, then every rupee of capital in non-branded is destroying relative value unless the strategic benefit is explicitly quantified and material.</p>
       <p><strong>What to do.</strong> Run an explicit value-of-integration analysis in the first year: what would you pay in the open market for the sourcing security and quality control this business provides, versus the capital it consumes and the earnings volatility it imports? If the answer is unfavourable, structure a separation, a partnership, or a long-term supply arrangement that retains the benefit without the balance sheet. This is one of the clearest available ROCE levers.</p>
     </div>
@@ -1649,7 +1874,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="qbox q-w">
       <div class="qh">Weaknesses — the ones that matter</div>
       <ul>
-        <li><strong>ROCE of 9.2% and three-year ROE of 7.5% against an ~11% cost of capital.</strong> The company is <em>below</em> its hurdle rate — roughly ₹450 crore of economic profit destroyed a year — while trading at 63× earnings. This is the central problem.</li>
+        <li><strong>ROCE of 9.2% and three-year ROE of 7.5% against an ~11% cost of capital.</strong> The company is <em>below</em> its hurdle rate — roughly ₹450 crore of economic profit destroyed a year — while trading at ~60× earnings. This is the central problem.</li>
         <li><strong>EBITDA margin of 13.9%</strong> against Nestlé near 26%<sup class="cite"><a href="#s19" title="Source 19">19</a></sup>, HUL at 23.6%, Britannia at 18.5%<sup class="cite"><a href="#s21" title="Source 21">21</a></sup>. Roughly half is mix; roughly half is addressable.</li>
         <li><strong>Capital turn of about 0.8×</strong> — heavy goodwill and intangibles from the merger and from ₹7,000 crore of acquisitions, plus asset-heavy plantations.</li>
         <li><strong>A core growing at 3–6%.</strong> Tea revenue fell 4% in Q1 FY27; salt's category grows at 5%. Together they still govern the blended growth rate.</li>
@@ -1683,7 +1908,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
         <li><strong>Quick-commerce margin compression.</strong> Platform commissions plus a ₹4,900 crore industry ad-spend pool<sup class="cite"><a href="#s15" title="Source 15">15</a></sup> that did not exist five years ago, on assortments that punish the long tail.</li>
         <li><strong>Channel conflict escalating to policy.</strong> Distributor federations petitioning government; roughly 200,000 kirana closures reported<sup class="cite"><a href="#s16" title="Source 16">16</a></sup>.</li>
         <li><strong>Input cost and FX volatility</strong> — tea at 7–10% inflation, palm and crude-linked packaging elevated, Robusta down 26%.</li>
-        <li><strong>Valuation risk.</strong> At 63× earnings with 9% ROCE, any growth disappointment de-rates the stock sharply — which constrains your ability to use paper for acquisitions.</li>
+        <li><strong>Valuation risk.</strong> At ~60× earnings with 9% ROCE, any growth disappointment de-rates the stock sharply — which constrains your ability to use paper for acquisitions.</li>
         <li><strong>Regional challengers</strong> in tea, spices and snacks, structurally advantaged on freshness, local taste and cost.</li>
       </ul>
     </div>
@@ -1756,6 +1981,14 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
 
   <div class="wrap">
   <div class="pull warnbox">
+    <span class="plab">Update · Q1 FY27 — Nestlé is running above every row of this table</span>
+    <p>Nestlé India grew revenue <strong>25%</strong> in the June 2026 quarter, with domestic sales up 25% on volume and EBITDA margin up 250bps to 24.1%<sup class="cite"><a href="#s42" title="Source 42">42</a></sup>. Part of that is base: Q1 FY26 profit had fallen 12%. But even a partial carry-through moves the bar. <strong>If Nestlé's FY27 lands at +18% and it compounds at 12% thereafter, its FY31 domestic revenue is ~₹42,800 crore</strong> — above this document's ₹42,500 crore target, and ~₹3,000 crore ahead of the base case. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
+    <p>This is the warning below made concrete. Keep the ₹42,500 crore absolute target; restate the relative bar when Nestlé's full FY27 is known; and treat the growth-portfolio CAGR lever in <a href="#bridge">§17</a> — 28% to 32% — as necessary, not optional.</p>
+  </div>
+  </div>
+
+  <div class="wrap">
+  <div class="pull warnbox">
     <span class="plab">Why this argues against managing to a relative target at all</span>
     <p>The ₹42,500 crore target swings by roughly <strong>₹4,000 crore — and the required CAGR by three full points — on two points of a competitor's growth rate that you neither control nor forecast well.</strong> A target that unstable cannot be the number an organisation is managed to: in the year Nestlé outperforms, every operating team is missing a goal for reasons entirely outside the business.</p>
     <p>So separate the two uses. <strong>The number the company manages to is absolute: ₹42,500 crore by FY31, at a spread above the cost of capital.</strong> That is fixed, it is in the scorecard, and it does not move. <strong>Relative rank is reported, not targeted</strong> — reviewed annually against where Nestlé has actually got to, with the bar restated rather than the plan rewritten. If Nestlé compounds at 15%, the honest board conversation is that leadership by revenue has moved out of reach in this plan period, and the right response is to say so, not to add ₹6,000 crore of acquisitions at multiples that destroy value.</p>
@@ -1820,7 +2053,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <li><strong>Retained cash.</strong> Free cash flow was ₹2,016 crore in FY26 and will grow with the business. At the current 64% dividend payout, retention is roughly ₹550 crore a year. <strong>Cutting the payout to 35% frees around ₹500 crore annually</strong> and compounds — cumulatively ₹9,000–11,000 crore of retained cash over five years on a growing base.</li>
     <li><strong>Debt capacity.</strong> With ₹2,820 crore of borrowings against ₹2,815 crore<sup class="cite"><a href="#s1" title="Source 1">1</a></sup> of EBITDA, leverage is negligible. Taking net debt to a still-conservative 1.5× EBITDA provides ₹5,000–6,000 crore of additional firepower, rising as EBITDA grows.</li>
     <li><strong>Capital release.</strong> A partial or full exit from non-branded, and a strategic review of the UK, could release meaningful capital and simultaneously improve ROCE — the rare move that helps both sides of the equation.</li>
-    <li><strong>Equity.</strong> The one line in this plan that is argued backwards, and it is worth more than the fifteen words it usually gets. At 63× earnings, issuing shares to buy a snacks asset at roughly 35–40× earnings is <strong>accretive, not expensive</strong> — you would be issuing dear paper for cheaper assets. The full three-option comparison is in <a href="#ma">section 14</a>; the short version is that equity is only the wrong currency if the stock is <em>undervalued</em>, which nobody anywhere in this document argues. It does become unavailable if growth disappoints, which is an argument for issuing while the multiple holds, not for ruling it out.</li>
+    <li><strong>Equity.</strong> The one line in this plan that is argued backwards, and it is worth more than the fifteen words it usually gets. At ~60× earnings, issuing shares to buy a snacks asset at roughly 35–40× earnings is <strong>accretive, not expensive</strong> — you would be issuing dear paper for cheaper assets. The full three-option comparison is in <a href="#ma">section 14</a>; the short version is that equity is only the wrong currency if the stock is <em>undervalued</em>, which nobody anywhere in this document argues. It does become unavailable if growth disappoints, which is an argument for issuing while the multiple holds, not for ruling it out.</li>
   </ul>
   <p>Total realistic firepower: <strong>₹15,000–17,000 crore over five years</strong>. At the 3–5× revenue multiples good Indian branded food assets command, that buys ₹4,000–5,000 crore of acquired revenue — roughly <strong>half</strong> of the ₹9,000 crore gap, and less than half if you pay full multiples.</p>
 
@@ -1929,14 +2162,14 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     </tbody>
   </table>
   </div>
-  <p class="tnote wrap">Entry multiples derived from the ₹15,000 cr / 3.5× revenue ticket at a category-normal 14% EBITDA, ~2% D&amp;A and 25% tax. Dilution measured against the ~₹1.04 lakh crore market capitalisation in section 09. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
+  <p class="tnote wrap">Entry multiples derived from the ₹15,000 cr / 3.5× revenue ticket at a category-normal 14% EBITDA, ~2% D&amp;A and 25% tax. Dilution measured against the ~₹1.04 lakh crore market capitalisation at the time of the original analysis. At ₹957 on 1 October 2026 the trailing multiple is ~58× and the market capitalisation ~₹94,700 crore, so the same ticket would be ~15.8% dilution: the argument below is unchanged, and the window it describes is narrower. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <div class="pull warnbox">
     <span class="plab">The trap in the "equity is expensive" argument</span>
     <p>Put the two branches side by side and notice that <strong>both of them favour issuing:</strong></p>
     <p><strong>If 62.9× is justified</strong> — the market is right that this is a compounder — then equity is exceptionally cheap currency and you should use it to buy assets trading at 39×.<br><br>
-    <strong>If 62.9× is not justified</strong> — which is what conclusion 1 implies, since a business earning 9.2% against an 11% cost of capital does not obviously deserve a 63× multiple — then issuing overvalued paper transfers value <em>from</em> incoming shareholders <em>to</em> your existing ones. That is an argument to issue more, not less.</p>
+    <strong>If 62.9× is not justified</strong> — which is what conclusion 1 implies, since a business earning 9.2% against an 11% cost of capital does not obviously deserve a ~60× multiple — then issuing overvalued paper transfers value <em>from</em> incoming shareholders <em>to</em> your existing ones. That is an argument to issue more, not less.</p>
     <p><strong>Equity is the wrong currency in exactly one case: when the stock is undervalued. Nobody anywhere in this document argues that it is.</strong> The threat register in section 11 makes the opposite case, warning that any growth disappointment de-rates the stock sharply — which is a reason to issue while the multiple holds, not a reason to rule it out.</p>
   </div>
 
@@ -2193,7 +2426,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wf-row"><div class="wl">Acquisitions, grown<br><span class="tnote" style="margin:0;font-size:11.5px">₹15,000 cr @ 3.5× → ₹4,290 cr, +25% p.a.</span></div><div class="wtrack"><span class="wseg" style="left:69.9%;width:18.6%"></span></div><div class="wv">+8,371</div></div>
     <div class="wf-row total"><div class="wl">FY31 base case</div><div class="wtrack"><span class="wseg tot" style="left:0%;width:88.5%"></span></div><div class="wv">39,842</div></div>
   </div>
-  <p class="tnote">Bars are scaled to ₹45,000 crore. Segment bases are the derived FY26 estimates from section 09. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
+  <p class="tnote">Bars are scaled to ₹45,000 crore. Segment bases reconcile to the reported FY26 business split within ₹30 crore a line: International ₹4,885 cr and non-branded ₹2,387 cr are reported against ₹4,900 cr and ₹2,400 cr used here; core India derives to ~₹9,020 cr against ₹8,990 cr. Re-basing moves the FY31 figure by +₹17 crore, so the rounded bases are kept and every figure in the document stays consistent. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span></p>
 
   <div class="wrap">
   <h3>The assumption in that walk that deserves the most scrutiny</h3>
@@ -2355,7 +2588,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <div class="fnbox">
     <header><h4>Packaged Foods</h4><span class="who">President / CEO, India Foods</span></header>
     <div class="body">
-      <p class="mandate">Take India Foods from roughly ₹7,300 crore to ₹22,000 crore by FY31 at a 17%+ EBITDA margin, with number one or two positions in salt, spices, Indian-Chinese and snacking.</p>
+      <p class="mandate">Take India Foods from ₹6,588 crore (FY26, reported) to ₹22,000 crore by FY31 at a 17%+ EBITDA margin, with number one or two positions in salt, spices, Indian-Chinese and snacking.</p>
       <h4>The moves</h4>
       <ol>
         <li><strong>Re-weight Sampann toward spices and condiments.</strong> Pulses build scale; spices build the company. Set an explicit target for spices and condiments as a share of Sampann revenue and reallocate A&amp;P and shelf accordingly, accepting slower topline for better margin and capital returns.</li>
@@ -2375,7 +2608,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   <div class="fnbox">
     <header><h4>Packaged Beverages, RTD &amp; Coffee</h4><span class="who">President, India Beverages · MD, NourishCo</span></header>
     <div class="body">
-      <p class="mandate">Take India Beverages from ~₹5,600 crore to ₹13,000 crore by FY31, with RTD tripling and tea stabilised at mid-single-digit volume growth and a 300bps higher margin.</p>
+      <p class="mandate">Take India Beverages from ₹6,467 crore (FY26, reported, including Organic India) to ₹13,000 crore by FY31, with RTD tripling and tea stabilised at mid-single-digit volume growth and a 300bps higher margin.</p>
       <h4>The moves</h4>
       <ol>
         <li><strong>RTD national expansion is the single biggest item on this agenda.</strong> Water is properly distributed in only 40–50% of the country with North and West as white space, in a business growing 41%. Stand up a named expansion programme with a dedicated leader, dedicated P&amp;L, dedicated route infrastructure and dedicated cooler capital.</li>
@@ -2508,7 +2741,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
         <li><strong>Enforce ROIC accountability on past acquisitions.</strong> Capital Foods at ~₹5,100 crore and Organic India at ~₹1,900 crore must be reported against explicit return hurdles, not just growth rates. What gets measured after close is what disciplines the next deal.</li>
         <li><strong>Build the working capital programme.</strong> A 15-day reduction in cash conversion cycle at your scale is worth several hundred crore of released capital and directly lifts ROCE.</li>
         <li><strong>Establish leverage headroom deliberately.</strong> Net debt at 1.5× EBITDA is conservative and provides ₹5,000–6,000 crore of M&amp;A capacity. Communicate this to the market before you need it, not during a deal.</li>
-        <li><strong>Reconcile the equity story.</strong> At 63× earnings on 9.2% ROCE, the investor narrative and the financial reality have diverged. Give the market a credible, dated ROCE bridge — that is what protects the multiple.</li>
+        <li><strong>Reconcile the equity story.</strong> At ~60× earnings on 9.2% ROCE, the investor narrative and the financial reality have diverged. Give the market a credible, dated ROCE bridge — that is what protects the multiple.</li>
       </ol>
       <h4>First 90 days</h4>
       <p>Deliver an ROCE decomposition by business unit: capital employed, EBIT, returns. Identify the three largest sources of capital release. Present a five-year funding plan for the FY31 ambition.</p>
@@ -2939,8 +3172,8 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <div class="wide">
   <footer class="foot">
   <div class="wrap">
-  <p><strong>Reported figures</strong> — revenue, growth rates, margins, market shares quoted by management, distribution counts, store counts — are taken from company disclosures, earnings calls, investor presentations and reputable financial press, all cited below, and are current through the quarter ended June 2026 (Q1 FY27).</p>
-  <p><strong>Derived figures</strong> are marked <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> or <span class="est" title="Derived figure — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Derived</span>. The segment revenue splits in section 09, for example, are calculated from disclosed growth rates and the disclosed ratio of growth businesses to India business, not lifted from a filing.</p>
+  <p><strong>Reported figures</strong> — revenue, growth rates, margins, market shares quoted by management, distribution counts, store counts — are taken from company disclosures, earnings calls, investor presentations and reputable financial press, all cited below, and are current through the quarter ended June 2026 (Q1 FY27), with company announcements, NielsenIQ data and Q2 FY27 business updates to 5 October 2026.</p>
+  <p><strong>Derived figures</strong> are marked <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span> or <span class="est" title="Derived figure — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Derived</span>. Segment revenues, results, assets and liabilities in sections 09 and 09A are taken from the audited segment note of the FY26 consolidated statements; EBITDA margins and returns computed from them are tagged Derived, as are splits below the disclosed level (RTD, Soulfull, solubles versus plantations).</p>
   <p><strong>Projections and recommendations</strong> are marked <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> or <span class="est" title="Recommendation — this document’s analysis, not company policy or guidance" tabindex="0" role="note">Recommended</span>. The FY29 and FY31 targets, peer CAGR assumptions, funding estimates and M&amp;A ticket sizes are this document's analysis. Company guidance for FY27 is double-digit revenue growth with 50–70bps of margin expansion<sup class="cite"><a href="#s5" title="Source 5">5</a></sup>; everything beyond that horizon here is argument, not guidance.</p>
   <p><strong>Judgments</strong> — competitive vulnerabilities, category attractiveness, margin bands, risk likelihood — are marked <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span> and should be debated rather than accepted.</p>
   <p><strong>Inline citations.</strong> Numbered markers such as <sup class="cite"><a href="#s1" title="Source 1">1</a></sup> follow the principal reported figures and link directly to the numbered source below. They are applied where a specific published figure is being relied on; they are deliberately <em>not</em> applied to derived, modelled or judgment material, which by definition has no source other than this document's own analysis. If a number in this document carries no citation and no <span class="est" title="Derived estimate — calculated from disclosed ratios and growth rates, not lifted from a filing" tabindex="0" role="note">Est</span>, <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span> or <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span> tag, treat that as an omission worth querying.</p>
@@ -2981,6 +3214,29 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <li id="s30"><span class="srcnum">30.</span><a href="https://nielseniq.com/global/en/insights/analysis/2026/health-and-wellness-consumer-trends-the-rise-of-the-self-directed-health-consumer/">Health and wellness consumer trends 2026 — NIQ</a></li>
     <li id="s31"><span class="srcnum">31.</span><a href="https://www.kotakmf.com/Information/blogs/gst-2-point-0">GST 2.0: new 5% and 18% slabs effective 22 September 2025 — Kotak</a></li>
     <li id="s32"><span class="srcnum">32.</span><a href="https://www.business-standard.com/economy/news/consumer-companies-expect-gst-2-0-to-drive-demand-for-the-next-few-quarters-125121501149_1.html">Consumer companies expect GST 2.0 to drive demand — Business Standard</a></li>
+    <li id="s33"><span class="srcnum">33.</span><a href="https://www.tataconsumer.com/iar-2025-26/docs/consolidated.pdf">Tata Consumer Integrated Annual Report FY2025-26 — Consolidated financial statements, note 38 (segment information)</a></li>
+    <li id="s34"><span class="srcnum">34.</span><a href="https://www.tataconsumer.com/iar-2025-26/docs/mda.pdf">Tata Consumer Integrated Annual Report FY2025-26 — Management Discussion &amp; Analysis</a></li>
+    <li id="s35"><span class="srcnum">35.</span><a href="https://www.tataconsumer.com/iar-2025-26/docs/boards-report.pdf">Tata Consumer Integrated Annual Report FY2025-26 — Board’s Report (subsidiary performance)</a></li>
+    <li id="s36"><span class="srcnum">36.</span><a href="https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/2026-05/Q4FY26_Investor_Presentation.pdf">Tata Consumer Q4 FY26 investor presentation</a></li>
+    <li id="s37"><span class="srcnum">37.</span><a href="https://nsearchives.nseindia.com/corporate/Sukhvinder_24072026160704_3_TCPL_BM_Investor_Presentation.pdf">Tata Consumer Q1 FY27 investor presentation — NSE filing</a></li>
+    <li id="s38"><span class="srcnum">38.</span><a href="https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/2026-07/TataConsumer_Q1FY27_Transcript.pdf">Tata Consumer Q1 FY27 earnings call transcript</a></li>
+    <li id="s39"><span class="srcnum">39.</span><a href="https://nsearchives.nseindia.com/corporate/Sukhvinder_01092026145309_SE_Intimation_CFPL_sd.pdf">Tata Consumer acquires further 5% of Capital Foods, holding now 80% — NSE intimation</a></li>
+    <li id="s40"><span class="srcnum">40.</span><a href="https://univest.in/blogs/why-tata-consumer-products-ltd-share-price-52-week-low-2026-09-25">Tata Consumer share price at 52-week low — Univest</a></li>
+    <li id="s41"><span class="srcnum">41.</span><a href="https://www.indmoney.com/stocks/tata-consumer-products-ltd-share-price">Tata Consumer share price and market capitalisation — INDmoney</a></li>
+    <li id="s42"><span class="srcnum">42.</span><a href="https://upstox.com/news/market-news/earnings/nestle-india-q1-results-net-profit-soars-48-yo-y-to-975-crore-ebitda-margin-expands/article-197352/">Nestlé India Q1 FY27 results — Upstox</a></li>
+    <li id="s43"><span class="srcnum">43.</span><a href="https://www.business-standard.com/companies/quarterly-results/hul-q1fy27-profit-falls-revenue-rises-126072800275_1.html">HUL Q1 FY27 results — Business Standard</a></li>
+    <li id="s44"><span class="srcnum">44.</span><a href="https://itcportal.com/content/dam/itc-corporate/pdfs/financial-result/quarterly-results-2026-2027/june-2026/ITC-Press-Release-Q1-FY2027.pdf">ITC Q1 FY27 media statement</a></li>
+    <li id="s45"><span class="srcnum">45.</span><a href="https://www.indianretailer.com/news/retail-india-news-britannia-profit-rises-14-pc-q1-fy27">Britannia Q1 FY27 results — Indian Retailer</a></li>
+    <li id="s46"><span class="srcnum">46.</span><a href="https://www.sahi.com/blogs/marico-q1-results-fy2027">Marico Q1 FY27 results — Sahi</a></li>
+    <li id="s47"><span class="srcnum">47.</span><a href="https://www.businesstoday.in/markets/stocks/story/marico-shares-rise-3-after-q2-update-nuvama-bullish-on-volume-growth-559611-2026-10-05">Marico Q2 FY27 business update — Business Today</a></li>
+    <li id="s48"><span class="srcnum">48.</span><a href="https://upstox.com/news/market-news/earnings/dabur-india-q1-earnings-net-profit-jumps-15-yo-y-to-591-crore-ebitda-margin-expands/article-197790/">Dabur Q1 FY27 results — Upstox</a></li>
+    <li id="s49"><span class="srcnum">49.</span><a href="https://www.sahi.com/blogs/godrej-consumer-products-q1-results-2027">Godrej Consumer Q1 FY27 results — Sahi</a></li>
+    <li id="s50"><span class="srcnum">50.</span><a href="https://www.indianretailer.com/news/reliances-campa-posts-rs-2900-cr-sales-q1-fy27-gains-double-digit-market-share">Reliance Consumer Q1 FY27: Campa ₹2,900 crore — Indian Retailer</a></li>
+    <li id="s51"><span class="srcnum">51.</span><a href="https://dailypioneer.com/news/fmcg-growth-moderates-in-june-quarter-nielseniq">NielsenIQ: FMCG growth moderates in June quarter 2026 — The Pioneer</a></li>
+    <li id="s52"><span class="srcnum">52.</span><a href="https://www.tradingview.com/news/moodys:14306a14a5a1c:0-e-commerce-s-share-to-fmcg-sales-in-top-eight-metros-at-21-in-june-quarter-niq/">NielsenIQ: e-commerce 21% of FMCG in top eight metros, June quarter 2026 — TradingView</a></li>
+    <li id="s53"><span class="srcnum">53.</span><a href="https://nielseniq.com/global/en/news-center/2026/niq-gst-2-0-transition-reshapes-indias-fmcg-growth-landscape/">NIQ: GST 2.0 transition reshapes India’s FMCG growth, October–December 2025 — NielsenIQ</a></li>
+    <li id="s54"><span class="srcnum">54.</span><a href="https://mediabrief.com/rural-fuels-indias-13-9-fmcg-growth-in-q2-nielseniq/">NielsenIQ: FMCG grows 13.9% in April–June 2025 — MediaBrief</a></li>
+    <li id="s55"><span class="srcnum">55.</span><a href="https://propnewstime.com/latestnewsstories/MjMxMTc=/fmcg-sector-sees-slower-volume-growth-as-gst-transition-and-market-shifts-affect-demand">NielsenIQ: July–September 2025 volume growth 5.4%, rural 7.7% — PropNewsTime</a></li>
   </ul>
   </div>
   </footer>
@@ -3343,6 +3599,13 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       tip.style.left=Math.max(0,x)+'px'; tip.style.top=Math.max(0,y)+'px';
     });
     node.addEventListener('mouseleave',function(){tip.classList.remove('on');});
+    node.addEventListener('focus',function(){
+      tip.innerHTML=html; tip.classList.add('on');
+      var r=body.getBoundingClientRect(), b=node.getBoundingClientRect();
+      tip.style.left=Math.max(0,Math.min(r.width-tip.offsetWidth,b.left-r.left+b.width/2-tip.offsetWidth/2))+'px';
+      tip.style.top=Math.max(0,b.bottom-r.top+6)+'px';
+    });
+    node.addEventListener('blur',function(){tip.classList.remove('on');});
   }
   function ctlbar(host,label){
     var c=H('div',{class:'chartctl'},host);
@@ -3616,8 +3879,418 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     H('p',{class:'chnote',html:'Base case from the section 17 model. The dashed line is Nestlé India’s projected FY31 domestic revenue — the bar leadership has to clear. <span class="est" title="Modelled — this document’s own projection built on stated assumptions, not company guidance" tabindex="0" role="note">Modelled</span>'},host);
   }
 
+
+  /* ================= shared: horizontal bars with a zero baseline ================= */
+  function clear(n){ while(n.firstChild) n.removeChild(n.firstChild); }
+  function niceStep(span){
+    var raw=span/5, p=Math.pow(10,Math.floor(Math.log(raw)/Math.LN10)), m=raw/p;
+    return (m<=1?1:m<=2?2:m<=2.5?2.5:m<=5?5:10)*p;
+  }
+  /* rows: {label, sub, v, cls, tip, me, vlab, na}; o: {fmt, ref:[{v,label}], min, max, ml, onClick} */
+  function hbar(svg,s,rows,o){
+    clear(svg);
+    var W=760, ml=o.ml||210, mr=o.mr||86, mt=24, rh=o.rh||34, mb=34;
+    var Hh=mt+rows.length*rh+mb;
+    svg.setAttribute('viewBox','0 0 '+W+' '+Hh);
+    var vals=rows.filter(function(r){return r.v!==null&&r.v!==undefined;}).map(function(r){return r.v;});
+    (o.ref||[]).forEach(function(r){vals.push(r.v);});
+    var lo=Math.min(0,o.min!==undefined?o.min:Math.min.apply(null,vals));
+    var hi=Math.max(0,o.max!==undefined?o.max:Math.max.apply(null,vals));
+    var st=niceStep(hi-lo||1); lo=Math.floor(lo/st)*st; hi=Math.ceil(hi/st)*st;
+    var x=function(v){return ml+(Math.max(lo,Math.min(hi,v))-lo)/(hi-lo)*(W-ml-mr);};
+    for(var t=lo;t<=hi+1e-9;t+=st){
+      E('line',{class:'ax-grid',x1:x(t),x2:x(t),y1:mt-6,y2:Hh-mb},svg);
+      E('text',{class:'ax-tick',x:x(t),y:Hh-mb+15,'text-anchor':'middle'},svg).textContent=o.fmt(Math.round(t*100)/100);
+    }
+    E('line',{class:'ax-line',x1:x(0),x2:x(0),y1:mt-6,y2:Hh-mb},svg);
+    if(o.axis) E('text',{class:'ax-lab',x:W-mr,y:Hh-6,'text-anchor':'end'},svg).textContent=o.axis;
+    rows.forEach(function(r,i){
+      var yy=mt+i*rh, bh=Math.min(18,rh-12);
+      var node=E('g',{class:'bub',tabindex:'0',role:'img','aria-label':r.label+': '+(r.na?'not disclosed':(r.vlab||o.fmt(r.v)))},svg);
+      E('rect',{x:0,y:yy-2,width:W,height:rh,fill:'transparent'},node);
+      E('text',{class:'pt-lab'+(r.me?' me':''),x:ml-10,y:yy+bh/2+(r.sub?-1:4),'text-anchor':'end'},node).textContent=r.label;
+      if(r.sub) E('text',{class:'ax-tick',x:ml-10,y:yy+bh/2+11,'text-anchor':'end'},node).textContent=r.sub;
+      if(r.na){
+        E('text',{class:'ax-tick',x:x(0)+6,y:yy+bh/2+4},node).textContent='not disclosed';
+      } else {
+        var x0=x(Math.min(0,r.v)), x1=x(Math.max(0,r.v));
+        E('rect',{class:r.cls,x:x0,y:yy,width:Math.max(2,x1-x0),height:bh,rx:3,opacity:r.op||1},node);
+        var right=r.v>=0;
+        E('text',{class:'pt-lab'+(r.me?' me':''),x:right?x1+6:x0-6,y:yy+bh/2+4,'text-anchor':right?'start':'end'},node).textContent=r.vlab||o.fmt(r.v);
+      }
+      if(r.tip) bindTip(node,s.tip,s.body,r.tip);
+      if(o.onClick&&r.click){ node.addEventListener('click',function(){o.onClick(r);}); node.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();o.onClick(r);}}); }
+    });
+    (o.ref||[]).forEach(function(rf){
+      E('line',{x1:x(rf.v),x2:x(rf.v),y1:mt-10,y2:Hh-mb,stroke:'var(--rust)','stroke-width':1.5,'stroke-dasharray':'5 4'},svg);
+      E('text',{class:'ax-tick',x:x(rf.v)+5,y:mt-12,fill:'var(--rust)'},svg).textContent=rf.label;
+    });
+  }
+  /* grouped vertical bars. groups: [{label, me, bars:[{v, cls, op, tip, lab}]}]; o: {fmt, ref, axis, legend:[[cls,op,label]]} */
+  function vbars(svg,s,groups,o){
+    clear(svg);
+    var W=760, Hh=o.h||340, ml=52, mr=20, mt=26, mb=o.mb||46;
+    svg.setAttribute('viewBox','0 0 '+W+' '+Hh);
+    var vals=[]; groups.forEach(function(g){g.bars.forEach(function(b){ if(b.v!==null&&b.v!==undefined) vals.push(b.v);});});
+    (o.ref||[]).forEach(function(r){vals.push(r.v);});
+    var lo=Math.min(0,Math.min.apply(null,vals)), hi=Math.max(0,Math.max.apply(null,vals));
+    var st=niceStep(hi-lo||1); lo=Math.floor(lo/st)*st; hi=Math.ceil(hi/st)*st;
+    var dlo=lo<0?lo-st*0.35:lo; /* room under negative bars for their labels */
+    var y=function(v){return Hh-mb-(v-dlo)/(hi-dlo)*(Hh-mt-mb);};
+    for(var t=lo;t<=hi+1e-9;t+=st){
+      E('line',{class:'ax-grid',x1:ml,x2:W-mr,y1:y(t),y2:y(t)},svg);
+      E('text',{class:'ax-tick',x:ml-8,y:y(t)+3.5,'text-anchor':'end'},svg).textContent=o.fmt(Math.round(t*100)/100);
+    }
+    E('line',{class:'ax-line',x1:ml,x2:W-mr,y1:y(0),y2:y(0)},svg);
+    var gw=(W-ml-mr)/groups.length;
+    groups.forEach(function(g,gi){
+      var n=g.bars.length, bw=Math.min(46,gw*0.72/n), gap=3, tot=n*bw+(n-1)*gap, x0=ml+gi*gw+(gw-tot)/2;
+      g.bars.forEach(function(b,bi){
+        var xx=x0+bi*(bw+gap);
+        var node=E('g',{class:'bub',tabindex:'0',role:'img','aria-label':g.label+' '+(b.lab||'')+': '+(b.v===null?'not reported':o.fmt(b.v))},svg);
+        E('rect',{x:xx-1,y:mt,width:bw+2,height:Hh-mt-mb,fill:'transparent'},node);
+        if(b.v===null||b.v===undefined){
+          E('rect',{x:xx,y:y(0)-26,width:bw,height:26,fill:'none',stroke:'var(--line-2)','stroke-dasharray':'3 3',rx:3},node);
+          E('text',{class:'ax-tick',x:xx+bw/2,y:y(0)-30,'text-anchor':'middle'},node).textContent='n/r';
+        } else {
+          var top=y(Math.max(0,b.v)), bot=y(Math.min(0,b.v));
+          E('rect',{class:b.cls,x:xx,y:top,width:bw,height:Math.max(2,bot-top),rx:3,opacity:b.op||1},node);
+          if(o.labels!==false) E('text',{class:'pt-lab'+(g.me?' me':''),x:xx+bw/2,y:b.v>=0?top-5:bot+12,'text-anchor':'middle'},node).textContent=o.fmt(b.v);
+        }
+        if(b.tip) bindTip(node,s.tip,s.body,b.tip);
+      });
+      var lab=E('text',{class:'pt-lab'+(g.me?' me':''),x:ml+gi*gw+gw/2,y:Hh-mb+17,'text-anchor':'middle'},svg); lab.textContent=g.label;
+      if(g.sub) E('text',{class:'ax-tick',x:ml+gi*gw+gw/2,y:Hh-mb+30,'text-anchor':'middle'},svg).textContent=g.sub;
+    });
+    (o.ref||[]).forEach(function(rf){
+      E('line',{x1:ml,x2:W-mr,y1:y(rf.v),y2:y(rf.v),stroke:'var(--rust)','stroke-width':1.5,'stroke-dasharray':'5 4'},svg);
+      E('text',{class:'ax-tick',x:W-mr-2,y:y(rf.v)-5,'text-anchor':'end',fill:'var(--rust)'},svg).textContent=rf.label;
+    });
+  }
+  function legend(host,items){
+    var old=host.querySelector('.legend.dyn'); if(old) old.parentNode.removeChild(old);
+    var lg=H('div',{class:'legend dyn'},null);
+    items.forEach(function(it){
+      var sw='<i class="sw '+it[0]+'" style="opacity:'+(it[1]||1)+'" aria-hidden="true"></i>';
+      H('span',{html:sw+it[2]},lg);
+    });
+    var body=host.querySelector('.chartbody'); body.parentNode.insertBefore(lg,body.nextSibling);
+  }
+  function pct(v){return (v>0?'+':'')+v+'%';}
+  function pc(v){return v+'%';}
+
+  /* ================= 5. segment explorer ================= */
+  var SEGTREE={n:'Tata Consumer',rev:20290,g:15,q:12,basis:'Reported',
+    m:'EBITDA margin 13.9% FY26, 13.6% Q1 FY27',pos:'Among India’s top-10 FMCG companies; #2 branded tea company globally',
+    note:'Consolidated revenue after inter-segment eliminations. The five businesses below sum to ₹20,302 cr before eliminations.',
+    kids:[
+    {id:'salt',n:'Salt',rev:4000,plus:true,g:14,q:7,role:'core',basis:'Reported',m:'Gross margin 33–36% (management)',pos:'#1 in India · ~39% value share, +100bps in FY26',
+      note:'Crossed ₹4,000 cr in FY26 on double-digit volume growth. MRP of the core pack went from ₹30 to ₹32 in June 2026; value-added salts grew volume 13% in Q1 FY27.',
+      kids:[
+       {n:'Tata Salt — core iodised',rev:3700,approx:true,g:null,q:7,role:'core',basis:'Est',m:'Gross margin 33–36%',pos:'Category leader',note:'Residual of the salt portfolio after premium salts. Q1 growth shown is for the whole salt portfolio.'},
+       {n:'Premium &amp; value-added salts',rev:300,plus:true,g:null,q:13,qv:true,role:'growth',basis:'Reported',m:'Premium price per kg',pos:'Rock salt alone ₹100+ cr',note:'Lite, Rock Salt, Lo-Sodium Rock Salt (15% lower sodium), Himalayan Rock Salt Crystal. Q1 figure is volume growth.'}
+      ]},
+    {id:'tea',n:'Tea &amp; coffee (India)',rev:5030,approx:true,g:6,q:-4,role:'core',basis:'Derived',m:'Gross margin 33–36% (management)',pos:'#2 tea brand in India · tea share −50bps · leads tea in e-commerce',
+      note:'Tea grew 3% in volume and 6% in value in FY26; coffee grew 43%. In Q1 FY27 tea volume rose 2% while revenue fell 4% as lower tea costs were passed on; coffee grew 24%. Tea procurement is now inflating 7–10%.'},
+    {id:'growth',n:'Growth businesses',rev:4000,plus:true,g:24,q:47,role:'growth',basis:'Reported',m:'Capital Foods + Organic India gross margin 48%',pos:'31% of India business in FY26 → 36% in Q1 FY27',
+      note:'Management guides 30%+ growth for the portfolio. Includes overseas revenue of Capital Foods and Organic India.',
+      kids:[
+       {n:'Tata Sampann',rev:1500,plus:true,g:46,q:58,role:'growth',basis:'Reported',m:'EBITDA ~12%, from −5% in FY20',pos:'National brand in pulses, spices, dry fruits; pulses ~₹650 cr in a ₹2.2 lakh cr market',note:'Dry fruits (~₹300 cr run-rate) and cold-pressed oils (~₹200 cr) added to a core growing ~30%. Margin up 150–200bps YoY in Q1.'},
+       {n:'Ready-to-drink (NourishCo)',rev:960,approx:true,g:10,q:41,role:'growth',basis:'Est',m:'Expanding with utilisation (management)',pos:'#1 natural mineral water (Himalayan); Copper+ +26% in FY26',note:'Q1 FY27 volume +35%. Distributed properly in only 40–50% of the country; North and West are white space. Capacity being doubled.'},
+       {n:'Capital Foods',rev:839,g:5,q:40,role:'growth',basis:'Reported',m:'Gross margin 48% (with Organic India)',pos:'India’s leading Desi-Chinese brand (Ching’s Secret)',note:'FY26 hit by export disruption and the GST transition; Q1 FY27 revenue ₹232 cr. Stake raised to 80% on 1 Sept 2026.'},
+       {n:'Organic India',rev:478,g:28,q:27,role:'growth',basis:'Reported',m:'Gross margin 48% (with Capital Foods)',pos:'Leading organic and herbal supplements brand',note:'Q1 FY27 revenue ₹118 cr. US supplements and Indian e-commerce led the growth.'},
+       {n:'Soulfull, vending &amp; other',rev:200,approx:true,g:null,q:45,role:'growth',basis:'Est',m:'Not disclosed',pos:'Vending: ₹100 cr run-rate, 8,000+ machines',note:'Soulfull grew 45% in Q1 FY27 (protein muesli launched). Revenue is an estimated residual.'}
+      ]},
+    {id:'intl',n:'International',rev:4885,g:16,gcc:9,q:16,qcc:3,role:'intl',basis:'Reported',m:'Segment EBIT 11.9% (from 14.7%); 13.0% in Q1 FY27',pos:'#1 tea in Canada, #3 in UK, #4 R&amp;G coffee in US',
+      note:'Coffee costs and US tariffs compressed margin in FY26; easing coffee prices are lifting US margins in FY27.',
+      kids:[
+       {n:'USA — Eight O’Clock, Tetley',rev:2202,g:23,cc:true,q:7,qcc:true,role:'intl',basis:'Reported',m:'Gross margin under pressure (coffee, tariffs)',pos:'#4 R&amp;G coffee · 4.3% coffee-bag share',note:'Seven consecutive quarters of share gain. Coffee volume +3% in FY26; growth mainly pricing.'},
+       {n:'UK — Tetley, teapigs, Good Earth',rev:1514,g:-1,cc:true,q:-2,qcc:true,role:'intl',basis:'Reported',m:'Operating profit improved on pricing',pos:'#3 · 18.5% everyday black, 10.2% fruit &amp; herbal',note:'Structurally declining black tea category; a hot June 2026 hurt further. Specialty brands gaining share.'},
+       {n:'Canada — Tetley',rev:468,g:0,cc:true,q:0,qcc:true,role:'intl',basis:'Reported',m:'Mix shifting to specialty',pos:'#1 · 25.1% value share',note:'Black tea volumes down, specialty up 8%; fastest-growing major brand in herbal tea.'},
+       {n:'Other markets',rev:701,g:null,q:null,role:'intl',basis:'Derived',m:'Not disclosed',pos:'Joekels (South Africa), Europe, Australia, Middle East',note:'Residual of the International business. Middle East hit by shipping disruption.'}
+      ]},
+    {id:'nb',n:'Non-branded',rev:2387,g:25,gcc:23,q:-7,qcc:-10,role:'nb',basis:'Reported',m:'Segment EBIT 21.3% → 11.8% → 9.9% (Q1 FY27)',pos:'Coffee extraction (India, Vietnam) and plantations',
+      note:'Revenue rose on volume while margin halved as prior-year fair-value gains reversed. Q1 FY27 fell on a 26% drop in Robusta prices.',
+      kids:[
+       {n:'Coffee solubles',rev:1623,approx:true,g:32,q:-12,qcc:true,role:'nb',basis:'Derived',m:'Largely pass-through pricing',pos:'B2B extraction; Vietnam revenue +84% in FY26',note:'68% of non-branded per the FY26 MD&amp;A.'},
+       {n:'Plantations',rev:764,approx:true,g:10,q:-8,qcc:true,role:'nb',basis:'Derived',m:'Crop- and price-driven',pos:'Tea and coffee estates',note:'32% of non-branded per the FY26 MD&amp;A.'}
+      ]}
+  ]};
+  var ROLECLS={core:'bar-core',growth:'bar-growth',intl:'bar-intl',nb:'bar-nb'};
+  var ROLELAB={core:'Core India',growth:'Growth portfolio',intl:'International',nb:'Non-branded'};
+
+  function segChart(host){
+    var s=shell(host,'Segment explorer: from the group to the brand',
+      'Click a bar to open its brands or markets; use the breadcrumb to go back up. Switch the measure to compare size with growth. The panel below gives the detail for your selection.');
+    var crumb=H('div',{class:'chartctl',style:'border-top:none;border-bottom:1px solid var(--line)'},null);
+    host.insertBefore(crumb,s.body);
+    var svg=E('svg',{viewBox:'0 0 760 300',role:'group','aria-label':'Segment revenue and growth'},s.body);
+    var c=ctlbar(host,'Measure');
+    var detail=H('div',{class:'segdetail'},host);
+    var note=H('p',{class:'chnote',html:'Revenue in ₹ crore, FY26. “+” marks a disclosed milestone (“crossed ₹4,000 cr”) rather than an exact figure; “~” marks an estimate. Growth for International markets is in constant currency where marked cc. Basis labels in the detail panel say which figures are reported and which are derived. <span class="est" title="Mixed basis — see the detail panel for each figure" tabindex="0" role="note">Mixed basis</span>'},host);
+    var path=[SEGTREE], metric='rev', sel=null;
+
+    function revLab(d){return (d.approx?'~':'')+'₹'+Math.round(d.rev).toLocaleString('en-IN')+(d.plus?'+':'')+' cr';}
+    function gLab(v,cc){return v===null||v===undefined?'n/d':pct(v)+(cc?' cc':'');}
+    function tipFor(d,parent){
+      return '<b>'+d.n+'</b><dl><dt>FY26 revenue</dt><dd>'+revLab(d)+'</dd><dt>Share of '+(parent===SEGTREE?'group':'segment')+'</dt><dd>'+Math.round(d.rev/parent.rev*100)+'%</dd><dt>FY26 growth</dt><dd>'+gLab(d.g,d.cc)+(d.gcc!==undefined?' ('+d.gcc+'% cc)':'')+'</dd><dt>Q1 FY27</dt><dd>'+gLab(d.q,d.qcc===true)+(typeof d.qcc==='number'?' ('+d.qcc+'% cc)':'')+(d.qv?' vol':'')+'</dd><dt>Basis</dt><dd>'+d.basis+'</dd></dl>'+(d.kids?'<div style="margin-top:6px;font-size:11.5px;opacity:.75">Click to open</div>':'');
+    }
+    function showDetail(d,parent){
+      var share=parent?Math.round(d.rev/parent.rev*100)+'% of '+(parent===SEGTREE?'group':parent.n):'100% of group';
+      detail.innerHTML='<div class="grid g4" style="margin:0">'+
+        '<div class="kpi hi"><span class="kpi-lab">'+d.n+' · FY26 revenue</span><div class="kpi-val">'+revLab(d).replace(' cr','<small> cr</small>')+'</div><div class="kpi-sub">'+share+'</div></div>'+
+        '<div class="kpi'+((d.g!==null&&d.g<0)?' lo':'')+'"><span class="kpi-lab">FY26 growth</span><div class="kpi-val">'+gLab(d.g,d.cc).replace('%','<small>%</small>')+'</div><div class="kpi-sub">'+(d.gcc!==undefined?d.gcc+'% in constant currency':'Year to March 2026')+'</div></div>'+
+        '<div class="kpi'+((d.q!==null&&d.q<0)?' lo':(d.q>20?' hi':''))+'"><span class="kpi-lab">Q1 FY27 growth</span><div class="kpi-val">'+gLab(d.q,d.qcc===true).replace('%','<small>%</small>')+'</div><div class="kpi-sub">'+(typeof d.qcc==='number'?d.qcc+'% in constant currency':(d.qv?'Volume growth':'Quarter to June 2026'))+'</div></div>'+
+        '<div class="kpi"><span class="kpi-lab">Basis</span><div class="kpi-val" style="font-size:20px">'+d.basis+'</div><div class="kpi-sub">'+(d.role?ROLELAB[d.role]:'Consolidated')+'</div></div>'+
+        '</div><dl class="segdl"><dt>Margin evidence</dt><dd>'+d.m+'</dd><dt>Market position</dt><dd>'+d.pos+'</dd><dt>Context</dt><dd>'+d.note+'</dd></dl>';
+    }
+    function draw(){
+      var node=path[path.length-1];
+      crumb.innerHTML='';
+      H('span',{class:'cl',text:'Viewing'},crumb);
+      path.forEach(function(p,i){
+        var b=H('button',{type:'button',html:p.n},crumb);
+        b.setAttribute('aria-pressed',i===path.length-1?'true':'false');
+        b.addEventListener('click',function(){ path=path.slice(0,i+1); sel=null; draw(); });
+        if(i<path.length-1) H('span',{class:'cl',text:'›'},crumb);
+      });
+      var rows=node.kids.slice().sort(function(a,b){return b.rev-a.rev;}).map(function(d){
+        var v=metric==='rev'?d.rev:(metric==='g'?d.g:d.q);
+        var cc=metric==='g'?d.cc:(d.qcc===true);
+        return {label:d.n.replace(/&amp;/g,'&'),sub:metric==='rev'?(d.kids?'click to open ›':(ROLELAB[d.role]||'')):revLab(d),v:v,na:v===null||v===undefined,cls:ROLECLS[d.role],op:d.basis==='Reported'?1:0.62,
+          vlab:metric==='rev'?revLab(d):gLab(v,cc)+(metric==='q'&&d.qv?' vol':''),tip:tipFor(d,node),click:true,d:d,me:sel===d};
+      });
+      hbar(svg,s,rows,{fmt:metric==='rev'?function(v){return v>=1000?(v/1000)+'k':v;}:pc,ml:230,
+        axis:metric==='rev'?'FY26 revenue, ₹ crore':(metric==='g'?'FY26 growth':'Q1 FY27 growth'),
+        onClick:function(r){ if(r.d.kids){ path.push(r.d); sel=null; draw(); } else { sel=r.d; showDetail(r.d,node); draw(); } }});
+      if(!sel) showDetail(node,path.length>1?path[path.length-2]:null);
+      var roles={}; node.kids.forEach(function(d){roles[d.role]=1;});
+      var items=Object.keys(roles).map(function(k){return [ROLECLS[k],1,ROLELAB[k]];});
+      items.push(['bar-mut',0.62,'Lighter shade = estimated or derived']);
+      legend(host,items);
+    }
+    btn(c,'FY26 revenue',true,function(){metric='rev';draw();});
+    btn(c,'FY26 growth',false,function(){metric='g';draw();});
+    btn(c,'Q1 FY27 growth',false,function(){metric='q';draw();});
+    draw();
+  }
+
+  /* ================= 6. segment margins and returns ================= */
+  var SEGR=[
+    {n:'India Business',cls:'bar-growth',ebit:[9.1,11.8],ebitda:[12.8,15.2],qm:[9.3,11.1],roce:[7.4,11.2],ce:[13776,13390],rev:[11241,12779]},
+    {n:'International',cls:'bar-intl',ebit:[14.7,11.9],ebitda:[17.3,14.3],qm:[13.5,13.0],roce:[10.7,9.0],ce:[6224,6932],rev:[4549,5251]},
+    {n:'Non-branded',cls:'bar-nb',ebit:[21.3,11.8],ebitda:[24.7,14.6],qm:[12.0,9.9],roce:[17.5,11.4],ce:[2331,2462],rev:[1910,2387]}
+  ];
+  function segRetChart(host){
+    var s=shell(host,'What each segment earns, and on how much capital',
+      'Audited segment figures, prior period in the lighter shade. Switch between margins, return on segment capital and the capital itself. The dashed line on the returns view is the pre-tax equivalent of an 11% cost of capital.');
+    var svg=E('svg',{viewBox:'0 0 760 340',role:'group','aria-label':'Segment margins and returns'},s.body);
+    var c=ctlbar(host,'Measure');
+    var V={
+      ebit:{k:'ebit',p:['FY25','FY26'],fmt:pc,lab:'Segment EBIT margin'},
+      ebitda:{k:'ebitda',p:['FY25','FY26'],fmt:pc,lab:'EBITDA margin (derived)'},
+      qm:{k:'qm',p:['Q1 FY26','Q1 FY27'],fmt:pc,lab:'Segment margin, Q1'},
+      roce:{k:'roce',p:['FY25','FY26'],fmt:pc,lab:'Pre-tax return on segment capital',ref:[{v:14.7,label:'11% WACC ≈ 14.7% pre-tax'}]},
+      ce:{k:'ce',p:['FY25','FY26'],fmt:function(v){return v>=1000?(Math.round(v/100)/10)+'k':v;},lab:'Segment capital employed, ₹ cr'}
+    };
+    function draw(key){
+      var v=V[key];
+      var groups=SEGR.map(function(d){
+        return {label:d.n,me:d.n==='India Business',bars:[0,1].map(function(i){
+          var val=d[v.k][i];
+          return {v:val,cls:d.cls,op:i===0?0.4:1,lab:v.p[i],
+            tip:'<b>'+d.n+' · '+v.p[i]+'</b><dl><dt>'+v.lab+'</dt><dd>'+(v.k==='ce'?'₹'+val.toLocaleString('en-IN')+' cr':val+'%')+'</dd>'+(i===1&&v.k!=='ce'?'<dt>Change</dt><dd>'+((d[v.k][1]-d[v.k][0])>0?'+':'')+Math.round((d[v.k][1]-d[v.k][0])*100)+'bps</dd>':'')+(v.k!=='qm'?'<dt>Revenue</dt><dd>₹'+d.rev[i].toLocaleString('en-IN')+' cr</dd>':'')+'</dl>'};
+        })};
+      });
+      vbars(svg,s,groups,{fmt:v.fmt,ref:v.ref});
+      legend(host,[['bar-mut',0.4,v.p[0]+' (lighter)'],['bar-mut',1,v.p[1]],['bar-growth',1,'India'],['bar-intl',1,'International'],['bar-nb',1,'Non-branded']]);
+    }
+    btn(c,'EBIT margin',true,function(){draw('ebit');});
+    btn(c,'EBITDA margin',false,function(){draw('ebitda');});
+    btn(c,'Latest quarter',false,function(){draw('qm');});
+    btn(c,'Return on capital',false,function(){draw('roce');});
+    btn(c,'Capital employed',false,function(){draw('ce');});
+    draw('ebit');
+    H('p',{class:'chnote',html:'Segment result, depreciation and amortisation, assets and liabilities from note 38 of the FY26 consolidated statements; Q1 margins from the Q1 FY27 presentation. EBITDA adds segment D&amp;A to segment result. Return is segment result over segment assets less segment liabilities, pre-tax and before ₹222 cr of unallocated corporate cost. <span class="est" title="Derived figure — calculated from audited disclosures, not lifted from a filing" tabindex="0" role="note">Derived</span>'},host);
+  }
+
+  /* ================= 7. growth portfolio share ================= */
+  function growthChart(host){
+    var s=shell(host,'Growth businesses as a share of the India business',
+      'Sampann, ready-to-drink, Soulfull, vending, Capital Foods and Organic India. The jump in FY25 is the two acquisitions; everything since is organic. The dashed lines are management’s aspiration and this document’s FY31 recommendation.');
+    var svg=E('svg',{viewBox:'0 0 760 320',role:'group','aria-label':'Growth business share of India business'},s.body);
+    var D=[['FY21',8],['FY22',10],['FY23',15],['FY24',18],['FY25',28],['FY26',31],['Q1 FY26',28],['Q1 FY27',36]];
+    var groups=D.map(function(d,i){
+      var q=d[0].indexOf('Q1')===0;
+      return {label:d[0],me:i===D.length-1,bars:[{v:d[1],cls:'bar-growth',op:q?0.62:1,tip:'<b>'+d[0]+'</b><dl><dt>Share of India</dt><dd>'+d[1]+'%</dd>'+(d[0]==='FY26'?'<dt>Revenue</dt><dd>₹4,000+ cr</dd><dt>Growth</dt><dd>+24%</dd>':'')+(d[0]==='Q1 FY27'?'<dt>Revenue</dt><dd>₹1,314 cr</dd><dt>Growth</dt><dd>+47%</dd>':'')+(d[0]==='FY25'?'<dt>Note</dt><dd>Capital Foods, Organic India added</dd>':'')+'</dl>'}]};
+    });
+    vbars(svg,s,groups,{fmt:pc,ref:[{v:45,label:'Management aspiration ~45% (3–4 yrs)'},{v:60,label:'This document: 60% by FY31'}]});
+    legend(host,[['bar-growth',1,'Full year'],['bar-growth',0.62,'First quarter (seasonally comparable pair)']]);
+    H('p',{class:'chnote',html:'From the Q1 FY27 investor presentation<sup class="cite"><a href="#s37" title="Source 37">37</a></sup>; includes overseas revenue of Capital Foods and Organic India. Compare Q1 with Q1: the portfolio is seasonal.'},host);
+  }
+
+  /* ================= 8. geography ================= */
+  var GEO=[['India',12869,14516],['USA',2037,2588],['United Kingdom',1509,1618],['Rest of world',1202,1568]];
+  function geoChart(host){
+    var s=shell(host,'Revenue by geography, FY25 and FY26',
+      'Where revenue is booked, from the audited geographic disclosure. Switch between rupees, share of group and growth.');
+    var svg=E('svg',{viewBox:'0 0 760 300',role:'group','aria-label':'Revenue by geography'},s.body);
+    var c=ctlbar(host,'Measure');
+    var T=[17618,20290], cls=['bar-growth','bar-intl','bar-intl','bar-intl'];
+    function draw(m){
+      var rows=[];
+      GEO.forEach(function(g,i){
+        var gr=Math.round((g[2]/g[1]-1)*1000)/10, sh=[Math.round(g[1]/T[0]*1000)/10,Math.round(g[2]/T[1]*1000)/10];
+        var tip='<b>'+g[0]+'</b><dl><dt>FY25</dt><dd>₹'+g[1].toLocaleString('en-IN')+' cr</dd><dt>FY26</dt><dd>₹'+g[2].toLocaleString('en-IN')+' cr</dd><dt>Growth</dt><dd>'+pct(gr)+'</dd><dt>Share FY26</dt><dd>'+sh[1]+'%</dd></dl>';
+        if(m==='g'){ rows.push({label:g[0],v:gr,cls:cls[i],tip:tip,me:i===0}); }
+        else {
+          var a=m==='rev'?g[1]:sh[0], b=m==='rev'?g[2]:sh[1], f=m==='rev'?function(v){return '₹'+v.toLocaleString('en-IN');}:pc;
+          rows.push({label:g[0],sub:'FY25',v:a,cls:cls[i],op:0.4,tip:tip,vlab:f(a)});
+          rows.push({label:'',sub:'FY26',v:b,cls:cls[i],tip:tip,vlab:f(b),me:i===0});
+        }
+      });
+      hbar(svg,s,rows,{fmt:m==='rev'?function(v){return v>=1000?(v/1000)+'k':v;}:pc,rh:m==='g'?34:24,ml:150,axis:m==='rev'?'₹ crore':(m==='g'?'FY26 growth':'Share of group revenue')});
+    }
+    btn(c,'₹ crore',true,function(){draw('rev');});
+    btn(c,'Share of group',false,function(){draw('sh');});
+    btn(c,'Growth',false,function(){draw('g');});
+    draw('rev');
+    legend(host,[['bar-growth',1,'India'],['bar-intl',1,'Overseas'],['bar-mut',0.4,'FY25 (lighter)']]);
+    H('p',{class:'chnote',html:'Revenue by location of sale, note 38C of the FY26 consolidated statements<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>. USA growth includes coffee price increases and rupee depreciation; in constant currency the US branded business grew 23%.'},host);
+  }
+
+  /* ================= 9. Q1 FY27 scoreboard ================= */
+  var Q1=[
+    {n:'Nestlé India',g:25.2,eb:24.1,d:250,p:47.9},
+    {n:'Marico',g:22.9,eb:20.7,d:36,p:27.1},
+    {n:'Godrej Consumer',g:18.3,eb:19.0,d:null,p:11.5},
+    {n:'ITC FMCG–Others',g:15.3,eb:9.4,d:55,p:22,pn:'segment result'},
+    {n:'Tata Consumer',g:11.9,eb:13.6,d:70,p:28.6,me:true},
+    {n:'Dabur',g:10.6,eb:24.3,d:50,p:15},
+    {n:'HUL',g:10.1,eb:23.0,d:-40,p:-3},
+    {n:'Britannia',g:9.5,eb:16.8,d:40,p:13.6},
+    {n:'Reliance Consumer',g:100,eb:null,d:null,p:null,cap:true}
+  ];
+  function q1Chart(host){
+    var s=shell(host,'Q1 FY27 scoreboard',
+      'The same nine companies as the table above. Pick a measure; Tata Consumer is marked in green and the bars re-sort. On revenue growth, the dashed line is the whole market’s value growth as NielsenIQ measured it.');
+    var svg=E('svg',{viewBox:'0 0 760 340',role:'group','aria-label':'Q1 FY27 peer scoreboard'},s.body);
+    var c=ctlbar(host,'Measure');
+    var M={
+      g:{k:'g',fmt:pc,ref:[{v:0.8,label:'Market (NIQ) +0.8%'}],max:30,ax:'Revenue growth, YoY'},
+      eb:{k:'eb',fmt:pc,ax:'EBITDA margin'},
+      d:{k:'d',fmt:function(v){return (v>0?'+':'')+v+'bps';},ax:'EBITDA margin change, YoY'},
+      p:{k:'p',fmt:pc,ax:'Profit growth, YoY'}
+    };
+    function draw(key){
+      var m=M[key];
+      var rows=Q1.slice().sort(function(a,b){
+        var av=a[m.k], bv=b[m.k]; if(av===null) return 1; if(bv===null) return -1; return bv-av;
+      }).map(function(d){
+        var v=d[m.k];
+        return {label:d.n,v:v,na:v===null,cls:d.me?'bar-growth':'bar-core',me:d.me,
+          vlab:v===null?null:(d.cap&&key==='g'?'>100% (off scale)':m.fmt(v)+(d.pn&&key==='p'?' (segment)':'')),
+          tip:'<b>'+d.n+'</b><dl><dt>Growth</dt><dd>'+(d.cap?'>100%':d.g+'%')+'</dd><dt>EBITDA</dt><dd>'+(d.eb===null?'n/d':d.eb+'%')+'</dd><dt>Margin Δ</dt><dd>'+(d.d===null?'n/d':(d.d>0?'+':'')+d.d+'bps')+'</dd><dt>Profit</dt><dd>'+(d.p===null?'n/d':pct(d.p))+'</dd></dl>'};
+      });
+      hbar(svg,s,rows,{fmt:m.fmt,ref:m.ref,max:m.max,ml:170,rh:32,axis:m.ax});
+    }
+    btn(c,'Revenue growth',true,function(){draw('g');});
+    btn(c,'EBITDA margin',false,function(){draw('eb');});
+    btn(c,'Margin change',false,function(){draw('d');});
+    btn(c,'Profit growth',false,function(){draw('p');});
+    draw('g');
+    legend(host,[['bar-growth',1,'Tata Consumer'],['bar-core',1,'Peers']]);
+    H('p',{class:'chnote',html:'Quarter ended 30 June 2026, sources as in the table above. Reliance Consumer reports gross revenue only; its growth sits off the scale. “Not disclosed” marks measures a company did not report.'},host);
+  }
+
+  /* ================= 10. consumer pulse ================= */
+  var PULSE=[
+    {q:'Apr–Jun 25',val:13.9,vol:6.0,pr:7.4,ru:8.4,ur:4.6},
+    {q:'Jul–Sep 25',val:12.9,vol:5.4,pr:null,ru:7.7,ur:null},
+    {q:'Oct–Dec 25',val:7.8,vol:2.6,pr:5.1,ru:2.9,ur:2.3},
+    {q:'Jan–Mar 26',val:null,vol:null,pr:null,ru:null,ur:null,gap:true},
+    {q:'Apr–Jun 26',val:0.8,vol:-2.0,pr:2.8,ru:-5.0,ur:-0.2,urEst:true}
+  ];
+  function pulseChart(host){
+    var s=shell(host,'Indian FMCG demand, quarter by quarter',
+      'NielsenIQ all-India year-on-year growth. Switch between the value–volume–price split and rural against urban volume. Hover any bar for the figure; “n/r” marks a measure not reported for that quarter.');
+    var svg=E('svg',{viewBox:'0 0 760 340',role:'group','aria-label':'FMCG demand by quarter'},s.body);
+    var c=ctlbar(host,'View');
+    function draw(view){
+      var groups=PULSE.map(function(p){
+        var bars;
+        if(view==='vvp') bars=[
+          {v:p.val,cls:'bar-growth',lab:'value',tip:'<b>'+p.q+' · value</b><dl><dt>Growth</dt><dd>'+(p.val===null?'n/r':pct(p.val))+'</dd></dl>'},
+          {v:p.vol,cls:'bar-intl',lab:'volume',tip:'<b>'+p.q+' · volume</b><dl><dt>Growth</dt><dd>'+(p.vol===null?'n/r':pct(p.vol))+'</dd></dl>'},
+          {v:p.pr,cls:'bar-core',lab:'price',tip:'<b>'+p.q+' · price</b><dl><dt>Growth</dt><dd>'+(p.pr===null?'n/r':pct(p.pr))+'</dd></dl>'}];
+        else bars=[
+          {v:p.ru,cls:'bar-growth',lab:'rural',tip:'<b>'+p.q+' · rural volume</b><dl><dt>Growth</dt><dd>'+(p.ru===null?'n/r':pct(p.ru))+'</dd></dl>'},
+          {v:p.ur,cls:'bar-intl',op:p.urEst?0.5:1,lab:'urban',tip:'<b>'+p.q+' · urban volume</b><dl><dt>Growth</dt><dd>'+(p.ur===null?'n/r':pct(p.ur))+'</dd>'+(p.urEst?'<dt>Basis</dt><dd>Derived</dd>':'')+'</dl>'+(p.urEst?'<div style="margin-top:6px;font-size:11.5px;opacity:.75">Not reported. Implied by all-India −2.0% and rural −5.0% at a ~38% rural weight.</div>':'')}];
+        return {label:p.q,sub:p.gap?'not captured':'',me:p.q==='Apr–Jun 26',bars:bars};
+      });
+      vbars(svg,s,groups,{fmt:function(v){return (v>0?'+':'')+v+'%';},mb:52});
+      legend(host,view==='vvp'?[['bar-growth',1,'Value'],['bar-intl',1,'Volume'],['bar-core',1,'Price']]:[['bar-growth',1,'Rural volume'],['bar-intl',1,'Urban volume'],['bar-intl',0.5,'Urban, derived']]);
+    }
+    btn(c,'Value · volume · price',true,function(){draw('vvp');});
+    btn(c,'Rural vs urban',false,function(){draw('ru');});
+    draw('vvp');
+    H('p',{class:'chnote',html:'NielsenIQ FMCG Quarterly Snapshots as reported<sup class="cite"><a href="#s51" title="Source 51">51</a><a href="#s53" title="Source 53">53</a><a href="#s54" title="Source 54">54</a><a href="#s55" title="Source 55">55</a></sup>. The January–March 2026 quarter is not captured in this edition. October–December 2025 was depressed by the GST 2.0 transition, which repriced nearly 60% of the FMCG basket.'},host);
+  }
+
+  /* ================= 11. channel share ================= */
+  function shareChart(host){
+    var s=shell(host,'Where India buys FMCG, and how fast each channel is moving',
+      'April–June 2026. Traditional trade still carries four-fifths of the market, but e-commerce is a fifth of the top eight metros and all of the growth.');
+    var svg=E('svg',{viewBox:'0 0 760 260',role:'group','aria-label':'FMCG channel share and growth'},s.body);
+    var c=ctlbar(host,'View');
+    var V={
+      mix:{rows:[['Traditional trade',81,'bar-core','Kiranas and wholesale; down ~4 points of share'],['Modern trade',12,'bar-intl','Supermarkets; up ~1 point'],['E-commerce incl. quick commerce',7,'bar-growth','Quick commerce is over three-quarters of e-commerce FMCG']],ax:'Share of all-India FMCG value',f:pc},
+      geo:{rows:[['All India',7,'bar-core',''],['Top 52 metros',17.4,'bar-growth',''],['Top 8 metros',21,'bar-growth','Was 18% in Oct–Dec 2025'],['Southern metros',25,'bar-growth','Highest e-commerce penetration in the country']],ax:'E-commerce share of FMCG value',f:pc},
+      gr:{rows:[['E-commerce (urban)',34.8,'bar-growth','Value growth 58%'],['Modern trade',17.5,'bar-intl',''],['All-India market',-2.0,'bar-core','Value +0.8%'],['Rural market',-5.0,'bar-nb','Value −2.9%']],ax:'Volume growth, YoY',f:function(v){return (v>0?'+':'')+v+'%';}}
+    };
+    function draw(k){
+      var v=V[k];
+      hbar(svg,s,v.rows.map(function(r){return {label:r[0],v:r[1],cls:r[2],vlab:v.f(r[1]),tip:'<b>'+r[0]+'</b><dl><dt>'+v.ax+'</dt><dd>'+v.f(r[1])+'</dd></dl>'+(r[3]?'<div style="margin-top:6px;font-size:11.5px;opacity:.75">'+r[3]+'</div>':'')};}),{fmt:v.f,ml:230,rh:40,axis:v.ax});
+    }
+    btn(c,'Channel mix',true,function(){draw('mix');});
+    btn(c,'E-commerce by geography',false,function(){draw('geo');});
+    btn(c,'Volume growth by channel',false,function(){draw('gr');});
+    draw('mix');
+    H('p',{class:'chnote',html:'NielsenIQ, quarter to June 2026<sup class="cite"><a href="#s51" title="Source 51">51</a><a href="#s52" title="Source 52">52</a></sup>; October–December 2025 comparison from NIQ<sup class="cite"><a href="#s53" title="Source 53">53</a></sup>. For Tata Consumer, general trade is 56% of the business, modern trade 16% and e-commerce plus quick commerce ~19% (excluding RTD)<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s38" title="Source 38">38</a></sup> — already far more organised than the market.'},host);
+  }
+
+  /* ================= 12. where the slowdown hit ================= */
+  function slowChart(host){
+    var s=shell(host,'Where the slowdown hit, April–June 2026',
+      'Food held up better than home and personal care, and the least-affected categories are ones Tata Consumer sells. Switch views to see the sector split or how widespread the decline was.');
+    var svg=E('svg',{viewBox:'0 0 760 300',role:'group','aria-label':'FMCG slowdown by sector and category'},s.body);
+    var c=ctlbar(host,'View');
+    function sector(){
+      var D=[['Food','64% of FMCG',0.9,-1.1],['Home & personal care','32%',1.0,-4.3],['OTC health','5%',-3.1,-5.0]];
+      vbars(svg,s,D.map(function(d,i){return {label:d[0],sub:d[1],me:i===0,bars:[
+        {v:d[2],cls:'bar-growth',lab:'value',tip:'<b>'+d[0]+' · value</b><dl><dt>Growth</dt><dd>'+pct(d[2])+'</dd><dt>Share</dt><dd>'+d[1]+'</dd></dl>'},
+        {v:d[3],cls:'bar-intl',lab:'volume',tip:'<b>'+d[0]+' · volume</b><dl><dt>Growth</dt><dd>'+pct(d[3])+'</dd></dl>'}]};}),{fmt:function(v){return (v>0?'+':'')+v+'%';},mb:56});
+      legend(host,[['bar-growth',1,'Value growth'],['bar-intl',1,'Volume growth']]);
+    }
+    function spread(){
+      var D=[['Least affected',8,'bar-growth','Vermicelli, noodles, packaged rice, hair oils','Ching’s noodles, Sampann vermicelli and poha'],
+             ['Low impact',25,'bar-growth','Packaged atta, non-refined oils','Sampann cold-pressed oils'],
+             ['Medium impact',35,'bar-intl','Biscuits, salty snacks, shampoo','Absent — salty snacks is the §15 entry'],
+             ['Heavy impact',33,'bar-nb','Washing powders, refined oils, toilet soaps','Absent']];
+      hbar(svg,s,D.map(function(d,i){return {label:d[0],sub:d[3],v:d[1],cls:d[2],vlab:d[1]+'% of categories',
+        tip:'<b>'+d[0]+'</b><dl><dt>Categories</dt><dd>'+d[1]+'%</dd></dl><div style="margin-top:6px;font-size:11.5px">Examples: '+d[3]+'</div><div style="margin-top:4px;font-size:11.5px;opacity:.8">Tata Consumer: '+d[4]+'</div>'};}),{fmt:pc,ml:290,rh:46,max:40,axis:'Share of FMCG categories, by severity of decline'});
+      legend(host,[['bar-growth',1,'Where Tata Consumer plays'],['bar-intl',1,'Mixed'],['bar-nb',1,'Where it is absent']]);
+    }
+    btn(c,'By sector',true,sector);
+    btn(c,'How widespread',false,spread);
+    sector();
+    H('p',{class:'chnote',html:'NielsenIQ, quarter to June 2026<sup class="cite"><a href="#s51" title="Source 51">51</a></sup>. Severity bands as NIQ grouped them; the Tata Consumer mapping is this document’s. Salt and tea were not named in the published bands. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span>'},host);
+  }
+
   /* ---------- build on demand, since chapters start collapsed ---------- */
-  var BUILDERS={chartPools:poolChart,chartComp:compChart,chartChan:chanChart,chartPortfolio:portfolioChart};
+  var BUILDERS={chartPools:poolChart,chartComp:compChart,chartChan:chanChart,chartPortfolio:portfolioChart,
+    chartSeg:segChart,chartSegRet:segRetChart,chartGrowth:growthChart,chartGeo:geoChart,chartQ1:q1Chart,
+    chartPulse:pulseChart,chartShare:shareChart,chartSlow:slowChart};
   var built={};
   function build(id){
     if(built[id]) return;
@@ -3647,6 +4320,64 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   window.addEventListener('hashchange',function(){ setTimeout(buildAll,140); });
   window.addEventListener('beforeprint',forceAll);
   setTimeout(buildAll,150);
+})();
+
+
+/* ---------- sortable tables and table filters ---------- */
+(function(){
+  function num(t){
+    var s=t.replace(/[,₹~×]/g,'').replace(/−/g,'-');
+    if(s.indexOf('→')>-1) s=s.split('→').pop();
+    if(/^\s*(—|n\/d|n\/a)/i.test(s)) return null;
+    var m=s.match(/-?\d+(\.\d+)?/);
+    return m?parseFloat(m[0]):null;
+  }
+  [].slice.call(document.querySelectorAll('table.sortable')).forEach(function(tbl){
+    var ths=[].slice.call(tbl.querySelectorAll('thead th')), tb=tbl.tBodies[0];
+    var orig=[].slice.call(tb.rows);
+    ths.forEach(function(th,ci){
+      th.setAttribute('tabindex','0'); th.setAttribute('aria-sort','none'); th.classList.add('sorth');
+      th.title='Sort by this column';
+      function go(){
+        var cur=th.getAttribute('aria-sort');
+        var dir=cur==='none'?'descending':(cur==='descending'?'ascending':'none');
+        ths.forEach(function(x){x.setAttribute('aria-sort','none');});
+        th.setAttribute('aria-sort',dir);
+        var rows=orig.filter(function(r){return !r.classList.contains('pin');});
+        var pinned=orig.filter(function(r){return r.classList.contains('pin');});
+        if(dir!=='none'){
+          var isNum=th.classList.contains('n');
+          rows.sort(function(a,b){
+            var A=a.cells[ci]?a.cells[ci].textContent.trim():'', B=b.cells[ci]?b.cells[ci].textContent.trim():'';
+            if(isNum){
+              var x=num(A), y=num(B);
+              if(x===null&&y===null) return 0; if(x===null) return 1; if(y===null) return -1;
+              return dir==='descending'?y-x:x-y;
+            }
+            return dir==='descending'?B.localeCompare(A):A.localeCompare(B);
+          });
+        }
+        rows.concat(pinned).forEach(function(r){tb.appendChild(r);});
+      }
+      th.addEventListener('click',go);
+      th.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
+    });
+  });
+  [].slice.call(document.querySelectorAll('.tblfilter')).forEach(function(bar){
+    var tbl=document.getElementById(bar.getAttribute('data-for')); if(!tbl) return;
+    var rows=[].slice.call(tbl.tBodies[0].rows);
+    var lab=document.createElement('span'); lab.className='cl'; lab.textContent='Show'; bar.appendChild(lab);
+    [['All','all'],['Core','core'],['Growth','growth'],['International','intl'],['Non-branded','nb'],['Joint venture','jv']].forEach(function(f,i){
+      var b=document.createElement('button'); b.type='button'; b.textContent=f[0];
+      b.setAttribute('aria-pressed',i===0?'true':'false');
+      b.addEventListener('click',function(){
+        [].slice.call(bar.querySelectorAll('button')).forEach(function(x){x.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        rows.forEach(function(r){ r.style.display=(f[1]==='all'||r.getAttribute('data-role')===f[1])?'':'none'; });
+      });
+      bar.appendChild(b);
+    });
+  });
 })();
 
 /* ---------- decision log filter ---------- */
