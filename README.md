@@ -7,7 +7,7 @@ A strategy dossier on the Indian FMCG industry and a five-year plan for Tata Con
 
 ## How the document is organised
 
-Six tabbed parts, 29 chapters. Each chapter shows its number, heading and overview; the full detail opens on click.
+Seven tabbed parts, 42 chapters. Each chapter shows its number, heading and overview; the full detail opens on click.
 
 | Tab | Chapters |
 |---|---|
@@ -16,6 +16,7 @@ Six tabbed parts, 29 chapters. Each chapter shows its number, heading and overvi
 | **Part Two · The Company** | 09 TCPL financials · 09A Segment Explorer · 10 Business-unit teardown · 11 The honest diagnosis |
 | **Part Three · The Plan** | 12 Defining "number one" · 13 Where to play · 14 The M&A map · 15 Salty snacks: the business case · 16 How to win: five thrusts · 17 The bridge to FY31 |
 | **Part Four · Execution** | 18 Eleven function playbooks · 19 Org design & decision rights · 20 Operating system & KPIs · 21 Scenarios & stress tests · 22 Risk register · 23 First 100 days |
+| **Part Five · Outside-In** | OI How to use it & the question bank · OI·1 Acquisitions: guardrails, track record, integration · OI·2 Category-defining brands · OI·3 Focus & trade-offs · OI·4 Channels & disintermediation · OI·5 Matrix organisation · OI·6 Talent & "hustle" · OI·7 Resilience · OI·8 Moats & reinvestment · OI·9 Making technology pay · OI·10 Supply chain choices · OI·11 Cyber security · OI·12 Questions not yet on the list |
 | **Reference** | 24 Sources & method |
 
 ## Using it
@@ -33,6 +34,14 @@ Six tabbed parts, 29 chapters. Each chapter shows its number, heading and overvi
 2. **The base case still finishes second.** Built from the disclosed segments, competent execution of the whole plan lands at ~₹39,800 crore — roughly ₹800 crore behind Nestlé. Leadership turns on moving the growth portfolio from 28% to 32% CAGR, worth more than doubling the M&A budget.
 
 3. **18% ROCE and the revenue target are arithmetically incompatible.** An asset bought at 3.5× revenue would need a 63% EBIT margin to earn 18% on that capital. Deploying ₹15,000 crore puts statutory ROCE near 13.5% by FY31, while the same business *excluding acquisition goodwill* earns 18%. The recommendation is to run and publish both.
+
+## Part Five · Outside-In
+
+An outside-in conversation guide for Tata Consumer's leadership, built from public information. Each chapter states the questions, the first-principles economics, what the public record already shows (cited), an outside-in assessment, what a strong answer would contain, and the follow-ups and evidence to ask for.
+
+- **Question bank** — 73 questions (your own and added ones), filterable by theme, searchable, with an "opening ten", tick-off saved in the browser, and a copy-agenda button.
+- **Deal screen** — score any acquisition target against eight guardrails (two hard gates), or load NourishCo, Capital Foods, Organic India, Bisleri, Haldiram's or a hypothetical snacks deal.
+- **Acquisition scorecard**, moat comparison against Amul, ITC, HUL and Reliance, technology-outcomes table and a cyber leadership checklist drawn from the 2025 JLR and M&S incidents.
 
 ## What changed in the October 2026 update
 
