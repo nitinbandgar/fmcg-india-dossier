@@ -423,6 +423,50 @@ sup.cite a:hover,sup.cite a:focus{border-color:var(--accent-line);}
 .bar-r{fill:var(--accent);} .bar-neg{fill:var(--rust);} .bar-mut{fill:var(--ink-4);}
 .bar-core{fill:var(--ink-4);} .bar-growth{fill:var(--accent);} .bar-acq{fill:var(--accent-2);} .bar-intl{fill:var(--amber);}
 
+
+/* ---------- Part Five: outside-in ---------- */
+.askbox{border:1px solid var(--accent-line); border-left:4px solid var(--accent); background:var(--accent-soft); border-radius:0 7px 7px 0; padding:14px 20px 6px; margin:18px 0 22px;}
+.askbox .plab{display:block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:8px;}
+.askbox ol{margin:0 0 8px; padding-left:22px;}
+.askbox li{margin-bottom:6px; font-family:"IBM Plex Sans",sans-serif; font-size:15px; line-height:1.45; color:var(--ink);}
+.askbox li em{font-style:normal; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-right:4px;}
+ul.probe{list-style:none; padding-left:0;}
+ul.probe li{position:relative; padding-left:26px; margin-bottom:9px;}
+ul.probe li::before{content:"?"; position:absolute; left:0; top:1px; width:17px; height:17px; border-radius:50%; background:var(--amber-soft); color:var(--amber); font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; text-align:center; line-height:17px;}
+.moatmap td.m1{background:var(--surface);} .moatmap td.m2{background:var(--accent-soft);}
+.moatmap td.m3{background:color-mix(in srgb, var(--accent) 26%, var(--surface)); color:var(--ink); font-weight:500;}
+.moatmap td{font-size:13px;}
+.qbank{border:1px solid var(--line-2); border-radius:8px; background:var(--surface); overflow:hidden; margin:8px 0 10px;}
+.qbank .qctl{border-top:none; border-bottom:1px solid var(--line);}
+.qsearch{font:inherit; font-family:"IBM Plex Sans",sans-serif; font-size:12.5px; padding:5px 9px; border:1px solid var(--line-2); border-radius:5px; background:var(--surface); color:var(--ink); min-width:180px;}
+.qcount{margin-left:auto;}
+.qlist{padding:6px 18px 16px; max-height:640px; overflow-y:auto;}
+.qth{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; margin:16px 0 6px;}
+.qth a{color:var(--accent); text-decoration:none;}
+.qrow{display:flex; gap:10px; align-items:flex-start; padding:7px 4px; border-bottom:1px solid var(--line); cursor:pointer; font-family:"IBM Plex Sans",sans-serif; font-size:14px; line-height:1.45;}
+.qrow input{margin-top:3px; accent-color:var(--accent); flex:none;}
+.qrow .qtext{flex:1;}
+.qrow .tag{flex:none; margin-top:1px;}
+.qrow.done .qtext{color:var(--ink-4); text-decoration:line-through;}
+.dsbody{padding:6px 16px 4px;}
+.dsrow{display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; padding:9px 0; border-bottom:1px solid var(--line);}
+.dsname b{display:block; font-family:"IBM Plex Sans",sans-serif; font-size:14px;}
+.dsname span{font-family:"IBM Plex Sans",sans-serif; font-size:12.4px; color:var(--ink-3);}
+.dsname b .tag{margin-left:6px; vertical-align:1px;}
+.dsopts{display:flex; gap:5px;}
+.dsopts button{font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; padding:6px 10px; border-radius:5px; border:1px solid var(--line-2); background:var(--surface); color:var(--ink-3); cursor:pointer;}
+.dsopts button.ds0.on{background:var(--rust-soft); color:var(--rust); border-color:var(--rust); font-weight:600;}
+.dsopts button.ds1.on{background:var(--amber-soft); color:var(--amber); border-color:var(--amber); font-weight:600;}
+.dsopts button.ds2.on{background:var(--accent-soft); color:var(--accent); border-color:var(--accent); font-weight:600;}
+.dsverdict{margin:12px 16px 16px; border-radius:7px; padding:12px 16px; font-family:"IBM Plex Sans",sans-serif;}
+.dsverdict .dsv{font-size:20px; font-weight:700; margin-right:12px;}
+.dsverdict .dss{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.08em;}
+.dsverdict p{margin:6px 0 0; font-size:13.6px;}
+.dsverdict.win{background:var(--accent-soft); color:var(--accent-2); border:1px solid var(--accent-line);}
+.dsverdict.close{background:var(--amber-soft); color:var(--amber);}
+.dsverdict.lose{background:var(--rust-soft); color:var(--rust);}
+@media(max-width:620px){ .dsrow{grid-template-columns:1fr;} .qcount{margin-left:0;} .qsearch{min-width:0; flex:1;} }
+@media print{ .qbank .qctl,.oitool .chartctl,.dsopts{display:none !important;} .qlist{max-height:none;} }
 /* ---------- October 2026 additions: explorer, sortable tables ---------- */
 .bar-nb{fill:var(--rust); fill-opacity:.62;}
 .legend i.sw{border-radius:3px; flex:none;}
@@ -691,7 +735,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       <input type="search" id="q" class="navsearch" placeholder="Search the dossier…" autocomplete="off" aria-label="Search the dossier">
       <div class="qresults" id="qres" hidden></div>
     </div>
-<div class="navgroup">Orientation</div><a href="#whatsnew" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>NEW</span><span>What Changed — October 2026</span></a><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#segments" data-part="p2" data-roles="ceo cfo strategy cmo sales"><span>09A</span><span>Segment Explorer</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
+<div class="navgroup">Orientation</div><a href="#whatsnew" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>NEW</span><span>What Changed — October 2026</span></a><a href="#summary" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>00</span><span>Executive Summary</span></a><a href="#execbrief" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>The One-Page Brief</span></a><a href="#decisions" data-part="p0" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>—</span><span>Decisions Required</span></a><div class="navgroup">Part One · The Industry</div><a href="#industry" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>01</span><span>The Industry: Structure and Size</span></a><a href="#forces" data-part="p1" data-roles="ceo cfo cmo sales supply rnd digital strategy"><span>02</span><span>The Seven Forces Reshaping the Industry</span></a><a href="#economics" data-part="p1" data-roles="ceo cfo strategy supply"><span>03</span><span>How Money Is Actually Made in Indian FMCG</span></a><a href="#consumer" data-part="p1" data-roles="ceo cmo rnd sales digital"><span>04</span><span>The Consumer</span></a><a href="#channels" data-part="p1" data-roles="ceo sales cmo digital supply"><span>05</span><span>Channels: The Ground Is Moving</span></a><a href="#chanecon" data-part="p1" data-roles="ceo cfo sales cmo digital supply"><span>06</span><span>Channel Economics: What Each Route to Market Actually Pays You</span></a><a href="#competition" data-part="p1" data-roles="ceo cfo cmo sales rnd strategy"><span>07</span><span>The Competitive Landscape</span></a><a href="#win" data-part="p1" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>08</span><span>What It Takes to Win</span></a><div class="navgroup">Part Two · The Company</div><a href="#tcpl" data-part="p2" data-roles="ceo cfo strategy"><span>09</span><span>Tata Consumer: The Numbers</span></a><a href="#segments" data-part="p2" data-roles="ceo cfo strategy cmo sales"><span>09A</span><span>Segment Explorer</span></a><a href="#bu" data-part="p2" data-roles="ceo cfo strategy rnd"><span>10</span><span>Business Unit Teardown</span></a><a href="#diagnosis" data-part="p2" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>11</span><span>The Honest Diagnosis</span></a><div class="navgroup">Part Three · The Plan</div><a href="#ambition" data-part="p3" data-roles="ceo cfo strategy"><span>12</span><span>Defining "Number One"</span></a><a href="#whereplay" data-part="p3" data-roles="ceo cfo rnd strategy"><span>13</span><span>Where to Play</span></a><a href="#ma" data-part="p3" data-roles="ceo cfo strategy"><span>14</span><span>The M&amp;A Map</span></a><a href="#snacks" data-part="p3" data-roles="ceo cfo supply rnd sales strategy"><span>15</span><span>Salty Snacks: The Business Case</span></a><a href="#howwin" data-part="p3" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>16</span><span>How to Win: Five Thrusts</span></a><a href="#bridge" data-part="p3" data-roles="ceo cfo strategy"><span>17</span><span>The Bridge to FY31</span></a><div class="navgroup">Part Four · Execution</div><a href="#functions" data-part="p4" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>18</span><span>Function Playbooks</span></a><a href="#orgdesign" data-part="p4" data-roles="ceo chro sales cfo"><span>19</span><span>Organisation Design &amp; Decision Rights</span></a><a href="#os" data-part="p4" data-roles="ceo cfo chro strategy"><span>20</span><span>The Operating System</span></a><a href="#scenarios" data-part="p4" data-roles="ceo cfo sales strategy supply"><span>21</span><span>Scenarios &amp; Stress Tests</span></a><a href="#risks" data-part="p4" data-roles="ceo cfo strategy"><span>22</span><span>Risk Register</span></a><a href="#hundred" data-part="p4" data-roles="ceo"><span>23</span><span>Your First 100 Days</span></a><div class="navgroup">Part Five · Outside-In</div><a href="#oi-intro" data-part="p6" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>OI</span><span>How to Use This Part — and the Question Bank</span></a><a href="#oi-ma" data-part="p6" data-roles="ceo cfo strategy"><span>OI·1</span><span>Acquisitions: Guardrails, Track Record and Integration</span></a><a href="#oi-brands" data-part="p6" data-roles="ceo cmo rnd strategy"><span>OI·2</span><span>Category-Defining Brands</span></a><a href="#oi-focus" data-part="p6" data-roles="ceo cmo sales strategy"><span>OI·3</span><span>Focus: Breadth, Depth and Trade-offs</span></a><a href="#oi-channels" data-part="p6" data-roles="ceo sales cmo digital supply strategy"><span>OI·4</span><span>Channel Choice and Disintermediation</span></a><a href="#oi-org" data-part="p6" data-roles="ceo chro sales strategy"><span>OI·5</span><span>The Matrix Organisation</span></a><a href="#oi-talent" data-part="p6" data-roles="ceo chro sales"><span>OI·6</span><span>Talent: What "Hustle" Means Here</span></a><a href="#oi-resilience" data-part="p6" data-roles="ceo cfo strategy"><span>OI·7</span><span>Resilience When Global FMCG Struggles</span></a><a href="#oi-moats" data-part="p6" data-roles="ceo cfo strategy supply digital"><span>OI·8</span><span>Moats, Network Effects and Reinvestment</span></a><a href="#oi-tech" data-part="p6" data-roles="ceo cfo digital supply sales"><span>OI·9</span><span>Making Technology Pay</span></a><a href="#oi-supply" data-part="p6" data-roles="ceo supply cfo"><span>OI·10</span><span>Supply Chain Choices</span></a><a href="#oi-cyber" data-part="p6" data-roles="ceo cfo digital supply"><span>OI·11</span><span>Cyber Security as a Leadership Choice</span></a><a href="#oi-more" data-part="p6" data-roles="ceo cfo strategy cmo chro"><span>OI·12</span><span>Questions Not Yet on the List</span></a><div class="navgroup">Reference</div><a href="#sources" data-part="p5" data-roles="ceo cfo cmo sales supply rnd chro digital strategy"><span>24</span><span>Sources &amp; Method</span></a>
   </div>
 </nav>
 
@@ -732,7 +776,7 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       </div>
     </div>
   </div>
-  <div class="tabbar" role="tablist" aria-label="Document parts"><button type="button" role="tab" class="tab" id="tab-p0" data-part="p0" aria-selected="true" aria-controls="pan-p0" tabindex="0"><span class="tsub">Orientation</span><span class="tlab">Start Here</span></button><button type="button" role="tab" class="tab" id="tab-p1" data-part="p1" aria-selected="false" aria-controls="pan-p1" tabindex="-1"><span class="tsub">Part One</span><span class="tlab">The Industry</span></button><button type="button" role="tab" class="tab" id="tab-p2" data-part="p2" aria-selected="false" aria-controls="pan-p2" tabindex="-1"><span class="tsub">Part Two</span><span class="tlab">The Company</span></button><button type="button" role="tab" class="tab" id="tab-p3" data-part="p3" aria-selected="false" aria-controls="pan-p3" tabindex="-1"><span class="tsub">Part Three</span><span class="tlab">The Plan</span></button><button type="button" role="tab" class="tab" id="tab-p4" data-part="p4" aria-selected="false" aria-controls="pan-p4" tabindex="-1"><span class="tsub">Part Four</span><span class="tlab">Execution</span></button><button type="button" role="tab" class="tab" id="tab-p5" data-part="p5" aria-selected="false" aria-controls="pan-p5" tabindex="-1"><span class="tsub">Reference</span><span class="tlab">Sources</span></button></div>
+  <div class="tabbar" role="tablist" aria-label="Document parts"><button type="button" role="tab" class="tab" id="tab-p0" data-part="p0" aria-selected="true" aria-controls="pan-p0" tabindex="0"><span class="tsub">Orientation</span><span class="tlab">Start Here</span></button><button type="button" role="tab" class="tab" id="tab-p1" data-part="p1" aria-selected="false" aria-controls="pan-p1" tabindex="-1"><span class="tsub">Part One</span><span class="tlab">The Industry</span></button><button type="button" role="tab" class="tab" id="tab-p2" data-part="p2" aria-selected="false" aria-controls="pan-p2" tabindex="-1"><span class="tsub">Part Two</span><span class="tlab">The Company</span></button><button type="button" role="tab" class="tab" id="tab-p3" data-part="p3" aria-selected="false" aria-controls="pan-p3" tabindex="-1"><span class="tsub">Part Three</span><span class="tlab">The Plan</span></button><button type="button" role="tab" class="tab" id="tab-p4" data-part="p4" aria-selected="false" aria-controls="pan-p4" tabindex="-1"><span class="tsub">Part Four</span><span class="tlab">Execution</span></button><button type="button" role="tab" class="tab" id="tab-p6" data-part="p6" aria-selected="false" aria-controls="pan-p6" tabindex="-1"><span class="tsub">Part Five</span><span class="tlab">Outside-In</span></button><button type="button" role="tab" class="tab" id="tab-p5" data-part="p5" aria-selected="false" aria-controls="pan-p5" tabindex="-1"><span class="tsub">Reference</span><span class="tlab">Sources</span></button></div>
 </div>
 <div class="rolebanner" id="rolebanner" hidden></div>
 
@@ -3158,6 +3202,884 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
   </div>
 </section>
 </div>
+<div class="panel" id="pan-p6" role="tabpanel" aria-labelledby="tab-p6" tabindex="0">
+  <div class="panelhead"><span class="peyebrow">Part Five</span><h3 class="ptitle">Outside-In: Questions for the CEO</h3><div class="pactions"><button type="button" class="expandall" data-part="p6">Expand all</button><button type="button" class="collapseall" data-part="p6">Collapse all</button></div></div>
+
+<section id="oi-intro" class="chapter" data-part="p6" data-roles="ceo cfo cmo sales supply rnd chro digital strategy" data-open="true">
+  <div class="chead" role="button" tabindex="0" aria-expanded="true" aria-controls="body-oi-intro">
+    <div class="cmeta"><span class="cnum">OI</span><span class="coff">Not in this reading path</span></div>
+    <h2>How to Use This Part — and the Question Bank</h2>
+    <p class="standfirst">An outside-in conversation with Tata Consumer's leadership: what an experienced industry CEO would ask, why it matters from first principles, what the public record already answers, and what a good answer would have to contain. The goal is better discussion, not a scorecard.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-intro">
+    <div class="wide">
+  <div class="wrap">
+  <h3>The method</h3>
+  <p>Each chapter in this part follows the same six steps, because the useful conversations with a CEO are the ones that separate what is known from what is believed:</p>
+  <ol class="steps">
+    <li><b>The questions on the table.</b> Your questions, sharpened where they could be dodged, and joined by the ones an outside-in reviewer would add.</li>
+    <li><b>First principles.</b> The underlying economics that decides the answer, stated before the company's position, so the answer can be tested rather than accepted.</li>
+    <li><b>What the public record shows.</b> Disclosed facts from the annual report, investor presentations, earnings calls and reputable press, each cited. Most of the hard questions are already partly answered in public; the gaps are where the conversation should go.</li>
+    <li><b>The outside-in view.</b> An assessment: where the company is genuinely strong, where the stated position and the evidence diverge, and where nobody outside can yet tell. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></li>
+    <li><b>What a strong answer sounds like.</b> Practical suggestions, written as a good answer would be given — specific, measurable and owned.</li>
+    <li><b>Follow-ups and evidence to ask for.</b> The second and third questions, which matter more than the first, and the numbers that would settle the point.</li>
+  </ol>
+
+  <div class="pull">
+    <span class="plab">Three rules for the conversation itself</span>
+    <p><strong>Ask for the number, then the mechanism, then the exception.</strong> "What is it?", "what drives it?", "where has it not worked?" A leadership team that can answer the third is a team that is learning.</p>
+    <p><strong>Prefer "how do you know?" to "are you sure?"</strong> The first invites evidence; the second invites defence.</p>
+    <p><strong>Ask what they have stopped doing.</strong> Strategy is visible in the trade-offs, not the priorities. Every chapter below has at least one question of this kind.</p>
+  </div>
+
+  <h3>The opening ten</h3>
+  <p>If there is time for only ten questions, these carry the most information per minute — each one forces a choice rather than a description:</p>
+  <ol class="steps">
+    <li><b>On returns:</b> Excluding acquisitions you say you earn ~30% on capital. Including them the company earns below its cost of capital. Which number should the board hold you to over the next five years — and what has to happen for the two to converge? <a href="#oi-ma">→ OI·1</a></li>
+    <li><b>On M&amp;A discipline:</b> Haldiram's raised money at roughly the valuation you balked at in 2023. Was walking away right — and what would you need to see to pay that price today? <a href="#oi-ma">→ OI·1</a></li>
+    <li><b>On focus:</b> You launched 80 products last year, one a week. Which five brands get disproportionate money for the next three years, and which three would you be willing to stop funding? <a href="#oi-focus">→ OI·3</a></li>
+    <li><b>On category leadership:</b> Name the one category you intend to <em>define</em> — not enter — by FY31, and the standard you will set in it that others will have to follow. <a href="#oi-brands">→ OI·2</a></li>
+    <li><b>On channels:</b> In which of your categories is a quick-commerce private label a credible substitute within three years, and what in the product makes yours not substitutable? <a href="#oi-channels">→ OI·4</a></li>
+    <li><b>On organisation:</b> When a growth brand and the tea business want the same distributor's attention in a tea-dominant town, who decides — and how fast? <a href="#oi-org">→ OI·5</a></li>
+    <li><b>On talent:</b> Attrition is 26% and 12,406 people on your frontline are off-roll. Whose hustle is the strategy actually depending on? <a href="#oi-talent">→ OI·6</a></li>
+    <li><b>On technology:</b> Which three operating numbers — fill rate, forecast accuracy, cost to serve — have moved because of MAVIC and Integrated Business Planning, and by how much? <a href="#oi-tech">→ OI·9</a></li>
+    <li><b>On cyber:</b> If you lost your ERP, distributor platform and plant systems for five weeks, as Jaguar Land Rover did, what would it cost — and when did the board last rehearse it? <a href="#oi-cyber">→ OI·11</a></li>
+    <li><b>On governance:</b> Your chairman is also the chairman of Tata Sons, where his reappointment is now disputed. What in this company's strategy depends on group support, and what would change if that support changed? <a href="#oi-more">→ OI·12</a></li>
+  </ol>
+
+  <h3>The question bank</h3>
+  <p>Every question in this part, in one place. Filter by theme or by whose question it is, search, and tick questions off as they are discussed. Your ticks are saved in this browser only. "Copy agenda" copies the questions currently shown.</p>
+  </div>
+  <div class="qbank" id="qbank"></div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-ma" class="chapter" data-part="p6" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-ma">
+    <div class="cmeta"><span class="cnum">OI·1</span><span class="coff">Not in this reading path</span></div>
+    <h2>Acquisitions: Guardrails, Track Record and Integration</h2>
+    <p class="standfirst">Go/no-go guardrails with examples of each, how the deals are actually playing out, what the "secret sauce" in integration is, and how well acquired brands translate once they are inside a large company.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-ma">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>What are the guardrails for a go/no-go decision on an acquisition — and can you give an example of a deal stopped by each?</li>
+      <li>How are the acquisitions actually playing out against the case you approved?</li>
+      <li>What is the secret sauce in how you integrate — and what does "translation effectiveness" look like: does an acquired brand get stronger inside Tata, or just bigger?</li>
+      <li><em>Added:</em> Who sets the walk-away price, and when — before or after the team has fallen in love with the deal?</li>
+      <li><em>Added:</em> What is the post-deal review cadence, and has a review ever changed a decision?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>An acquisition creates value only if the buyer can do something with the asset that the seller could not, and pays less than that difference. Everything else — strategic fit, portfolio logic, "capabilities" — is a restatement of that sentence or a way of avoiding it. In Indian FMCG specifically, the "something" is almost always one of three things: <strong>distribution reach</strong> the target could not afford, <strong>trust</strong> the target could not earn on its own, or <strong>cost of capital</strong> (patient group money against a founder who needs liquidity). The price has to leave room for the integration to stumble, because in FMCG it usually does: disruption in the first year destroys share that takes three to recover.</p>
+  <p>The second principle is about time. Paying 6–7× sales for a business earning 10–15% EBITDA means the deal earns low single digits on its capital in the early years by construction. Whether that is a good deal depends entirely on how long the growth lasts — which is why the post-deal review matters more than the pre-deal model.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Deal</th><th class="n">Year</th><th class="n">Price (₹ cr)</th><th class="n">Revenue at deal (₹ cr)</th><th class="n">Implied EV/sales</th><th class="n">Revenue now (₹ cr)</th><th>How it is playing out</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NourishCo</strong> — PepsiCo's 50% of the JV, plus Gluco+ brand</td><td class="n">2020</td><td class="n">29</td><td class="n">181</td><td class="n">~0.3×<br><span style="font-size:11px">for half</span></td><td class="n">~960 <span class="tag">RTD est</span></td><td><span class="tag go">Strong</span> The best-priced deal in the portfolio: a JV partner's exit, bought for a fraction of sales. RTD grew 10% in FY26 and 41% in Q1 FY27; Himalayan is the #1 natural mineral water<sup class="cite"><a href="#s66" title="Source 66">66</a><a href="#s37" title="Source 37">37</a></sup>.</td></tr>
+      <tr><td><strong>Soulfull</strong> (Kottaram Agro Foods)</td><td class="n">2021</td><td class="n">156 + earn-out</td><td class="n">39</td><td class="n">~4×</td><td class="n">small <span class="tag">n/d</span></td><td><span class="tag warn">Unproven</span> Still sub-scale five years on; +45% in Q1 FY27 off a low base. Earn-out over five years tied to milestones<sup class="cite"><a href="#s65" title="Source 65">65</a><a href="#s38" title="Source 38">38</a></sup>.</td></tr>
+      <tr><td><strong>Capital Foods</strong> — Ching's Secret, Smith &amp; Jones</td><td class="n">2024</td><td class="n">5,100 EV <span style="font-size:11px">(100%)</span></td><td class="n">~750–770</td><td class="n">~6.6–7×</td><td class="n">839</td><td><span class="tag warn">Behind, recovering</span> ₹799 cr in FY25, ₹839 cr in FY26 (+5%), then +40% in Q1 FY27 after a GTM rebuild. Staged purchase: 75% in 2024, 80% in Sept 2026<sup class="cite"><a href="#s63" title="Source 63">63</a><a href="#s64" title="Source 64">64</a><a href="#s35" title="Source 35">35</a><a href="#s39" title="Source 39">39</a></sup>.</td></tr>
+      <tr><td><strong>Organic India</strong></td><td class="n">2024</td><td class="n">1,900 + earn-out</td><td class="n">~380</td><td class="n">~5×</td><td class="n">478</td><td><span class="tag go">On track</span> +28% in FY26; pharmacy channel now in 50+ cities; new herbal R&amp;D facility. Earn-out linked to FY26 audited results<sup class="cite"><a href="#s63" title="Source 63">63</a><a href="#s35" title="Source 35">35</a><a href="#s58" title="Source 58">58</a></sup>.</td></tr>
+      <tr><td><strong>Bisleri</strong> (talks)</td><td class="n">2023</td><td class="n">6,000–7,000 asked</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td><span class="tag stop">Walked away</span> Talks ended March 2023 without agreement. Water was then built organically through Himalayan, Copper+ and Water Plus<sup class="cite"><a href="#s59" title="Source 59">59</a></sup>.</td></tr>
+      <tr><td><strong>Haldiram's</strong> (reported talks for 51%)</td><td class="n">2023</td><td class="n">~$10bn valuation sought</td><td class="n">~$1.5bn</td><td class="n">~6.6×</td><td class="n">—</td><td><span class="tag stop">Did not proceed</span> Reported to have balked at the valuation; both sides denied negotiations. Temasek bought ~10% at ~$10bn in March 2025<sup class="cite"><a href="#s60" title="Source 60">60</a><a href="#s61" title="Source 61">61</a></sup>.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">Revenue at deal and multiples as reported at announcement or by broker notes; Capital Foods' FY24 revenue was estimated at ₹750–770 cr and the deal is quoted at ~7× EV/sales and ~50× EV/EBITDA<sup class="cite"><a href="#s64" title="Source 64">64</a></sup>. NourishCo's multiple is for a 50% stake plus brand rights. "Revenue now" is FY26. <span class="est" title="Derived where noted — multiples are calculated from reported prices and revenues" tabindex="0" role="note">Derived</span></p>
+
+  <div class="wrap">
+  <p>Four further facts frame the conversation:</p>
+  <ul>
+    <li><strong>The stated rules.</strong> The CEO's own tests for a category are size, growth, margin and the number of players: too few and "there is a risk of getting trampled when they compete"; too many and nobody has found a way to differentiate. Every deal must clear an IRR hurdle. He has ruled out regular edible oils, biscuits and carbonated drinks, and says that excluding acquisitions the business earns about 30% on capital<sup class="cite"><a href="#s57" title="Source 57">57</a></sup>. In 2023: "we won't buy at all costs"<sup class="cite"><a href="#s62" title="Source 62">62</a></sup>.</li>
+    <li><strong>The cost of what was bought.</strong> Goodwill is ₹11,884 crore and indefinite-life brands ₹2,093 crore — together about <strong>60% of net worth</strong><sup class="cite"><a href="#s34" title="Source 34">34</a></sup>. ICRA notes that returns "continue to remain impacted by the high level of goodwill"<sup class="cite"><a href="#s67" title="Source 67">67</a></sup>.</li>
+    <li><strong>An old deal is now the auditor's concern.</strong> The FY26 audit report's first key audit matter is the <strong>₹2,185 crore of goodwill in the UK &amp; Europe business</strong>, "on account of competitive pressures and decline in black tea demand". A ₹16 crore Bangladesh goodwill was written off<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>. The acquisitions that matter most to returns today are the Tetley-era ones, not 2024's.</li>
+    <li><strong>The integration playbook.</strong> A "golden invoice" within 24 hours of closing, a 24-hour war room, a 650-activity back-end plan and full system integration by day 100 — with the acquired brand's core team deliberately kept separate. The COO's candid caveat: the 2020 consolidation took six to nine months, and some steps are allowed to stretch to four or five months "to avoid losing institutional knowledge"<sup class="cite"><a href="#s56" title="Source 56">56</a></sup>.</li>
+  </ul>
+
+  <h3>The outside-in view</h3>
+  <p><strong>The discipline is real, and it is visible in the deals not done.</strong> Walking away from Bisleri and Haldiram's, and building water organically instead, are the strongest evidence the guardrails exist. NourishCo is the model deal: a distressed or exiting seller, a price that cannot hurt, and a capability the company could scale.</p>
+  <p><strong>But the record shows a pattern worth naming: the integration is fast, and the commercial translation is slow.</strong> Capital Foods was integrated "within 100 days" and then grew 5% in its second full year, until the go-to-market was rebuilt in February 2026. The playbook optimises for Day-1 continuity and back-end systems — the parts an operator can control — and under-weights the part that creates the value: getting a brand that lived in 3–4 lakh stores to sell through in 18–20 lakh. That is not a systems problem; it is a distributor-economics and salesforce-attention problem, which is precisely what the 2026 GTM split was designed to fix.</p>
+  <p><strong>The Haldiram's question deserves an honest answer rather than a defensive one.</strong> Professional investors paid roughly the valuation that was declined. That does not prove the decision wrong — minority stakes in a market leader and a majority with control premium are different instruments, and the CEO's own "too few players" test argues against a category dominated by one firm. But it does mean the board should hear the counterfactual explicitly: what salty snacks would have contributed by FY31, and what the company is doing instead.</p>
+
+  <h3>The guardrails, and an example of each</h3>
+  <p>The first four are the company's own stated tests; the rest are what an outside-in board would add. Use the screen below to test any target against them.</p>
+  </div>
+
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>#</th><th>Guardrail</th><th>Go looks like</th><th>No-go looks like</th><th>Example from the record</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td><strong>Category structure</strong> — size, growth, margin, number of players</td><td>Large, growing, fragmented below a few branded leaders</td><td>Two entrenched players with cost advantages; or so fragmented nobody differentiates</td><td>Biscuits and regular edible oil ruled out on exactly this test<sup class="cite"><a href="#s57" title="Source 57">57</a></sup></td></tr>
+      <tr><td class="n">2</td><td><strong>Right to win</strong> — what Tata adds that the owner could not</td><td>Distribution the target could not afford; trust in a "trust-deficit" category</td><td>The thesis is "it would be nice to have"</td><td>Capital Foods: 3–4 lakh → 18–20 lakh stores<sup class="cite"><a href="#s56" title="Source 56">56</a></sup>; Organic India: trust plus the pharmacy channel</td></tr>
+      <tr><td class="n">3</td><td><strong>Price</strong> — IRR hurdle on full purchase price</td><td>Clears the hurdle at a haircut to synergies</td><td>Only clears it if every synergy lands</td><td>Haldiram's at ~6.6× sales for a majority — declined<sup class="cite"><a href="#s60" title="Source 60">60</a></sup></td></tr>
+      <tr><td class="n">4</td><td><strong>Build vs buy</strong> — can it be built faster than bought?</td><td>Building would take too long to matter</td><td>The capability can be built in 2–3 years</td><td>Dry fruits built in-house to a ~₹300 cr run-rate; water built rather than buying Bisleri<sup class="cite"><a href="#s57" title="Source 57">57</a><a href="#s34" title="Source 34">34</a></sup></td></tr>
+      <tr class="me"><td class="n">5</td><td><strong>Return on full capital by a fixed year</strong></td><td>Clears 11% WACC on full goodwill by year 7 in the base case</td><td>Accretive to EPS but below WACC for a decade</td><td>Not publicly stated — <em>ask for it</em> <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></td></tr>
+      <tr class="me"><td class="n">6</td><td><strong>Integration capacity</strong></td><td>A named integration leader free to do it; no more than one major integration live</td><td>Two large integrations alongside a GTM rebuild</td><td>2024: two deals and the Tata Coffee merger at once; Capital Foods' commercial lag followed</td></tr>
+      <tr class="me"><td class="n">7</td><td><strong>People and incentives</strong></td><td>Founders and key talent tied to the 3–5 year plan, not the closing date</td><td>Earn-outs that reward one year's numbers</td><td>Organic India's earn-out tied to FY26 audited results<sup class="cite"><a href="#s63" title="Source 63">63</a></sup> — <em>ask what it paid and what it rewarded</em></td></tr>
+      <tr class="me"><td class="n">8</td><td><strong>Structure that limits regret</strong></td><td>Staged ownership, options, minority-to-majority paths</td><td>All-in on day one in an unproven category</td><td>Capital Foods bought 75% then 80%, with 20% still to buy<sup class="cite"><a href="#s39" title="Source 39">39</a></sup></td></tr>
+      <tr class="me"><td class="n">9</td><td><strong>Diligence beyond the numbers</strong> — quality, regulatory, cyber, ESG</td><td>Clean on food safety, export regulation, data and supply chain</td><td>Unpriced regulatory exposure</td><td>Organic India's US supplements business carries US regulatory and tariff exposure</td></tr>
+      <tr class="me"><td class="n">10</td><td><strong>Pre-agreed kill and review points</strong></td><td>Board review at 12, 24 and 36 months against the approval case</td><td>Reviews that re-baseline the plan</td><td>Not publicly disclosed — <em>ask for the last review</em></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="wrap">
+  <div class="chart oitool" id="dealScreen"></div>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"Our guardrails are written down and the board has a copy. We set the walk-away price before the first management meeting and the investment committee — not the deal team — owns it. Every deal is approved with a return-on-full-capital path and reviewed at 12, 24 and 36 months against that case, not a refreshed one. Here is the review for Capital Foods: we were behind on distribution translation by about a year, we diagnosed it as distributor economics, and the February 2026 GTM split was the fix. Here is what we would do differently: we would have kept the acquired sales leadership in charge of the distributor transition for longer, and we would not have run two integrations alongside the Tata Coffee merger."</p>
+  </div>
+
+  <h3>Follow-ups that matter more than the first question</h3>
+  <ul class="probe">
+    <li>What was the approval case for Capital Foods' FY26 revenue and EBITDA, and what was the actual? What does the 25–30% "new normal" assume about distributor fill?</li>
+    <li>What did the Organic India earn-out pay, and did it reward the right behaviour?</li>
+    <li>On the UK goodwill: what discount rate and terminal growth does the impairment test use, and how much headroom is there? What does the board do if black tea keeps declining 2–3% a year?</li>
+    <li>Which deal in the last five years did the investment committee stop that management wanted? (If the answer is "none", the committee is not a guardrail.)</li>
+    <li>What is the "translation" scorecard for an acquired brand — distribution added, share in new states, price premium held, founder-era talent retained at 24 months?</li>
+    <li>If a snacks asset came up at 4× sales tomorrow, does it pass test 1? Your own "too few players" rule and this dossier's snacks case point in different directions (see <a href="#snacks">§15</a>).</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Approval case vs actual, by deal</span><span><b>Ask for:</b> ROIC on full purchase price, by year</span><span><b>Ask for:</b> Impairment headroom by CGU</span><span><b>Ask for:</b> Acquired-brand distribution and share, pre vs post</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-brands" class="chapter" data-part="p6" data-roles="ceo cmo rnd strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-brands">
+    <div class="cmeta"><span class="cnum">OI·2</span><span class="coff">Not in this reading path</span></div>
+    <h2>Category-Defining Brands: the Playbook and the Route</h2>
+    <p class="standfirst">Tata Salt defined a category forty years ago. The question is whether the company has a repeatable way to do it again — and how it is set up to.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-brands">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>What is the playbook for building a category-defining brand?</li>
+      <li>How is the company set up to do it — who owns a category, with what money and what patience?</li>
+      <li>What is the route from where each brand is today to category-defining?</li>
+      <li><em>Added:</em> Which category will you <em>define</em>, as opposed to participate in, by FY31 — and what standard will you set that others must follow?</li>
+      <li><em>Added:</em> How do you know when a brand has become category-defining? What is the metric?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>A category-defining brand is one whose name becomes the consumer's shorthand for the category's promise — so that competitors are measured against it. That happens only when three conditions coincide: <strong>a real consumer problem the category had not solved</strong> (adulteration, inconsistency, effort), <strong>a standard the brand sets and keeps</strong> (iodisation, "unpolished", restaurant taste at home), and <strong>enough availability and repetition</strong> that the standard becomes the default. Most "category creation" fails on the third condition, not the first. The economic prize is a sustained price premium with lower marketing cost per unit than followers — the definer pays once to educate the category; followers pay every year to be compared with it.</p>
+  <p>For Tata specifically, the most valuable version of this is in <strong>trust-deficit categories</strong>: where consumers cannot verify quality at the point of purchase and fear adulteration. There the Tata name does work no amount of advertising can buy — and that is the CEO's own stated filter<sup class="cite"><a href="#s57" title="Source 57">57</a></sup>.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Brand</th><th>Category promise it set</th><th>Evidence it defines the category</th><th>Stage</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tata Salt</strong></td><td>Iodised, pure, national ("Desh ka Namak")</td><td>~39% value share; "probably the most penetrated FMCG brand in the country"; ~88–89% top-of-mind recall<sup class="cite"><a href="#s57" title="Source 57">57</a><a href="#s38" title="Source 38">38</a></sup></td><td><span class="tag go">Defines</span></td></tr>
+      <tr><td><strong>Ching's Secret</strong></td><td>"Desi Chinese" at home</td><td>Named the category; "Agent Ching" film reached 100m+ impressions in under two months<sup class="cite"><a href="#s34" title="Source 34">34</a></sup> — but FY26 growth was 5%</td><td><span class="tag go">Defines</span> but under-distributed</td></tr>
+      <tr><td><strong>Tata Sampann</strong></td><td>Unpolished, trusted staples</td><td>₹1,500 cr, 34% five-year CAGR; retailers report Sampann buyers "rarely switch"<sup class="cite"><a href="#s58" title="Source 58">58</a><a href="#s57" title="Source 57">57</a></sup>; still ~5% of branded pulses <span class="est" title="Derived estimate — calculated from management’s stated figures" tabindex="0" role="note">Derived</span></td><td><span class="tag warn">Leading challenger</span></td></tr>
+      <tr><td><strong>Himalayan</strong></td><td>Natural mineral water from source</td><td>#1 natural mineral water brand<sup class="cite"><a href="#s37" title="Source 37">37</a></sup>; a premium niche inside a price-led category</td><td><span class="tag go">Defines a niche</span></td></tr>
+      <tr><td><strong>Organic India</strong></td><td>Proof-based organic ("Kaam se organic": 600+ tests)<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td><td>Leading organic supplements brand; pharmacy channel in 50+ cities</td><td><span class="tag warn">Building</span></td></tr>
+      <tr><td><strong>Tata Simply Better / cold-pressed oils</strong></td><td>Trust in a "trust-deficit" category</td><td>~₹200 cr run-rate built in-house<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td><td><span class="tag warn">Early</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <p>On the set-up: the MD&amp;A describes a "platform-based portfolio approach"; R&amp;D has grown from a team of 10–15 into science, chef, process and packaging capabilities; five health platforms (gut, metabolic health, protein, sugar reduction, iron) now run across brands; and innovation-to-sales is 4.5%, with Capital Foods at 7% and Sampann at 8%<sup class="cite"><a href="#s57" title="Source 57">57</a><a href="#s58" title="Source 58">58</a><a href="#s36" title="Source 36">36</a><a href="#s37" title="Source 37">37</a></sup>.</p>
+
+  <h3>The outside-in view</h3>
+  <p>The company has defined categories before — Tata Salt, and through acquisition Ching's — and has a credible engine for the first step (finding a trust gap) and the second (setting a standard). <strong>The evidence is weaker on the third step: making the standard the default through relentless availability and repetition in one category at a time.</strong> The innovation engine is optimised for breadth — 80 launches a year across five health platforms — which is the opposite of the concentration that category definition needs. Health platforms that run <em>across</em> brands build capability; they do not build a category definer, because no single brand owns the claim.</p>
+  <p>The honest candidate list is short. Sampann in spices and pulses has the scale and the trust thesis; Ching's has the category name but not yet the distribution; Himalayan defines a niche that may not grow into a category. A good answer from leadership names <strong>one or two</strong> and accepts that the rest are "strong participants".</p>
+
+  <div class="pull">
+    <span class="plab">A category-definer playbook in six steps — and where Tata stands</span>
+    <p><strong>1. Find the fear or the friction</strong> (adulteration, inconsistency, effort) — <em>strong</em>. <strong>2. Name the standard</strong> in consumer words and make it testable — <em>strong</em> (iodised, unpolished, 600 tests). <strong>3. Own the proof</strong>: certification, science partners, claims others must match — <em>building</em> (CSIR, CFTRI, NIFTEM partnerships). <strong>4. Win availability before the followers do</strong> — <em>the gap</em>: Ching's and Water Plus are both distribution-constrained. <strong>5. Price for the premium and defend the entry pack</strong> — <em>good in salt, untested elsewhere</em>. <strong>6. Extend to adjacent occasions only after the core is defined</strong> — <em>at risk</em>: extension is running ahead of definition in several brands.</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>Which single category gets a five-year, protected budget to be defined, even if the quarterly numbers disappoint?</li>
+    <li>Who owns a category end to end — brand, innovation, pricing, distribution targets — and can they overrule a shared sales team?</li>
+    <li>What is the share-of-search and share-of-shelf target that would tell you Sampann spices has become the default?</li>
+    <li>Which health platform will become a <em>brand</em> claim rather than a cross-portfolio capability?</li>
+    <li>What would you need to stop funding to put twice the money behind your chosen definer?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Price premium vs category, by brand</span><span><b>Ask for:</b> Share of search in the category</span><span><b>Ask for:</b> Numeric distribution vs leader</span><span><b>Ask for:</b> Repeat rate at 12 months</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-focus" class="chapter" data-part="p6" data-roles="ceo cmo sales strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-focus">
+    <div class="cmeta"><span class="cnum">OI·3</span><span class="coff">Not in this reading path</span></div>
+    <h2>Focus: Too Many Brands, Depth vs Breadth, and the Trade-offs</h2>
+    <p class="standfirst">Is the breadth of brands and launches a strength or a distraction — for the leadership, for the salesforce, and for the retailer?</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-focus">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>Are too many brands and options distracting? How are you ensuring focus — depth or breadth?</li>
+      <li>How are you forcing trade-offs?</li>
+      <li>Is there too much for the sales team to sell? When does "more" become distraction?</li>
+      <li><em>Added:</em> What did you stop doing in the last twelve months?</li>
+      <li><em>Added:</em> What share of last year's launches will still be on shelf in two years?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>Breadth is not the problem; <strong>undifferentiated attention</strong> is. A portfolio can be broad at the company level and deep at the brand level if every brand has an explicit role — and the scarce resources (management time, A&amp;P, salesperson minutes in the outlet, shelf facings) are allocated by role rather than equally. The binding constraint in Indian general trade is rarely the number of SKUs in the catalogue. It is the 3–5 minutes a salesperson has in a kirana and the 3–4 items they can realistically push. Every new launch competes for those minutes with tea and salt, which pay the bills.</p>
+
+  <h3>What the public record shows</h3>
+  <ul>
+    <li><strong>The portfolio:</strong> roughly 25 consumer brands across India and international — Tata Tea (Premium, Gold, Agni, Chakra Gold, Kanan Devan), Tetley, Tata Coffee Grand, Sonnets, Tata Salt, Tata Sampann, Tata Simply Better, Soulfull, Ching's Secret, Smith &amp; Jones, Organic India, Himalayan, Copper+, Gluco+, Water Plus, Fruski, Tata Lyfe, MyBistro, Eight O'Clock, teapigs, Good Earth, Joekels, plus the Starbucks JV.</li>
+    <li><strong>The pace:</strong> 80 launches in FY26 — one a week, against one a month in FY21. "The first 100 launches took four years; the next 100 took two." Innovation-to-sales is 4.5%<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>. On the India business that is roughly ₹550–600 crore of innovation revenue spread across well over a hundred recent launches — an average launch measured in single-digit crores. <span class="est" title="Derived estimate — calculated from disclosed ratios" tabindex="0" role="note">Derived</span></li>
+    <li><strong>The structural answer to sales overload:</strong> the go-to-market was "trifurcated" between December 2025 and February 2026. In 28 salt-heavy cities, separate salt and non-salt distributors; in 64 tea-and-salt-strong cities, separate core and growth distributors; a common distributor elsewhere. 189 new distributors were onboarded, 356 transitioned and ~25,000 beats re-cut across 4,100 sales representatives<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>.</li>
+    <li><strong>The tool:</strong> AI inside the sales app influenced 41% of orders, and a recommendation engine for general-trade assortment completed its pilot in FY26<sup class="cite"><a href="#s35" title="Source 35">35</a><a href="#s34" title="Source 34">34</a></sup>.</li>
+  </ul>
+
+  <h3>The outside-in view</h3>
+  <p><strong>The company has answered the sales-overload question structurally, and it is the right answer.</strong> Splitting distributors so that growth brands have a salesforce whose incentive is not dominated by salt and tea is exactly what a portfolio this broad needs. It also adds cost to serve and two distributor relationships in the same town; whether it pays will be visible in growth-business distribution and in cost to serve over FY27.</p>
+  <p><strong>The question it has not visibly answered is at the top: what gets less.</strong> The public record shows additions — brands, platforms, launches, channels (vending, pharmacy, food service) — and almost no subtractions. One launch a week is a sign of a healthy engine; it is also a sign that the kill rule may be weak. A portfolio this broad needs an explicit <strong>role for every brand</strong> and a visible cadence of exits.</p>
+  </div>
+
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Role</th><th>What it gets</th><th>What it must deliver</th><th>Candidates <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></th></tr></thead>
+    <tbody>
+      <tr><td><strong>Defend &amp; fund</strong> (cash engines)</td><td>Enough A&amp;P to hold share; price leadership</td><td>Share, margin, cash</td><td>Tata Salt, Tata Tea (Premium, Gold), Tetley Canada</td></tr>
+      <tr class="me"><td><strong>Win</strong> (2–3 brands only)</td><td>Disproportionate A&amp;P, distribution priority, best talent</td><td>Category leadership by a dated milestone</td><td>Sampann (spices &amp; pulses), Ching's, one RTD franchise</td></tr>
+      <tr><td><strong>Prove</strong> (time-boxed)</td><td>A fixed budget and an 18–24 month hurdle</td><td>Hurdle met, or folded into a Win brand</td><td>Soulfull, Simply Better, kombucha, vending</td></tr>
+      <tr><td><strong>Harvest / fix</strong></td><td>Minimal investment; pricing for margin</td><td>Cash and an exit option</td><td>UK everyday black tea, regional tea tail SKUs</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="wrap">
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"Every brand has one of four roles, and the role decides its budget, its distributor and its targets. Three brands are in 'win' and get 60% of incremental A&amp;P. Launches must hit a run-rate at 18 months or they are delisted; last year we stopped 22 SKUs and folded one brand. In the outlet, the salesperson's app shows at most four 'must-sell' lines, ranked by the recommendation engine for that store, and growth distributors are paid on growth brands only. We measure focus with three numbers: revenue per SKU, the share of launches alive at 24 months, and lines sold per call."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>How many SKUs were discontinued last year, and what share of revenue do the bottom 20% of SKUs contribute?</li>
+    <li>What is the 24-month survival rate of launches, and how does it compare with the industry's?</li>
+    <li>How many lines does a general-trade salesperson sell per call today, versus two years ago?</li>
+    <li>Has the distributor split raised or lowered cost to serve as a percentage of sales?</li>
+    <li>Which platform — vending, pharmacy, food service — would you exit if it missed its plan by half?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Revenue per SKU trend</span><span><b>Ask for:</b> Launch survival at 24 months</span><span><b>Ask for:</b> Lines per call</span><span><b>Ask for:</b> Cost to serve after the GTM split</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-channels" class="chapter" data-part="p6" data-roles="ceo sales cmo digital supply strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-channels">
+    <div class="cmeta"><span class="cnum">OI·4</span><span class="coff">Not in this reading path</span></div>
+    <h2>Channel Choice: Disintermediation and the Consumer's Vote</h2>
+    <p class="standfirst">Channels are not chosen by the company any more; consumers choose them, and the company follows. The real question is who ends up owning the shopper's moment of choice.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-channels">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>What is the disintermediation risk across channels?</li>
+      <li>How is consumer choice dictating channel choice — and is the company following the consumer or the margin?</li>
+      <li><em>Added:</em> In which categories could a platform's private label substitute for your brand within three years?</li>
+      <li><em>Added:</em> Who owns the consumer data in each channel, and what do you actually get back?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>"Disintermediation" is three different risks that are often lumped together:</p>
+  <ol>
+    <li><strong>The distributor is disintermediated</strong> — modern trade and quick commerce buy direct. For the brand this is mostly <em>good</em>: fewer hands on the margin. The risk is to the general-trade system that still sells most of the volume, and therefore to the brand's rural and small-town reach.</li>
+    <li><strong>The brand is disintermediated</strong> — the platform's own label replaces it. This is the serious risk, and it is category-specific: it is highest where the product is a commodity the consumer cannot tell apart, and lowest where trust, taste or habit decide.</li>
+    <li><strong>Discovery is disintermediated</strong> — the platform's search ranking and paid placement decide what the shopper sees. This converts brand equity into a rent paid to the platform as retail media.</li>
+  </ol>
+  <p>Channel power follows whoever owns the shopper's moment of choice, the inventory and the data. In general trade the brand owns the first and shares the second; in quick commerce the platform owns all three.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Signal</th><th class="n">Value</th><th>Read</th></tr></thead>
+    <tbody>
+      <tr><td>General trade, share of TCPL's business</td><td class="n">~56%</td><td>Down; management stopped quoting Nielsen because it no longer describes the market<sup class="cite"><a href="#s38" title="Source 38">38</a></sup></td></tr>
+      <tr><td>E-commerce + quick commerce, India salience (ex-RTD)</td><td class="n">19%</td><td>Up 62% in FY26<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td></tr>
+      <tr><td>Modern trade, India salience (ex-RTD)</td><td class="n">15%</td><td>Up 20% in FY26<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td></tr>
+      <tr><td>"New-age" channels, share of India business</td><td class="n">41%</td><td>Per the MD &amp; CEO's message<sup class="cite"><a href="#s58" title="Source 58">58</a></sup></td></tr>
+      <tr><td>Tata tea's share of tea sold online</td><td class="n">38%</td><td>Far above its general-trade share — the brand wins where search decides<sup class="cite"><a href="#s58" title="Source 58">58</a></sup></td></tr>
+      <tr><td>Sales to Tata group's own BigBasket entities</td><td class="n">₹334 cr</td><td>FY26 related-party sales; BigBasket lost ₹3,073 cr on ₹8,223 cr of turnover<sup class="cite"><a href="#s33" title="Source 33">33</a><a href="#s81" title="Source 81">81</a></sup></td></tr>
+      <tr><td>Emerging channels, exit run-rate</td><td class="n">₹300 cr</td><td>Food service ~₹170 cr, vending ~₹100 cr, pharmacy ~₹30 cr<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td></tr>
+      <tr><td>E-commerce share of FMCG, top 8 metros</td><td class="n">21%</td><td>25% in southern metros; 7% nationally (NIQ, June 2026)<sup class="cite"><a href="#s52" title="Source 52">52</a></sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <p>The platforms have moved from marketplace models towards buying inventory themselves and building their own labels in staples, dry fruits and snacks, and distributor federations have taken their grievances to government<sup class="cite"><a href="#s16" title="Source 16">16</a></sup>.</p>
+
+  <h3>The outside-in view</h3>
+  <p><strong>Tata Consumer is a beneficiary of the channel shift, not a victim of it</strong> — the brand over-indexes online (38% of online tea against a lower offline share), and 41% of the India business is already in newer channels. The risk is not that the company is late; it is that <strong>its fastest-growing category, Sampann, sits squarely where private labels are strongest</strong>: pulses, dry fruits and whole spices are close to commodities in the consumer's eye, and the platform sees the sell-through data first. Trust is the defence, but only if it is made visible in the product (unpolished, tested, traceable) rather than assumed from the logo.</p>
+  <p>The second risk is quieter: <strong>retail media becomes a tax on brand equity.</strong> If share of search must be bought, the margin advantage of a strong brand migrates to the platform. And the Tata group's own channel assets — BigBasket, the Tata Neu loyalty programme, Starbucks' 500 stores — are under-used as a source of first-party consumer data, though BigBasket's losses limit how much it can carry.</p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"We map every category on two axes — how substitutable it is by a private label, and how much of it is bought online. Dry fruits and whole pulses are our highest-risk quadrant, so that is where we put proof-of-quality on pack, channel-specific packs that are hard to compare, and the innovation pipeline. We cap retail media at a fixed share of online revenue and measure it on incremental contribution. In general trade we protect distributor economics deliberately, because GT is still where the rural growth will come from. And we treat BigBasket and Tata Neu as a data partnership, not just a customer."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What is contribution margin per ₹100 in quick commerce versus general trade, after retail media? (§06 estimates roughly nine points less.)</li>
+    <li>Where have you already lost share to a platform's own label, and what did you learn?</li>
+    <li>What data do you get from each platform, at what latency, and what decisions has it changed?</li>
+    <li>How are distributor ROIs trending in the cities where quick commerce is largest?</li>
+    <li>What is the three-year plan for D2C — a sales channel, or a learning lab with a capped budget?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Contribution by channel, after retail media</span><span><b>Ask for:</b> Share of search by category</span><span><b>Ask for:</b> Distributor ROI, metros vs rest</span><span><b>Ask for:</b> Private-label share in your categories online</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-org" class="chapter" data-part="p6" data-roles="ceo chro sales strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-org">
+    <div class="cmeta"><span class="cnum">OI·5</span><span class="coff">Not in this reading path</span></div>
+    <h2>The Matrix Organisation: Who Decides, and How Fast</h2>
+    <p class="standfirst">A company with five businesses, four countries, four channels and a split salesforce is a matrix whether or not it calls itself one. The question is whether the matrix has tie-breakers.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-org">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>How does the matrix organisation work — and where does it slow you down?</li>
+      <li><em>Added:</em> For the five decisions that matter most (price, launch, distributor, A&amp;P allocation, kill), who decides, and who can veto?</li>
+      <li><em>Added:</em> How do acquired brands keep their speed inside the matrix?</li>
+      <li><em>Added:</em> What is the decision you most wish had been made faster last year?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>A matrix exists to share something expensive — a salesforce, a supply chain, a brand — across units that would each be sub-scale alone. Its cost is decision latency and diluted accountability. The matrix pays when the shared asset is worth more than the speed lost, which is true for supply chain and back office almost everywhere, and for the salesforce only when the categories sold together share an outlet and a call pattern. The design rule that makes a matrix work: <strong>one dimension owns the P&amp;L, the others own a service level</strong>, and every recurring conflict has a named tie-breaker and a deadline.</p>
+
+  <h3>What the public record shows</h3>
+  <ul>
+    <li><strong>Top structure:</strong> MD &amp; CEO; Executive Director &amp; COO; Group CFO. An Executive Committee of CEO, CFO, COO, business heads, function heads and the risk team reviews major exposures<sup class="cite"><a href="#s34" title="Source 34">34</a></sup>.</li>
+    <li><strong>The dimensions:</strong> category businesses (salt, tea &amp; coffee, Sampann, RTD, Capital Foods, Organic India, Soulfull), geographies (India, UK, US, Canada, others — international run through TCP UK Group), channels (general trade, modern trade, e-commerce, emerging), and shared functions (supply chain, R&amp;D, digital).</li>
+    <li><strong>The new sales matrix:</strong> since February 2026, separate core and growth distributors in 92 cities<sup class="cite"><a href="#s36" title="Source 36">36</a></sup> — which converts a hidden attention conflict into an explicit structural one.</li>
+    <li><strong>Protected cells:</strong> in acquisitions, "the acquired company's core team usually stays separate and protected because it drives much of the brand's value"<sup class="cite"><a href="#s56" title="Source 56">56</a></sup>.</li>
+    <li><strong>Recent roles:</strong> a Senior Vice President for Business Integration &amp; Transformation (May 2026) and a Head of Digital Transformation for Sales &amp; Marketing (June 2026)<sup class="cite"><a href="#s85" title="Source 85">85</a><a href="#s84" title="Source 84">84</a></sup> — both cross-cutting roles, i.e. more matrix.</li>
+    <li><strong>Integrated Business Planning</strong> now runs a unified decision forum across procurement, manufacturing, warehousing and distribution<sup class="cite"><a href="#s35" title="Source 35">35</a></sup>.</li>
+  </ul>
+
+  <h3>The outside-in view</h3>
+  <p>The company has made the right structural moves: protected teams for acquired brands, a split salesforce for growth brands, and a monthly planning forum (IBP) to resolve supply conflicts. <strong>The risk is that each move adds a dimension without removing one.</strong> Category, geography, channel, distributor type and now transformation roles are five ways of slicing the same rupee of revenue. In practice that means a growth-brand manager in a tea-dominant town negotiates with a core distributor, a growth distributor, a channel head, the supply chain and digital — and the consumer does not wait. Section 19 of this dossier sets out a full decision-rights design; the outside-in question is simpler: <em>how many people can say no to a launch?</em></p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"Category business heads own the India P&amp;L; sales, supply chain and digital are service owners with service-level targets they are paid on. We have written decision rights for six recurring decisions, and the COO is the tie-breaker within 72 hours. Acquired brands keep their own marketing and innovation for three years, use our sales and supply chain, and report to one person. We measure the matrix: time from idea to shelf, number of sign-offs per launch, and the share of escalations resolved within a week."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>How many sign-offs does a new SKU need today, and how long from concept to first invoice?</li>
+    <li>When a core distributor and a growth distributor want the same outlet, whose service level wins?</li>
+    <li>What decision rights does an acquired brand's leader have that a Tata brand manager does not — and when do those expire?</li>
+    <li>Which dimension of the matrix would you remove if you had to remove one?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Concept-to-shelf days</span><span><b>Ask for:</b> Sign-offs per launch</span><span><b>Ask for:</b> Escalations resolved in a week</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-talent" class="chapter" data-part="p6" data-roles="ceo chro sales" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-talent">
+    <div class="cmeta"><span class="cnum">OI·6</span><span class="coff">Not in this reading path</span></div>
+    <h2>Talent: What "Hustle" Means in This Company</h2>
+    <p class="standfirst">"Hustlers" is a useful word only once it is defined. In a 158-year-old group running a challenger strategy, it should mean something specific, measurable and sustainable.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-talent">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>Hustlers — what does hustling mean in your context?</li>
+      <li>What is the talent strategy behind it?</li>
+      <li><em>Added:</em> Where do your best growth-business leaders come from — FMCG majors, start-ups, or inside?</li>
+      <li><em>Added:</em> With attrition at 26%, is hustle being renewed or being burned?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>In a challenger, hustle is the substitute for scale: the incumbent wins on cost and reach, so the challenger must win on speed of learning — test, read, scale or kill faster than the incumbent can respond. That makes hustle an <strong>organisational property, not a personality trait</strong>. It shows up as short decision loops, frontline authority and tolerance for small failures. When it depends on individuals working harder rather than on systems letting them move faster, it shows up instead as attrition.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Evidence of hustle (speed)</th><th>Evidence of strain</th></tr></thead>
+    <tbody>
+      <tr><td>MAVIC distributor platform rolled out to 3,000+ distributors in four months; ~200 onboarded in a single day<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td><td>Overall attrition <strong>26%</strong><sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td></tr>
+      <tr><td>A "golden invoice" within 24 hours of closing each acquisition; a 15-minute issue-resolution target in the war room<sup class="cite"><a href="#s56" title="Source 56">56</a></sup></td><td><strong>12,406 off-roll</strong> staff on the frontline, more than the 11,233 full-time employees (including plantation workers)<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td></tr>
+      <tr><td>One launch a week; dry fruits built in-house to a ~₹300 cr run-rate</td><td>Capital Foods' GTM rebuild was slowed by difficulty "finding distributors" and filling sales vacancies<sup class="cite"><a href="#s38" title="Source 38">38</a></sup></td></tr>
+      <tr><td>Pan-India GTM re-cut in three months: 189 new distributors, ~25,000 beats<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td><td>Digital leadership has turned over twice since 2021<sup class="cite"><a href="#s86" title="Source 86">86</a></sup></td></tr>
+      <tr><td>650+ hires, weighted to sales, e-commerce, category marketing, procurement, digital and AI; frontline training hours up five-fold; AI Academy<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s58" title="Source 58">58</a></sup></td><td>Engagement index 76 on a 94% response — healthy, but not exceptional</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <h3>The outside-in view: a working definition</h3>
+  <p>The record supports a precise definition of hustle at Tata Consumer: <strong>speed from decision to the outlet.</strong> Every proud example above is an execution sprint — a rollout, an onboarding, a re-cut. That is a genuine strength and rare in a large Indian company. What it is not yet, visibly, is speed of <em>learning</em>: how fast a failing launch is killed, how quickly a pilot's result changes the plan.</p>
+  <p>Two structural facts deserve attention. First, the frontline that does the hustling is mostly <strong>not employed by the company</strong> — off-roll staff outnumber full-time employees, and distributor salesmen sit outside both. A strategy that depends on frontline execution is exposed to the incentives and attrition of people it does not directly manage. Second, <strong>26% attrition</strong> in an organisation carrying acquisitions, a GTM rebuild and a digital programme at once is the cost of hustle showing up somewhere.</p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"Hustle here means three things: we decide in days, we go to market in weeks, and we kill in quarters. We hire for two different jobs — operators who scale what works, and builders who find what's next — and we pay them differently: builders in growth brands carry a three-year incentive on their brand's revenue and margin. We moved our best 500 frontline off-roll staff onto the rolls last year because the strategy runs through them. We track regretted attrition, not total attrition — ours is X% — and we know exactly which roles are hardest to fill."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What is regretted attrition among high performers, and in which functions?</li>
+    <li>How many growth-business leaders came from start-ups, and how many have stayed three years?</li>
+    <li>What does a distributor salesman earn from selling a growth brand versus salt — and did the GTM split change it?</li>
+    <li>What is the path from off-roll to on-roll, and how many made it last year?</li>
+    <li>Which senior role would you most hate to lose tomorrow, and who is ready to step in?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Regretted attrition by level</span><span><b>Ask for:</b> Internal fill rate, critical roles</span><span><b>Ask for:</b> Frontline tenure and productivity</span><span><b>Ask for:</b> Successor readiness, top 30 roles</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-resilience" class="chapter" data-part="p6" data-roles="ceo cfo strategy" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-resilience">
+    <div class="cmeta"><span class="cnum">OI·7</span><span class="coff">Not in this reading path</span></div>
+    <h2>Resilience: Why Should Tata Consumer Hold Up When Global FMCG Is Struggling?</h2>
+    <p class="standfirst">The global giants are losing volume, breaking themselves up and cutting prices. The question is which of their problems Tata Consumer shares, and which it has escaped.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-resilience">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>When FMCG companies are struggling globally, why will we be resilient?</li>
+      <li><em>Added:</em> Which of the global industry's problems do we already have — in the UK, in the US, in India's metros?</li>
+      <li><em>Added:</em> What would a "bad year" look like, and what would we do in it?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>Resilience in consumer goods is the product of four things: <strong>how non-discretionary the demand is</strong>, <strong>how much pricing power the brands have</strong>, <strong>how flexible the cost base is</strong>, and <strong>how strong the balance sheet is</strong>. The global industry's problem is a specific combination: mature markets with no volume growth, five years of price increases consumers will no longer absorb, private label at record share, health trends (now accelerated by GLP-1 medicines) eroding indulgent categories, and portfolios built for a world of supermarket shelf space.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Signal</th><th>Global</th><th>Tata Consumer</th></tr></thead>
+    <tbody>
+      <tr><td>Volume</td><td>Kraft Heinz Q2 2026 volume/mix −2.6 pts, North America organic −2.7%<sup class="cite"><a href="#s75" title="Source 75">75</a></sup>; Top-100 US food companies' sales +2.4% ≈ inflation, i.e. flat volume, with group volumes down five years running<sup class="cite"><a href="#s76" title="Source 76">76</a></sup></td><td>India underlying volume +13% in Q1 FY27<sup class="cite"><a href="#s37" title="Source 37">37</a></sup> — but the Indian FMCG market's volume fell 2% in the same quarter (NIQ)<sup class="cite"><a href="#s51" title="Source 51">51</a></sup></td></tr>
+      <tr><td>Where growth is</td><td>Nestlé H1 2026: emerging markets +7.1% organic vs developed +2.3%<sup class="cite"><a href="#s78" title="Source 78">78</a></sup>; Unilever Q2: emerging markets +8.3%, India +10% with 5% volume<sup class="cite"><a href="#s77" title="Source 77">77</a></sup></td><td>~72% of revenue booked in India; ~28% in the US, UK and elsewhere, growing 5–9% per the CEO<sup class="cite"><a href="#s33" title="Source 33">33</a><a href="#s57" title="Source 57">57</a></sup></td></tr>
+      <tr><td>Private label &amp; health</td><td>US store-brand unit share at a record in H1 2026; GLP-1 use cited as a top pressure on snacks<sup class="cite"><a href="#s79" title="Source 79">79</a></sup></td><td>Low exposure to indulgence today; private-label risk sits in staples online (see OI·4)</td></tr>
+      <tr><td>Portfolio stress</td><td>Unilever demerged ice cream; Kellogg broken up and sold; Kraft Heinz's split proposed, then called off; Nestlé profit down sharply<sup class="cite"><a href="#s76" title="Source 76">76</a><a href="#s78" title="Source 78">78</a></sup></td><td>Auditor's key audit matter on <strong>₹2,185 cr UK goodwill</strong> because of declining black tea demand<sup class="cite"><a href="#s33" title="Source 33">33</a></sup></td></tr>
+      <tr><td>Balance sheet</td><td>Breakups and disposals increasingly used to reshape portfolios and balance sheets</td><td>Net cash ₹2,978 cr; free cash flow 107% of EBITDA; India net working capital −2 days<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <h3>The outside-in view</h3>
+  <p><strong>The honest answer is "resilient in India, exposed abroad".</strong> Tata Consumer's India business has the four resilience properties: low-ticket staples, a salt brand that took a ₹2 price increase without losing volume, a cost base it has shown it can flex, and a balance sheet with negative working capital. Its international business is a small version of the global industry's problem — a declining black-tea category in the UK, commodity and tariff exposure in US coffee — and the audit report now says so explicitly.</p>
+  <p>Two cautions on the India side. First, the company's volume growth is out-running a shrinking market, which means it is taking share from someone who will fight back. Second, the global industry's structural forces — health, private label, digital shelf — are not absent from India; they are arriving through metros and quick commerce first, where Tata Consumer's growth portfolio over-indexes.</p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"We are resilient for four reasons we can measure — non-discretionary staples, proven pricing power in salt, negative working capital in India and net cash — and exposed in two places: UK black tea and US coffee margins. For the first, we run the UK for cash and specialty growth, and we have a plan if the impairment headroom narrows. For the second, we hedge, and coffee prices are now falling in our favour. Our 'bad year' plan is written: if India volumes fall 3% for two quarters, here is what we cut and what we protect."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What is the headroom in the UK impairment test, and at what black-tea decline rate does it disappear?</li>
+    <li>How much of FY26's growth was share gain versus market growth, by category?</li>
+    <li>What would GLP-1-style health shifts do to the snacks and indulgence categories this plan wants to enter?</li>
+    <li>Which costs are genuinely variable within a quarter?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Share gain vs market growth</span><span><b>Ask for:</b> UK impairment headroom</span><span><b>Ask for:</b> Downside plan, written</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-moats" class="chapter" data-part="p6" data-roles="ceo cfo strategy supply digital" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-moats">
+    <div class="cmeta"><span class="cnum">OI·8</span><span class="coff">Not in this reading path</span></div>
+    <h2>Moats, Network Effects and the Reinvestment Loop</h2>
+    <p class="standfirst">Amul's moat is a cooperative of 36 lakh farmers; ITC's is the largest private agri-sourcing network in India. What is Tata Consumer's — and is efficiency being turned into reinvestment, or into margin?</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-moats">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>How are you building network effects and a moat — as Amul and ITC have?</li>
+      <li>How are you managing efficiency, and how is that being reinvested?</li>
+      <li><em>Added:</em> Which of your advantages would still exist if a competitor had unlimited money — Reliance, say?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>True network effects — where each additional user makes the product better for every other user — are rare in FMCG. What consumer companies build instead are <strong>compounding loops</strong>: scale lowers cost, lower cost funds price or advertising, which brings more scale. Amul is the closest thing in Indian food to a genuine two-sided network: more farmers bring more milk at lower cost, which funds lower prices and wider reach, which raises farmer realisations and attracts more farmers. ITC's loop runs through sourcing: buying directly from farmers at scale (now through the MAARS platform, with a target of 4,000 farmer producer organisations) feeds Aashirvaad's cost and quality<sup class="cite"><a href="#s82" title="Source 82">82</a></sup>. A moat is whatever makes such a loop hard to copy.</p>
+  <p>The efficiency question is the engine of the loop: <strong>a rupee of productivity saved is either reinvested in price and brand (the loop compounds) or kept as margin (the loop stalls).</strong> Both can be right; it should be a choice, not an accident.</p>
+
+  <h3>Where the moats are: an outside-in comparison</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table class="moatmap">
+    <thead><tr><th>Moat source</th><th>Amul</th><th>ITC</th><th>HUL</th><th>Reliance Consumer</th><th>Tata Consumer</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sourcing network</strong> — direct farmer links</td><td class="m3">36 lakh farmer-owners, 18,600 villages<sup class="cite"><a href="#s83" title="Source 83">83</a></sup></td><td class="m3">Largest private agri procurer; MAARS</td><td class="m1">Conventional</td><td class="m1">Conventional</td><td class="m2">Plantation associates; tea blending scale; coffee extraction</td></tr>
+      <tr><td><strong>Scale cost advantage</strong></td><td class="m3">Category-defining in dairy</td><td class="m2">In atta, biscuits</td><td class="m3">Across HPC</td><td class="m2">Buying scale, not yet manufacturing</td><td class="m2">In salt and tea; sub-scale in growth categories</td></tr>
+      <tr><td><strong>Distribution density</strong></td><td class="m3">Dense cold-chain network</td><td class="m3">~7 mn outlets</td><td class="m3">Deepest in industry</td><td class="m2">~3 mn outlets, fast-growing</td><td class="m2">4.5 mn outlets, 1.8 mn direct</td></tr>
+      <tr><td><strong>Brand trust</strong></td><td class="m3">Very high</td><td class="m2">High</td><td class="m3">High, multi-brand</td><td class="m1">Price-led (Campa)</td><td class="m3">Tata name; Tata Salt ~88–89% recall</td></tr>
+      <tr><td><strong>Ecosystem &amp; first-party data</strong></td><td class="m1">Limited</td><td class="m2">Agri data</td><td class="m2">B2B retailer platforms</td><td class="m3">Own retail stores + JioMart</td><td class="m2">Latent: BigBasket, Tata Neu loyalty, Starbucks, MAVIC retailer data</td></tr>
+      <tr><td><strong>Patient capital</strong></td><td class="m2">Cooperative; no equity needs</td><td class="m3">Cigarette cash flows</td><td class="m3">Parent and cash flows</td><td class="m3">Group balance sheet, "not profit-constrained"</td><td class="m2">Net cash; group backing</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="tnote wrap">Darker cells mark stronger moats. Ratings are this document's assessment from public information. <span class="est" title="Analytical judgment — offered to be argued with, not a reported fact" tabindex="0" role="note">Judgment</span></p>
+  <div class="wrap">
+
+  <h3>The outside-in view</h3>
+  <p><strong>Tata Consumer's real moat is trust — and trust is a moat only in categories where the consumer fears being cheated.</strong> That is why the "trust-deficit" filter matters so much: it points the company at the categories where its moat works (salt, pulses, spices, oils, supplements, water) and away from those where it does not (cola, biscuits). Distribution is good but not differentiated; ITC and HUL reach more outlets.</p>
+  <p><strong>The closest thing to a network effect the company is building is in its distributor and retailer platforms.</strong> MAVIC connects 3,000+ distributors; AI in the sales app now influences 41% of orders; a recommendation engine is in pilot<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s35" title="Source 35">35</a></sup>. If those tools get better with every outlet that uses them — better assortment suggestions, better credit, better schemes — they become a data network that a new entrant cannot buy. Today they are efficiency tools; the question is whether they become a platform.</p>
+  <p><strong>The group ecosystem is the under-used asset.</strong> Starbucks' 500 stores, BigBasket's grocery shoppers and the Tata Neu loyalty programme are first-party consumer touchpoints few FMCG companies have. But BigBasket's losses and Tata Neu's refocus on financial services and loyalty<sup class="cite"><a href="#s81" title="Source 81">81</a></sup> limit what can be built on them.</p>
+  <p><strong>On the reinvestment loop,</strong> the evidence is good: India working capital fell from 59 days in FY20 to −2 days, free cash flow is 107% of EBITDA, and A&amp;P is 6.7% of India sales<sup class="cite"><a href="#s36" title="Source 36">36</a></sup>. What is not visible is the rule: how much of each year's productivity is earmarked for brand investment versus margin.</p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"Our moat is trust in categories where trust is scarce, and we choose categories by that rule. We are turning our distributor and retailer platforms into a data network — every outlet that orders through it gets better recommendations, and we measure that. Our efficiency rule is explicit: half of each year's productivity savings is reinvested in A&amp;P and price-pack architecture, half goes to margin. And we have a group data partnership with BigBasket and Tata Neu that gives us shopper-level insight our competitors cannot see."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What is the annual productivity saving in rupees, and where did it go last year?</li>
+    <li>Does the MAVIC retailer app get measurably better as more outlets use it? What is the evidence?</li>
+    <li>What would it take to build an ITC-style direct sourcing loop in spices or pulses, where Sampann competes?</li>
+    <li>Which advantage would survive Reliance pricing at zero margin for three years?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Productivity savings and their use</span><span><b>Ask for:</b> A&amp;P as % of sales, by brand role</span><span><b>Ask for:</b> Retailer app usage and order uplift</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-tech" class="chapter" data-part="p6" data-roles="ceo cfo digital supply sales" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-tech">
+    <div class="cmeta"><span class="cnum">OI·9</span><span class="coff">Not in this reading path</span></div>
+    <h2>Making Technology Pay</h2>
+    <p class="standfirst">What the technology programme has actually delivered in business outcomes, how the company is organised to deliver more, and the principles that should govern build, buy, invest and hire.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-tech">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>How are you making technology pay? What is the playbook, and how is it helping to build a moat?</li>
+      <li>What business outcomes have technology initiatives (AI, digital) actually delivered — fill rate, inventory levels?</li>
+      <li>How are you organised to deliver the value?</li>
+      <li>What are your principles on technology: in-house versus outsourced, investment, talent?</li>
+      <li><em>Added:</em> Which technology programme would you stop today if you had to fund one more?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>In FMCG, technology pays through four levers and no others: <strong>more revenue per outlet</strong> (right assortment, always available), <strong>less capital</strong> (inventory and receivables), <strong>lower cost to serve</strong> (routes, dispatch, automation), and <strong>faster, better innovation</strong> (insight to launch). A programme that cannot name which lever it moves, and by how much, is a cost. The common failure is to measure adoption — apps installed, distributors onboarded — instead of the operating number the app was meant to change.</p>
+  <p>On build versus buy: <strong>buy the platform, build the edge.</strong> Transaction systems, distributor management and planning engines are commodities best bought from scale vendors. The models that encode what only this company knows — which assortment sells in which outlet, how demand responds to price in which town — are where in-house talent earns its cost.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table class="sortable">
+    <thead><tr><th>Initiative</th><th>Built on</th><th>Disclosed outcome</th><th>Lever</th><th>Outcome measured in rupees?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MAVIC</strong> distributor management and sales app</td><td>Salesforce</td><td>3,000+ distributors in four months; onboarding from a week to under 45 minutes; a new retailer can order in ~2 minutes<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s68" title="Source 68">68</a></sup></td><td>Revenue per outlet</td><td><span class="tag warn">Adoption only</span></td></tr>
+      <tr><td><strong>AI in sales-force automation</strong></td><td>MAVIC</td><td>Influenced <strong>41% of orders</strong>; orders via SFA and range per outlet "increased"<sup class="cite"><a href="#s35" title="Source 35">35</a><a href="#s34" title="Source 34">34</a></sup></td><td>Revenue per outlet</td><td><span class="tag warn">Partial</span></td></tr>
+      <tr><td><strong>Route optimisation</strong></td><td>—</td><td>Average field travel down <strong>30%</strong><sup class="cite"><a href="#s35" title="Source 35">35</a></sup></td><td>Cost to serve</td><td><span class="tag warn">Partial</span></td></tr>
+      <tr><td><strong>Integrated Business Planning</strong> and planning platform</td><td>Blue Yonder (with Accenture, from 2021)<sup class="cite"><a href="#s69" title="Source 69">69</a></sup></td><td>"Improvements in service levels, inventory optimisation and responsiveness"<sup class="cite"><a href="#s35" title="Source 35">35</a></sup></td><td>Capital</td><td><span class="tag stop">Not quantified</span></td></tr>
+      <tr><td><strong>Centralised dispatch planning</strong> across C&amp;F agents</td><td>—</td><td>"Benchmark service levels" maintained<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td><td>Cost to serve</td><td><span class="tag stop">Not quantified</span></td></tr>
+      <tr><td><strong>Working capital</strong> (the combined result)</td><td>Planning + commercial discipline</td><td>Group net working capital <strong>59 → 21 days</strong> (FY20→FY26); India <strong>−2 days</strong>; FCF 107% of EBITDA<sup class="cite"><a href="#s36" title="Source 36">36</a></sup></td><td>Capital</td><td><span class="tag go">Yes</span></td></tr>
+      <tr><td><strong>GT recommendation engine</strong></td><td>In-house ML</td><td>Pilot complete in FY26; national rollout next<sup class="cite"><a href="#s34" title="Source 34">34</a></sup></td><td>Revenue per outlet</td><td><span class="tag">Pending</span></td></tr>
+      <tr><td><strong>AI commodity procurement platform</strong></td><td>—</td><td>Launched FY24; tea blend optimisation and wider vendor base in FY26<sup class="cite"><a href="#s58" title="Source 58">58</a></sup></td><td>Cost</td><td><span class="tag stop">Not quantified</span></td></tr>
+      <tr><td><strong>Innovation tools</strong> — R&amp;D Genie, Vega stage-gate, Innova</td><td>Ai Palette and others</td><td>Faster concept validation; portfolio visibility<sup class="cite"><a href="#s35" title="Source 35">35</a></sup></td><td>Innovation</td><td><span class="tag stop">Not quantified</span></td></tr>
+      <tr><td><strong>Field and enterprise AI</strong> — geospatial targeting, Indic voice companion, GenAI marketing, AI Academy</td><td>Mixed</td><td>Pilots and capability building<sup class="cite"><a href="#s58" title="Source 58">58</a></sup></td><td>Mixed</td><td><span class="tag">Pending</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <p><strong>Organisation:</strong> a Global Chief Digital Officer role created in 2021 and refilled in January 2025 after its first holder moved to Tata Motors; a Head of Digital Transformation for Sales &amp; Marketing added in June 2026; a Sales Analytics Centre of Excellence embedding insight in frontline workflows<sup class="cite"><a href="#s86" title="Source 86">86</a><a href="#s84" title="Source 84">84</a><a href="#s34" title="Source 34">34</a></sup>. Technology spend is not disclosed.</p>
+
+  <h3>The outside-in view</h3>
+  <p><strong>The programme is real, broad and well-chosen on the buy side</strong> — Salesforce and Blue Yonder for commodity capability, with the differentiating work (assortment recommendation, procurement optimisation) in-house. The working-capital result is outstanding and is the clearest proof that planning and commercial discipline pay.</p>
+  <p><strong>But the public story is told in adoption, not outcomes.</strong> "41% of orders influenced by AI" is not the same as "41% more lines sold"; "onboarding in 45 minutes" is a process metric. The numbers the question asks about — fill rate, forecast accuracy, inventory by node, cost to serve — are not disclosed. That may simply be disclosure practice. It may also mean they are not yet the numbers by which the programme is governed internally, which is the more important question. And three leaders of digital in five years suggests the function is still finding its shape.</p>
+
+  <div class="pull">
+    <span class="plab">Principles a strong answer would contain</span>
+    <p><strong>1. Every initiative has an owner in the business and a number on the P&amp;L.</strong> The CFO's team, not the digital team, signs off the benefit. <strong>2. Buy the platform, build the edge.</strong> Name the three models that are proprietary. <strong>3. Kill pilots fast.</strong> A pilot that cannot show its number in two quarters is stopped. <strong>4. Talent in product teams, not projects.</strong> Small permanent teams that own a business outcome, with engineers and category people together. <strong>5. Spend is a portfolio.</strong> Run-the-business, grow-the-business and bets, with a stated split and a stated return. <strong>6. Security by design</strong> — every new platform that connects distributors and retailers is also a new attack surface (OI·11).</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What are fill rate, forecast accuracy and inventory days by node today, versus before IBP — and what is the target?</li>
+    <li>In outlets where the recommendation engine ran, what was the uplift in lines per bill against a control group?</li>
+    <li>What is total technology spend as a share of revenue, and how much is run versus change?</li>
+    <li>Which technology decision would you reverse with hindsight?</li>
+    <li>How does the moat get deeper — does MAVIC's data make the next distributor's sales better?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Fill rate &amp; OTIF</span><span><b>Ask for:</b> Forecast accuracy (MAPE)</span><span><b>Ask for:</b> Cost to serve per case</span><span><b>Ask for:</b> Tech spend and value realised</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-supply" class="chapter" data-part="p6" data-roles="ceo supply cfo" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-supply">
+    <div class="cmeta"><span class="cnum">OI·10</span><span class="coff">Not in this reading path</span></div>
+    <h2>Supply Chain Choices</h2>
+    <p class="standfirst">Make or buy, how many nodes, how much inventory, how to source commodities, and where the single points of failure are.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-supply">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>What are your supply chain choices, and why?</li>
+      <li><em>Added:</em> Where are you deliberately asset-light, and where would you rather own?</li>
+      <li><em>Added:</em> What is your single point of failure — the plant, supplier or system whose loss would stop a category?</li>
+      <li><em>Added:</em> How fast can you pass a commodity shock through to price, and who decides?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>A supply chain is a set of trade-offs between cost, service, cash and resilience, and the right answer differs by category. Asset-light (co-packers) buys speed and flexibility at the cost of quality control and margin; owning buys control at the cost of capital and fixed cost. In a portfolio that runs from salt (stable, high-volume) to RTD (seasonal, bulky, capacity-constrained) to spices (fragmented sourcing, adulteration risk), <strong>one supply chain design is wrong for most of it.</strong></p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Business</th><th>Choice</th><th>Evidence</th><th>The trade-off to probe</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Organic India, Capital Foods</strong></td><td>Mostly in-house manufacturing; IP retained</td><td>CEO, Q1 FY27 call<sup class="cite"><a href="#s38" title="Source 38">38</a></sup>; new herbal R&amp;D facility at Barabanki<sup class="cite"><a href="#s58" title="Source 58">58</a></sup></td><td>Capacity for 25–30% growth; noodle capacity "finally" in place</td></tr>
+      <tr><td><strong>RTD</strong></td><td>Dedicated co-packers: exclusive, partner-funded capex</td><td>CEO: "almost exclusive… except that capex and operations are run by someone else"<sup class="cite"><a href="#s38" title="Source 38">38</a></sup>; capacity being doubled</td><td>Capacity ahead of distribution (40–50% effective reach) = inventory risk in a seasonal category</td></tr>
+      <tr><td><strong>Tata Sampann</strong></td><td>Largely outsourced; consolidation under evaluation</td><td>"It is just in Sampann that we do a lot of outsourcing"<sup class="cite"><a href="#s38" title="Source 38">38</a></sup></td><td>Quality assurance in adulteration-prone categories is the brand promise</td></tr>
+      <tr><td><strong>Tea and coffee</strong></td><td>Blending at scale; auctions plus plantation associates; coffee hedged</td><td>Blend optimisation and wider vendor base in FY26; tea inflation now 7–10%<sup class="cite"><a href="#s58" title="Source 58">58</a><a href="#s38" title="Source 38">38</a></sup></td><td>Pass-through lag; one plantation associate is selling assets after losses<sup class="cite"><a href="#s33" title="Source 33">33</a></sup></td></tr>
+      <tr><td><strong>Solubles</strong></td><td>Owned extraction in India and Vietnam; scaling Vietnam</td><td>Vietnam revenue +84% in FY26<sup class="cite"><a href="#s35" title="Source 35">35</a><a href="#s58" title="Source 58">58</a></sup></td><td>Capital in a commodity-priced, made-to-order business</td></tr>
+      <tr><td><strong>Network</strong></td><td>126 plant and operating locations in India, 6 overseas; centralised dispatch planning; warehouse modernisation</td><td>BRSR and MD&amp;A<sup class="cite"><a href="#s70" title="Source 70">70</a><a href="#s34" title="Source 34">34</a></sup></td><td>Node count vs the cost of the split distributor model</td></tr>
+      <tr><td><strong>Sourcing base</strong></td><td>35% of inputs directly from MSMEs and small producers; 63% from within India</td><td>BRSR FY26<sup class="cite"><a href="#s70" title="Source 70">70</a></sup></td><td>Supplier quality and traceability at scale</td></tr>
+      <tr><td><strong>Working capital</strong></td><td>Inventory 64 days (66); receivables 18 days; India NWC −2 days</td><td>MD&amp;A and FY26 presentation<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s36" title="Source 36">36</a></sup></td><td>Is negative working capital squeezing distributors?</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <h3>The outside-in view</h3>
+  <p><strong>The design is sensibly differentiated by category</strong> — owned where IP and quality are the brand (Organic India, Ching's), partnered where capital intensity and seasonality argue for it (RTD), and outsourced where sourcing is fragmented (Sampann). The working-capital performance is best-in-class.</p>
+  <p>Three tensions deserve a direct answer. <strong>First, Sampann's outsourcing sits in exactly the categories where the brand promise is purity</strong>; a single adulteration incident in a co-packed spice would cost more than any capex saved. <strong>Second, RTD capacity is being doubled into a business that is properly distributed in only 40–50% of the country</strong> — the risk is a seasonal stock build that the trade has to absorb. <strong>Third, India's −2 days of working capital</strong> is excellent for the company, but in a split-distributor model it may be financed by distributors whose economics the GTM change also asks a lot of.</p>
+
+  <div class="pull">
+    <span class="plab">What a strong answer sounds like</span>
+    <p>"We choose make or buy per category on four tests: IP, quality risk, capital intensity and seasonality. Sampann co-packers are audited monthly with traceability to lot, and we are bringing whole spices in-house above ₹X crore. RTD capacity is released by region only when effective distribution crosses a threshold. We know our ten single points of failure, and each has a second source or a recovery time we have tested. We pass commodity moves through within 60 days by rule, and we watch distributor ROI as closely as our own working capital."</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What share of Sampann volume comes from third-party manufacturers, and how many food-safety audits failed last year?</li>
+    <li>What is the RTD capacity utilisation by region, and how much stock sat in trade at season end?</li>
+    <li>Which supplier or plant, if lost for a month, would stop a ₹500 crore+ business?</li>
+    <li>What is the average distributor's return on investment, and how has it moved since FY24?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> OTIF to distributors</span><span><b>Ask for:</b> Capacity utilisation by category</span><span><b>Ask for:</b> Single points of failure and recovery times</span><span><b>Ask for:</b> Distributor ROI</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-cyber" class="chapter" data-part="p6" data-roles="ceo cfo digital supply" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-cyber">
+    <div class="cmeta"><span class="cnum">OI·11</span><span class="coff">Not in this reading path</span></div>
+    <h2>Cyber Security as a Leadership Choice</h2>
+    <p class="standfirst">Two of the most expensive cyber incidents of 2025 happened inside or alongside the Tata group. The question for the CEO is not whether the company is compliant, but whether it could keep shipping salt if its systems went dark.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-cyber">
+    <div class="wide">
+  <div class="wrap">
+  <div class="askbox"><span class="plab">Questions on the table</span>
+    <ol>
+      <li>How are you making leadership choices to enhance cyber security — architecture, access control on production systems, access management, third-party access, MFA?</li>
+      <li><em>Added:</em> How long could the company keep invoicing and shipping if ERP, MAVIC and plant systems were down — and when was that last tested?</li>
+      <li><em>Added:</em> Who on the board can challenge the cyber programme, and what do they see each quarter?</li>
+      <li><em>Added:</em> 3,000+ distributors and thousands of retailers now connect to company systems. How is that access governed?</li>
+    </ol>
+  </div>
+
+  <h3>First principles</h3>
+  <p>For a consumer goods company, the expensive cyber event is not a data breach — it is <strong>an operational stop</strong>: no orders, no invoices, no dispatch, no production. The cost is measured in weeks of lost sales and the trade's willingness to wait. Modern attacks increasingly come through <strong>identity</strong> (a convincing call to a help desk, a stolen session) and <strong>third parties</strong> (outsourced IT, vendors, partners with access), not through technical exploits. So the leadership choices that matter are about identity, segmentation, third-party access and the tested ability to recover — and they are budget and design choices, not IT settings.</p>
+
+  <h3>What the public record shows</h3>
+  </div>
+  <div class="grid g4">
+    <div class="kpi lo"><span class="kpi-lab">JLR shutdown, Sept 2025</span><div class="kpi-val">5<small> weeks</small></div><div class="kpi-sub">Production halted; £196m direct costs<sup class="cite"><a href="#s71" title="Source 71">71</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">JLR total cost (Tata est.)</span><div class="kpi-val">~£1.8<small>bn</small></div><div class="kpi-sub">Including lost output<sup class="cite"><a href="#s72" title="Source 72">72</a></sup></div></div>
+    <div class="kpi lo"><span class="kpi-lab">M&amp;S, April 2025</span><div class="kpi-val">~£300<small>m</small></div><div class="kpi-sub">Profit hit; entry via help-desk impersonation<sup class="cite"><a href="#s73" title="Source 73">73</a></sup></div></div>
+    <div class="kpi hi"><span class="kpi-lab">TCPL data breaches, FY26</span><div class="kpi-val">0</div><div class="kpi-sub">No cyber or privacy complaints (BRSR)<sup class="cite"><a href="#s70" title="Source 70">70</a></sup></div></div>
+  </div>
+  <div class="wrap">
+  <p>The JLR attack was against a Tata group company; the M&amp;S attack was reported to have run through social engineering of an IT help desk operated by TCS, a Tata group company — TCS has said it found no compromise of its own network, and M&amp;S says the later end of that contract was unrelated<sup class="cite"><a href="#s74" title="Source 74">74</a></sup>. TCS also provides services to Tata Consumer (₹43 crore in FY26)<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>.</p>
+  <p>Tata Consumer's own disclosure is substantive: a programme aligned to the NIST Cybersecurity Framework; a Security Operations Centre with automated alerting and incident playbooks aligned to CERT-In; strengthened privileged-access controls and third-party security governance; data discovery, classification and exfiltration monitoring; phishing simulations; and AI in threat prioritisation<sup class="cite"><a href="#s34" title="Source 34">34</a></sup>.</p>
+  </div>
+
+  <div class="tablewrap wide">
+  <table>
+    <thead><tr><th>Leadership choice</th><th>Lesson from the 2025 incidents</th><th>Disclosed by TCPL?</th><th>The question to ask</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Phishing-resistant MFA</strong> for admins, remote access and help-desk resets</td><td>M&amp;S attackers reportedly talked their way through password resets</td><td><span class="tag warn">Not specified</span></td><td>Can a caller get a password or MFA reset without a second, independent verification?</td></tr>
+      <tr><td><strong>Privileged access management</strong> on production and ERP</td><td>Attackers seek admin rights to spread and encrypt</td><td><span class="tag go">Yes — strengthened</span></td><td>How many people hold standing admin rights today, and is access granted just-in-time?</td></tr>
+      <tr><td><strong>IT/OT segmentation</strong> of plants and co-packers</td><td>JLR's production stopped with its IT systems</td><td><span class="tag warn">Not specified</span></td><td>Can a plant keep running if corporate IT is isolated? Which of the 126 sites have been tested?</td></tr>
+      <tr><td><strong>Third-party access</strong> — IT outsourcers, co-packers, 3,000+ distributors on MAVIC</td><td>The help desk and suppliers are the soft entry points</td><td><span class="tag go">Yes — governance strengthened</span></td><td>Is every third party tiered by access, with logging, contractual obligations and periodic review?</td></tr>
+      <tr><td><strong>Joiner-mover-leaver</strong> for 12,406 off-roll staff and distributor salesmen</td><td>Orphan accounts outlive the person</td><td><span class="tag warn">Not specified</span></td><td>How quickly is access removed when a distributor salesman leaves?</td></tr>
+      <tr><td><strong>Immutable backups and tested recovery</strong></td><td>Recovery time, not prevention, decided the cost</td><td><span class="tag warn">Not specified</span></td><td>What is the tested recovery time for ERP and order-to-cash — hours, days or weeks?</td></tr>
+      <tr><td><strong>Board oversight and rehearsal</strong></td><td>Decisions in the first 48 hours set the outcome</td><td><span class="tag">Risk committee covers risk broadly</span></td><td>When did the board last run a ransomware tabletop, and what did it learn?</td></tr>
+      <tr><td><strong>Data protection</strong> — India's DPDP regime</td><td>Retailer, consumer and employee data now span many apps</td><td><span class="tag go">Privacy-by-design stated</span></td><td>Where is consumer data held across D2C, loyalty and partner platforms, and who is accountable?</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="wrap">
+  <h3>The outside-in view</h3>
+  <p><strong>The programme looks well-founded on paper, and zero reported breaches is a good record.</strong> But the company's strategy is steadily increasing its attack surface: a cloud distributor platform connecting thousands of outside firms, a retailer app, AI tools, co-packers, a vending network and more e-commerce integrations. The disclosure says little about the two things that decided the cost of the 2025 incidents — <strong>identity verification at the help desk and tested recovery time</strong>. Those are where the CEO's attention, and budget, should go.</p>
+
+  <div class="pull warnbox">
+    <span class="plab">The one question that matters most</span>
+    <p>"If ransomware encrypted our ERP and MAVIC on a Monday morning, how many days until we invoice again — and have we proved it?" A strong answer is a number of days, the date it was last tested, the manual fallback for order-taking in the meantime, and the name of the person who decides whether to pay.</p>
+  </div>
+
+  <h3>Follow-ups</h3>
+  <ul class="probe">
+    <li>What did the company change after the JLR and M&amp;S incidents? Was there a group-wide review?</li>
+    <li>How is the TCS relationship governed for security — what access does it have, and how is it monitored?</li>
+    <li>What share of the cyber budget goes to recovery versus prevention?</li>
+    <li>Is there cyber insurance, and what does it exclude?</li>
+    <li>Which board member has the expertise to challenge the CISO?</li>
+  </ul>
+  <div class="metricstrip"><span><b>Ask for:</b> Tested recovery time, ERP and order-to-cash</span><span><b>Ask for:</b> Phishing-resistant MFA coverage</span><span><b>Ask for:</b> Standing admin accounts</span><span><b>Ask for:</b> Third parties with network access</span></div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section id="oi-more" class="chapter" data-part="p6" data-roles="ceo cfo strategy cmo chro" data-open="false">
+  <div class="chead" role="button" tabindex="0" aria-expanded="false" aria-controls="body-oi-more">
+    <div class="cmeta"><span class="cnum">OI·12</span><span class="coff">Not in this reading path</span></div>
+    <h2>Questions Not Yet on the List</h2>
+    <p class="standfirst">Eight further lines of questioning an outside-in CEO would add — several of them uncomfortable, all of them material.</p>
+    <span class="chint"><span class="chint-open">Read the full chapter</span><span class="chint-close">Collapse chapter</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="cbody" id="body-oi-more">
+    <div class="wide">
+  <div class="wrap">
+
+  <div class="fnbox">
+    <header><h4>1. Governance and the group</h4><span class="who">Material · time-sensitive</span></header>
+    <div class="body">
+      <p>Tata Consumer's chairman, N. Chandrasekaran, is also executive chairman of Tata Sons. In September 2026 the Tata Sons board reappointed him for five years by four votes to one; Tata Trusts, which own about two-thirds of Tata Sons, called the resolution legally void<sup class="cite"><a href="#s80" title="Source 80">80</a></sup>. The company also pays Tata Sons for the use of the brand (₹55 crore in FY26) and sells ₹334 crore a year to group-owned BigBasket entities<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>.</p>
+      <p><strong>Ask:</strong> What in this strategy depends on group support — capital, brand, talent moves, channel partners — and what changes if the group's leadership changes? Is there a plan for chairman continuity at the company level? How are related-party sales to group retailers priced and reviewed?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>2. Your own red lines versus this plan</h4><span class="who">Strategic · most useful debate</span></header>
+    <div class="body">
+      <p>The CEO has said the company will not enter regular edible oils, biscuits or carbonated drinks, and that categories with "too few players" risk getting trampled<sup class="cite"><a href="#s57" title="Source 57">57</a></sup>. This dossier's plan argues for salty snacks, a category with one dominant leader (§15).</p>
+      <p><strong>Ask:</strong> Does salty snacks pass your own test? If not, what is the alternative route to the scale this plan needs by FY31 — and is the honest answer that the company should aim to be the most profitable F&amp;B player rather than the largest?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>3. Pricing power and commodity cycles</h4><span class="who">Operational · recurring</span></header>
+    <div class="body">
+      <p>Tea passed cost deflation on to consumers in FY26 and now faces 7–10% procurement inflation; salt took ₹30→₹32 cleanly; US coffee was priced through tariffs and cost spikes<sup class="cite"><a href="#s38" title="Source 38">38</a><a href="#s35" title="Source 35">35</a></sup>.</p>
+      <p><strong>Ask:</strong> What is the rule for pass-through, and the lag? Where do you lead on price and where do you follow? Which brand has the most untested pricing power?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>4. Health policy and the salt franchise</h4><span class="who">Long-dated · high impact</span></header>
+    <div class="body">
+      <p>Salt is a ₹4,000 crore franchise in a world where public-health policy targets sodium. The company has launched a lower-sodium rock salt (15% less) and iron-fortified salt<sup class="cite"><a href="#s36" title="Source 36">36</a><a href="#s58" title="Source 58">58</a></sup>.</p>
+      <p><strong>Ask:</strong> If front-of-pack warnings or sodium-reduction targets arrived in India, what happens to volume? Is Tata Salt positioned to lead sodium reduction — the most credible way to define the next version of the category — or to resist it?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>5. Climate and the agricultural base</h4><span class="who">Long-dated · rising</span></header>
+    <div class="body">
+      <p>El Niño, a deficit monsoon and pest infestations have already hit tea crops and plantation associates; one associate is selling assets after losses<sup class="cite"><a href="#s34" title="Source 34">34</a><a href="#s33" title="Source 33">33</a></sup>.</p>
+      <p><strong>Ask:</strong> What is the climate-adjusted cost curve for tea and coffee over ten years? Is plantation exposure a hedge or a liability? What does climate do to the "value of integration" in the non-branded business?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>6. The international portfolio's future</h4><span class="who">Strategic · capital allocation</span></header>
+    <div class="body">
+      <p>About 28% of revenue and ₹5,165 crore of goodwill sit outside India; UK goodwill is a key audit matter; international earns 9.0% pre-tax on its segment capital<sup class="cite"><a href="#s33" title="Source 33">33</a></sup>.</p>
+      <p><strong>Ask:</strong> Is international a growth engine, a cash engine or a capability (coffee know-how, global brands)? What would the company do with the capital if it sold the UK business — and why not?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>7. The investor narrative</h4><span class="who">Board · market</span></header>
+    <div class="body">
+      <p>The stock is near a 52-week low at roughly 58× trailing earnings, while the business grows faster than most peers<sup class="cite"><a href="#s40" title="Source 40">40</a></sup>.</p>
+      <p><strong>Ask:</strong> What is the market not believing — margin expansion, growth durability or acquisition returns? Which three numbers, reported every quarter, would change its mind? Would you commit publicly to returns including goodwill?</p>
+    </div>
+  </div>
+
+  <div class="fnbox">
+    <header><h4>8. Capital return, succession and the Starbucks question</h4><span class="who">Board</span></header>
+    <div class="body">
+      <p>The dividend is ₹10 a share, ~60% of standalone profit (~₹990 crore)<sup class="cite"><a href="#s35" title="Source 35">35</a></sup>; Tata Starbucks lost ₹49.5 crore in FY26 on ₹1,367 crore of revenue<sup class="cite"><a href="#s10" title="Source 10">10</a><a href="#s35" title="Source 35">35</a></sup>.</p>
+      <p><strong>Ask:</strong> What is the capital allocation hierarchy — organic growth, M&amp;A, dividend — and the rule for changing it? How deep is the bench behind the CEO and COO? What does Starbucks have to deliver by FY29 to justify the capital and the attention, and what is the exit if it does not?</p>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <div class="panel" id="pan-p5" role="tabpanel" aria-labelledby="tab-p5" tabindex="0">
   <div class="panelhead"><span class="peyebrow">Reference</span><h3 class="ptitle">Sources &amp; Method</h3><div class="pactions"><button type="button" class="expandall" data-part="p5">Expand all</button><button type="button" class="collapseall" data-part="p5">Collapse all</button></div></div>
 
@@ -3237,6 +4159,37 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
     <li id="s53"><span class="srcnum">53.</span><a href="https://nielseniq.com/global/en/news-center/2026/niq-gst-2-0-transition-reshapes-indias-fmcg-growth-landscape/">NIQ: GST 2.0 transition reshapes India’s FMCG growth, October–December 2025 — NielsenIQ</a></li>
     <li id="s54"><span class="srcnum">54.</span><a href="https://mediabrief.com/rural-fuels-indias-13-9-fmcg-growth-in-q2-nielseniq/">NielsenIQ: FMCG grows 13.9% in April–June 2025 — MediaBrief</a></li>
     <li id="s55"><span class="srcnum">55.</span><a href="https://propnewstime.com/latestnewsstories/MjMxMTc=/fmcg-sector-sees-slower-volume-growth-as-gst-transition-and-market-shifts-affect-demand">NielsenIQ: July–September 2025 volume growth 5.4%, rural 7.7% — PropNewsTime</a></li>
+    <li id="s56"><span class="srcnum">56.</span><a href="https://www.tata.com/newsroom/business/tata-consumer-acquisition-integration">The 100-day playbook: integrating Capital Foods and Organic India — Tata newsroom (Sept 2025)</a></li>
+    <li id="s57"><span class="srcnum">57.</span><a href="https://www.outlookbusiness.com/magazine/tata-consumer-ceo-sunil-dsouza-on-chasing-growth-bold-bets-and-the-allure-of-indias-fmcg-market">Sunil D’Souza on chasing growth and bold bets — Outlook Business (May 2026)</a></li>
+    <li id="s58"><span class="srcnum">58.</span><a href="https://www.tataconsumer.com/iar-2025-26/results-reflections/md-ceos-message/">Tata Consumer Integrated Annual Report FY2025-26 — MD &amp; CEO’s message</a></li>
+    <li id="s59"><span class="srcnum">59.</span><a href="https://www.business-standard.com/article/markets/tata-consumer-dips-2-after-withdrawing-plans-to-acquire-bisleri-123032000348_1.html">Tata Consumer withdraws plans to acquire Bisleri — Business Standard (Mar 2023)</a></li>
+    <li id="s60"><span class="srcnum">60.</span><a href="https://www.business-standard.com/companies/news/tata-consumer-products-in-talks-to-buy-at-least-51-stake-in-haldiram-s-123090600568_1.html">Tata Consumer in talks to buy at least 51% of Haldiram’s — Business Standard (Sept 2023)</a></li>
+    <li id="s61"><span class="srcnum">61.</span><a href="https://www.outlookbusiness.com/corporate/temasek-acquires-10-stake-in-haldiram-snacks-food-at-10-billion-valuation">Temasek acquires ~10% of Haldiram Snacks Food at ~$10bn valuation — Outlook Business (Mar 2025)</a></li>
+    <li id="s62"><span class="srcnum">62.</span><a href="https://www.business-standard.com/article/companies/tata-consumer-products-is-in-acquisition-talks-with-3-4-players-md-ceo-123020500669_1.html">“We’re looking at acquisitions but won’t buy at all costs” — Business Standard (Feb 2023)</a></li>
+    <li id="s63"><span class="srcnum">63.</span><a href="https://www.business-standard.com/companies/news/tata-consumers-to-acquire-capital-foods-for-enterprise-value-of-rs-5-100-cr-124011200994_1.html">Tata Consumer to acquire Capital Foods and Organic India — Business Standard (Jan 2024)</a></li>
+    <li id="s64"><span class="srcnum">64.</span><a href="https://www.indiainfoline.com/article/news-top-story/tata-consumer-good-acquisitions-but-already-priced-in-1705558371262_1.html">Tata Consumer: good acquisitions but already priced in — IIFL (Jan 2024)</a></li>
+    <li id="s65"><span class="srcnum">65.</span><a href="https://insights.dsij.in/dsijarticledetail/tata-consumer-products-acquires-soulfull-brand-owner-kottaram-agro-foods-for-rs-15580-core-16795">Tata Consumer acquires Soulfull owner Kottaram Agro Foods for ₹155.8 crore — DSIJ (2021)</a></li>
+    <li id="s66"><span class="srcnum">66.</span><a href="https://www.business-standard.com/article/news-cm/tata-consumer-gains-on-acquiring-pepsico-s-stake-in-nourishco-beverages-120051900365_1.html">Tata Consumer acquires PepsiCo’s stake in NourishCo — Business Standard (May 2020)</a></li>
+    <li id="s67"><span class="srcnum">67.</span><a href="https://www.icra.in/Rating/ShowRationalReportFilePdfViewer/142817">Tata Consumer Products: ratings reaffirmed — ICRA rationale</a></li>
+    <li id="s68"><span class="srcnum">68.</span><a href="https://www.salesforce.com/in/news/stories/salesforce-accelerates-digital-transformation-of-tata-consumer-products-limited/">Salesforce accelerates digital transformation of Tata Consumer (MAVIC) — Salesforce</a></li>
+    <li id="s69"><span class="srcnum">69.</span><a href="https://www.businesswire.com/news/home/20210324005731/en/Tata-Consumer-Products-Digitally-Transforms-Supply-Chain-with-Blue-Yonder-and-Accenture">Tata Consumer digitally transforms supply chain with Blue Yonder and Accenture — Business Wire (2021)</a></li>
+    <li id="s70"><span class="srcnum">70.</span><a href="https://www.tataconsumer.com/iar-2025-26/docs/brsr.pdf">Tata Consumer Business Responsibility &amp; Sustainability Report FY2025-26</a></li>
+    <li id="s71"><span class="srcnum">71.</span><a href="https://securityaffairs.com/184742/security/jaguar-land-rover-confirms-major-disruption-and-196m-cost-from-september-cyberattack.html">Jaguar Land Rover confirms £196m cost from September 2025 cyberattack — Security Affairs</a></li>
+    <li id="s72"><span class="srcnum">72.</span><a href="https://www.theregister.com/2025/11/17/asia_tech_news_roundup/">JLR hack cost Tata Motors around $2.4 billion — The Register (Nov 2025)</a></li>
+    <li id="s73"><span class="srcnum">73.</span><a href="https://mp.scotsman.com/uk-news/marks-spencer-blames-human-error-as-cyber-attack-set-to-cost-ps300m-5697568">Marks &amp; Spencer cyber attack set to cost £300m — The Scotsman (May 2025)</a></li>
+    <li id="s74"><span class="srcnum">74.</span><a href="https://www.computing.co.uk/news/2025/security/m-s-ends-contract-with-tcs">M&amp;S ends service-desk contract with TCS after cyberattack — Computing</a></li>
+    <li id="s75"><span class="srcnum">75.</span><a href="https://news.kraftheinzcompany.com/press-releases-details/2026/Kraft-Heinz-Reports-Second-Quarter-2026-Results-Updates-2026-Full-Year-Outlook/default.aspx">Kraft Heinz reports second-quarter 2026 results — Kraft Heinz</a></li>
+    <li id="s76"><span class="srcnum">76.</span><a href="https://www.foodprocessing.com/business-of-food-beverage/top-100-archives/article/55398276/the-2026-top-100-underlying-health-issues">The 2026 Top 100: underlying health issues — Food Processing</a></li>
+    <li id="s77"><span class="srcnum">77.</span><a href="https://www.unilever.com/news/press-and-media/press-releases/2026/desire-at-scale-powering-strong-h1-performance/">Unilever 2026 first-half results — Unilever</a></li>
+    <li id="s78"><span class="srcnum">78.</span><a href="https://www.foodnavigator.com/Article/2026/07/23/nestle-h1-2026-organic-growth-up-but-net-profit-falls-314/">Nestlé H1 2026: organic growth up, net profit falls — FoodNavigator</a></li>
+    <li id="s79"><span class="srcnum">79.</span><a href="https://www.bakeryandsnacks.com/Article/2026/08/14/us-snack-sales-growth-shifts-overseas-in-2026/">US snack sales growth shifts overseas in 2026 — Bakery &amp; Snacks</a></li>
+    <li id="s80"><span class="srcnum">80.</span><a href="https://www.businesstoday.in/latest/corporate/story/tata-trusts-opposes-n-chandrasekaran-reappointment-says-board-resolution-is-legal-nullity-556219-2026-09-17">Tata Trusts oppose N Chandrasekaran’s reappointment — Business Today (Sept 2026)</a></li>
+    <li id="s81"><span class="srcnum">81.</span><a href="https://inc42.com/?p=566045">Tata Digital posts nearly ₹5,000 crore loss in FY26 as BigBasket bleeds — Inc42</a></li>
+    <li id="s82"><span class="srcnum">82.</span><a href="https://www.deccanherald.com/business/companies/itc-to-increase-fpos-to-4000-in-next-4-years-linking-a-crore-farmers-scale-up-maars-ecosystem-3304889">ITC to scale MAARS to 4,000 FPOs — Deccan Herald</a></li>
+    <li id="s83"><span class="srcnum">83.</span><a href="https://agrospectrumindia.com/news/94/30871/gujarat-co-operative-milk-marketing-federation-amul-records-turnover-of-rs-59545-cr-in-2023-24.html">GCMMF (Amul): 36 lakh farmers, 18,600 villages — AgroSpectrum</a></li>
+    <li id="s84"><span class="srcnum">84.</span><a href="https://www.pitchonnet.com/on-the-move/tata-consumer-products-strengthens-leadership-with-furhan-ahmeds-appointment-40222.html">Tata Consumer appoints Furhan Ahmed, Head of Digital Transformation, Sales &amp; Marketing — Pitchonnet (June 2026)</a></li>
+    <li id="s85"><span class="srcnum">85.</span><a href="https://www.investywise.com/tata-consumer-products-senior-management-appointment/">Tata Consumer designates Head of Business Integration &amp; Transformation as SMP — InvestyWise (May 2026)</a></li>
+    <li id="s86"><span class="srcnum">86.</span><a href="https://apacnewsnetwork.com/2025/01/rajesh-gopal-joins-tata-consumer-products-as-global-chief-digital-officer/">Rajesh Gopal joins Tata Consumer as Global Chief Digital Officer — APAC News Network (Jan 2025)</a></li>
   </ul>
   </div>
   </footer>
@@ -4378,6 +5331,232 @@ mark.hit{background:var(--amber-soft); color:var(--ink); border-radius:2px; padd
       bar.appendChild(b);
     });
   });
+})();
+
+
+/* ---------- Part Five: question bank and deal screen ---------- */
+(function(){
+  function H(t,a,p){var e=document.createElement(t);for(var k in a){if(k==='html')e.innerHTML=a[k];else if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}if(p)p.appendChild(e);return e;}
+  function store(get,val){ try{ if(get) return JSON.parse(localStorage.getItem('fmcg-oi-done')||'{}'); localStorage.setItem('fmcg-oi-done',JSON.stringify(val)); }catch(e){ return get?{}:undefined; } }
+
+  /* ===== question bank ===== */
+  var TH={
+    ma:['Acquisitions','#oi-ma'], brands:['Category-defining brands','#oi-brands'], focus:['Focus & trade-offs','#oi-focus'],
+    channels:['Channels','#oi-channels'], org:['Organisation','#oi-org'], talent:['Talent','#oi-talent'],
+    resilience:['Resilience','#oi-resilience'], moats:['Moats & reinvestment','#oi-moats'], tech:['Technology','#oi-tech'],
+    supply:['Supply chain','#oi-supply'], cyber:['Cyber security','#oi-cyber'], more:['Further questions','#oi-more']
+  };
+  /* s: y = your question, a = added; t: in the opening ten */
+  var Q=[
+    ['ma','y','What are the guardrails for a go/no-go decision on an acquisition — with an example of a deal stopped by each?'],
+    ['ma','y','How are the acquisitions playing out against the case you approved — Capital Foods, Organic India, Soulfull, NourishCo?'],
+    ['ma','y','What is the secret sauce in integration, and how do you measure translation effectiveness — does an acquired brand get stronger inside Tata, or only bigger?'],
+    ['ma','a','Excluding acquisitions you earn ~30% on capital; including them the company earns below its cost of capital. Which number should the board hold you to, and when do they converge?',1],
+    ['ma','a','Haldiram’s raised money at roughly the valuation declined in 2023. Was walking away right, and what would you need to see to pay that price now?',1],
+    ['ma','a','Who sets the walk-away price, and when — before or after the deal team is committed?'],
+    ['ma','a','What was the approval case for Capital Foods’ FY26 revenue and EBITDA, and what was the actual?'],
+    ['ma','a','What did the Organic India earn-out pay, and did it reward the right behaviour?'],
+    ['ma','a','What headroom does the UK goodwill impairment test have, and at what black-tea decline does it disappear?'],
+    ['ma','a','Which deal did the investment committee stop that management wanted?'],
+    ['brands','y','What is the playbook for building a category-defining brand?'],
+    ['brands','y','How is the company set up to do it — who owns a category, with what money and patience?'],
+    ['brands','y','What is the route from today to category-defining, brand by brand?'],
+    ['brands','a','Name the one category you will define — not enter — by FY31, and the standard you will set in it.',1],
+    ['brands','a','What metric tells you a brand has become category-defining: price premium, share of search, numeric distribution?'],
+    ['brands','a','Which health platform becomes a brand claim rather than a cross-portfolio capability?'],
+    ['focus','y','Are too many brands and options distracting? Depth or breadth?'],
+    ['focus','y','How are you forcing trade-offs?'],
+    ['focus','y','Is there too much for the sales team to sell?'],
+    ['focus','a','You launched 80 products last year. Which five brands get disproportionate money for three years, and which three would you stop funding?',1],
+    ['focus','a','What share of launches is still on shelf after 24 months, and how many SKUs were cut last year?'],
+    ['focus','a','How many lines does a general-trade salesperson sell per call, versus two years ago?'],
+    ['focus','a','Has the distributor split raised or lowered cost to serve?'],
+    ['channels','y','What is the disintermediation risk, channel by channel?'],
+    ['channels','y','How is consumer choice dictating channel choice — are you following the consumer or the margin?'],
+    ['channels','a','In which categories could a quick-commerce private label substitute for your brand within three years?',1],
+    ['channels','a','What is contribution per ₹100 in quick commerce versus general trade, after retail media?'],
+    ['channels','a','What data do you get back from each platform, and what decision has it changed?'],
+    ['channels','a','How are distributor returns trending in the cities where quick commerce is largest?'],
+    ['org','y','How does the matrix organisation work, and where does it slow you down?'],
+    ['org','a','When a growth brand and tea want the same distributor’s attention in a tea-dominant town, who decides, and how fast?',1],
+    ['org','a','How many sign-offs does a new SKU need, and how long from concept to first invoice?'],
+    ['org','a','What decision rights does an acquired brand’s leader keep, and when do they expire?'],
+    ['org','a','Which dimension of the matrix would you remove if you had to remove one?'],
+    ['talent','y','What does hustling mean in your context?'],
+    ['talent','y','What is the talent strategy behind it?'],
+    ['talent','a','Attrition is 26% and the off-roll frontline outnumbers employees. Whose hustle is the strategy depending on?',1],
+    ['talent','a','What is regretted attrition among high performers, and in which functions?'],
+    ['talent','a','How many growth-business leaders came from start-ups, and how many stayed three years?'],
+    ['talent','a','What does a distributor salesman earn from a growth brand versus salt?'],
+    ['resilience','y','When FMCG companies are struggling globally, why will we be resilient?'],
+    ['resilience','a','Which of the global industry’s problems do we already have — in the UK, the US and India’s metros?'],
+    ['resilience','a','How much of FY26 growth was share gain versus market growth?'],
+    ['resilience','a','What does the written plan for a bad year say you would cut and protect?'],
+    ['moats','y','How are you building network effects and a moat, as Amul and ITC have?'],
+    ['moats','y','How are you managing efficiency, and how is it reinvested?'],
+    ['moats','a','Which advantage survives a competitor pricing at zero margin for three years?'],
+    ['moats','a','Does the MAVIC retailer platform get better as more outlets use it? What is the evidence?'],
+    ['moats','a','What is the annual productivity saving, and where did it go?'],
+    ['tech','y','How are you making technology pay? What is the playbook, and how does it build a moat?'],
+    ['tech','y','What business outcomes have AI and digital delivered — fill rate, inventory levels?'],
+    ['tech','y','How are you organised to deliver the value?'],
+    ['tech','y','What are your principles: in-house versus outsourced, investment, talent?'],
+    ['tech','a','Which three operating numbers have moved because of MAVIC and IBP, and by how much?',1],
+    ['tech','a','What is technology spend as a share of revenue, and how much is run versus change?'],
+    ['tech','a','In outlets with the recommendation engine, what was the uplift against a control group?'],
+    ['supply','y','What are your supply chain choices, and why?'],
+    ['supply','a','Where are you asset-light by choice, and where would you rather own?'],
+    ['supply','a','What is your single point of failure in each category?'],
+    ['supply','a','What share of Sampann is co-packed, and how many food-safety audits failed last year?'],
+    ['supply','a','What is RTD capacity utilisation by region, and how much stock sat in trade at season end?'],
+    ['cyber','y','What leadership choices are you making on cyber: architecture, production access, access management, third-party access, MFA?'],
+    ['cyber','a','If you lost ERP, MAVIC and plant systems for five weeks, as JLR did, what would it cost — and when did the board last rehearse it?',1],
+    ['cyber','a','Can anyone get a password or MFA reset by phone without independent verification?'],
+    ['cyber','a','How is access governed for 3,000+ distributors, co-packers and IT outsourcers?'],
+    ['cyber','a','What is the tested recovery time for order-to-cash?'],
+    ['more','a','What in this strategy depends on group support, and what changes if the group’s leadership changes?',1],
+    ['more','a','Does salty snacks pass your own "too few players" test? If not, what is the alternative route to scale?'],
+    ['more','a','What is the rule and the lag for passing commodity costs through to price?'],
+    ['more','a','If India adopted sodium targets or front-of-pack warnings, what happens to the salt franchise?'],
+    ['more','a','Is the international business a growth engine, a cash engine or a capability?'],
+    ['more','a','What is the market not believing at ~58× earnings, and which three numbers would change its mind?'],
+    ['more','a','What does Tata Starbucks have to deliver by FY29, and what is the exit if it does not?']
+  ];
+
+  function qbank(host){
+    var done=store(true)||{};
+    var state={th:'all',src:'all',top:false,hide:false,q:''};
+    var bar=H('div',{class:'chartctl qctl'},host);
+    var bar2=H('div',{class:'chartctl qctl'},host);
+    var list=H('div',{class:'qlist'},host);
+    H('span',{class:'cl',text:'Theme'},bar);
+    function chip(parent,label,key,val){
+      var b=H('button',{type:'button',text:label},parent);
+      b.setAttribute('aria-pressed',state[key]===val?'true':'false');
+      b.addEventListener('click',function(){
+        [].slice.call(parent.querySelectorAll('button[data-k="'+key+'"]')).forEach(function(x){x.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true'); state[key]=val; render();
+      });
+      b.setAttribute('data-k',key);
+      return b;
+    }
+    chip(bar,'All','th','all');
+    Object.keys(TH).forEach(function(k){ chip(bar,TH[k][0],'th',k); });
+    H('span',{class:'cl',text:'Whose'},bar2);
+    chip(bar2,'All','src','all'); chip(bar2,'Your questions','src','y'); chip(bar2,'Added','src','a');
+    var topb=H('button',{type:'button',text:'Opening ten only'},bar2); topb.setAttribute('aria-pressed','false');
+    topb.addEventListener('click',function(){ state.top=!state.top; topb.setAttribute('aria-pressed',state.top?'true':'false'); render(); });
+    var hideb=H('button',{type:'button',text:'Hide discussed'},bar2); hideb.setAttribute('aria-pressed','false');
+    hideb.addEventListener('click',function(){ state.hide=!state.hide; hideb.setAttribute('aria-pressed',state.hide?'true':'false'); render(); });
+    var srch=H('input',{type:'search',placeholder:'Search questions…','aria-label':'Search questions',class:'qsearch'},bar2);
+    srch.addEventListener('input',function(){ state.q=srch.value.toLowerCase(); render(); });
+    var copyb=H('button',{type:'button',text:'Copy agenda'},bar2);
+    var count=H('span',{class:'cl qcount'},bar2);
+
+    function visible(){
+      return Q.map(function(r,i){return {r:r,i:i};}).filter(function(o){
+        var r=o.r;
+        if(state.th!=='all'&&r[0]!==state.th) return false;
+        if(state.src!=='all'&&r[1]!==state.src) return false;
+        if(state.top&&!r[3]) return false;
+        if(state.hide&&done[o.i]) return false;
+        if(state.q&&r[2].toLowerCase().indexOf(state.q)<0) return false;
+        return true;
+      });
+    }
+    function render(){
+      list.innerHTML='';
+      var vis=visible(), last=null, nDone=0;
+      Q.forEach(function(r,i){ if(done[i]) nDone++; });
+      vis.forEach(function(o){
+        var r=o.r;
+        if(r[0]!==last){ last=r[0]; H('h4',{class:'qth',html:'<a href="'+TH[r[0]][1]+'">'+TH[r[0]][0]+' →</a>'},list); }
+        var row=H('label',{class:'qrow'+(done[o.i]?' done':'')},list);
+        var cb=H('input',{type:'checkbox'},row); cb.checked=!!done[o.i];
+        cb.addEventListener('change',function(){ if(cb.checked) done[o.i]=1; else delete done[o.i]; store(false,done); row.classList.toggle('done',cb.checked); count.textContent=vis.length+' shown · '+Object.keys(done).length+' discussed'; });
+        H('span',{class:'qtext',text:r[2]},row);
+        H('span',{class:'tag'+(r[1]==='y'?' go':''),text:r[1]==='y'?'Yours':'Added'},row);
+        if(r[3]) H('span',{class:'tag warn',text:'Opening ten'},row);
+      });
+      if(!vis.length) H('p',{class:'chnote',text:'No questions match these filters.'},list);
+      count.textContent=vis.length+' shown · '+nDone+' discussed';
+    }
+    copyb.addEventListener('click',function(){
+      var vis=visible(), last=null, out=['Tata Consumer — outside-in questions',''];
+      vis.forEach(function(o){ if(o.r[0]!==last){ last=o.r[0]; out.push('',TH[last][0].toUpperCase()); } out.push('- '+o.r[2]); });
+      var txt=out.join('\n');
+      function ok(){ copyb.textContent='Copied ✓'; setTimeout(function(){copyb.textContent='Copy agenda';},1600); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(ok,function(){fallback();}); } else fallback();
+      function fallback(){ var ta=H('textarea',{},document.body); ta.value=txt; ta.select(); try{document.execCommand('copy'); ok();}catch(e){} document.body.removeChild(ta); }
+    });
+    render();
+  }
+
+  /* ===== deal screen ===== */
+  var CRIT=[
+    ['Category structure','Size, growth, margin and number of players — the CEO’s own test',true],
+    ['Right to win','What Tata adds that the owner could not: reach, trust, capital',false],
+    ['Price vs hurdle','Clears the IRR hurdle on full price with synergies haircut',true],
+    ['Build vs buy','Building would take too long to matter',false],
+    ['Return on full capital','Clears an 11% WACC on full goodwill by year 7',false],
+    ['Integration capacity','A named leader free to do it; no other major integration live',false],
+    ['People & incentives','Founders and key talent tied to a 3–5 year plan',false],
+    ['Diligence beyond numbers','Food safety, regulatory, cyber and ESG clean or priced',false]
+  ];
+  var PRESETS=[
+    ['NourishCo (2020)',[2,2,2,1,2,2,2,2]],
+    ['Capital Foods (2024)',[2,2,1,2,0,1,1,2]],
+    ['Organic India (2024)',[2,2,1,2,1,1,2,1]],
+    ['Bisleri (2023)',[1,1,0,0,0,1,1,1]],
+    ['Haldiram’s 51% (2023)',[0,1,0,1,0,0,1,1]],
+    ['Regional snacks at 4× sales',[1,2,1,1,1,1,1,1]]
+  ];
+  var LAB=['Fails','Partly','Passes'];
+  function dealScreen(host){
+    host.innerHTML='';
+    var hd=H('header',{},host);
+    H('p',{class:'ch-t',text:'Deal screen: test a target against the guardrails'},hd);
+    H('p',{class:'ch-s',html:'Score each guardrail, or load a past deal. A fail on either <b>hard gate</b> (category structure, price) is a no-go regardless of the rest. Scores for past deals are this document’s outside-in judgment, not the company’s.'},hd);
+    var c=H('div',{class:'chartctl'},host); H('span',{class:'cl',text:'Load'},c);
+    var body=H('div',{class:'dsbody'},host);
+    var verdict=H('div',{class:'dsverdict'},host);
+    var sc=[1,1,1,1,1,1,1,1], rows=[];
+    CRIT.forEach(function(cr,i){
+      var row=H('div',{class:'dsrow'},body);
+      H('div',{class:'dsname',html:'<b>'+cr[0]+(cr[2]?' <span class="tag stop">Hard gate</span>':'')+'</b><span>'+cr[1]+'</span>'},row);
+      var grp=H('div',{class:'dsopts',role:'radiogroup','aria-label':cr[0]},row);
+      var bs=LAB.map(function(l,v){
+        var b=H('button',{type:'button',class:'ds'+v,text:l,role:'radio'},grp);
+        b.addEventListener('click',function(){ sc[i]=v; paint(); });
+        return b;
+      });
+      rows.push(bs);
+    });
+    PRESETS.forEach(function(p){
+      var b=H('button',{type:'button',text:p[0]},c); b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){
+        [].slice.call(c.querySelectorAll('button')).forEach(function(x){x.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true'); sc=p[1].slice(); paint();
+      });
+    });
+    function paint(){
+      rows.forEach(function(bs,i){ bs.forEach(function(b,v){ var on=sc[i]===v; b.setAttribute('aria-checked',on?'true':'false'); b.classList.toggle('on',on); }); });
+      var total=sc.reduce(function(a,b){return a+b;},0);
+      var gateFail=CRIT.some(function(cr,i){return cr[2]&&sc[i]===0;});
+      var fails=CRIT.filter(function(cr,i){return sc[i]===0;}).map(function(cr){return cr[0];});
+      var parts=CRIT.filter(function(cr,i){return sc[i]===1;}).map(function(cr){return cr[0];});
+      var cls,head,text;
+      if(gateFail){ cls='lose'; head='No-go'; text='A hard gate fails: '+CRIT.filter(function(cr,i){return cr[2]&&sc[i]===0;}).map(function(cr){return cr[0].toLowerCase();}).join(' and ')+'. Walk away, or restructure the deal until it passes.'; }
+      else if(total>=14&&!fails.length){ cls='win'; head='Go'; text='Passes every guardrail with at most two partial scores. Proceed, with the review points set before signing.'; }
+      else { cls='close'; head='Conditional'; text=(fails.length?'Fix before signing: '+fails.join(', ').toLowerCase()+'. ':'')+(parts.length?'Strengthen: '+parts.join(', ').toLowerCase()+'.':''); }
+      verdict.className='dsverdict '+cls;
+      verdict.innerHTML='<span class="dsv">'+head+'</span><span class="dss">Score '+total+' / 16</span><p>'+text+'</p>';
+    }
+    paint();
+  }
+
+  var qb=document.getElementById('qbank'); if(qb) qbank(qb);
+  var ds=document.getElementById('dealScreen'); if(ds) dealScreen(ds);
 })();
 
 /* ---------- decision log filter ---------- */
